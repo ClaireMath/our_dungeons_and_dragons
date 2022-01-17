@@ -11,7 +11,20 @@
   </div>
 </template>
 
-<style>
+<script>
+// import Action from './views/Action.vue'
+// import NotFound from './views/NotFound.vue'
+
+export default {
+  name: 'App',
+  components: {
+    // Action, 
+    // NotFound
+  }
+}
+</script>
+
+<style scoped>
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
