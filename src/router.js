@@ -6,6 +6,8 @@ import Router from "vue-router";
 
 import Home from "./views/Home.vue";
 import NotFound from "./views/NotFound.vue";
+import Action from"./views/Action.vue";
+import About from"./views/About.vue";
 
 Vue.use(Router);
 
@@ -20,8 +22,18 @@ export default new Router({
     {
       // juste le slash ça permet de dire que ce sera cette vue qui sera envoyée par défaut
       path: "/",
+      name: "Home",
+      component: Home
+    },
+    {
+      path: "/action",
       name: "Action",
       component: Action
+    },
+    {
+      path: "/about",
+      name: "About",
+      component: About
     },
     // {
     //   path: "/action",
