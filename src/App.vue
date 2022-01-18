@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <div><Header/></div>
     <div id="nav">
       <router-link to="/">Home</router-link> |
       <router-link to="/about">About</router-link> |
@@ -8,16 +9,22 @@
     <!-- <h1>Hello and Welcome brave knight !</h1> -->
     <!-- <Home/> -->
     <router-view />
+    <div><Footer/></div>
   </div>
 </template>
 
 <script>
 // import Action from './views/Action.vue'
 // import NotFound from './views/NotFound.vue'
+import Header from './views/header.vue'
+import Footer from './views/Footer.vue'
+
 
 export default {
   name: 'App',
   components: {
+    Header,
+    Footer
     // Action, 
     // NotFound
   }
