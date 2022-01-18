@@ -6,14 +6,14 @@
 </template>
 
 <script>
-import myfooter from "../components/myfooter";
+/*import myfooter from "../components/myfooter";
 
 export default {
   name: "notfound",
   components: {
     myfooter
   }
-};
+};*/
 </script>
 <style scoped>
 div {
