@@ -5,16 +5,6 @@
   </div>
 </template>
 
-<script>
-/*import myfooter from "../components/myfooter";
-
-export default {
-  name: "notfound",
-  components: {
-    myfooter
-  }
-};*/
-</script>
 <style scoped>
 div {
   background-color: whitesmoke;
@@ -23,3 +13,9 @@ h1 {
   color: black;
 }
 </style>
+
+<script>
+export default {
+  name: "Footer"
+  } 
+</script>

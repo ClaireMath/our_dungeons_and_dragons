@@ -8,7 +8,7 @@ import Home from "./views/Home.vue";
 import Footer from "./views/Footer.vue";
 import Action from"./views/Action.vue";
 import About from"./views/About.vue";
-import Header from "./views/Header.vue";
+import Header from "./views/header.vue";
 
 Vue.use(Router);
 
