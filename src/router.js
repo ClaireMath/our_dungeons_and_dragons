@@ -5,9 +5,10 @@ import Vue from "vue";
 import Router from "vue-router";
 
 import Home from "./views/Home.vue";
-import NotFound from "./views/NotFound.vue";
+import Footer from "./views/Footer.vue";
 import Action from"./views/Action.vue";
 import About from"./views/About.vue";
+import Header from "./views/Header.vue";
 
 Vue.use(Router);
 
@@ -41,9 +42,15 @@ export default new Router({
     //   component: Action
     // },
   {
-    path: "/NotFound",
-    name: "NotFound",
-    component: NotFound
+    path: "/Footer",
+    name: "Footer",
+    component: Footer
+  },
+
+  {
+    path: "/Header",
+    name: "Header",
+    component: Header
   },
  
     // {

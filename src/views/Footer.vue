@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>404 NOT FOUND</h1>
+    <h1>MENTIONS LÉGALES</h1>
     <myfooter></myfooter>
   </div>
 </template>
@@ -20,6 +20,6 @@ div {
   background-color: whitesmoke;
 }
 h1 {
-  color: red;
+  color: black;
 }
 </style>

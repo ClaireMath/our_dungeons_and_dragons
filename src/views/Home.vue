@@ -1,7 +1,7 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <h1> This is our Home Page</h1>
+    <img class="logo" alt="logo" src="../assets/La quête (12).png">
+    <img class ="skull" alt="skull" src="../assets/skull-g7b1e0377f_1920.jpg">
     <!-- <HelloWorld msg="Welcome to Your Vue.js App"/> -->
   </div>
 </template>
@@ -16,4 +16,23 @@ export default {
     // HelloWorld
   }
 }
+
+
 </script>
+
+<style scoped>
+
+.skull {
+  width: 40%;
+  position: relative;
+  right: 150px;
+}
+
+.logo {
+  width: 20%;
+  position: relative;
+  bottom: 470px;
+  right: 350px
+}
+
+</style>
