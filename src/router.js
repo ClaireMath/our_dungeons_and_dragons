@@ -8,6 +8,7 @@ import Home from "./views/Home.vue";
 import NotFound from "./views/NotFound.vue";
 import Action from"./views/Action.vue";
 import About from"./views/About.vue";
+import Game from"./views/Game.vue";
 
 Vue.use(Router);
 
@@ -35,6 +36,12 @@ export default new Router({
       name: "About",
       component: About
     },
+    {
+      path: "/game",
+      name: "Game",
+      component: Game
+    },
+    
     // {
     //   path: "/action",
     //   name: "action",

@@ -1,5 +1,22 @@
 <template>
-  <div class="big_ctn">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="big_ctn">
   <div>
     <h1>Hi and welcome, brave Knight !<br /></h1>
     <h3>Take action against this dragon</h3>
@@ -133,4 +150,3 @@ h3 {
   align-items: center;
 }
 </style>
-c
