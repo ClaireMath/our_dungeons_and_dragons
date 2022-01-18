@@ -118,6 +118,10 @@ export default {
     };
   },
 
+ created: function() {
+    
+    },
+    
   methods: {
     getNextParagraphLeft() {
       this.left = true;

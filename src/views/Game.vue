@@ -1,16 +1,21 @@
 <template>
 
 <div>
-    
     {{ MyJson["book"][Id]["paragraph"] }}
-    <input
+    <div v-for= "choices in MyJson['book'][Id]['choices']" :key="choices['text']" >
+       <input
         
-        @click="goTo(MyJson['book'][Id]['choice'][0]['id'])"
+        @click="goTo(choices['id'])"
         type="button"
         class="btn"
-        v-model="MyJson['book'][Id]['choice'][0]['text']"
+        v-model="choices['text']"
         
       />
+         
+        </div>
+
+
+   
     
 </div>
 
@@ -28,6 +33,11 @@ export default {
         MyJson: json
     }
   },
+ created: function(){
+      this.Id = this.$route.query.id
+   
+
+  },
 
   methods: {
       goTo(nextid){
@@ -35,11 +45,7 @@ export default {
             window.location.reload();
       }
   },
-  created: function(){
-      this.Id = this.$route.query.id
-   
-
-  }
+ 
 }
 
 </script>
