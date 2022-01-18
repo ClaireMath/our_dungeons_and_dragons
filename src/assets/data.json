@@ -1,0 +1,28 @@
+{
+    "book": [
+        {
+            "id": 0,
+            "paragraph": "Lorem Ipsum",
+            "choices": [
+                {
+                    "id": 1,
+                    "text": "Go to the left"
+                },
+                {
+                    "id": 2,
+                    "text": "Go to the right"
+                }
+            ]
+        },
+        {
+            "id": 1,
+            "paragraph": "Lorem Ipsum toto tati",
+            "choices": [
+                {
+                    "id": 0,
+                    "text": "Aller au chateau"
+                }
+            ]
+        }
+    ]
+}

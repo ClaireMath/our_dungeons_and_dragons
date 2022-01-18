@@ -4,6 +4,7 @@ import Action from '../views/Action.vue'
 import Home from '../views/Home.vue'
 import NotFound from '../views/NotFound.vue'
 import About from '../views/About.vue'
+import Game from '../views/Game.vue'
 
 Vue.use(VueRouter)
 
@@ -20,7 +21,11 @@ const routes = [
     name: "Action",
     component: Action
   },
- 
+  {
+    path: "/game/:id",
+    name: "Game",
+    component: Game
+  },
   {
   path: "/notfound",
   name: "NotFound",
