@@ -1,0 +1,42 @@
+import Vue from 'vue'
+import VueRouter from 'vue-router'
+import Action from '../views/Action.vue'
+import Home from '../views/Home.vue'
+import NotFound from '../views/NotFound.vue'
+import About from '../views/About.vue'
+
+Vue.use(VueRouter)
+
+const routes = [
+   {
+     // juste le slash ça permet de dire que ce sera cette vue qui sera envoyée par défaut
+    path: "/",
+    name: "Home",
+    component: Home
+  },
+  {
+    // juste le slash ça permet de dire que ce sera cette vue qui sera envoyée par défaut
+    path: "/Action",
+    name: "Action",
+    component: Action
+  },
+ 
+  {
+  path: "/notfound",
+  name: "NotFound",
+  component: NotFound
+},
+{
+  path: "/about",
+  name: "About",
+  component: About
+},
+]
+
+const router = new VueRouter({
+  mode: 'history',
+  base: process.env.BASE_URL,
+  routes
+})
+
+export default router
