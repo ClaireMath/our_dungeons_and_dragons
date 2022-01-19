@@ -82,7 +82,29 @@ html, body{
   position: relative;
   background-color: green;
   bottom: 0;
-  width: 100%;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition-property: height;
+  transition-duration: 500ms;
+  transition-property: bottom;
+  transition-duration: 500ms;
+}
+
+.footer h1 {
+  color: #2c3e5000; 
+  transition-property: color;
+  transition-duration: 500ms;
+}
+
+.footer:hover {
+  height: 120px;
+  bottom: 80px;
+} 
+
+.footer:hover h1 {
+  color: #2c3e50;
 }
 
 .header {
@@ -90,6 +112,27 @@ html, body{
   background-color: green;
   left: 0;
   top: 0;
-  width: 100%;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition-property: height;
+  transition-duration: 500ms;
+  
+  
+}
+
+.header h1 {
+  color: #2c3e5000; 
+  transition-property: color;
+  transition-duration: 500ms;
+}
+
+.header:hover {
+  height: 120px;
+} 
+
+.header:hover h1 {
+  color: #2c3e50;
 }
 </style>
