@@ -10,8 +10,10 @@
 <div class="block">
 <router-link to="/">| Accueil |</router-link>
 <router-link to="/Rules"> Règles |</router-link>
-<router-link to="/Action"> Histoires |</router-link>
+<router-link to="/Game/?id=0"> Jouer |</router-link>
+<router-link to="/Action"> Histoire |</router-link>
 <router-link to="/About"> À propos |</router-link>
+
 </div>
 
 </div>

@@ -47,6 +47,7 @@ width: 100%;
   display: block;
    width: 50%;
   height: 50%;
+  text-align: justify;
 }
 
 img {

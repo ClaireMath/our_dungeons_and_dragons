@@ -14,9 +14,9 @@
   
 </div>
 
-<hr>
+
 <h1> RÈGLES </h1>
-<hr>
+
 
 
 
@@ -61,7 +61,7 @@ export default {
 
 
 body{
-  background:black;
+background:black;
  margin: 0;
  padding: 0;
   

@@ -8,8 +8,8 @@ import Home from "./views/Home.vue";
 import Footer from "./views/Footer.vue";
 import Action from"./views/Action.vue";
 import About from"./views/About.vue";
-import Game from"./views/Game.vue";
-import Header from "./views/Header.vue";
+// import Game from"./views/Game.vue";
+// import Header from "./views/Header.vue";
 import Rules from "./views/Rules.vue";
 import RulesCard from "./views/RulesCard.vue";
 
@@ -39,11 +39,11 @@ export default new Router({
       name: "About",
       component: About
     },
-    {
-      path: "/game",
-      name: "Game",
-      component: Game
-    },
+    // {
+    //   path: "/game",
+    //   name: "Game",
+    //   component: Game
+    // },
     
     // {
     //   path: "/action",
@@ -56,11 +56,11 @@ export default new Router({
     component: Footer
   },
 
-  {
-    path: "/Header",
-    name: "Header",
-    component: Header
-  },
+  // {
+  //   path: "/Header",
+  //   name: "Header",
+  //   component: Header
+  // },
 
   {
     path: "/Rules",

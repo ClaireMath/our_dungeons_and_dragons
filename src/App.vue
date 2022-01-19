@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-<<<<<<< Updated upstream
+
     <div><Header/></div>
     <!--<div id="nav">
 <<<<<<< HEAD
@@ -8,22 +8,15 @@
       <router-link to="/about">About</router-link> |
       <router-link to="/action">Let's play !</router-link>
     </div>-->
-    
-=======
-    <div id="nav">
+
+    <!-- <div id="nav">
       <router-link to="/">Home</router-link> |
       <router-link to="/about">About</router-link> |
       <router-link to="/action">Let's play !</router-link> |
       <router-link to="/game/?id=0">Game</router-link>
-    </div>
->>>>>>> Stashed changes
-=======
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link> |
-      <router-link to="/action">Let's play !</router-link>
-    </div>-->
-    
->>>>>>> 54238c8 (Commit main page CSS 0.1)
+    </div> -->
+
+
     <!-- <h1>Hello and Welcome brave knight !</h1> -->
     <!-- <Home/> -->
 
@@ -40,8 +33,8 @@
 import Navbar from './views/Navbar.vue'
 // import Action from './views/Action.vue'
 // import NotFound from './views/NotFound.vue'
-import Header from './views/header.vue';
-import Footer from './views/Footer.vue';
+// import Header from './views/header.vue';
+// import Footer from './views/Footer.vue';
 
 
 export default {
@@ -76,19 +69,19 @@ html, body{
 
 #app {
   display: inline-block;
-<<<<<<< HEAD
+
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: black;
-=======
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+
+  font-family: Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  background-color: gray;
->>>>>>> 54238c8 (Commit main page CSS 0.1)
+  /* background-color: gray; */
+
   height: 100vh;
   width: 100%;
   margin: 0px;
@@ -113,10 +106,7 @@ html, body{
   position: relative;
   background-color: green;
   bottom: 0;
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 38fbedc (Commit header & footer)
+
   height: 40px;
   display: flex;
   align-items: center;
@@ -140,12 +130,9 @@ html, body{
 
 .footer:hover h1 {
   color: #2c3e50;
-<<<<<<< HEAD
-=======
+
   width: 100%;
->>>>>>> 54238c8 (Commit main page CSS 0.1)
-=======
->>>>>>> 38fbedc (Commit header & footer)
+
 }
 
 .header {
@@ -153,10 +140,6 @@ html, body{
   background-color: green;
   left: 0;
   top: 0;
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 38fbedc (Commit header & footer)
   height: 40px;
   display: flex;
   align-items: center;
