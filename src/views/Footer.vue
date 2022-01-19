@@ -1,4 +1,9 @@
 <template>
+  <div class="footer">
+    <footer>
+      <h1>This is the footer</h1>
+    </footer>
+  </div>
   <div>
     <h1>MENTIONS LÉGALES</h1>
     <myfooter>Copyright © 2022 QUEST STORIES</myfooter>
@@ -16,6 +21,6 @@ h1 {
 
 <script>
 export default {
-  name: "Footer"
-  } 
+  name: "Footer",
+};
 </script>
