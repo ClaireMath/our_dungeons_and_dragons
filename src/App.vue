@@ -3,6 +3,7 @@
 <<<<<<< Updated upstream
     <div><Header/></div>
     <!--<div id="nav">
+<<<<<<< HEAD
       <router-link to="/">Home</router-link> |
       <router-link to="/about">About</router-link> |
       <router-link to="/action">Let's play !</router-link>
@@ -16,6 +17,13 @@
       <router-link to="/game/?id=0">Game</router-link>
     </div>
 >>>>>>> Stashed changes
+=======
+      <router-link to="/">Home</router-link> |
+      <router-link to="/about">About</router-link> |
+      <router-link to="/action">Let's play !</router-link>
+    </div>-->
+    
+>>>>>>> 54238c8 (Commit main page CSS 0.1)
     <!-- <h1>Hello and Welcome brave knight !</h1> -->
     <!-- <Home/> -->
 
@@ -68,10 +76,19 @@ html, body{
 
 #app {
   display: inline-block;
+<<<<<<< HEAD
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: black;
+=======
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
+  background-color: gray;
+>>>>>>> 54238c8 (Commit main page CSS 0.1)
   height: 100vh;
   width: 100%;
   margin: 0px;
@@ -96,6 +113,7 @@ html, body{
   position: relative;
   background-color: green;
   bottom: 0;
+<<<<<<< HEAD
   height: 40px;
   display: flex;
   align-items: center;
@@ -119,6 +137,9 @@ html, body{
 
 .footer:hover h1 {
   color: #2c3e50;
+=======
+  width: 100%;
+>>>>>>> 54238c8 (Commit main page CSS 0.1)
 }
 
 .header {
@@ -126,6 +147,7 @@ html, body{
   background-color: green;
   left: 0;
   top: 0;
+<<<<<<< HEAD
   height: 40px;
   display: flex;
   align-items: center;
@@ -148,5 +170,8 @@ html, body{
 
 .header:hover h1 {
   color: #2c3e50;
+=======
+  width: 100%;
+>>>>>>> 54238c8 (Commit main page CSS 0.1)
 }
 </style>
