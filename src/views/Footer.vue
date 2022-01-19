@@ -1,7 +1,7 @@
 <template>
   <div>
     <h1>MENTIONS LÉGALES</h1>
-    <myfooter></myfooter>
+    <myfooter>Copyright © 2022 QUEST STORIES</myfooter>
   </div>
 </template>
 

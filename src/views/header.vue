@@ -1,6 +1,6 @@
 <template>
   <header>
-    <h1>This is the header</h1>
+    <h1>LE CHATEAU DES TÉNÈBRES</h1>
   </header>
 </template>
 
@@ -11,4 +11,17 @@ export default {
 
 
 </script>
+
+
+
+<style scoped>
+
+header {
+  background-color: whitesmoke;
+}
+h1 {
+  color: black;
+}
+</style>
+
 

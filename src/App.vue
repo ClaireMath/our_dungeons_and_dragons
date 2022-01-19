@@ -1,46 +1,25 @@
 <template>
   <div id="app">
-    <div><Header/></div>
-    <div id="nav">
-      
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link> |
-      <router-link to="/action">Let's play !</router-link>
-      <router-link to="/header">Header</router-link>
-      <router-link to="/footer">Footer</router-link>
 
-      <div class="menu-bg"></div>
-<div class="menu-burger">☰</div>
-<!-- <div class="menu-items">
-  <div>Accueil</div>
-  <div>Règles</div>
-  <div>Histoires</div>
-  <div>Profil</div>
-  <div>À propos</div>
-
-</div> -->
-    </div>
-    <!-- <h1>Hello and Welcome brave knight !</h1> -->
-    <!-- <Home/> -->
+    <div><Navbar/>
+    
     <router-view />
-    <div><Footer/></div>
+    
+  </div>
+
   </div>
 </template>
 
 <script>
-// import Action from './views/Action.vue'
-// import NotFound from './views/NotFound.vue'
-import Header from './views/header.vue'
-import Footer from './views/Footer.vue'
+import Navbar from './views/Navbar.vue'
 
 
 export default {
   name: 'App',
   components: {
-    Header,
-    Footer
-    // Action, 
-    // NotFound
+    Navbar,
+    
+   
   }
 }
 
@@ -53,23 +32,8 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
+  color: black;
 }
 
-#nav {
-  padding: 30px;
-  display: flex;
-  flex-direction: row ;
-  justify-content: flex-end;
-}
-
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-#nav a.router-link-exact-active {
-  color: #42b983;
-}
 
 </style>
