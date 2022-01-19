@@ -1,7 +1,8 @@
 <template>
 
 <div>
-    {{ MyJson["book"][Id]["paragraph"] }}
+    <p v-html="MyJson.book[Id].paragraph"></p>
+    
     <div v-for= "choices in MyJson['book'][Id]['choices']" :key="choices['text']" >
        <input
         
@@ -30,12 +31,15 @@ export default {
   data() {
     return{
         Id : null,
-        MyJson: json
+        MyJson: json,
+        
     }
   },
  created: function(){
-      this.Id = this.$route.query.id
-   
+    
+    this.Id = this.$route.query.id
+    
+    
 
   },
 
@@ -54,6 +58,7 @@ export default {
 h3 {
   margin: 40px 0 0;
 }
+
 .big_ctn {
   width: 60%;
   display: flex;
