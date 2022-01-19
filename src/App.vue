@@ -179,11 +179,6 @@ html, body{
 
 .header:hover h1 {
   color: #2c3e50;
-<<<<<<< HEAD
-=======
   width: 100%;
->>>>>>> 54238c8 (Commit main page CSS 0.1)
-=======
->>>>>>> 38fbedc (Commit header & footer)
 }
 </style>

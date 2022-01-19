@@ -48,40 +48,23 @@
     
     <div v-for= "choices in MyJson['book'][Id]['choices']" :key="choices['text']" >
        <input
-        
->>>>>>> Stashed changes
-=======
+
 
     <div
       v-for="choices in MyJson['book'][Id]['choices']"
       :key="choices['text']"
     >
       <input
->>>>>>> a106c33 (addition of the random function for the dice and non final display of the result)
         @click="goTo(choices['id'])"
         type="button"
         class="btn"
         v-model="choices['text']"
-<<<<<<< HEAD
-<<<<<<< Updated upstream
       />
     </div>
   </div>
 </template>
 
 <script>
-import json from "../assets/data.json";
-=======
-        
-=======
->>>>>>> a106c33 (addition of the random function for the dice and non final display of the result)
-      />
-    </div>
-  </div>
-</template>
-
-<script>
-<<<<<<< HEAD
 import json from '../assets/data.json'
 >>>>>>> Stashed changes
 =======
@@ -135,26 +118,6 @@ export default {
     },
   },
 };
-=======
-    return{
-        Id : null,
-        MyJson: json,
-        
-    }
-=======
-    return {
-      Id: null,
-      MyJson: json,
-      randomDice1: null,
-      randomDice2: null,
-      lifePoints: null,
-      enemyLifePoints: {},
-      enemyDamagePoints : null,
-      enemyWeapon: null,
-      enemyArmor: null,
-      potion: "",
-    };
->>>>>>> a106c33 (addition of the random function for the dice and non final display of the result)
   },
   created: function () {
     this.Id = this.$route.query.id;
@@ -171,13 +134,10 @@ export default {
  
 }
 
->>>>>>> Stashed changes
-=======
     goTo(nextid) {
       this.$router.push("?id=" + nextid);
       window.location.reload();
     },
-<<<<<<< HEAD
    
 throwTheDice(nbOfDice){
     if (nbOfDice==1) {
