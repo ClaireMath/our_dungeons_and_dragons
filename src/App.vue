@@ -114,6 +114,9 @@ html, body{
   background-color: green;
   bottom: 0;
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 38fbedc (Commit header & footer)
   height: 40px;
   display: flex;
   align-items: center;
@@ -137,9 +140,12 @@ html, body{
 
 .footer:hover h1 {
   color: #2c3e50;
+<<<<<<< HEAD
 =======
   width: 100%;
 >>>>>>> 54238c8 (Commit main page CSS 0.1)
+=======
+>>>>>>> 38fbedc (Commit header & footer)
 }
 
 .header {
@@ -148,6 +154,9 @@ html, body{
   left: 0;
   top: 0;
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 38fbedc (Commit header & footer)
   height: 40px;
   display: flex;
   align-items: center;
@@ -170,8 +179,11 @@ html, body{
 
 .header:hover h1 {
   color: #2c3e50;
+<<<<<<< HEAD
 =======
   width: 100%;
 >>>>>>> 54238c8 (Commit main page CSS 0.1)
+=======
+>>>>>>> 38fbedc (Commit header & footer)
 }
 </style>
