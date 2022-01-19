@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+<<<<<<< Updated upstream
     <div><Header/></div>
     <!--<div id="nav">
       <router-link to="/">Home</router-link> |
@@ -7,6 +8,14 @@
       <router-link to="/action">Let's play !</router-link>
     </div>-->
     
+=======
+    <div id="nav">
+      <router-link to="/">Home</router-link> |
+      <router-link to="/about">About</router-link> |
+      <router-link to="/action">Let's play !</router-link> |
+      <router-link to="/game/?id=0">Game</router-link>
+    </div>
+>>>>>>> Stashed changes
     <!-- <h1>Hello and Welcome brave knight !</h1> -->
     <!-- <Home/> -->
 

@@ -1,4 +1,5 @@
 <template>
+<<<<<<< Updated upstream
   <div>
     <!-- <input
       @click="throwTheDice()"
@@ -20,10 +21,19 @@
       :key="choices['text']"
     >
       <input
+=======
+
+<div>
+    {{ MyJson["book"][Id]["paragraph"] }}
+    <div v-for= "choices in MyJson['book'][Id]['choices']" :key="choices['text']" >
+       <input
+        
+>>>>>>> Stashed changes
         @click="goTo(choices['id'])"
         type="button"
         class="btn"
         v-model="choices['text']"
+<<<<<<< Updated upstream
       />
     </div>
   </div>
@@ -31,11 +41,28 @@
 
 <script>
 import json from "../assets/data.json";
+=======
+        
+      />
+         
+        </div>
+
+
+   
+    
+</div>
+
+</template>
+
+<script>
+import json from '../assets/data.json'
+>>>>>>> Stashed changes
 
 export default {
   name: "Game",
   props: {},
   data() {
+<<<<<<< Updated upstream
     return {
       Id: null,
       MyJson: json,
@@ -77,13 +104,38 @@ export default {
     },
   },
 };
+=======
+    return{
+        Id : null,
+        MyJson: json
+    }
+  },
+ created: function(){
+      this.Id = this.$route.query.id
+   
+
+  },
+
+  methods: {
+      goTo(nextid){
+            this.$router.push('?id='+nextid)
+            window.location.reload();
+      }
+  },
+ 
+}
+
+>>>>>>> Stashed changes
 </script>
 
 <style scoped>
 h3 {
   margin: 40px 0 0;
 }
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
 .big_ctn {
   width: 60%;
   display: flex;
