@@ -36,6 +36,13 @@ const routes = [
   name: "About",
   component: About
 },
+
+{
+  path: "/RulesCard",
+  name: "RulesCard",
+  component: RulesCard
+},
+
 ]
 
 const router = new VueRouter({
