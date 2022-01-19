@@ -43,15 +43,16 @@ export default {
       randomDice2: null,
       lifePoints: null,
       enemyLifePoints: {},
-      enemyDamagePoints : null,
+      weapon: 5,
       enemyWeapon: null,
-      enemyArmor: null,
+      enemyArmor: 0,
       potion: "",
     };
   },
   created: function () {
     this.Id = this.$route.query.id;
     this.getFirstLifePoints();
+    this.fight()
   },
 
   methods: {
@@ -70,13 +71,67 @@ export default {
     },
     getFirstLifePoints() {
       this.throwTheDice(2);
-      console.log(this.randomDice1);
-      console.log(this.randomDice2);
+      
       this.lifePoints = (this.randomDice1 + this.randomDice2) * 4;
-      console.log(this.lifePoints);
+      
     },
+    JoueurHitEnemy(){
+        this.enemyLifePoints = 20;              //A aller chercher dans le json quand il sera mis en forme
+        //le joueur attaque l'ennemi
+        //il lance les dés
+        this.throwTheDice(2);
+        //calcul du resultat
+        let total = this.randomDice1 + this.randomDice2;
+        console.log("Vous attaquez de:  "+total)
+        if(total >= 6){
+            console.log("le coup est reussi")
+            let damage = (total-6)+this.weapon -this.enemyArmor 
+            this.enemyLifePoints = this.enemyLifePoints - damage
+            console.log(this.enemyLifePoints)
+        }
+    },
+    
+    EnemyHitJoueur(){
+        
+        this.throwTheDice(2);
+        
+        let total = this.randomDice1 + this.randomDice2;
+        
+        if(total >= 6){
+            console.log("le coup est reussi")
+            let damage = (total-6)+this.enemyWeapon - armor
+            this.lifePoints = this.lifePoints - damage
+            
+        }
+
   },
-};
+  fight(whoStart){
+
+      if(whoStart == "player"){
+        while(this.enemyLifePoints >5 || this.lifePoints >0){
+            this.JoueurHitEnemy()
+            if(this.enemyLifePoints <=5){
+                console.log("l'ennemie est assomé")
+            }else{
+                this.EnemyHitJoueur()
+            }
+        }
+        }else{
+           while(this.enemyLifePoints >5 || this.lifePoints >0){
+            this.EnemyHitJoueur()
+            if(this.lifePoints <=0){
+                console.log("l'ennemie est assomé")
+            }else{
+                
+                this.JoueurHitEnemy()
+            }
+        } 
+      }
+
+
+  }
+}
+
 </script>
 
 <style scoped>
