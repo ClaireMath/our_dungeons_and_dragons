@@ -1,5 +1,8 @@
 <template>
+<<<<<<< HEAD
 <<<<<<< Updated upstream
+=======
+>>>>>>> a106c33 (addition of the random function for the dice and non final display of the result)
   <div>
     <!-- <input
       @click="throwTheDice()"
@@ -7,6 +10,7 @@
       class="btn"
       v-model="Jettez les dés"
     /> -->
+<<<<<<< HEAD
     <p>Vous partez avec {{ lifePoints }} points de vie.</p>
     <button @click="throwTheDice(1)">Jettez un dé</button>
     <button @click="throwTheDice(2)">Jettez 2 dés</button>
@@ -22,18 +26,34 @@
     >
       <input
 =======
+=======
+    <button @click="throwTheDice(1)">Jettez un dé</button>
+    <button @click="throwTheDice(2)">Jettez 2 dés</button>
+    
+    <p v-if="randomDice" >{{ randomDice }}</p>
+    <p v-if="randomDice2" >{{ randomDice2 }}</p>
+>>>>>>> a106c33 (addition of the random function for the dice and non final display of the result)
 
-<div>
     <p v-html="MyJson.book[Id].paragraph"></p>
+<<<<<<< HEAD
     
     <div v-for= "choices in MyJson['book'][Id]['choices']" :key="choices['text']" >
        <input
         
 >>>>>>> Stashed changes
+=======
+
+    <div
+      v-for="choices in MyJson['book'][Id]['choices']"
+      :key="choices['text']"
+    >
+      <input
+>>>>>>> a106c33 (addition of the random function for the dice and non final display of the result)
         @click="goTo(choices['id'])"
         type="button"
         class="btn"
         v-model="choices['text']"
+<<<<<<< HEAD
 <<<<<<< Updated upstream
       />
     </div>
@@ -44,25 +64,26 @@
 import json from "../assets/data.json";
 =======
         
+=======
+>>>>>>> a106c33 (addition of the random function for the dice and non final display of the result)
       />
-         
-        </div>
-
-
-   
-    
-</div>
-
+    </div>
+  </div>
 </template>
 
 <script>
+<<<<<<< HEAD
 import json from '../assets/data.json'
 >>>>>>> Stashed changes
+=======
+import json from "../assets/data.json";
+>>>>>>> a106c33 (addition of the random function for the dice and non final display of the result)
 
 export default {
   name: "Game",
   props: {},
   data() {
+<<<<<<< HEAD
 <<<<<<< Updated upstream
     return {
       Id: null,
@@ -111,16 +132,21 @@ export default {
         MyJson: json,
         
     }
+=======
+    return {
+      Id: null,
+      MyJson: json,
+      randomDice: null,
+      randomDice2: null,
+    };
+>>>>>>> a106c33 (addition of the random function for the dice and non final display of the result)
   },
- created: function(){
-    
-    this.Id = this.$route.query.id
-    
-    
-
+  created: function () {
+    this.Id = this.$route.query.id;
   },
 
   methods: {
+<<<<<<< HEAD
       goTo(nextid){
             this.$router.push('?id='+nextid)
             window.location.reload();
@@ -130,6 +156,27 @@ export default {
 }
 
 >>>>>>> Stashed changes
+=======
+    goTo(nextid) {
+      this.$router.push("?id=" + nextid);
+      window.location.reload();
+    },
+   
+throwTheDice(nbOfDice){
+    if (nbOfDice==1) {
+    this.randomDice = Math.floor(6*Math.random())+1;  
+    } else {
+    this.randomDice = Math.floor(6*Math.random())+1;  
+    this.randomDice2 = Math.floor(6*Math.random())+1;  
+    }
+ },
+//     rollDice(dice1),
+//     rollDice(dice2),
+//     rollDice(dice3);    
+// }
+//   },
+}}
+>>>>>>> a106c33 (addition of the random function for the dice and non final display of the result)
 </script>
 
 <style scoped>
