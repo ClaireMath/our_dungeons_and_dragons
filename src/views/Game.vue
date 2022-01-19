@@ -6,7 +6,7 @@
       class="btn"
       v-model="Jettez les dés"
     /> -->
-    <p>Vous partez avec {{ lifePoints }} points de vie.</p>
+    <p>Vous partez avec {{ startingLifePoints }} points de vie.</p>
     <button @click="throwTheDice(1)">Jettez un dé</button>
     <button @click="throwTheDice(2)">Jettez 2 dés</button>
 
@@ -41,18 +41,22 @@ export default {
       MyJson: json,
       randomDice1: null,
       randomDice2: null,
-      lifePoints: null,
+      startingLifePoints: 20,
+      lifePoints: 0,
+      remainingLifePoints: 0,
       enemyLifePoints: {},
       weapon: 5,
-      enemyWeapon: null,
+      enemyWeapon: 0,
+      playerArmor: 0,
       enemyArmor: 0,
       potion: "",
     };
   },
   created: function () {
     this.Id = this.$route.query.id;
-    this.getFirstLifePoints();
-    this.fight()
+    // this.getFirstLifePoints();
+    // this.fight("player")
+    this.EnemyHitJoueur()
   },
 
   methods: {
@@ -72,22 +76,26 @@ export default {
     getFirstLifePoints() {
       this.throwTheDice(2);
       
-      this.lifePoints = (this.randomDice1 + this.randomDice2) * 4;
+      this.startingLifePoints = (this.randomDice1 + this.randomDice2) * 4;
       
     },
     JoueurHitEnemy(){
-        this.enemyLifePoints = 20;              //A aller chercher dans le json quand il sera mis en forme
+        this.enemyLifePoints = 20;   
+        console.log(this.enemyLifePoints)
+                 //A aller chercher dans le json quand il sera mis en forme
+
         //le joueur attaque l'ennemi
         //il lance les dés
         this.throwTheDice(2);
         //calcul du resultat
+        
         let total = this.randomDice1 + this.randomDice2;
-        console.log("Vous attaquez de:  "+total)
+        console.log("Vous attaquez de:  "+total + "total des dés")
         if(total >= 6){
             console.log("le coup est reussi")
             let damage = (total-6)+this.weapon -this.enemyArmor 
             this.enemyLifePoints = this.enemyLifePoints - damage
-            console.log(this.enemyLifePoints)
+            console.log("il reste à l'ennemi :" + this.enemyLifePoints)
         }
     },
     
@@ -96,12 +104,17 @@ export default {
         this.throwTheDice(2);
         
         let total = this.randomDice1 + this.randomDice2;
-        
+        console.log("total des dés : " +total);
         if(total >= 6){
-            console.log("le coup est reussi")
-            let damage = (total-6)+this.enemyWeapon - armor
-            this.lifePoints = this.lifePoints - damage
-            
+            console.log("le coup est reussi car score égal ou supérieur à 6")
+            let damage = (total-6)+this.enemyWeapon - this.playerArmor
+            console.log("enemyweapon : " + this.enemyWeapon);
+            console.log("playerarmor : " + this.playerArmor);
+            console.log("damage = (total des dés moins 6 + l'arme de l'ennemi - l'armure du joueur)" + damage);
+            this.remainingLifePoints = this.startingLifePoints - damage
+            this.lifePoints = this.remainingLifePoints
+            console.log("lifepoints restants du héro : " + this.remainingLifePoints);
+            console.log("lifepoints : " + this.lifePoints);
         }
 
   },
@@ -111,7 +124,7 @@ export default {
         while(this.enemyLifePoints >5 || this.lifePoints >0){
             this.JoueurHitEnemy()
             if(this.enemyLifePoints <=5){
-                console.log("l'ennemie est assomé")
+                console.log("l'ennemi est assommé")
             }else{
                 this.EnemyHitJoueur()
             }
@@ -120,18 +133,16 @@ export default {
            while(this.enemyLifePoints >5 || this.lifePoints >0){
             this.EnemyHitJoueur()
             if(this.lifePoints <=0){
-                console.log("l'ennemie est assomé")
+                console.log("l'ennemi est assommé")
             }else{
                 
                 this.JoueurHitEnemy()
             }
         } 
       }
-
-
   }
 }
-
+}
 </script>
 
 <style scoped>
