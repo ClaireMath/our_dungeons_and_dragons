@@ -48,6 +48,7 @@ html, body{
   padding: 0;
   box-sizing:  border-box;
   outline: none;
+  background-image: url("/public/img/scrollBack.jpeg");
 }
 
 #app {
@@ -57,7 +58,7 @@ html, body{
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  background-color: gray;
+  
   height: 100vh;
   width: 100%;
   margin: 0px;
@@ -78,61 +79,5 @@ html, body{
   color: #42b983;
 }
 
-.footer {
-  position: relative;
-  background-color: green;
-  bottom: 0;
-  height: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition-property: height;
-  transition-duration: 500ms;
-  transition-property: bottom;
-  transition-duration: 500ms;
-}
 
-.footer h1 {
-  color: #2c3e5000; 
-  transition-property: color;
-  transition-duration: 500ms;
-}
-
-.footer:hover {
-  height: 120px;
-  bottom: 80px;
-} 
-
-.footer:hover h1 {
-  color: #2c3e50;
-}
-
-.header {
-  position: relative;
-  background-color: green;
-  left: 0;
-  top: 0;
-  height: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition-property: height;
-  transition-duration: 500ms;
-  
-  
-}
-
-.header h1 {
-  color: #2c3e5000; 
-  transition-property: color;
-  transition-duration: 500ms;
-}
-
-.header:hover {
-  height: 120px;
-} 
-
-.header:hover h1 {
-  color: #2c3e50;
-}
 </style>

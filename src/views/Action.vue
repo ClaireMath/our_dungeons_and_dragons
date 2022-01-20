@@ -95,6 +95,7 @@
 
 <script>
 import LeftPage from "./LeftPage.vue";
+//import toggleLeft from "./LeftPage.vue";
 import RightPage from "./RightPage.vue";
 export default {
   components: { LeftPage, RightPage },
@@ -139,6 +140,7 @@ html,
 body {
   height: 100%;
   width: 100%;
+  background-image: url("/public/img/scrollBack.jpeg");
 }
 
 h3 {
@@ -150,7 +152,7 @@ h3 {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: cadetblue;
+  
 }
 .gameContainer {
   display: flex;
@@ -158,17 +160,6 @@ h3 {
   justify-content: space-between;
 }
 
-.leftPage {
-
-  width: 100%;
-  height: 100vh;
-  background-color: blue;
-}
-.rightPage {
-  width: 100%;
-  height: 100vh;
-  background-color: red;
-}
 
 
 </style>
