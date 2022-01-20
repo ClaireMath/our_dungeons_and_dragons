@@ -13,7 +13,7 @@
     <p v-if="randomDice1">{{ randomDice1 }}</p>
     <p v-if="randomDice2">{{ randomDice2 }}</p>
 
-    <p v-html="MyJson.book[Id].paragraph"></p>
+    <p class="paragraphe" v-html="MyJson.book[Id].paragraph"></p>
 
     <div
       v-for="choices in MyJson['book'][Id]['choices']"
@@ -155,5 +155,11 @@ h3 {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+.paragraphe
+{
+    width:600px;
+    height: 300Px;
+    overflow: auto;
 }
 </style>
