@@ -21,7 +21,7 @@
     <!-- <h1>Hello and Welcome brave knight !</h1> -->
     <!-- <Home/> -->
 
-    <div><Navbar/></div>
+
     
     
     <router-view />
@@ -32,7 +32,6 @@
 </template>
 
 <script>
-import Navbar from './views/Navbar.vue'
 // import Action from './views/Action.vue'
 // import NotFound from './views/NotFound.vue'
 import Header from './views/header.vue';
@@ -42,7 +41,7 @@ import Footer from './views/Footer.vue';
 export default {
   name: 'App',
   components: {
-    Navbar, Header, Footer
+    Header, Footer
     
    
   }
@@ -108,7 +107,6 @@ html, body{
 
 .footer {
   position: relative;
-  background-color: green;
   bottom: 0;
 
   height: 40px;
@@ -141,7 +139,6 @@ html, body{
 
 .header {
   position: relative;
-  background-color: green;
   left: 0;
   top: 0;
   height: 40px;
