@@ -15,7 +15,7 @@ export default {
 <style>
 .header {
   position: relative;
-  background-color: green;
+  background-color: grey;
   left: 0;
   top: 0;
   height: 40px;
@@ -24,6 +24,8 @@ export default {
   justify-content: center;
   transition-property: height;
   transition-duration: 500ms;
+  z-index: 6;
+  overflow: visible;
 }
 
 .header h1 {

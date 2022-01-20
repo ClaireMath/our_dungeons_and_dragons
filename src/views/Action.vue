@@ -1,9 +1,12 @@
 <template>
   <div class="big_ctn">
+    <!--<img class="backgroundImg" src="../assets/scrollBack.jpeg" alt="background">-->
     <div class="gameContainer">
+      
       <div><LeftPage /></div>
 
       <div>
+        
         <h1>Hi and welcome, brave Knight !<br /></h1>
         <h3>Take action against this dragon</h3>
 
@@ -140,7 +143,6 @@ html,
 body {
   height: 100%;
   width: 100%;
-  background-image: url("/public/img/scrollBack.jpeg");
 }
 
 h3 {
@@ -148,10 +150,14 @@ h3 {
 }
 .big_ctn {
   width: 100%;
-  height: 100%;
+  height: 91%;
+  padding-top: 9%;
   display: flex;
   justify-content: center;
   align-items: center;
+  background-image: url("../assets/scrollBack.jpeg");
+  position: relative;
+  z-index: 1;
   
 }
 .gameContainer {
@@ -160,6 +166,14 @@ h3 {
   justify-content: space-between;
 }
 
+.backgroundImg {
+  position: relative;
+  z-index: -2;
+  opacity: 50%;
+  object-fit: cover;
+}
+
 
 
 </style>
+<img class="backgroundImg" src="../assets/scrollBack.jpeg" alt="background">

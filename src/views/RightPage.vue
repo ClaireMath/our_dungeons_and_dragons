@@ -3,12 +3,12 @@
     <h1>This is the right Page</h1>
     <div class="rightBtn">
       <div class="star">
-        <input
-          type="image"
+        <img
           id="menuStar"
-          src="./sideMenuStar.png"
+          src="../assets/sideMenuStar.png"
+          alt="star"
           @click="toggleRight()"
-        />
+        >
       </div>
     </div>
   </div>
@@ -31,7 +31,7 @@ export default {
         rightPage.style.cssText =
           "transition-property: width, right; transition-duration: 500ms; width: 250%; right: 150%";
         star.style.left = "-250vh";
-          //"transition-property: right; transition-duration: 500ms; right: 2000px";
+          "transition-property: right; transition-duration: 500ms; right: 2000px";
       } else {
         rightPage.style.width = "100%";
         rightPage.style.right = "0";
@@ -46,6 +46,7 @@ export default {
 
 <style scoped>
 #rightPage {
+  top: -4%;
   right: 0px;
   width: 100%;
   height: 100vh;

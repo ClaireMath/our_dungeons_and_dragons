@@ -15,7 +15,7 @@ export default {
 <style>
 .footer {
   position: relative;
-  background-color: green;
+  background-color: grey;
   bottom: 0;
   height: 40px;
   display: flex;
@@ -25,6 +25,8 @@ export default {
   transition-duration: 500ms;
   transition-property: bottom;
   transition-duration: 500ms;
+  z-index: 6;
+  overflow: visible;
 }
 
 .footer h1 {
