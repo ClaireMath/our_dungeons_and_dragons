@@ -254,6 +254,12 @@ h3 {
   object-fit: cover;
 }
 
+.paragraphe
+{
+    height: 100vh;
+    overflow: auto;
+}
+
 
 
 </style>

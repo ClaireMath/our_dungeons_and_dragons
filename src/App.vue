@@ -3,7 +3,7 @@
 
     <div><Header/></div>
 
-    
+
     <!--<div id="nav">
       <router-link to="/">Home</router-link> |
       <router-link to="/about">About</router-link> |
@@ -21,27 +21,28 @@
     <!-- <h1>Hello and Welcome brave knight !</h1> -->
     <!-- <Home/> -->
 
-    <div><Navbar/>
+    <div><Navbar/></div>
+    
     
     <router-view />
-    
+    <div><Footer/></div>
   </div>
 
-  </div>
+
 </template>
 
 <script>
 import Navbar from './views/Navbar.vue'
 // import Action from './views/Action.vue'
 // import NotFound from './views/NotFound.vue'
-// import Header from './views/header.vue';
-// import Footer from './views/Footer.vue';
+import Header from './views/header.vue';
+import Footer from './views/Footer.vue';
 
 
 export default {
   name: 'App',
   components: {
-    Navbar,
+    Navbar, Header, Footer
     
    
   }

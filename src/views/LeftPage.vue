@@ -38,7 +38,7 @@ export default {
   methods: {
     toggleLeft() {
       let leftPage = document.getElementById("leftPage");
-      let leftBtn = document.getElementById("leftBtn");
+      //let leftBtn = document.getElementById("leftBtn");
       let star = document.getElementById("star");
       let hp = document.getElementById("hp");
       let inv = document.getElementById("inventaire");
@@ -46,7 +46,7 @@ export default {
       let journal = document.getElementById("journal");
       this.pageOpened = !this.pageOpened;
       if (this.pageOpened == true) {
-        leftBtn.style.left = "50px";
+        //leftBtn.style.left = "50px";
         leftPage.style.cssText =
           "transition-property: width; transition-duration: 1000ms; width: 200px";
         
@@ -59,7 +59,7 @@ export default {
         journal.style.cssText = "transition-property: left; transition-duration: 1000ms; left: 50px";
       } else {
         leftPage.style.width = "10px";
-        leftBtn.style.left = "-126px";
+        //leftBtn.style.left = "-126px";
         star.style.transform = "rotate(0deg)";
         hp.style.left = "-200px";
         inv.style.left = "-200px";
@@ -93,11 +93,11 @@ export default {
 }
 
 #menuStar {
-  width: 100px;
+  width: 150px;
 }
 
 #star {
-  width: 100px;
+  width: 150px;
   transition-property: transform;
   transition-duration: 1000ms;
 }

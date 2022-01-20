@@ -158,8 +158,7 @@ h3 {
 }
 .paragraphe
 {
-    width:600px;
-    height: 300Px;
+  height: 100vh;
     overflow: auto;
 }
 </style>
