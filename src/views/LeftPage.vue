@@ -48,15 +48,15 @@ export default {
       if (this.pageOpened == true) {
         leftBtn.style.left = "50px";
         leftPage.style.cssText =
-          "transition-property: width; transition-duration: 10000ms; width: 200px";
+          "transition-property: width; transition-duration: 1000ms; width: 200px";
         
         star.style.cssText =
           "transform: rotate(90deg)";
         
-        hp.style.cssText = "transition-property: left; transition-duration: 10000ms; left: 100px";
-        inv.style.cssText = "transition-property: left; transition-duration: 10000ms; left: 100px";
-        sorts.style.cssText = "transition-property: left; transition-duration: 10000ms; left: 100px";
-        journal.style.cssText = "transition-property: left; transition-duration: 10000ms; left: 100px";
+        hp.style.cssText = "transition-property: left; transition-duration: 1000ms; left: 50px";
+        inv.style.cssText = "transition-property: left; transition-duration: 1000ms; left: 50px";
+        sorts.style.cssText = "transition-property: left; transition-duration: 1000ms; left: 50px";
+        journal.style.cssText = "transition-property: left; transition-duration: 1000ms; left: 50px";
       } else {
         leftPage.style.width = "10px";
         leftBtn.style.left = "-126px";
@@ -99,17 +99,18 @@ export default {
 #star {
   width: 100px;
   transition-property: transform;
-  transition-duration: 10000ms;
+  transition-duration: 1000ms;
 }
 
 #leftBtn {
   position: relative;
   left: -126px;
-  align-self: center;
+  top: -50px;
+  align-self: flex-end;
   justify-self: right;
   z-index: 3;
   transition-property: transform;
-  transition-duration: 10000ms;
+  transition-duration: 1000ms;
 }
 
 #menuItems {
@@ -141,7 +142,13 @@ export default {
 h3 {
   font-family: Augusta;
   color:black;
+  font-size: 1.2em;
+  transition-duration: 300ms;
+}
+
+h3:hover {
   font-size: 1.4em;
+  text-shadow: 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #fff, 0 0 50px #fff, 0 0 60px #fff, 0 0 70px #fff, 0 0 80px #fff;
 }
 </style>
 .star:active{
