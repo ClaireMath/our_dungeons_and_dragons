@@ -2,8 +2,9 @@
   <div id="app">
 
     <div><Header/></div>
+
+    
     <!--<div id="nav">
-<<<<<<< HEAD
       <router-link to="/">Home</router-link> |
       <router-link to="/about">About</router-link> |
       <router-link to="/action">Let's play !</router-link>
@@ -65,6 +66,7 @@ html, body{
   padding: 0;
   box-sizing:  border-box;
   outline: none;
+  background-image: url("/public/img/scrollBack.jpeg");
 }
 
 #app {
@@ -80,6 +82,7 @@ html, body{
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+
   /* background-color: gray; */
 
   height: 100vh;

@@ -17,7 +17,7 @@ const routes = [
   },
   {
     // juste le slash ça permet de dire que ce sera cette vue qui sera envoyée par défaut
-    path: "/Action",
+    path: "/action/:id",
     name: "Action",
     component: Action
   },
