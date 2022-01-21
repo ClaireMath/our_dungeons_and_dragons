@@ -2,13 +2,11 @@
   <div class="big_ctn">
     <!--<img class="backgroundImg" src="../assets/scrollBack.jpeg" alt="background">-->
     <div class="gameContainer">
-      
       <div><LeftPage /></div>
       <div id="paragraphCtn">
-      <p class="paragraphe" v-html="MyJson.book[Id].paragraph"></p>
+        <p class="paragraphe" v-html="MyJson.book[Id].paragraph"></p>
 
-
-<!--
+        <!--
       <div>
         
         <h1>Hi and welcome, brave Knight !<br /></h1>
@@ -67,36 +65,38 @@
               class="btn"
               value="Droite"
             />
+-->
+
+        <div id="game">
+          <div class="combat">
+            <h1>Fight</h1>
+            <div class="container">
+              <div class="player">
+                <h2>Player</h2>
+                <h4>Points de vie: {{ lifePoints }}</h4>
+                <h4>Dégat de l'arme: {{ weapon }}</h4>
+                <h4>Point d'armure: {{ playerArmor }}</h4>
+              </div>
+              <div class="enemy">
+                <h2>Enemy</h2>
+                <h4>Points de vie: {{ enemyLifePoints }}</h4>
+                <h4>Dégat de l'arme: {{ enemyWeapon }}</h4>
+                <h4>Point d'armure: {{ enemyArmor }}</h4>
+              </div>
+            </div>
+            <div class="log">
+              <div class="allLogs">
+                <p v-for="line in log" :key="line">{{ line }}</p>
+              </div>
+            </div>
+            <div class="action">
+              <button @click="JoueurHitEnemy">Attaquer</button>
+            </div>
           </div>
+          <p class="paragraphe" v-html="MyJson.book[Id].paragraph"></p>
         </div>
-        <div v-if="right">
-          <p>ce paragraphe s'affiche si je clique sur DROITE</p>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure
-            voluptas fugit neque aut iste, dolore cumque iusto! Explicabo
-            reiciendis quidem vero voluptatem temporibus iure debitis aliquam,
-            placeat velit hic magnam!
-          </p>
-          <div class="btnCtn">
-            <input
-              v-if="btn2"
-              @click="getParagraph2Left"
-              type="button"
-              class="btn"
-              value="Gauche"
-            />
-            <input
-              v-if="btn2"
-              @click="getParagraph2Right"
-              type="button"
-              class="btn"
-              value="Droite"
-            />
-          </div>
-        </div>
-      </div>-->
+        <div><RightPage /></div>
       </div>
-      <div><RightPage /></div>
     </div>
   </div>
 </template>
@@ -120,16 +120,20 @@ export default {
       startingLifePoints: 20,
       lifePoints: 0,
       remainingLifePoints: 0,
-      enemyLifePoints: {},
+      enemyLifePoints: 0,
       weapon: 5,
       enemyWeapon: 0,
       playerArmor: 0,
       enemyArmor: 0,
       potion: "",
+      log: [],
     };
   },
   created: function () {
     this.Id = this.$route.query.id;
+    this.enemyLifePoints = this.MyJson.book[this.Id].ennemie[0].vie;
+    this.enemyWeapon = this.MyJson.book[this.Id].ennemie[0].attaque;
+    this.enemyArmor = this.MyJson.book[this.Id].ennemie[0].defense;
     // this.getFirstLifePoints();
     // this.fight("player")
     this.EnemyHitJoueur();
@@ -155,6 +159,7 @@ export default {
       this.startingLifePoints = (this.randomDice1 + this.randomDice2) * 4;
     },
     JoueurHitEnemy() {
+      this.log.push("C'est à vous d'attaquer.");
       this.enemyLifePoints = 20;
       console.log(this.enemyLifePoints);
       //A aller chercher dans le json quand il sera mis en forme
@@ -165,12 +170,19 @@ export default {
       //calcul du resultat
 
       let total = this.randomDice1 + this.randomDice2;
-      console.log("Vous attaquez de:  " + total + "total des dés");
+      this.log.push("Vous attaquez de :  " + total + " (total des dés).");
+
       if (total >= 6) {
-        console.log("le coup est reussi");
+        this.log.push("Le coup est réussi.");
+
         let damage = total - 6 + this.weapon - this.enemyArmor;
+        this.log.push(
+          "Vous faites à l'ennemi :  " + damage + " points de dégats."
+        );
         this.enemyLifePoints = this.enemyLifePoints - damage;
-        console.log("il reste à l'ennemi :" + this.enemyLifePoints);
+        this.log.push(
+          "il reste à l'ennemi : " + this.enemyLifePoints + " points."
+        );
       }
     },
 
@@ -178,9 +190,9 @@ export default {
       this.throwTheDice(2);
 
       let total = this.randomDice1 + this.randomDice2;
-      console.log("total des dés : " + total);
+      console.log("Total des dés : " + total);
       if (total >= 6) {
-        console.log("le coup est reussi car score égal ou supérieur à 6");
+        console.log("le coup est réussi car lscore égal ou supérieur à 6");
         let damage = total - 6 + this.enemyWeapon - this.playerArmor;
         console.log("enemyweapon : " + this.enemyWeapon);
         console.log("playerarmor : " + this.playerArmor);
@@ -242,7 +254,11 @@ h3 {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-image: linear-gradient(rgba(227, 202, 171, 0.7), rgba(227, 202, 171, 0.7)), url("../assets/Bat.png"), url("../assets/scrollBack.jpeg");
+  background-image: linear-gradient(
+      rgba(227, 202, 171, 0.7),
+      rgba(227, 202, 171, 0.7)
+    ),
+    url("../assets/Bat.png"), url("../assets/scrollBack.jpeg");
   background-repeat: no-repeat;
   background-position: center;
   position: relative;
@@ -250,7 +266,10 @@ h3 {
 }
 
 #paragraphCtn {
-  background-color: linear-gradient(rgba(227, 202, 171, 0.5), rgba(227, 202, 171, 0.5));
+  background-color: linear-gradient(
+    rgba(227, 202, 171, 0.5),
+    rgba(227, 202, 171, 0.5)
+  );
   position: relative;
   z-index: 2;
 }
@@ -274,5 +293,48 @@ h3 {
 p {
   font-family: Irish;
 }
+
+.combat {
+  width: 500px;
+  height: 600px;
+  background-color: blue;
+  position: absolute;
+  z-index: 10;
+}
+#game {
+  display: flex;
+  justify-content: center;
+}
+.container {
+  width: 100%;
+  height: 350px;
+  display: flex;
+  flex-direction: row;
+  background-color: yellow;
+}
+
+.player {
+  width: 50%;
+  background-color: green;
+}
+
+.enemy {
+  width: 50%;
+  background-color: purple;
+}
+.log {
+  width: 100%;
+  height: 100px;
+  background-color: pink;
+}
+.action {
+  width: 100%;
+  height: 100px;
+  background-color: fuchsia;
+}
+.allLogs {
+  width: 100%;
+  height: 100px;
+  overflow: scroll;
+}
 </style>
-<img class="backgroundImg" src="../assets/scrollBack.jpeg" alt="background">

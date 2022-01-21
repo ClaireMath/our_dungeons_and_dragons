@@ -1,52 +1,83 @@
 <template>
   <div class="bigCtn">
-    <!-- <input
-      @click="throwTheDice()"
-      type="button"
-      class="btn"
-      v-model="Jettez les dés"
-    /> -->
-    <p>Vous partez avec {{ startingLifePoints }} points de vie.</p>
-    <br />
-    <div class="main">
-      <!-- <img v-bind:src="'../assets/dice/' + randomDice1 + '.png'"/> -->
-      <!-- <img :src="require('../assets/dice/' + randomDice1 + '.png')" id="img1"/>
- <img :src="require('../assets/dice/' + randomDice2 + '.png')" id="img2"/> -->
-
-      <div class="div_du_Gif1">
-        <img v-if="gif1" src="../assets/dice/dice.gif" alt="dé gif1" id="img1" />
-        <div v-if="dice1" class="whiteBox">
-          <img :src="require('../assets/dice/' + randomDice1 + '.png')" id="img2"/>
-        </div>
-      </div>
-
-      <div class="div_du_Gif2">
-        <img v-if="gif2" src="../assets/dice/dice.gif" alt="dé gif2" id="img1" />
-        <div v-if="dice2" class="whiteBox">
-          <img :src="require('../assets/dice/' + randomDice2 + '.png')" id="img2"/>
-        </div>
+    <div class="topDiv">
+      <div class="firstElofTopDiv">
+        <button @click="getFirstLifePoints()" class="btn startBtn">
+          Commencer le jeu !
+        </button>
+        <p v-if="startingLifePoints" class="startingLifePoints">
+          Vous partez avec {{ startingLifePoints }} points de vie.
+        </p>
       </div>
      
+        <div class="dicePackage">
+          <div v-if="diceResult" class="diceResult">
+            <div class="div_du_Gif1">
+              <img
+                v-if="gif1"
+                src="../assets/dice/dice.gif"
+                alt="dé gif1"
+                id="img1"
+              />
+              <div v-if="dice1" class="whiteBox">
+                <img
+                  :src="require('../assets/dice/' + randomDice1 + '.png')"
+                  id="img2"
+                />
+              </div>
+            </div>
+
+            <div class="div_du_Gif1">
+              <img
+                v-if="gif2"
+                src="../assets/dice/dice.gif"
+                alt="dé gif2"
+                id="img1"
+              />
+              <div v-if="dice2" class="whiteBox">
+                <img
+                  :src="require('../assets/dice/' + randomDice2 + '.png')"
+                  id="img2"
+                />
+              </div>
+            </div>
+          </div>
+
+          <div class="diceThrow">
+            <img
+              @click="throwTheDice(1)"
+              src="../assets/dice/dice3D.png"
+              alt="dé en3D"
+              class="dice3D"
+            />
+            <div class="dice3Dx2" @click="throwTheDice(2)">
+              <img
+                src="../assets/dice/black3Ddice.png"
+                alt="dé en3D"
+                class="dice3D"
+              />
+              <img
+                src="../assets/dice/dice3D.png"
+                alt="dé en3D"
+                class="dice3D"
+              />
+           
+          </div>
+          <!--   <p v-if="randomDice1">{{ randomDice1 }}</p>
+      <p v-if="randomDice2">{{ randomDice2 }}</p>-->
+        </div>
+      </div>
     </div>
-
-    <br />
-    <br />
-    <button @click="throwTheDice(1)">Jettez un dé</button>
-    <button @click="throwTheDice(2)">Jettez 2 dés</button>
-
-    <p v-if="randomDice1">{{ randomDice1 }}</p>
-    <p v-if="randomDice2">{{ randomDice2 }}</p>
-
     <p class="paragraphe" v-html="MyJson.book[Id].paragraph"></p>
 
-    <div
+    <div class="divOfChoicesBtn"
       v-for="choices in MyJson['book'][Id]['choices']"
       :key="choices['text']"
     >
       <input
         @click="goTo(choices['id'])"
         type="button"
-        class="btn"
+        class="btn btnChoices"
         v-model="choices['text']"
       />
     </div>
@@ -67,9 +98,10 @@ export default {
       gif2: false,
       dice1: false,
       dice2: false,
+      diceResult: null,
       randomDice1: null,
       randomDice2: null,
-      startingLifePoints: 20,
+      startingLifePoints: 0,
       lifePoints: 0,
       remainingLifePoints: 0,
       enemyLifePoints: {},
@@ -82,7 +114,6 @@ export default {
   },
   created: function () {
     this.Id = this.$route.query.id;
-    this.getFirstLifePoints();
     // this.fight("player")
     //  this.EnemyHitJoueur();
   },
@@ -129,6 +160,7 @@ export default {
     throwTheDice(nbOfDice) {
       if (nbOfDice == 1) {
         this.playSound();
+
         this.gif2 = false;
         this.dice1 = false;
         this.dice2 = false;
@@ -140,8 +172,9 @@ export default {
         setTimeout(this.diceAnim, 2000, 1);
       } else {
         this.playSound();
-        // this.gif1 = true;
-         this.dice1 = false;
+        this.diceResult = true;
+        this.diceThrow = false;
+        this.dice1 = false;
         this.dice2 = false;
         this.gif1 = true;
         this.gif2 = true;
@@ -151,11 +184,9 @@ export default {
         this.randomDice1 = Math.floor(6 * Math.random()) + 1;
         this.randomDice2 = Math.floor(6 * Math.random()) + 1;
 
-      
         // attention dans le settimeout, le paramètre de notre fonction diceAnim
         // se place après le temps en milisecondes, aussi curieux que cela puisse paraitre
-         setTimeout(this.diceAnim, 1500, 2);
-        
+        setTimeout(this.diceAnim, 1500, 2);
       }
     },
 
@@ -242,42 +273,131 @@ h3 {
 }
 
 .bigCtn {
-  background-color: pink;
+  background-image: url("../assets/scrollBack.jpeg");
   width: 100%;
-  padding: 10%;
+  /* padding: 10%; */
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: justify;
 }
-.main {
-  width: 300px;
+.topDiv {
+  margin-left: 10%;
+  margin-right: 10%;
+  width: 80%;
   height: 160px;
+  display: flex;
+  align-items: center;
+  /*background-color: blue;*/
+  justify-content: space-between;
+}
+.firstElofTopDiv {
+  width: 600px;
+  height: 160px;
+  /*background-color: yellow;*/
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.dicePackage {
+  width: 200px;
+  height: 160px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  /*background-color: yellowgreen;*/
+}
+.diceResult {
+  width: 150px;
+  height: 120px;
   border-radius: 13px;
-  background-color: black;
+  /*background-color: grey;*/
   display: flex;
   justify-content: space-evenly;
   align-items: center;
 }
 
+/*.div_du_Gif1 {
+background-color: coral;
+}*/
+
 #img1 {
-  width: 150px;
-  height: 150px;
+  width: 100px;
+  height: 100px;
+  border-radius: 20px;
 }
 #img2 {
-  width: 80px;
-  height: 80px;
+  width: 60px;
+  height: 60px;
 }
 .whiteBox {
   border-radius: 13px;
-  background-color: gainsboro;
-  width: 80px;
-  height: 80px;
+  /* background-color: gainsboro;*/
+  width: 60px;
+  height: 60px;
 }
-.paragraphe
-{
-  height: 100vh;
-    overflow: auto;
+.paragraphe {
+  margin-left: 10%;
+  margin-right: 10%;
+  height: 80vh;
+  overflow: auto;
+  text-align: justify;
 }
+.diceThrow {
+  width: 200px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  cursor: pointer;
+/*background-color: fuchsia;*/
+}
+.dice3D {
+  width: 40px;
+  height: 40px;
+}
+.startBtn {
+  width: 200px;
+  height: 50px;
+}
+
+  .btn {
+  /*margin: 30px;*/
+  box-shadow: inset 0px 1px 0px 0px #a6827e;
+  background: linear-gradient(to bottom, #7d5d3b 5%, #634b30 100%);
+  background-color: #7d5d3b;
+  border-radius: 10px;
+  border: 2px solid goldenrod;
+  display: inline-block;
+  cursor: pointer;
+  color: goldenrod;
+  font-size: 17px;
+  padding: 6px 24px;
+  text-decoration: none;
+  text-shadow: 0px 1px 0px #4d3534;
+}
+.btn:hover {
+  background: linear-gradient(to bottom, #634b30 5%, #7d5d3b 100%);
+  background-color: #634b30;
+  border: 3px solid goldenrod;
+}
+.btn:active {
+  position: relative;
+  top: 1px;
+  border: 3px solid goldenrod;
+}
+.divOfChoicesBtn {
+  width: 80%;
+  padding-top: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /*background-color: aqua;*/
+}
+
+
 </style>
