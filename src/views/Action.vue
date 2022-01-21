@@ -256,4 +256,3 @@ h3 {
 }
 
 </style>
-<img class="backgroundImg" src="../assets/scrollBack.jpeg" alt="background">
