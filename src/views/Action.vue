@@ -4,8 +4,10 @@
     <div class="gameContainer">
       
       <div><LeftPage /></div>
-      <div>
+      <div id="paragraphCtn">
       <p class="paragraphe" v-html="MyJson.book[Id].paragraph"></p>
+
+
 <!--
       <div>
         
@@ -106,7 +108,7 @@ import RightPage from "./RightPage.vue";
 import json from "../assets/data.json";
 
 export default {
-  components: {LeftPage, RightPage},
+  components: { LeftPage, RightPage },
   name: "Action",
   props: {},
   data() {
@@ -130,7 +132,7 @@ export default {
     this.Id = this.$route.query.id;
     // this.getFirstLifePoints();
     // this.fight("player")
-    this.EnemyHitJoueur()
+    this.EnemyHitJoueur();
   },
 
   methods: {
@@ -149,80 +151,80 @@ export default {
     },
     getFirstLifePoints() {
       this.throwTheDice(2);
-      
+
       this.startingLifePoints = (this.randomDice1 + this.randomDice2) * 4;
-      
     },
-    JoueurHitEnemy(){
-        this.enemyLifePoints = 20;   
-        console.log(this.enemyLifePoints)
-                 //A aller chercher dans le json quand il sera mis en forme
+    JoueurHitEnemy() {
+      this.enemyLifePoints = 20;
+      console.log(this.enemyLifePoints);
+      //A aller chercher dans le json quand il sera mis en forme
 
-        //le joueur attaque l'ennemi
-        //il lance les dés
-        this.throwTheDice(2);
-        //calcul du resultat
-        
-        let total = this.randomDice1 + this.randomDice2;
-        console.log("Vous attaquez de:  "+total + "total des dés")
-        if(total >= 6){
-            console.log("le coup est reussi")
-            let damage = (total-6)+this.weapon -this.enemyArmor 
-            this.enemyLifePoints = this.enemyLifePoints - damage
-            console.log("il reste à l'ennemi :" + this.enemyLifePoints)
-        }
-    },
-    
-    EnemyHitJoueur(){
-        
-        this.throwTheDice(2);
-        
-        let total = this.randomDice1 + this.randomDice2;
-        console.log("total des dés : " +total);
-        if(total >= 6){
-            console.log("le coup est reussi car score égal ou supérieur à 6")
-            let damage = (total-6)+this.enemyWeapon - this.playerArmor
-            console.log("enemyweapon : " + this.enemyWeapon);
-            console.log("playerarmor : " + this.playerArmor);
-            console.log("damage = (total des dés moins 6 + l'arme de l'ennemi - l'armure du joueur)" + damage);
-            this.remainingLifePoints = this.startingLifePoints - damage
-            this.lifePoints = this.remainingLifePoints
-            console.log("lifepoints restants du héro : " + this.remainingLifePoints);
-            console.log("lifepoints : " + this.lifePoints);
-        }
+      //le joueur attaque l'ennemi
+      //il lance les dés
+      this.throwTheDice(2);
+      //calcul du resultat
 
-  },
-  fight(whoStart){
-
-      if(whoStart == "player"){
-        while(this.enemyLifePoints >5 || this.lifePoints >0){
-            this.JoueurHitEnemy()
-            if(this.enemyLifePoints <=5){
-                console.log("l'ennemi est assommé")
-            }else{
-                this.EnemyHitJoueur()
-            }
-        }
-        }else{
-           while(this.enemyLifePoints >5 || this.lifePoints >0){
-            this.EnemyHitJoueur()
-            if(this.lifePoints <=0){
-                console.log("l'ennemi est assommé")
-            }else{
-                
-                this.JoueurHitEnemy()
-            }
-        } 
+      let total = this.randomDice1 + this.randomDice2;
+      console.log("Vous attaquez de:  " + total + "total des dés");
+      if (total >= 6) {
+        console.log("le coup est reussi");
+        let damage = total - 6 + this.weapon - this.enemyArmor;
+        this.enemyLifePoints = this.enemyLifePoints - damage;
+        console.log("il reste à l'ennemi :" + this.enemyLifePoints);
       }
-  }
-}
-}
+    },
+
+    EnemyHitJoueur() {
+      this.throwTheDice(2);
+
+      let total = this.randomDice1 + this.randomDice2;
+      console.log("total des dés : " + total);
+      if (total >= 6) {
+        console.log("le coup est reussi car score égal ou supérieur à 6");
+        let damage = total - 6 + this.enemyWeapon - this.playerArmor;
+        console.log("enemyweapon : " + this.enemyWeapon);
+        console.log("playerarmor : " + this.playerArmor);
+        console.log(
+          "damage = (total des dés moins 6 + l'arme de l'ennemi - l'armure du joueur)" +
+            damage
+        );
+        this.remainingLifePoints = this.startingLifePoints - damage;
+        this.lifePoints = this.remainingLifePoints;
+        console.log(
+          "lifepoints restants du héro : " + this.remainingLifePoints
+        );
+        console.log("lifepoints : " + this.lifePoints);
+      }
+    },
+    fight(whoStart) {
+      if (whoStart == "player") {
+        while (this.enemyLifePoints > 5 || this.lifePoints > 0) {
+          this.JoueurHitEnemy();
+          if (this.enemyLifePoints <= 5) {
+            console.log("l'ennemi est assommé");
+          } else {
+            this.EnemyHitJoueur();
+          }
+        }
+      } else {
+        while (this.enemyLifePoints > 5 || this.lifePoints > 0) {
+          this.EnemyHitJoueur();
+          if (this.lifePoints <= 0) {
+            console.log("l'ennemi est assommé");
+          } else {
+            this.JoueurHitEnemy();
+          }
+        }
+      }
+    },
+  },
+};
 </script>
 
 <style scoped>
 @font-face {
- font-family: "Irish";
- src: url("../assets/IrishUncialfabeta-Bold.ttf");
+  font-family: "Irish";
+  src: url("../assets/IrishUncialfabeta-Bold.ttf");
 }
 html,
 body {
@@ -240,10 +242,17 @@ h3 {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-image: url("../assets/scrollBack.jpeg");
+  background-image: linear-gradient(rgba(227, 202, 171, 0.7), rgba(227, 202, 171, 0.7)), url("../assets/Bat.png"), url("../assets/scrollBack.jpeg");
+  background-repeat: no-repeat;
+  background-position: center;
   position: relative;
   z-index: 1;
-  
+}
+
+#paragraphCtn {
+  background-color: linear-gradient(rgba(227, 202, 171, 0.5), rgba(227, 202, 171, 0.5));
+  position: relative;
+  z-index: 2;
 }
 .gameContainer {
   display: flex;
@@ -254,21 +263,16 @@ h3 {
 .backgroundImg {
   position: relative;
   z-index: -2;
-  opacity: 50%;
   object-fit: cover;
 }
 
-.paragraphe
-{
-    height: 100vh;
-    overflow: auto;
+.paragraphe {
+  height: 100vh;
+  overflow: auto;
 }
 
 p {
   font-family: Irish;
 }
-
-
-
 </style>
 <img class="backgroundImg" src="../assets/scrollBack.jpeg" alt="background">
