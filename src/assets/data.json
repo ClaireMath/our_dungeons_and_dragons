@@ -282,6 +282,14 @@
             "id": 14,
             "text": "Rendez vous au 14"
           }
+        ],
+        "ennemie": [
+            {
+                "nom": "loup",
+                "vie":20,
+                "attque":8,
+                "defense":0
+            }
         ]
       },
       {
