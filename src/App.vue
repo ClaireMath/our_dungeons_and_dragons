@@ -53,7 +53,8 @@ export default {
 <style>
 html, body{
   height: 100vh;
-  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
   display: flex;
   justify-content: space-between;
   margin: none;
