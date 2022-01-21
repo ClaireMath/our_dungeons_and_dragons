@@ -264,7 +264,7 @@
       },
       {
         "id": 21,
-        "paragraph": "21Brave Pip ! Vous tirez votre fidèle épée, Excalibur Junior qui, ne l'oubliez pas, inflige 5 Points de Dommage supplémentaires si, toutefois, vous touchez la bête. — Salut, marmonne E.J. (Merlin n'a-t-il pas dit qu'il lui arrivait parfois de parler ?) Nous combattons les Loups, alors ? C'est plutôt dangereux à ton âge, tu ne crois pas ? Enfin, allons-y... Et, avant que vous n'ayez compris ce qui vous arrive, Excalibur Junior, au bout de votre bras, décrit un large moulinet vous permettant ainsi de frapper le premier. Quelle épée avisée ! Maintenant, lancez les dés. Le Loup est un adversaire coriace qui possède 20 POINTS DE VIE. Chaque fois qu'il réussit à vous atteindre il obtient, grâce à ses crocs, 3 Points de Dommage supplémentaires. Votre pourpoint en peau de dragon ne vous offrira aucune protection, car le Loup va chercher à vous déchirer les bras, les jambes et la gorge, qui ne sont pas protégés ; vous serez donc très vulnérable. Bonne chance, Pip, et que le meilleur gagne ! Si vous tuer le Loup, ou si vous l'assommez, vous avez le choix entre : Revenir sur vos pas, et prendre le sentier de gauche. Rendez-vous au 20. Continuer votre chemin, et prendre le nouveau sentier, à droite. Rendez-vous au 10. Continuer votre chemin, et prendre le sentier de gauche. Rendez-vous au 22. Si c'est le Loup qui vous tue, rendez-vous au 14. ",
+        "paragraph": "21Brave Pip ! Vous tirez votre fidèle épée, Excalibur Junior qui, ne l'oubliez pas, inflige 5 Points de Dommage supplémentaires si, toutefois, vous touchez la bête. — Salut, marmonne E.J. (Merlin n'a-t-il pas dit qu'il lui arrivait parfois de parler ?) Nous combattons les Loups, alors ? C'est plutôt dangereux à ton âge, tu ne crois pas ? Enfin, allons-y... Et, avant que vous n'ayez compris ce qui vous arrive, Excalibur Junior, au bout de votre bras, décrit un large moulinet vous permettant ainsi de frapper le premier. Quelle épée avisée ! Maintenant, lancez les dés. Le Loup est un adversaire coriace qui possède 20 POINTS DE VIE. Chaque fois qu'il réussit à vous atteindre il obtient, grâce à ses crocs, 3 Points de Dommage supplémentaires. Votre pourpoint en peau de dragon ne vous offrira aucune protection, car le Loup va chercher à vous déchirer les bras, les jambes et la gorge, qui ne sont pas protégés ; vous serez donc très vulnérable. Bonne chance, Pip, et que le meilleur gagne ! Si vous tuez le Loup, ou si vous l'assommez, vous avez le choix entre : Revenir sur vos pas, et prendre le sentier de gauche. Rendez-vous au 20. Continuer votre chemin, et prendre le nouveau sentier, à droite. Rendez-vous au 10. Continuer votre chemin, et prendre le sentier de gauche. Rendez-vous au 22. Si c'est le Loup qui vous tue, rendez-vous au 14. ",
         "choices": [
           {
             "id": 20,
@@ -287,7 +287,7 @@
             {
                 "nom": "loup",
                 "vie":20,
-                "attque":8,
+                "attaque":8,
                 "defense":0
             }
         ]

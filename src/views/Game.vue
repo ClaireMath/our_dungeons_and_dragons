@@ -12,30 +12,46 @@
       <!-- <img v-bind:src="'../assets/dice/' + randomDice1 + '.png'"/> -->
       <!-- <img :src="require('../assets/dice/' + randomDice1 + '.png')" id="img1"/>
  <img :src="require('../assets/dice/' + randomDice2 + '.png')" id="img2"/> -->
+      <div>
+        <div class="div_du_Gif1">
+          <img
+            v-if="gif1"
+            src="../assets/dice/dice.gif"
+            alt="dé gif1"
+            id="img1"
+          />
+          <div v-if="dice1" class="whiteBox">
+            <img
+              :src="require('../assets/dice/' + randomDice1 + '.png')"
+              id="img2"
+            />
+          </div>
+        </div>
 
-      <div class="div_du_Gif1">
-        <img v-if="gif1" src="../assets/dice/dice.gif" alt="dé gif1" id="img1" />
-        <div v-if="dice1" class="whiteBox">
-          <img :src="require('../assets/dice/' + randomDice1 + '.png')" id="img2"/>
+        <div class="div_du_Gif2">
+          <img
+            v-if="gif2"
+            src="../assets/dice/dice.gif"
+            alt="dé gif2"
+            id="img1"
+          />
+          <div v-if="dice2" class="whiteBox">
+            <img
+              :src="require('../assets/dice/' + randomDice2 + '.png')"
+              id="img2"
+            />
+          </div>
         </div>
       </div>
 
-      <div class="div_du_Gif2">
-        <img v-if="gif2" src="../assets/dice/dice.gif" alt="dé gif2" id="img1" />
-        <div v-if="dice2" class="whiteBox">
-          <img :src="require('../assets/dice/' + randomDice2 + '.png')" id="img2"/>
-        </div>
-      </div>
-     
+      <br />
+      <br />
+      <button @click="throwTheDice(1)">Jettez un dé</button>
+      <button @click="throwTheDice(2)">Jettez 2 dés</button>
+
+      <p v-if="randomDice1">{{ randomDice1 }}</p>
+      <p v-if="randomDice2">{{ randomDice2 }}</p>
     </div>
-
-    <br />
-    <br />
-    <button @click="throwTheDice(1)">Jettez un dé</button>
-    <button @click="throwTheDice(2)">Jettez 2 dés</button>
-
-    <p v-if="randomDice1">{{ randomDice1 }}</p>
-    <p v-if="randomDice2">{{ randomDice2 }}</p>
 
     <p class="paragraphe" v-html="MyJson.book[Id].paragraph"></p>
 
@@ -141,7 +157,7 @@ export default {
       } else {
         this.playSound();
         // this.gif1 = true;
-         this.dice1 = false;
+        this.dice1 = false;
         this.dice2 = false;
         this.gif1 = true;
         this.gif2 = true;
@@ -151,11 +167,9 @@ export default {
         this.randomDice1 = Math.floor(6 * Math.random()) + 1;
         this.randomDice2 = Math.floor(6 * Math.random()) + 1;
 
-      
         // attention dans le settimeout, le paramètre de notre fonction diceAnim
         // se place après le temps en milisecondes, aussi curieux que cela puisse paraitre
-         setTimeout(this.diceAnim, 1500, 2);
-        
+        setTimeout(this.diceAnim, 1500, 2);
       }
     },
 
@@ -275,9 +289,8 @@ h3 {
   width: 80px;
   height: 80px;
 }
-.paragraphe
-{
+.paragraphe {
   height: 100vh;
-    overflow: auto;
+  overflow: auto;
 }
 </style>

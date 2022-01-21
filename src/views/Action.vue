@@ -2,97 +2,36 @@
   <div class="big_ctn">
     <!--<img class="backgroundImg" src="../assets/scrollBack.jpeg" alt="background">-->
     <div class="gameContainer">
-      
       <div><LeftPage /></div>
-      <div>
-      <p class="paragraphe" v-html="MyJson.book[Id].paragraph"></p>
-<!--
-      <div>
+      <div id="game">
+        <div class="combat">
+          <h1>Fight</h1>
+          <div class="container">
+            <div class="player">
+              <h2>Player</h2>
+              <h4>Points de vie: {{ lifePoints }}</h4>
+              <h4>Dégat de l'arme: {{ weapon }}</h4>
+              <h4>Point d'armure: {{ playerArmor }}</h4>
+            </div>
+            <div class="enemy">
+              <h2>Enemy</h2>
+              <h4>Points de vie: {{ enemyLifePoints }}</h4>
+              <h4>Dégat de l'arme: {{ enemyWeapon }}</h4>
+              <h4>Point d'armure: {{ enemyArmor }}</h4>
+            </div>
+          </div>
+          <div class="log">
+            <div class="allLogs">
+              <p v-for="line in log" :key="line" >{{ line }}</p>
+            </div>
+            
+          </div>
+          <div class="action">
+            <button @click="JoueurHitEnemy">Attaquer</button>
+          </div>
+        </div>
+        <p class="paragraphe" v-html="MyJson.book[Id].paragraph"></p>
         
-        <h1>Hi and welcome, brave Knight !<br /></h1>
-        <h3>Take action against this dragon</h3>
-
-        <p>
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Perferendis
-          natus totam optio facere suscipit sapiente corrupti magnam saepe eaque
-          repellendus eligendi distinctio dolor, hic harum voluptas, ad quos
-          sequi delectus.PROUT
-        </p>
-        <p>
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nesciunt
-          deserunt asperiores officia nihil? Non eos odit quo consequatur
-          veritatis, natus neque voluptatum sint doloribus fugit dolorem ut
-          earum accusantium autem.
-        </p>
-
-        <div class="btnCtn">
-          <input
-            v-if="btn1"
-            @click="getNextParagraphLeft"
-            type="button"
-            class="btn"
-            value="Gauche"
-          />
-          <input
-            v-if="btn1"
-            @click="getNextParagraphRight"
-            type="button"
-            class="btn"
-            value="Droite"
-          />
-        </div>
-
-        <div v-if="left">
-          <p>ce paragraphe s'affiche si je clique sur GAUCHE</p>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure
-            voluptas fugit neque aut iste, dolore cumque iusto! Explicabo
-            reiciendis quidem vero voluptatem temporibus iure debitis aliquam,
-            placeat velit hic magnam!
-          </p>
-          <div class="btnCtn">
-            <input
-              v-if="btn2"
-              @click="getParagraph2Left"
-              type="button"
-              class="btn"
-              value="Gauche"
-            />
-            <input
-              v-if="btn2"
-              @click="getParagraph2Right"
-              type="button"
-              class="btn"
-              value="Droite"
-            />
-          </div>
-        </div>
-        <div v-if="right">
-          <p>ce paragraphe s'affiche si je clique sur DROITE</p>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure
-            voluptas fugit neque aut iste, dolore cumque iusto! Explicabo
-            reiciendis quidem vero voluptatem temporibus iure debitis aliquam,
-            placeat velit hic magnam!
-          </p>
-          <div class="btnCtn">
-            <input
-              v-if="btn2"
-              @click="getParagraph2Left"
-              type="button"
-              class="btn"
-              value="Gauche"
-            />
-            <input
-              v-if="btn2"
-              @click="getParagraph2Right"
-              type="button"
-              class="btn"
-              value="Droite"
-            />
-          </div>
-        </div>
-      </div>-->
       </div>
       <div><RightPage /></div>
     </div>
@@ -106,7 +45,7 @@ import RightPage from "./RightPage.vue";
 import json from "../assets/data.json";
 
 export default {
-  components: {LeftPage, RightPage},
+  components: { LeftPage, RightPage },
   name: "Action",
   props: {},
   data() {
@@ -118,19 +57,23 @@ export default {
       startingLifePoints: 20,
       lifePoints: 0,
       remainingLifePoints: 0,
-      enemyLifePoints: {},
+      enemyLifePoints: 0,
       weapon: 5,
       enemyWeapon: 0,
       playerArmor: 0,
       enemyArmor: 0,
       potion: "",
+      log: []
     };
   },
   created: function () {
     this.Id = this.$route.query.id;
+    this.enemyLifePoints = this.MyJson.book[this.Id].ennemie[0].vie
+    this.enemyWeapon = this.MyJson.book[this.Id].ennemie[0].attaque
+    this.enemyArmor = this.MyJson.book[this.Id].ennemie[0].defense
     // this.getFirstLifePoints();
     // this.fight("player")
-    this.EnemyHitJoueur()
+    this.EnemyHitJoueur();
   },
 
   methods: {
@@ -149,74 +92,79 @@ export default {
     },
     getFirstLifePoints() {
       this.throwTheDice(2);
-      
+
       this.startingLifePoints = (this.randomDice1 + this.randomDice2) * 4;
+    },
+    JoueurHitEnemy() {
+      this.log.push("C'est à vous d'attaquer.")
+      this.enemyLifePoints = 20;
+      console.log(this.enemyLifePoints);
+      //A aller chercher dans le json quand il sera mis en forme
+
+      //le joueur attaque l'ennemi
+      //il lance les dés
+      this.throwTheDice(2);
+      //calcul du resultat
+
+      let total = this.randomDice1 + this.randomDice2;
+      this.log.push("Vous attaquez de :  " + total + " (total des dés).")
       
-    },
-    JoueurHitEnemy(){
-        this.enemyLifePoints = 20;   
-        console.log(this.enemyLifePoints)
-                 //A aller chercher dans le json quand il sera mis en forme
-
-        //le joueur attaque l'ennemi
-        //il lance les dés
-        this.throwTheDice(2);
-        //calcul du resultat
+      if (total >= 6) {
+        this.log.push("Le coup est réussi.")
         
-        let total = this.randomDice1 + this.randomDice2;
-        console.log("Vous attaquez de:  "+total + "total des dés")
-        if(total >= 6){
-            console.log("le coup est reussi")
-            let damage = (total-6)+this.weapon -this.enemyArmor 
-            this.enemyLifePoints = this.enemyLifePoints - damage
-            console.log("il reste à l'ennemi :" + this.enemyLifePoints)
-        }
-    },
-    
-    EnemyHitJoueur(){
+        let damage = total - 6 + this.weapon - this.enemyArmor;
+        this.log.push("Vous faites à l'ennemi :  "+ damage+ " points de dégats.")
+        this.enemyLifePoints = this.enemyLifePoints - damage;
+        this.log.push("il reste à l'ennemi : " + this.enemyLifePoints+" points.");
         
-        this.throwTheDice(2);
-        
-        let total = this.randomDice1 + this.randomDice2;
-        console.log("total des dés : " +total);
-        if(total >= 6){
-            console.log("le coup est reussi car score égal ou supérieur à 6")
-            let damage = (total-6)+this.enemyWeapon - this.playerArmor
-            console.log("enemyweapon : " + this.enemyWeapon);
-            console.log("playerarmor : " + this.playerArmor);
-            console.log("damage = (total des dés moins 6 + l'arme de l'ennemi - l'armure du joueur)" + damage);
-            this.remainingLifePoints = this.startingLifePoints - damage
-            this.lifePoints = this.remainingLifePoints
-            console.log("lifepoints restants du héro : " + this.remainingLifePoints);
-            console.log("lifepoints : " + this.lifePoints);
-        }
-
-  },
-  fight(whoStart){
-
-      if(whoStart == "player"){
-        while(this.enemyLifePoints >5 || this.lifePoints >0){
-            this.JoueurHitEnemy()
-            if(this.enemyLifePoints <=5){
-                console.log("l'ennemi est assommé")
-            }else{
-                this.EnemyHitJoueur()
-            }
-        }
-        }else{
-           while(this.enemyLifePoints >5 || this.lifePoints >0){
-            this.EnemyHitJoueur()
-            if(this.lifePoints <=0){
-                console.log("l'ennemi est assommé")
-            }else{
-                
-                this.JoueurHitEnemy()
-            }
-        } 
       }
-  }
-}
-}
+    },
+
+    EnemyHitJoueur() {
+      this.throwTheDice(2);
+
+      let total = this.randomDice1 + this.randomDice2;
+      console.log("Total des dés : " + total);
+      if (total >= 6) {
+        console.log("le coup est réussi car lscore égal ou supérieur à 6");
+        let damage = total - 6 + this.enemyWeapon - this.playerArmor;
+        console.log("enemyweapon : " + this.enemyWeapon);
+        console.log("playerarmor : " + this.playerArmor);
+        console.log(
+          "damage = (total des dés moins 6 + l'arme de l'ennemi - l'armure du joueur)" +
+            damage
+        );
+        this.remainingLifePoints = this.startingLifePoints - damage;
+        this.lifePoints = this.remainingLifePoints;
+        console.log(
+          "lifepoints restants du héro : " + this.remainingLifePoints
+        );
+        console.log("lifepoints : " + this.lifePoints);
+      }
+    },
+    fight(whoStart) {
+      if (whoStart == "player") {
+        while (this.enemyLifePoints > 5 || this.lifePoints > 0) {
+          this.JoueurHitEnemy();
+          if (this.enemyLifePoints <= 5) {
+            console.log("l'ennemi est assommé");
+          } else {
+            this.EnemyHitJoueur();
+          }
+        }
+      } else {
+        while (this.enemyLifePoints > 5 || this.lifePoints > 0) {
+          this.EnemyHitJoueur();
+          if (this.lifePoints <= 0) {
+            console.log("l'ennemi est assommé");
+          } else {
+            this.JoueurHitEnemy();
+          }
+        }
+      }
+    },
+  },
+};
 </script>
 
 <style scoped>
@@ -239,7 +187,6 @@ h3 {
   background-image: url("../assets/scrollBack.jpeg");
   position: relative;
   z-index: 1;
-  
 }
 .gameContainer {
   display: flex;
@@ -254,13 +201,59 @@ h3 {
   object-fit: cover;
 }
 
-.paragraphe
+.paragraphe {
+  height: 100vh;
+  overflow: auto;
+  position: relative;
+  
+}
+.combat {
+  width: 500px;
+  height: 600px;
+  background-color: blue;
+  position: absolute;
+  z-index: 10;
+}
+#game
 {
-    height: 100vh;
-    overflow: auto;
+  display: flex;
+  justify-content: center;
+}
+.container{
+  width: 100%;
+  height: 350px;
+  display: flex;
+  flex-direction: row;
+  background-color: yellow;
+
 }
 
+.player{
+  width: 50%;
+  background-color: green;
+}
 
+.enemy{
+  width: 50%;
+  background-color: purple;
+}
+.log
+{
+  width: 100%;
+  height: 100px;
+  background-color: pink;
+}
+.action
+{
+  width: 100%;
+  height: 100px;
+  background-color: fuchsia;
+}
+.allLogs{
+  width: 100%;
+  height:100px;
+  overflow: scroll;
+}
 
 </style>
 <img class="backgroundImg" src="../assets/scrollBack.jpeg" alt="background">
