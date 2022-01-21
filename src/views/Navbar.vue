@@ -3,7 +3,7 @@
     <div id="nav">
 
 <a href="/">
-    <img class="logo" alt="logo" src="../assets/La quête (13).png">
+    <img class="logo" alt="logo" src="../assets/QuestStoriesLogo.png">
 
 </a>
 
@@ -59,7 +59,7 @@
 
 .block{
   position: absolute;
-  left: 77%;
+  left: 73%;
 }
 
 </style>

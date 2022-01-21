@@ -12,6 +12,13 @@ import Game from"./views/Game.vue";
 // import Header from "./views/Header.vue";
 import Rules from "./views/Rules.vue";
 import RulesCard from "./views/RulesCard.vue";
+import BasicRules from "./views/BasicRules.vue"
+import LeftPage from "./views/LeftPage.vue";
+import Life from "./views/Life.vue";
+import Magic from "./views/Magic.vue";
+import RightPage from "./views/RightPage.vue";
+
+
 
 Vue.use(Router);
 
@@ -30,17 +37,17 @@ export default new Router({
       component: Home
     },
     {
-      path: "/action",
+      path: "/Action",
       name: "Action",
       component: Action
     },
     {
-      path: "/about",
+      path: "/About",
       name: "About",
       component: About
     },
     {
-      path: "/game",
+      path: "/Game",
       name: "Game",
       component: Game
     },
@@ -73,6 +80,37 @@ export default new Router({
     name: "RulesCard",
     component: RulesCard
   },
+
+  {
+    path: "/BasicRules",
+    name: "BasicRules",
+    component: BasicRules
+  },
+
+  {
+    path: "/LeftPage",
+    name: "LeftPage",
+    component: LeftPage
+  },
+
+  {
+    path: "/Life",
+    name: "Life",
+    component: Life
+  },
+
+  {
+    path: "/Magic",
+    name: "Magic",
+    component: Magic
+  },
+
+  {
+    path: "/RightPage",
+    name: "RightPage",
+    component: RightPage
+  },
+
 
 
  

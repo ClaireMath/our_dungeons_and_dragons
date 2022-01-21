@@ -1,9 +1,9 @@
 <template>
   <div class="about">
   <div class="boxabout">
-    <img src="../assets/pexels-julia-volk-5273000.jpg" alt="about">
+    <img src="../assets/About.jpg" alt="about">
     <div class="boxtext">
-    <h1>Si vous êtes arrivé là..</h1>
+    <h1>{{message}}</h1>
     <div class="spanbox">
     <span>C'est sans doute que vous voulez savoir ce que l'on fait et pourquoi on le fait.<br></span>
       <span> QUEST STORIES c'est avant tout un site pour les passionés de lectures mais également les passionés de jeux.
@@ -14,12 +14,23 @@
      <span> Envie de partager avec nous ?
       Retrouvez nous sur les réseaux sociaux.
     </span></div>
-    <img src="../assets/La quête (19).png" alt="fb" class="rs">
-    <img src="../assets/La quête (20).png" alt="fb" class="rs">
+    <img src="../assets/Fb.png" alt="fb" class="rs">
+    <img src="../assets/Insta.png" alt="fb" class="rs">
     </div>
     </div>
   </div>
 </template>
+
+
+<script>
+// var about = new Vue ({
+//   el: '#about',
+//   data: {
+//     message : "Si vous êtes arrivé là.."
+//   }
+// })
+
+</script>
 
 
 <style scoped>
