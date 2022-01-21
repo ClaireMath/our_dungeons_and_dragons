@@ -220,6 +220,10 @@ export default {
 </script>
 
 <style scoped>
+@font-face {
+ font-family: "Irish";
+ src: url("../assets/IrishUncialfabeta-Bold.ttf");
+}
 html,
 body {
   height: 100%;
@@ -258,6 +262,10 @@ h3 {
 {
     height: 100vh;
     overflow: auto;
+}
+
+p {
+  font-family: Irish;
 }
 
 
