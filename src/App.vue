@@ -50,7 +50,7 @@ export default {
 
 </script>
 
-<style>
+<style scoped>
 html, body{
   height: 100vh;
   max-width: 100%;
@@ -86,7 +86,7 @@ html, body{
 
   /* background-color: gray; */
 
-  height: 100vh;
+  /*height: 100vh;*/
   width: 100%;
   margin: 0px;
 }
@@ -109,8 +109,8 @@ html, body{
 .footer {
   position: relative;
   bottom: 0;
-
   height: 40px;
+
   display: flex;
   align-items: center;
   justify-content: center;

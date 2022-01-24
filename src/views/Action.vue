@@ -72,7 +72,9 @@
         </div>
       </div>
       <div id="game">
-        <div class="combat">
+        <p class="paragraphe" v-html="MyJson.book[Id].paragraph"></p>
+
+        <!-- <div class="combat">
           <h1>Fight</h1>
           <div class="container">
             <div class="player">
@@ -96,24 +98,23 @@
           <div class="action">
             <button @click="JoueurHitEnemy">Attaquer</button>
           </div>
+        </div> -->
+        <div class="divOfChoicesBtn">
+          <div
+            v-for="choices in MyJson['book'][Id]['choices']"
+            :key="choices['text']"
+          >
+            <input
+              @click="goTo(choices['id'])"
+              type="button"
+              class="btn btnChoices"
+              v-model="choices['text']"
+            />
+          </div>
         </div>
-        <p class="paragraphe" v-html="MyJson.book[Id].paragraph"></p>
-        <div
-          class="divOfChoicesBtn"
-          v-for="choices in MyJson['book'][Id]['choices']"
-          :key="choices['text']"
-        >
-          <input
-            @click="goTo(choices['id'])"
-            type="button"
-            class="btn btnChoices"
-            v-model="choices['text']"
-          />
-        </div>
-        <div id="paragraphCtn"></div>
       </div>
-      <div><RightPage /></div>
     </div>
+    <div><RightPage /></div>
   </div>
 </template>
 
@@ -327,12 +328,11 @@ h3 {
 }
 .big_ctn {
   width: 100%;
-  height: 91%;
-  padding-top: 9%;
   display: flex;
+  background-color: #634b30;
 
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   background-image: linear-gradient(
       rgba(227, 202, 171, 0.7),
       rgba(227, 202, 171, 0.7)
@@ -346,16 +346,16 @@ h3 {
 .superDiv {
   display: flex;
   flex-direction: column;
+  background-color: aquamarine;
 }
 .topDiv {
-  margin-left: 10%;
-  margin-right: 10%;
-  width: 80%;
+  /*width: 80%;*/
   height: 160px;
   display: flex;
   align-items: center;
-  /*background-color: blue;*/
+  background-color: blue;
   justify-content: space-between;
+  margin-bottom: 20px;
 }
 .firstElofTopDiv {
   width: 600px;
@@ -384,7 +384,7 @@ h3 {
   justify-content: space-evenly;
   align-items: center;
 }
-#paragraphCtn {
+/*#paragraphCtn {
   background-color: linear-gradient(
     rgba(227, 202, 171, 0.5),
     rgba(227, 202, 171, 0.5)
@@ -394,7 +394,7 @@ h3 {
   flex-direction: column;
   z-index: 2;
   width: 50%;
-}
+}*/
 .gameContainer {
   display: flex;
   flex-direction: row;
@@ -422,13 +422,14 @@ h3 {
   height: 60px;
 }
 .paragraphe {
-  height: 100vh;
+  height: 60vh;
   overflow: auto;
   text-align: justify;
 }
 
 p {
   font-family: Irish;
+  padding: 10px;
 }
 .diceThrow {
   width: 200px;
@@ -444,22 +445,24 @@ p {
   height: 40px;
 }
 .startBtn {
+  margin-left: 20px;
   width: 200px;
   height: 50px;
 }
 
-.combat {
+/*.combat {
   width: 500px;
   height: 600px;
   background-color: blue;
   position: absolute;
   z-index: 10;
-}
+}*/
 #game {
   display: flex;
+  flex-direction: column;
   justify-content: center;
 }
-.container {
+/*.container {
   width: 100%;
   height: 350px;
   display: flex;
@@ -490,7 +493,7 @@ p {
   width: 100%;
   height: 100px;
   overflow: scroll;
-}
+}*/
 .btn {
   /*margin: 30px;*/
   box-shadow: inset 0px 1px 0px 0px #a6827e;
@@ -520,10 +523,12 @@ p {
   width: 80%;
   padding-top: 20px;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  flex-direction: row;
+  justify-content: space-evenly;
   align-items: center;
-  padding-bottom: 200px;
   /*background-color: aqua;*/
+}
+.btnChoices {
+  margin-bottom: 20px;
 }
 </style>
