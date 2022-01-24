@@ -2,102 +2,119 @@
   <div class="big_ctn">
     <!--<img class="backgroundImg" src="../assets/scrollBack.jpeg" alt="background">-->
     <!-- <div class="gameContainer"> -->
-      <div><LeftPage /></div>
-      <div id="paragraphCtn">
-        <!-- <p class="paragraphe" v-html="MyJson.book[Id].paragraph"></p> -->
-
-        <!--
-      <div>
-        
-        <h1>Hi and welcome, brave Knight !<br /></h1>
-        <h3>Take action against this dragon</h3>
-
-        <p>
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Perferendis
-          natus totam optio facere suscipit sapiente corrupti magnam saepe eaque
-          repellendus eligendi distinctio dolor, hic harum voluptas, ad quos
-          sequi delectus.PROUT
-        </p>
-        <p>
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nesciunt
-          deserunt asperiores officia nihil? Non eos odit quo consequatur
-          veritatis, natus neque voluptatum sint doloribus fugit dolorem ut
-          earum accusantium autem.
-        </p>
-
-        <div class="btnCtn">
-          <input
-            v-if="btn1"
-            @click="getNextParagraphLeft"
-            type="button"
-            class="btn"
-            value="Gauche"
-          />
-          <input
-            v-if="btn1"
-            @click="getNextParagraphRight"
-            type="button"
-            class="btn"
-            value="Droite"
-          />
+    <div><LeftPage /></div>
+    <div class="superDiv">
+      <div class="topDiv">
+        <div class="firstElofTopDiv">
+          <button @click="getFirstLifePoints()" class="btn startBtn">
+            Commencer le jeu !
+          </button>
+          <p v-if="startingLifePoints" class="startingLifePoints">
+            Vous partez avec {{ startingLifePoints }} points de vie.
+          </p>
         </div>
 
-        <div v-if="left">
-          <p>ce paragraphe s'affiche si je clique sur GAUCHE</p>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure
-            voluptas fugit neque aut iste, dolore cumque iusto! Explicabo
-            reiciendis quidem vero voluptatem temporibus iure debitis aliquam,
-            placeat velit hic magnam!
-          </p>
-          <div class="btnCtn">
-            <input
-              v-if="btn2"
-              @click="getParagraph2Left"
-              type="button"
-              class="btn"
-              value="Gauche"
-            />
-            <input
-              v-if="btn2"
-              @click="getParagraph2Right"
-              type="button"
-              class="btn"
-              value="Droite"
-            />
--->
-</div>
-        <div id="game">
-          <div class="combat">
-            <h1>Fight</h1>
-            <div class="container">
-              <div class="player">
-                <h2>Player</h2>
-                <h4>Points de vie: {{ lifePoints }}</h4>
-                <h4>Dégat de l'arme: {{ weapon }}</h4>
-                <h4>Point d'armure: {{ playerArmor }}</h4>
-              </div>
-              <div class="enemy">
-                <h2>Enemy</h2>
-                <h4>Points de vie: {{ enemyLifePoints }}</h4>
-                <h4>Dégat de l'arme: {{ enemyWeapon }}</h4>
-                <h4>Point d'armure: {{ enemyArmor }}</h4>
+        <div class="dicePackage">
+          <div v-if="diceResult" class="diceResult">
+            <div class="div_du_Gif1">
+              <img
+                v-if="gif1"
+                src="../assets/dice/dice.gif"
+                alt="dé gif1"
+                id="img1"
+              />
+              <div v-if="dice1" class="whiteBox">
+                <img
+                  :src="require('../assets/dice/' + randomDice1 + '.png')"
+                  id="img2"
+                />
               </div>
             </div>
-            <div class="log">
-              <div class="allLogs">
-                <p v-for="line in log" :key="line">{{ line }}</p>
+
+            <div class="div_du_Gif1">
+              <img
+                v-if="gif2"
+                src="../assets/dice/dice.gif"
+                alt="dé gif2"
+                id="img1"
+              />
+              <div v-if="dice2" class="whiteBox">
+                <img
+                  :src="require('../assets/dice/' + randomDice2 + '.png')"
+                  id="img2"
+                />
               </div>
-            </div>
-            <div class="action">
-              <button @click="JoueurHitEnemy">Attaquer</button>
             </div>
           </div>
-          <p class="paragraphe" v-html="MyJson.book[Id].paragraph"></p>
-        </div>
-        <div><RightPage /></div>
-      </div>
 
+          <div class="diceThrow">
+            <img
+              @click="throwTheDice(1)"
+              src="../assets/dice/dice3D.png"
+              alt="dé en3D"
+              class="dice3D"
+            />
+            <div class="dice3Dx2" @click="throwTheDice(2)">
+              <img
+                src="../assets/dice/black3Ddice.png"
+                alt="dé en3D"
+                class="dice3D"
+              />
+              <img
+                src="../assets/dice/dice3D.png"
+                alt="dé en3D"
+                class="dice3D"
+              />
+            </div>
+            <!--   <p v-if="randomDice1">{{ randomDice1 }}</p>
+      <p v-if="randomDice2">{{ randomDice2 }}</p>-->
+          </div>
+        </div>
+      </div>
+      <div id="game">
+        <div class="combat">
+          <h1>Fight</h1>
+          <div class="container">
+            <div class="player">
+              <h2>Player</h2>
+              <h4>Points de vie: {{ lifePoints }}</h4>
+              <h4>Dégat de l'arme: {{ weapon }}</h4>
+              <h4>Point d'armure: {{ playerArmor }}</h4>
+            </div>
+            <div class="enemy">
+              <h2>Enemy</h2>
+              <h4>Points de vie: {{ enemyLifePoints }}</h4>
+              <h4>Dégat de l'arme: {{ enemyWeapon }}</h4>
+              <h4>Point d'armure: {{ enemyArmor }}</h4>
+            </div>
+          </div>
+          <div class="log">
+            <div class="allLogs">
+              <p v-for="line in log" :key="line">{{ line }}</p>
+            </div>
+          </div>
+          <div class="action">
+            <button @click="JoueurHitEnemy">Attaquer</button>
+          </div>
+        </div>
+        <p class="paragraphe" v-html="MyJson.book[Id].paragraph"></p>
+        <div
+          class="divOfChoicesBtn"
+          v-for="choices in MyJson['book'][Id]['choices']"
+          :key="choices['text']"
+        >
+          <input
+            @click="goTo(choices['id'])"
+            type="button"
+            class="btn btnChoices"
+            v-model="choices['text']"
+          />
+        </div>
+        <div id="paragraphCtn"></div>
+      </div>
+      <div><RightPage /></div>
+    </div>
+  </div>
 </template>
 
 <script>
@@ -114,6 +131,11 @@ export default {
     return {
       Id: null,
       MyJson: json,
+      gif1: false,
+      gif2: false,
+      dice1: false,
+      dice2: false,
+      diceResult: null,
       randomDice1: null,
       randomDice2: null,
       startingLifePoints: 20,
@@ -144,17 +166,69 @@ export default {
       window.location.reload();
     },
 
+    playSound() {
+      var audio = new Audio(
+        "http://soundbible.com/mp3/Shake And Roll Dice-SoundBible.com-591494296.mp3"
+      );
+      audio.play();
+    },
+
     throwTheDice(nbOfDice) {
       if (nbOfDice == 1) {
+        this.playSound();
+
+        this.gif2 = false;
+        this.dice1 = false;
+        this.dice2 = false;
+        this.gif1 = true;
+        console.log("tets");
+        console.log("if throwthedice : gif1 :" + this.gif1);
+        console.log("if throwthedice : dé :" + this.dice1);
         this.randomDice1 = Math.floor(6 * Math.random()) + 1;
+        setTimeout(this.diceAnim, 2000, 1);
       } else {
+        this.playSound();
+        this.diceResult = true;
+        this.diceThrow = false;
+        this.dice1 = false;
+        this.dice2 = false;
+        this.gif1 = true;
+        this.gif2 = true;
+        console.log("else throwthedice : gif1 :" + this.gif1);
+        console.log("else throwthedice : dé :" + this.dice1);
+        // this.dice1 = true;
         this.randomDice1 = Math.floor(6 * Math.random()) + 1;
         this.randomDice2 = Math.floor(6 * Math.random()) + 1;
+
+        // attention dans le settimeout, le paramètre de notre fonction diceAnim
+        // se place après le temps en milisecondes, aussi curieux que cela puisse paraitre
+        setTimeout(this.diceAnim, 1500, 2);
       }
     },
-    getFirstLifePoints() {
-      this.throwTheDice(2);
 
+    diceAnim(nbOfDice) {
+      console.log("cest diceanim ici !");
+      if (nbOfDice == 1) {
+        this.gif1 = false;
+        this.dice1 = true;
+        console.log("diceAnim : gif1 :" + this.gif1);
+        console.log("diceAnim : dé :" + this.dice1);
+      } else {
+        this.gif1 = false;
+        this.gif2 = false;
+        this.dice1 = true;
+        this.dice2 = true;
+        console.log("diceAnim else car 2 dés : gif1 :" + this.gif1);
+        console.log("diceAnim else car 2 dés : dé : " + this.dice1);
+      }
+    },
+
+    getFirstLifePoints() {
+      this.gif1 = true;
+      this.gif2 = true;
+      console.log("getFirstLifePoints : gif1 :" + this.gif1);
+      console.log("getFirstLifePoints :  dé :" + this.dice1);
+      this.throwTheDice(2);
       this.startingLifePoints = (this.randomDice1 + this.randomDice2) * 4;
     },
     JoueurHitEnemy() {
@@ -233,6 +307,11 @@ export default {
 </script>
 
 <style scoped>
+* {
+  margin: 0;
+  padding: 0;
+}
+
 @font-face {
   font-family: "Irish";
   src: url("../assets/IrishUncialfabeta-Bold.ttf");
@@ -251,6 +330,7 @@ h3 {
   height: 91%;
   padding-top: 9%;
   display: flex;
+
   justify-content: center;
   align-items: center;
   background-image: linear-gradient(
@@ -263,13 +343,55 @@ h3 {
   position: relative;
   z-index: 1;
 }
+.superDiv {
+  display: flex;
+  flex-direction: column;
+}
+.topDiv {
+  margin-left: 10%;
+  margin-right: 10%;
+  width: 80%;
+  height: 160px;
+  display: flex;
+  align-items: center;
+  /*background-color: blue;*/
+  justify-content: space-between;
+}
+.firstElofTopDiv {
+  width: 600px;
+  height: 160px;
+  /*background-color: yellow;*/
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
 
+.dicePackage {
+  width: 200px;
+  height: 160px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  /*background-color: yellowgreen;*/
+}
+.diceResult {
+  width: 150px;
+  height: 120px;
+  border-radius: 13px;
+  /*background-color: grey;*/
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
 #paragraphCtn {
   background-color: linear-gradient(
     rgba(227, 202, 171, 0.5),
     rgba(227, 202, 171, 0.5)
   );
   position: relative;
+  display: flex;
+  flex-direction: column;
   z-index: 2;
   width: 50%;
 }
@@ -284,14 +406,46 @@ h3 {
   z-index: -2;
   object-fit: cover;
 }
-
+#img1 {
+  width: 100px;
+  height: 100px;
+  border-radius: 20px;
+}
+#img2 {
+  width: 60px;
+  height: 60px;
+}
+.whiteBox {
+  border-radius: 13px;
+  /* background-color: gainsboro;*/
+  width: 60px;
+  height: 60px;
+}
 .paragraphe {
   height: 100vh;
   overflow: auto;
+  text-align: justify;
 }
 
 p {
   font-family: Irish;
+}
+.diceThrow {
+  width: 200px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  cursor: pointer;
+  /*background-color: fuchsia;*/
+}
+.dice3D {
+  width: 40px;
+  height: 40px;
+}
+.startBtn {
+  width: 200px;
+  height: 50px;
 }
 
 .combat {
@@ -336,5 +490,40 @@ p {
   width: 100%;
   height: 100px;
   overflow: scroll;
+}
+.btn {
+  /*margin: 30px;*/
+  box-shadow: inset 0px 1px 0px 0px #a6827e;
+  background: linear-gradient(to bottom, #7d5d3b 5%, #634b30 100%);
+  background-color: #7d5d3b;
+  border-radius: 10px;
+  border: 2px solid goldenrod;
+  display: inline-block;
+  cursor: pointer;
+  color: goldenrod;
+  font-size: 17px;
+  padding: 6px 24px;
+  text-decoration: none;
+  text-shadow: 0px 1px 0px #4d3534;
+}
+.btn:hover {
+  background: linear-gradient(to bottom, #634b30 5%, #7d5d3b 100%);
+  background-color: #634b30;
+  border: 3px solid goldenrod;
+}
+.btn:active {
+  position: relative;
+  top: 1px;
+  border: 3px solid goldenrod;
+}
+.divOfChoicesBtn {
+  width: 80%;
+  padding-top: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 200px;
+  /*background-color: aqua;*/
 }
 </style>
