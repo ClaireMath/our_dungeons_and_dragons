@@ -1,7 +1,13 @@
 <template>
   <div class="footer">
     <footer>
-      <div id="nav"><Navbar/></div>
+      <div class="divNav">
+      <router-link to="/">| Accueil |</router-link>
+      <router-link to="/Rules"> Règles |</router-link>
+      <router-link to="/Action/?id=0"> Jouer |</router-link>
+      <router-link to="/About"> À propos |</router-link>
+    </div>
+    
     </footer>
   </div>
 </template>
@@ -16,9 +22,9 @@ h1 {
 </style>
 
 <script>
-import Navbar from "./Navbar.vue";
+
 export default {
-  components: {Navbar},
+  
   name: "Footer",
 };
 </script>
@@ -61,6 +67,27 @@ export default {
 
 .footer:hover h1 {
   color: #2c3e50;
+}
+ a {
+  font-weight: bold;
+  color: black;
+  text-decoration: none;
+}
+
+#nav a.router-link-exact-active {
+  color: #91583d;
+}
+
+.logo {
+  width: 15%;
+  position: absolute;
+  top: -70px;
+  left: -50px;
+}
+
+.block {
+  position: absolute;
+  left: 73%;
 }
 </style>
 
