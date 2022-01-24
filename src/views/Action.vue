@@ -75,9 +75,10 @@
       </div>
       <div id="game">
         <p class="paragraphe" v-html="MyJson.book[Id].paragraph"></p>
-
-        <!-- <div class="combat">
+        
+        <div class="combat">
           <h1>Fight</h1>
+          <button @click="closeWindow">X</button>
           <div class="container">
             <div class="player">
               <h2>Player</h2>
@@ -92,15 +93,52 @@
               <h4>Point d'armure: {{ enemyArmor }}</h4>
             </div>
           </div>
+          <div class="fightDice">
+            <div v-if="diceResult" class="diceResult">
+              <div class="div_du_Gif1">
+                <img
+                  v-if="gif1"
+                  src="../assets/dice/dice.gif"
+                  alt="dé gif1"
+                  id="img1"
+                />
+                <div v-if="dice1" class="whiteBox">
+                  <img
+                    :src="require('../assets/dice/' + randomDice1 + '.png')"
+                    id="img2"
+                  />
+                </div>
+              </div>
+
+              <div class="div_du_Gif1">
+                <img
+                  v-if="gif2"
+                  src="../assets/dice/dice.gif"
+                  alt="dé gif2"
+                  id="img1"
+                />
+                <div v-if="dice2" class="whiteBox">
+                  <img
+                    :src="require('../assets/dice/' + randomDice2 + '.png')"
+                    id="img2"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+
           <div class="log">
             <div class="allLogs">
               <p v-for="line in log" :key="line">{{ line }}</p>
             </div>
           </div>
           <div class="action">
-            <button @click="JoueurHitEnemy">Attaquer</button>
+            <button @click="JoueurHitEnemy" class="btn">Attaque</button>
+            <button @click="EnemyHitJoueur" class="btn">Attaque Ennemie</button>
+            <hr>
+            <button class="btn">Doigt de feu I</button>
           </div>
-        </div> -->
+        </div>
         <div class="divOfChoicesBtn">
           <div
             v-for="choices in MyJson['book'][Id]['choices']"
@@ -159,10 +197,16 @@ export default {
     this.enemyArmor = this.MyJson.book[this.Id].ennemie[0].defense;
     // this.getFirstLifePoints();
     // this.fight("player")
-    this.EnemyHitJoueur();
+    
   },
 
   methods: {
+
+    closeWindow(){
+      let div = document.getElementsByClassName("combat");
+      div[0].style.display = "none";
+    },
+    
     goTo(nextid) {
       this.$router.push("?id=" + nextid);
       window.location.reload();
@@ -265,24 +309,21 @@ export default {
 
     EnemyHitJoueur() {
       this.throwTheDice(2);
+      
 
       let total = this.randomDice1 + this.randomDice2;
-      console.log("Total des dés : " + total);
+      
       if (total >= 6) {
-        console.log("le coup est réussi car lscore égal ou supérieur à 6");
+        
         let damage = total - 6 + this.enemyWeapon - this.playerArmor;
-        console.log("enemyweapon : " + this.enemyWeapon);
-        console.log("playerarmor : " + this.playerArmor);
-        console.log(
-          "damage = (total des dés moins 6 + l'arme de l'ennemi - l'armure du joueur)" +
-            damage
-        );
+        
+        this.log.push("L'ennemi réussit à vous toucher, il vous inflige: "+ damage +" points de dégats")
         this.remainingLifePoints = this.startingLifePoints - damage;
         this.lifePoints = this.remainingLifePoints;
-        console.log(
-          "lifepoints restants du héro : " + this.remainingLifePoints
-        );
-        console.log("lifepoints : " + this.lifePoints);
+        
+        
+      }else{
+        this.log.push("L'ennemie vous rate")
       }
     },
     fight(whoStart) {
@@ -467,26 +508,28 @@ p {
   margin-left: 20px;
   top: 0px;
   position: relative;
-  z-index: ;
+  z-index: 10;
   width: 210px;
   height: 40px;
 }
 
-/*.combat {
+.combat {
   width: 500px;
   height: 600px;
   background-color: blue;
   position: absolute;
   z-index: 10;
-}*/
+}
 #game {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
+  background-color: greenyellow;
 }
-/*.container {
+.container {
   width: 100%;
-  height: 350px;
+  
   display: flex;
   flex-direction: row;
   background-color: yellow;
@@ -494,11 +537,13 @@ p {
 
 .player {
   width: 50%;
+  height: 100px;
   background-color: green;
 }
 
 .enemy {
   width: 50%;
+  height: 100px;
   background-color: purple;
 }
 .log {
@@ -515,7 +560,7 @@ p {
   width: 100%;
   height: 100px;
   overflow: scroll;
-}*/
+}
 .btn {
   /*margin: 30px;*/
   box-shadow: inset 0px 1px 0px 0px #a6827e;
@@ -551,5 +596,11 @@ p {
 }
 .btnChoices {
   margin-bottom: 20px;
+}
+
+.fightDice
+{
+  display: flex;
+  justify-content: center;
 }
 </style>
