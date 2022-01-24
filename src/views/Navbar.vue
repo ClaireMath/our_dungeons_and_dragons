@@ -4,7 +4,7 @@
       <img class="logo" alt="logo" src="../assets/La quête (13).png" />
     </a>-->
 
-    <div class="block">
+    <div class="divNav">
       <router-link to="/">| Accueil |</router-link>
       <router-link to="/Rules"> Règles |</router-link>
       <router-link to="/Action/?id=0"> Jouer |</router-link>
@@ -21,7 +21,7 @@
 
 <style scoped>
 #nav {
-  padding: 30px;
+  
   display: flex;
   flex-direction: row;
   justify-content: space-between;
