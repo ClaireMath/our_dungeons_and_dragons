@@ -192,9 +192,9 @@ export default {
   },
   created: function () {
     this.Id = this.$route.query.id;
-    this.enemyLifePoints = this.MyJson.book[this.Id].ennemie[0].vie;
-    this.enemyWeapon = this.MyJson.book[this.Id].ennemie[0].attaque;
-    this.enemyArmor = this.MyJson.book[this.Id].ennemie[0].defense;
+    this.enemyLifePoints = this.MyJson.book[this.Id].enemy[0].lifePoints;
+    this.enemyWeapon = this.MyJson.book[this.Id].enemy[0].attack;
+    this.enemyArmor = this.MyJson.book[this.Id].enemy[0].armor;
     // this.getFirstLifePoints();
     // this.fight("player")
     
