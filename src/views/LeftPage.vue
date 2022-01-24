@@ -15,7 +15,7 @@
       </div>
     </div>
     <div id="leftBtn">
-      <div id="star">
+      <div id="lStar">
         <img
           id="menuStar"
           src="../assets/sideMenuStar.png"
@@ -39,7 +39,7 @@ export default {
     toggleLeft() {
       let leftPage = document.getElementById("leftPage");
       //let leftBtn = document.getElementById("leftBtn");
-      let star = document.getElementById("star");
+      let lStar = document.getElementById("lStar");
       let hp = document.getElementById("hp");
       let inv = document.getElementById("inventaire");
       let sorts = document.getElementById("sorts");
@@ -50,7 +50,7 @@ export default {
         leftPage.style.cssText =
           "transition-property: width; transition-duration: 1000ms; width: 200px";
         
-        star.style.cssText =
+        lStar.style.cssText =
           "transform: rotate(90deg)";
         
         hp.style.cssText = "transition-property: left; transition-duration: 1000ms; left: 50px";
@@ -60,7 +60,7 @@ export default {
       } else {
         leftPage.style.width = "10px";
         //leftBtn.style.left = "-126px";
-        star.style.transform = "rotate(0deg)";
+        lStar.style.transform = "rotate(0deg)";
         hp.style.left = "-200px";
         inv.style.left = "-200px";
         sorts.style.left = "-200px";
@@ -81,7 +81,7 @@ export default {
 
 #leftPage {
   top: -4%;
-  width: -10px;
+  width: 10px;
   height: 100vh;
   background-image: linear-gradient(rgba(255, 255, 255, 0.5), rgba(0, 0, 0, 0.5)), url("../assets/gate-removebg-preview.png");
   position: relative;
@@ -96,7 +96,7 @@ export default {
   width: 150px;
 }
 
-#star {
+#lStar {
   width: 150px;
   transition-property: transform;
   transition-duration: 1000ms;
@@ -104,8 +104,8 @@ export default {
 
 #leftBtn {
   position: relative;
-  left: -126px;
-  top: -50px;
+  left: -142px;
+  top: -0px;
   align-self: flex-end;
   justify-self: right;
   z-index: 3;

@@ -1,7 +1,7 @@
 <template>
   <div class="footer">
     <footer>
-      <h1>This is the footer</h1>
+      <div id="nav"><Navbar/></div>
     </footer>
   </div>
 </template>
@@ -16,12 +16,22 @@ h1 {
 </style>
 
 <script>
+import Navbar from "./Navbar.vue";
 export default {
+  components: {Navbar},
   name: "Footer",
 };
 </script>
 
 <style>
+#nav {
+  display:hidden;
+}
+
+#nav:hover {
+  display: flex;
+}
+
 .footer {
   position: relative;
   background-color: grey;

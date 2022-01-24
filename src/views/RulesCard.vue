@@ -2,7 +2,7 @@
     <ul class="cards">
   <li>
     <a href="/BasicRules.vue" class="card">
-      <img src="../assets/La quête (17).png" class="card__image" alt="" />
+      <img src="../assets/Epee.png" class="card__image" alt="" />
       <div class="card__overlay">
         <div class="card__header">
                         
@@ -17,7 +17,7 @@
   </li>
   <li>
     <a href="/Life.vue" class="card">
-      <img src="../assets/La quête (16).png" class="card__image" alt="" />
+      <img src="../assets/Coeur.png" class="card__image" alt="" />
       <div class="card__overlay">        
         <div class="card__header">
           <div class="card__header-text">
@@ -31,7 +31,7 @@
   </li>
   <li>
     <a href="/Magic.vue" class="card">
-      <img src="../assets/La quête (18).png" class="card__image" alt="" />
+      <img src="../assets/Baguette.png" class="card__image" alt="" />
       <div class="card__overlay">
         <div class="card__header">
           <div class="card__header-text">
@@ -46,6 +46,22 @@
    
 </ul>
 </template>
+
+
+<script>
+// import BasicRules from "./BasicRules.vue"
+
+// export default {
+//   name: 'Rules',
+//   components: {
+//     BasicRules,
+    
+   
+//   }
+// }
+
+</script>
+
 
 
 <style scoped>

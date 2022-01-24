@@ -1,7 +1,7 @@
 <template>
   <div class="header">
     <header>
-      <h1>This is the header</h1>
+      <h1>Il castillo de las Noches</h1>
     </header>
   </div>
 </template>
@@ -13,6 +13,11 @@ export default {
 </script>
 
 <style>
+@font-face {
+ font-family: "Augusta";
+ src: url("../assets/augusta/Augusta.ttf");
+}
+
 .header {
   position: relative;
   background-color: grey;
@@ -29,6 +34,7 @@ export default {
 }
 
 .header h1 {
+  font-family: Augusta;
   color: #2c3e5000;
   transition-property: color;
   transition-duration: 500ms;
