@@ -67,7 +67,7 @@ export default {
         sound.style.cssText =
           "transition-property: left; transition-duration: 1000ms; left: 50px";
       } else {
-        leftPage.style.width = "10px";
+        leftPage.style.width = "0px";
         //leftBtn.style.left = "-126px";
         lStar.style.transform = "rotate(0deg)";
         hp.style.left = "-200px";
@@ -93,7 +93,7 @@ export default {
 
 #leftPage {
   top: -4%;
-  width: 10px;
+  width: 0px;
   height: 100vh;
   background-image: linear-gradient(
       rgba(255, 255, 255, 0.5),

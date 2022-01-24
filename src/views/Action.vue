@@ -353,7 +353,7 @@ h3 {
 .superDiv {
   display: flex;
   flex-direction: column;
-  background-color: aquamarine;
+  /*background-color: aquamarine;*/
 }
 .topDiv {
   /*width: 80%;*/
@@ -361,7 +361,7 @@ h3 {
   height: 50px;
   display: flex;
   align-items: flex-end;
-  background-color: blue;
+  /*background-color: blue;*/
   justify-content: space-between;
   margin-bottom: 20px;
   transition-duration: 500ms;
@@ -465,6 +465,9 @@ p {
 }
 .startBtn {
   margin-left: 20px;
+  top: 0px;
+  position: relative;
+  z-index: ;
   width: 210px;
   height: 40px;
 }

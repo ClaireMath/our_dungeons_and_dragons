@@ -25,10 +25,10 @@ export default {
 
 header {
   position: relative;
-  background-color: grey;
+  /*background-color: grey;*/
   left: 0;
   top: 0;
-  height: 40px;
+  height: 70px;
   display: flex;
   align-items: center;
   justify-content: space-between;

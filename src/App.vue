@@ -67,6 +67,7 @@ html, body{
   padding: 0;
   box-sizing:  border-box;
   outline: none;
+  overflow: hidden;
   background-image: url("/public/img/scrollBack.jpeg");
 }
 
