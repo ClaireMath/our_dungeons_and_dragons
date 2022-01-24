@@ -1,18 +1,17 @@
 <template>
   <div id="leftPage">
     <div id="menuItems">
-      <div id="hp">
-        <h3>Points de vie</h3>
-      </div>
-      <div id="inventaire">
-        <h3>Inventaire</h3>
-      </div>
-      <div id="sorts">
-        <h3>Sorts</h3>
-      </div>
-      <div id="journal">
-        <h3>Journal</h3>
-      </div>
+      <h3 id="hp">Points de vie</h3>
+
+      <h3 id="inventaire">Inventaire</h3>
+
+      <h3 id="sorts">Sorts</h3>
+
+      <h3 id="save">Sauvergarder</h3>
+
+      <h3 id="restart">Recommencer</h3>
+
+      <h3 id="sound">Son</h3>
     </div>
     <div id="leftBtn">
       <div id="lStar">
@@ -43,20 +42,30 @@ export default {
       let hp = document.getElementById("hp");
       let inv = document.getElementById("inventaire");
       let sorts = document.getElementById("sorts");
-      let journal = document.getElementById("journal");
+      let save = document.getElementById("save");
+      let restart = document.getElementById("restart");
+      let sound = document.getElementById("sound");
       this.pageOpened = !this.pageOpened;
       if (this.pageOpened == true) {
         //leftBtn.style.left = "50px";
         leftPage.style.cssText =
           "transition-property: width; transition-duration: 1000ms; width: 200px";
+
+        lStar.style.cssText = "transform: rotate(90deg)";
+
+        hp.style.cssText =
+          "transition-property: left; transition-duration: 1000ms; left: 50px";
+        inv.style.cssText =
+          "transition-property: left; transition-duration: 1000ms; left: 50px";
+        sorts.style.cssText =
+          "transition-property: left; transition-duration: 1000ms; left: 50px";
         
-        lStar.style.cssText =
-          "transform: rotate(90deg)";
-        
-        hp.style.cssText = "transition-property: left; transition-duration: 1000ms; left: 50px";
-        inv.style.cssText = "transition-property: left; transition-duration: 1000ms; left: 50px";
-        sorts.style.cssText = "transition-property: left; transition-duration: 1000ms; left: 50px";
-        journal.style.cssText = "transition-property: left; transition-duration: 1000ms; left: 50px";
+          save.style.cssText =
+          "transition-property: left; transition-duration: 1000ms; left: 50px";
+        restart.style.cssText =
+          "transition-property: left; transition-duration: 1000ms; left: 50px";
+        sound.style.cssText =
+          "transition-property: left; transition-duration: 1000ms; left: 50px";
       } else {
         leftPage.style.width = "10px";
         //leftBtn.style.left = "-126px";
@@ -64,7 +73,10 @@ export default {
         hp.style.left = "-200px";
         inv.style.left = "-200px";
         sorts.style.left = "-200px";
-        journal.style.left = "-200px";
+        
+        save.style.left = "-200px";
+        restart.style.left = "-200px";
+        sound.style.left = "-200px";
       }
       console.log(this.pageOpened);
       console.log(document.getElementById("leftPage").style.width);
@@ -75,15 +87,19 @@ export default {
 
 <style scoped>
 @font-face {
- font-family: "Augusta";
- src: url("../assets/augusta/Augusta.ttf");
+  font-family: "Augusta";
+  src: url("../assets/augusta/Augusta.ttf");
 }
 
 #leftPage {
   top: -4%;
   width: 10px;
   height: 100vh;
-  background-image: linear-gradient(rgba(255, 255, 255, 0.5), rgba(0, 0, 0, 0.5)), url("../assets/gate-removebg-preview.png");
+  background-image: linear-gradient(
+      rgba(255, 255, 255, 0.5),
+      rgba(0, 0, 0, 0.5)
+    ),
+    url("../assets/gate-removebg-preview.png");
   position: relative;
   z-index: 2;
   display: flex;
@@ -134,21 +150,31 @@ export default {
   position: relative;
   left: -200px;
 }
-#journal {
+
+#save {
+  position: relative;
+  left: -200px;
+}
+#restart {
+  position: relative;
+  left: -200px;
+}
+#sound {
   position: relative;
   left: -200px;
 }
 
 h3 {
   font-family: Augusta;
-  color:black;
+  color: black;
   font-size: 1.2em;
-  transition-duration: 300ms;
+  transition: 3s;
 }
 
 h3:hover {
-  font-size: 1.4em;
-  text-shadow: 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #fff, 0 0 50px #fff, 0 0 60px #fff, 0 0 70px #fff, 0 0 80px #fff;
+  font-size: 1.2em;
+  text-shadow: 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #fff, 0 0 50px #fff,
+    0 0 60px #fff, 0 0 70px #fff, 0 0 80px #fff;
 }
 </style>
 .star:active{

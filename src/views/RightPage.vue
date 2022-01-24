@@ -29,7 +29,7 @@
   </div>
 </template>
 
-<script>
+<!--<script>
 export default {
   name: "RightPage",
   data() {
@@ -72,7 +72,7 @@ export default {
     },
   },
 };
-</script>
+</script>-->
 
 <style scoped>
 @font-face {

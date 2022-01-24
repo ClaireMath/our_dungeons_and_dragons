@@ -15,34 +15,36 @@
         </div>
 
         <div class="dicePackage">
-          <div v-if="diceResult" class="diceResult">
-            <div class="div_du_Gif1">
-              <img
-                v-if="gif1"
-                src="../assets/dice/dice.gif"
-                alt="dé gif1"
-                id="img1"
-              />
-              <div v-if="dice1" class="whiteBox">
+          <div class="diceHidden">
+            <div v-if="diceResult" class="diceResult">
+              <div class="div_du_Gif1">
                 <img
-                  :src="require('../assets/dice/' + randomDice1 + '.png')"
-                  id="img2"
+                  v-if="gif1"
+                  src="../assets/dice/dice.gif"
+                  alt="dé gif1"
+                  id="img1"
                 />
+                <div v-if="dice1" class="whiteBox">
+                  <img
+                    :src="require('../assets/dice/' + randomDice1 + '.png')"
+                    id="img2"
+                  />
+                </div>
               </div>
-            </div>
 
-            <div class="div_du_Gif1">
-              <img
-                v-if="gif2"
-                src="../assets/dice/dice.gif"
-                alt="dé gif2"
-                id="img1"
-              />
-              <div v-if="dice2" class="whiteBox">
+              <div class="div_du_Gif1">
                 <img
-                  :src="require('../assets/dice/' + randomDice2 + '.png')"
-                  id="img2"
+                  v-if="gif2"
+                  src="../assets/dice/dice.gif"
+                  alt="dé gif2"
+                  id="img1"
                 />
+                <div v-if="dice2" class="whiteBox">
+                  <img
+                    :src="require('../assets/dice/' + randomDice2 + '.png')"
+                    id="img2"
+                  />
+                </div>
               </div>
             </div>
           </div>
@@ -114,18 +116,17 @@
         </div>
       </div>
     </div>
-    <div><RightPage /></div>
   </div>
 </template>
 
 <script>
 import LeftPage from "./LeftPage.vue";
 //import toggleLeft from "./LeftPage.vue";
-import RightPage from "./RightPage.vue";
+//import RightPage from "./RightPage.vue";
 import json from "../assets/data.json";
 
 export default {
-  components: { LeftPage, RightPage },
+  components: { LeftPage },
   name: "Action",
   props: {},
   data() {
@@ -178,10 +179,12 @@ export default {
       if (nbOfDice == 1) {
         this.playSound();
 
-        this.gif2 = false;
+        this.diceResult = true;
+        this.diceThrow = false;
         this.dice1 = false;
         this.dice2 = false;
         this.gif1 = true;
+        this.gif2 = false;
         console.log("tets");
         console.log("if throwthedice : gif1 :" + this.gif1);
         console.log("if throwthedice : dé :" + this.dice1);
@@ -308,9 +311,13 @@ export default {
 </script>
 
 <style scoped>
-* {
+*,
+*::after,
+*::before {
   margin: 0;
   padding: 0;
+  box-sizing:  border-box;
+  outline: none;
 }
 
 @font-face {
@@ -350,12 +357,19 @@ h3 {
 }
 .topDiv {
   /*width: 80%;*/
-  height: 160px;
+  position: relative;
+  height: 50px;
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   background-color: blue;
   justify-content: space-between;
   margin-bottom: 20px;
+  transition-duration: 500ms;
+  z-index: 8;
+}
+
+.topDiv:hover {
+  height: 160px;
 }
 .firstElofTopDiv {
   width: 600px;
@@ -364,6 +378,7 @@ h3 {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  
 }
 
 .dicePackage {
@@ -375,9 +390,13 @@ h3 {
   justify-content: space-evenly;
   /*background-color: yellowgreen;*/
 }
+
+.diceHidden {
+  height: 180px;
+}
 .diceResult {
   width: 150px;
-  height: 120px;
+  min-height: 120px;
   border-radius: 13px;
   /*background-color: grey;*/
   display: flex;
@@ -435,7 +454,7 @@ p {
   width: 200px;
   height: 60px;
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   justify-content: space-evenly;
   cursor: pointer;
   /*background-color: fuchsia;*/
@@ -446,8 +465,8 @@ p {
 }
 .startBtn {
   margin-left: 20px;
-  width: 200px;
-  height: 50px;
+  width: 210px;
+  height: 40px;
 }
 
 /*.combat {
@@ -520,7 +539,6 @@ p {
   border: 3px solid goldenrod;
 }
 .divOfChoicesBtn {
-  width: 80%;
   padding-top: 20px;
   display: flex;
   flex-direction: row;
