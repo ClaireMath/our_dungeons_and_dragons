@@ -1,10 +1,10 @@
 <template>
   <div class="big_ctn">
     <!--<img class="backgroundImg" src="../assets/scrollBack.jpeg" alt="background">-->
-    <div class="gameContainer">
+    <!-- <div class="gameContainer"> -->
       <div><LeftPage /></div>
       <div id="paragraphCtn">
-        <p class="paragraphe" v-html="MyJson.book[Id].paragraph"></p>
+        <!-- <p class="paragraphe" v-html="MyJson.book[Id].paragraph"></p> -->
 
         <!--
       <div>
@@ -66,7 +66,7 @@
               value="Droite"
             />
 -->
-
+</div>
         <div id="game">
           <div class="combat">
             <h1>Fight</h1>
@@ -97,8 +97,7 @@
         </div>
         <div><RightPage /></div>
       </div>
-    </div>
-  </div>
+
 </template>
 
 <script>
@@ -272,6 +271,7 @@ h3 {
   );
   position: relative;
   z-index: 2;
+  width: 50%;
 }
 .gameContainer {
   display: flex;

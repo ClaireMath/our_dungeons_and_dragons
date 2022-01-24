@@ -272,15 +272,17 @@ h3 {
   margin: 40px 0 0;
 }
 
+
 .bigCtn {
   background-image: url("../assets/scrollBack.jpeg");
   width: 100%;
-  /* padding: 10%; */
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: justify;
+  padding-bottom: 200px;
+  
 }
 .topDiv {
   margin-left: 10%;
@@ -342,7 +344,7 @@ background-color: coral;
 .paragraphe {
   margin-left: 10%;
   margin-right: 10%;
-  height: 80vh;
+  max-height: 50vh;
   overflow: auto;
   text-align: justify;
 }
@@ -396,6 +398,7 @@ background-color: coral;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding-bottom: 200px;
   /*background-color: aqua;*/
 }
 
