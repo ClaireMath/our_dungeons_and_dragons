@@ -7,6 +7,8 @@
 
       <h3 id="sorts">Sorts</h3>
 
+      <h3 id="dream">Temps du rêve</h3>
+
       <h3 id="save">Sauvergarder</h3>
 
       <h3 id="restart">Recommencer</h3>
@@ -42,6 +44,7 @@ export default {
       let hp = document.getElementById("hp");
       let inv = document.getElementById("inventaire");
       let sorts = document.getElementById("sorts");
+      let dream = document.getElementById("dream");
       let save = document.getElementById("save");
       let restart = document.getElementById("restart");
       let sound = document.getElementById("sound");
@@ -57,6 +60,10 @@ export default {
           "transition-property: left; transition-duration: 1000ms; left: 50px";
         inv.style.cssText =
           "transition-property: left; transition-duration: 1000ms; left: 50px";
+
+        dream.style.cssText =
+          "transition-property: left; transition-duration: 1000ms; left: 50px";
+
         sorts.style.cssText =
           "transition-property: left; transition-duration: 1000ms; left: 50px";
         
@@ -72,6 +79,7 @@ export default {
         lStar.style.transform = "rotate(0deg)";
         hp.style.left = "-200px";
         inv.style.left = "-200px";
+        dream.style.left = "-200px";
         sorts.style.left = "-200px";
         
         save.style.left = "-200px";
@@ -155,6 +163,12 @@ export default {
   position: relative;
   left: -200px;
 }
+
+#dream {
+   position: relative;
+  left: -200px;
+}
+
 #restart {
   position: relative;
   left: -200px;
