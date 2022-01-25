@@ -76,15 +76,6 @@
       </div>
 
       <div id="game">
-<<<<<<< HEAD
-        
-        <p class="paragraphe" v-html="MyJson.book[Id].paragraph"></p>
-        <img id="pageImg" v-bind:src="MyJson.book[Id].img"/>
-
-        <div class="combat">
-          <h1>Fight</h1>
-          <button @click="closeWindow">X</button>
-=======
         <p class="paragraphe" v-html="MyJson.book[Id].paragraph"></p>
 
         <div class="combat" id="combat">
@@ -93,7 +84,6 @@
             <div class="leftright"></div>
             <div class="rightleft"></div>
           </div>
->>>>>>> 02ce91b (modification du system de combat)
           <div class="container">
             <div class="player">
               <h2>Joueur</h2>
