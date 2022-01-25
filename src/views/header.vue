@@ -6,7 +6,7 @@
       <router-link to="/Rules"> Règles |</router-link>
       <router-link to="/Action/?id=0"> Jouer |</router-link>
       <router-link to="/About"> À propos |</router-link>
-      <p id="fs-toggle" @onclick="fs-toogle">Plein écran</p>
+      
     </div>
     </header>
 

@@ -9,6 +9,7 @@
           <button @click="getFirstLifePoints()" class="btn startBtn">
             Commencer le jeu !
           </button>
+
           <p v-if="startingLifePoints" class="startingLifePoints">
             Vous partez avec {{ startingLifePoints }} points de vie.
           </p>
@@ -73,7 +74,9 @@
           </div>
         </div>
       </div>
+
       <div id="game">
+<<<<<<< HEAD
         
         <p class="paragraphe" v-html="MyJson.book[Id].paragraph"></p>
         <img id="pageImg" v-bind:src="MyJson.book[Id].img"/>
@@ -81,18 +84,28 @@
         <div class="combat">
           <h1>Fight</h1>
           <button @click="closeWindow">X</button>
+=======
+        <p class="paragraphe" v-html="MyJson.book[Id].paragraph"></p>
+
+        <div class="combat" id="combat">
+          <h1>Combat</h1>
+          <div @click="closeWindow" class="close-container">
+            <div class="leftright"></div>
+            <div class="rightleft"></div>
+          </div>
+>>>>>>> 02ce91b (modification du system de combat)
           <div class="container">
             <div class="player">
-              <h2>Player</h2>
+              <h2>Joueur</h2>
               <h4>Points de vie: {{ lifePoints }}</h4>
-              <h4>Dégat de l'arme: {{ weapon }}</h4>
-              <h4>Point d'armure: {{ playerArmor }}</h4>
+              <h4>Dégats de l'arme: {{ weapon }}</h4>
+              <h4>Points d'armure: {{ playerArmor }}</h4>
             </div>
             <div class="enemy">
-              <h2>Enemy</h2>
+              <h2>Ennemi</h2>
               <h4>Points de vie: {{ enemyLifePoints }}</h4>
-              <h4>Dégat de l'arme: {{ enemyWeapon }}</h4>
-              <h4>Point d'armure: {{ enemyArmor }}</h4>
+              <h4>Dégats de l'arme: {{ enemyWeapon }}</h4>
+              <h4>Points d'armure: {{ enemyArmor }}</h4>
             </div>
           </div>
           <div class="fightDice">
@@ -130,28 +143,66 @@
           </div>
 
           <div class="log">
-            <div class="allLogs">
+            <div class="allLogs" id="logs">
               <p v-for="line in log" :key="line">{{ line }}</p>
             </div>
           </div>
           <div class="action">
-            <button @click="JoueurHitEnemy" class="btn">Attaque</button>
-            <button @click="EnemyHitJoueur" class="btn">Attaque Ennemie</button>
-            <hr>
-            <button class="btn">Doigt de feu I</button>
+            <div class="divFightBtn">
+              <div class="divAttackBtn">
+                <button @click="JoueurHitEnemy" class="btn">Attaque</button>
+                <button @click="EnemyHitJoueur" class="btn">
+                  Attaque Ennemi
+                </button>
+              </div>
+              <div class="divSorts">
+                <table>
+                  <thead>
+                    <th></th>
+                    <th>description</th>
+                    <th>Nombre de sorts restants</th>
+                    <th>Dégats</th>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <button class="btn">Doigt de feu I</button>
+                    </tr>
+                    <tr>
+                      blablabla
+                    </tr>
+                    <tr>
+                      9
+                    </tr>
+                    <tr>
+                      75
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
           </div>
-        </div>
-        <div class="divOfChoicesBtn">
-          <div
-            v-for="choices in MyJson['book'][Id]['choices']"
-            :key="choices['text']"
-          >
-            <input
-              @click="goTo(choices['id'])"
-              type="button"
+          <div class="divOfChoicesBtn">
+            <div id="movementButton">
+              <div
+                v-for="choices in MyJson['book'][Id]['choices']"
+                :key="choices['text']"
+              >
+                <input
+                  @click="goTo(choices['id'])"
+                  type="button"
+                  class="btn btnChoices"
+                  v-model="choices['text']"
+                />
+              </div>
+            </div>
+
+            <button
               class="btn btnChoices"
-              v-model="choices['text']"
-            />
+              id="displayFight"
+              @click="displayFightDiv"
+            >
+              Combat
+            </button>
           </div>
         </div>
       </div>
@@ -181,7 +232,7 @@ export default {
       diceResult: null,
       randomDice1: null,
       randomDice2: null,
-      startingLifePoints: 20,
+      startingLifePoints: 0,
       lifePoints: 0,
       remainingLifePoints: 0,
       enemyLifePoints: 0,
@@ -201,16 +252,47 @@ export default {
     this.enemyArmor = this.MyJson.book[this.Id].enemy[0].armor;
     // this.getFirstLifePoints();
     // this.fight("player")
-    
+  },
+  mounted() {
+    this.verifCombat();
   },
 
   methods: {
+    // AttackFingerFire() {
+    // let div = divSorts.querySelectorAll(".btn");
+    //   console.log(div);
+    //    div.style.display = "none";
+    // },
 
-    closeWindow(){
+    unDisplayMovement() {
+      let elem = document.getElementById("movementButton");
+      elem.style.display = "none";
+    },
+    displayMovement() {
+      let elem = document.getElementById("movementButton");
+      elem.style.display = "block";
+    },
+    verifCombat() {
+      if (this.MyJson.book[this.Id].ennemie != undefined) {
+        this.unDisplayMovement();
+
+        this.enemyLifePoints = this.MyJson.book[this.Id].ennemie[0].vie;
+        this.enemyWeapon = this.MyJson.book[this.Id].ennemie[0].attaque;
+        this.enemyArmor = this.MyJson.book[this.Id].ennemie[0].defense;
+      } else {
+        var elem = document.getElementById("displayFight");
+        elem.style.display = "none";
+      }
+    },
+    displayFightDiv() {
+      var div = document.getElementById("combat");
+      div.style.display = "block";
+    },
+    closeWindow() {
       let div = document.getElementsByClassName("combat");
       div[0].style.display = "none";
     },
-    
+
     goTo(nextid) {
       this.$router.push("?id=" + nextid);
       window.location.reload();
@@ -281,11 +363,11 @@ export default {
       console.log("getFirstLifePoints : gif1 :" + this.gif1);
       console.log("getFirstLifePoints :  dé :" + this.dice1);
       this.throwTheDice(2);
-      this.startingLifePoints = (this.randomDice1 + this.randomDice2) * 4;
+      this.lifePoints = (this.randomDice1 + this.randomDice2) * 4;
     },
     JoueurHitEnemy() {
       this.log.push("C'est à vous d'attaquer.");
-      this.enemyLifePoints = 20;
+      this.enemyLifePoints;
       console.log(this.enemyLifePoints);
       //A aller chercher dans le json quand il sera mis en forme
 
@@ -309,46 +391,33 @@ export default {
           "il reste à l'ennemi : " + this.enemyLifePoints + " points."
         );
       }
+      if (this.enemyLifePoints <= 0) {
+        this.displayMovement();
+      }
+      
     },
 
     EnemyHitJoueur() {
       this.throwTheDice(2);
-      
 
       let total = this.randomDice1 + this.randomDice2;
-      
+
       if (total >= 6) {
-        
         let damage = total - 6 + this.enemyWeapon - this.playerArmor;
-        
-        this.log.push("L'ennemi réussit à vous toucher, il vous inflige: "+ damage +" points de dégats")
-        this.remainingLifePoints = this.startingLifePoints - damage;
+
+        this.log.push(
+          "L'ennemi réussit à vous toucher, il vous inflige: " +
+            damage +
+            " points de dégats"
+        );
+        this.remainingLifePoints = this.lifePoints - damage;
         this.lifePoints = this.remainingLifePoints;
-        
-        
-      }else{
-        this.log.push("L'ennemie vous rate")
-      }
-    },
-    fight(whoStart) {
-      if (whoStart == "player") {
-        while (this.enemyLifePoints > 5 || this.lifePoints > 0) {
-          this.JoueurHitEnemy();
-          if (this.enemyLifePoints <= 5) {
-            console.log("l'ennemi est assommé");
-          } else {
-            this.EnemyHitJoueur();
-          }
-        }
       } else {
-        while (this.enemyLifePoints > 5 || this.lifePoints > 0) {
-          this.EnemyHitJoueur();
-          if (this.lifePoints <= 0) {
-            console.log("l'ennemi est assommé");
-          } else {
-            this.JoueurHitEnemy();
-          }
-        }
+        this.log.push("L'ennemie vous rate");
+      }
+
+      if (this.lifePoints <= 0) {
+        this.goTo(14);
       }
     },
   },
@@ -361,7 +430,7 @@ export default {
 *::before {
   margin: 0;
   padding: 0;
-  box-sizing:  border-box;
+  box-sizing: border-box;
   outline: none;
 }
 
@@ -423,7 +492,6 @@ h3 {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  
 }
 
 .dicePackage {
@@ -518,12 +586,16 @@ p {
 }
 
 .combat {
+  display: block;
   width: 500px;
   height: 600px;
   background-color: blue;
   position: absolute;
   z-index: 10;
+  box-shadow: 17px 14px 24px 5px rgba(0, 0, 0, 0.14);
+  /* display: none; */
 }
+
 #game {
   display: flex;
   flex-direction: column;
@@ -533,7 +605,7 @@ p {
 }
 .container {
   width: 100%;
-  
+
   display: flex;
   flex-direction: row;
   background-color: yellow;
@@ -554,10 +626,11 @@ p {
   width: 100%;
   height: 100px;
   background-color: pink;
+  bottom: 100%;
 }
 .action {
   width: 100%;
-  height: 100px;
+  height: 200px;
   background-color: fuchsia;
 }
 .allLogs {
@@ -567,6 +640,7 @@ p {
 }
 .btn {
   /*margin: 30px;*/
+  height: 40px;
   box-shadow: inset 0px 1px 0px 0px #a6827e;
   background: linear-gradient(to bottom, #7d5d3b 5%, #634b30 100%);
   background-color: #7d5d3b;
@@ -596,15 +670,95 @@ p {
   flex-direction: row;
   justify-content: space-evenly;
   align-items: center;
+  width: 100%;
   /*background-color: aqua;*/
 }
 .btnChoices {
   margin-bottom: 20px;
 }
 
-.fightDice
-{
+.fightDice {
   display: flex;
   justify-content: center;
+}
+#movementButton {
+  padding-top: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+
+  width: 100%;
+  background-color: aqua;
+}
+.close-container {
+  position: relative;
+  top: -20px;
+  left: 470px;
+  /*margin: auto;*/
+  width: 25px;
+  height: 25px;
+  /*margin-top: 100px;*/
+  cursor: pointer;
+}
+
+.leftright {
+  height: 4px;
+  width: 25px;
+  position: absolute;
+  /*margin-top: 24px;*/
+  background-color: black;
+  border-radius: 2px;
+  transform: rotate(45deg);
+  transition: all 0.3s ease-in;
+}
+
+.rightleft {
+  height: 4px;
+  width: 25px;
+  position: absolute;
+  /*margin-top: 24px;*/
+  background-color: black;
+  border-radius: 2px;
+  transform: rotate(-45deg);
+  transition: all 0.3s ease-in;
+}
+.close {
+  /* margin: 60px 0 0 5px; */
+  position: absolute;
+}
+
+.close-container:hover .leftright {
+  transform: rotate(-45deg);
+  background-color: red;
+}
+.close-container:hover .rightleft {
+  transform: rotate(45deg);
+  background-color: red;
+}
+.close-container:hover label {
+  opacity: 1;
+}
+.divAttackBtn {
+  width: 100%;
+  background-color: green;
+  height: 50px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.divSorts {
+  width: 100%;
+  background-color: green;
+  height: 50px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.divFightBtn {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: space-evenly;
+  justify-content: space-around;
 }
 </style>
