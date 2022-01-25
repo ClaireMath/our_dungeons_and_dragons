@@ -1,5 +1,5 @@
 <template>
-    <div><p>1. ' Une fois que vous serez entré dans le Château des Ténèbres, il sera judicieux
+    <p> Une fois que vous serez entré dans le Château des Ténèbres, il sera judicieux
 d'établir une carte, ce qui vous permettra de vous orienter et d'éviter de vous perdre.
 N'oubliez pas d'y faire figurer les quatre points cardinaux. Tout en parcourant les
 diverses parties du château, ayez soin de relever sur cette carte les couloirs et les
@@ -43,5 +43,16 @@ vous procurer de l'or la corruption est également possible dans les paragraphes
 marqués *C.
 7 : Prenez note, sur votre Feuille d'Aventure, dé tous les objets que vous pouvez
 trouver ou emporter avec vous durant votre voyage mais dont vous ne vous servez
-pas. Ils pourront vous rendre les plus grands services dans vos futures missions.</p></div>
+pas. Ils pourront vous rendre les plus grands services dans vos futures missions.</p>
 </template>
+
+<style scoped>
+p {
+    
+    text-align: justify;
+    line-height: 140%;
+    width: 80%;
+    position: relative;
+    left: 10%
+}
+</style>
