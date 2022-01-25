@@ -63,12 +63,21 @@ html, body{
 *,
 *::after,
 *::before {
+  
   margin: 0;
   padding: 0;
   box-sizing:  border-box;
   outline: none;
   overflow: hidden;
   background-image: url("/public/img/scrollBack.jpeg");
+}
+
+#fs-toggle:not(:fullscreen) {
+  background-color: #afa;
+}
+
+#fs-toggle:fullscreen {
+  background-color: #faa;
 }
 
 #app {
