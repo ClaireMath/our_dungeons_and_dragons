@@ -309,7 +309,7 @@
       ],
       "ennemie": [
         {
-          "name": "loup",
+          "name": "Loup",
           "lifePoints": 20,
           "attack": 3,
           "armor": 0,
@@ -1019,7 +1019,7 @@
           "playerArmor": true,
           "playerWeapon": true,
           "toHit": 4,
-          "Poison": 3
+          "poison": 3
         }
       ]
     },

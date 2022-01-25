@@ -168,7 +168,9 @@ h3 {
   font-family: Augusta;
   color: black;
   font-size: 1.2em;
-  transition: 3s;
+  text-shadow: none;
+  transition: text-shadow;
+  text-shadow: 0 0 20px 000;
 }
 
 h3:hover {

@@ -31,9 +31,8 @@ header {
   height: 70px;
   display: flex;
   align-items: center;
+  text-align: center;
   justify-content: space-between;
-  transition-property: height;
-  transition-duration: 500ms;
   z-index: 6;
   overflow: visible;
  
@@ -42,18 +41,9 @@ header {
 header h1 {
 padding-left: 30px;
   font-family: Augusta;
-  color: #2c3e5000;
-  transition-property: color;
-  transition-duration: 500ms;
 }
 
-header:hover {
-  height: 120px;
-}
 
-header:hover h1 {
-  color: #2c3e50;
-}
 .divNav{
   padding-right: 30px;
 }
