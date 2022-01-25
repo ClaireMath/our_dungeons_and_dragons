@@ -1,8 +1,9 @@
 <template>
     <ul class="cards">
   <li>
-    <a href="/BasicRules.vue" class="card">
-      <img src="../assets/Epee.png" class="card__image" alt="" />
+    
+    <div class="card"><router-link to="/BasicRules">
+      <img src="../assets/Epee.png" class="card__image" alt="" /></router-link>
       <div class="card__overlay">
         <div class="card__header">
                         
@@ -13,11 +14,12 @@
         </div>
         <p class="card__description">Maitrisez les bases comme personne..</p>
       </div>
-    </a>      
+    </div>      
   </li>
   <li>
-    <a href="/Life.vue" class="card">
-      <img src="../assets/Coeur.png" class="card__image" alt="" />
+    <div class="card">
+    <router-link to="/Life">
+      <img src="../assets/Coeur.png" class="card__image" alt="" /></router-link>
       <div class="card__overlay">        
         <div class="card__header">
           <div class="card__header-text">
@@ -27,11 +29,12 @@
         </div>
         <p class="card__description">Survivez à vos adversaires</p>
       </div>
-    </a>
+    </div>
   </li>
   <li>
-    <a href="/Magic.vue" class="card">
-      <img src="../assets/Baguette.png" class="card__image" alt="" />
+    <div class="card">
+    <router-link to="/Magic">
+      <img src="../assets/Baguette.png" class="card__image" alt="" /></router-link>
       <div class="card__overlay">
         <div class="card__header">
           <div class="card__header-text">
@@ -41,7 +44,7 @@
         </div>
         <p class="card__description">Abracadabra !</p>
       </div>
-    </a>
+    </div>
   </li>
    
 </ul>

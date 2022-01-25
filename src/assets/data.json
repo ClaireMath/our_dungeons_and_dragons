@@ -81,7 +81,26 @@
             "id": 8,
             "text": "Rendez vous au 8"
           }
-        ]
+        ],
+        "sortilège": [
+          {
+            "name": "FireFingers1",
+            "FireFingers1Number": 5,
+            "damagePoints": 10
+
+          },
+          {
+          "name": "FireFingers2",
+          "FireFingers2Number": 5,
+          "damagePoints": 10
+          }
+        ],
+        "arme": [ {
+          "name": "Pourpoint",
+        "damagePourpoint": 3,
+        "fioleNumber": 3
+        }
+      ]
       },
       {
         "id": 7,
@@ -105,8 +124,31 @@
             "id": 20,
             "text": "Rendez vous au 20"
           }
-        ]
-      },
+        ],
+        "sortilège": [
+          {
+            "name": "RightFireBall",
+            "rightHand": 1,
+            "damagePoints": 75
+
+          },
+          {
+          "name": "LeftFireBall",
+          "leftHand": 1,
+          "damagePoints": 75
+          }
+        ],
+        "arme": [ {
+          "name": "Dague",
+        "damagePoints": 2
+        }
+      ], "inventory": [ {
+        "name": "Baume",
+      "LifePointAdd": 3
+      }
+      ]},
+      
+    
       {
         "id": 9,
         "paragraph": "9Vous suivez le sentier de droite qui se révèle extrêmement sinueux, sans rencontrer d'autre obstacle que les branches qui s'accrochent à vos vêtements, jusqu'à une clairière distante d'environ quatre cents mètres. A l'extrémité de cette clairière, le sentier se divise en deux à nouveau mais, avant que vous n'ayez opté pour l'une ou l'autre branche, un petit problème se pose à vous. Au milieu de la clairière, il y a un Loup. Un Loup énorme, d'aspect féroce qui. le nez levé, flaire autour de lui comme s'il avait senti l'odeur de votre sandwich au rosbif... Ou la vôtre. Il s'agit de prendre une décision, Pip. Et vite ! Vous pouvez vous sauver en courant par où vous êtes venu en espérant que le Loup ne se lancera pas à votre poursuite. Vous pouvez vous battre contre le Loup, puis choisir votre sentier si vous sortez vainqueur du combat. Vous pouvez essayer de l'amadouer en lui offrant l'un de vos sandwich au rosbif. Si vous vous sauvez, rendez-vous au 11. Si vous décidez de combattre le Loup, rendez-vous au 21. Si vous préférez tenter de l'amadouer, rendez-vous au 31. ",
@@ -1425,6 +1467,12 @@
             "id": 75,
             "text": "Rendez vous au 75"
           }
+        ],
+        "sortilège": [
+          {
+            "name": "sortilège de mort",
+            "LifeEnemy": 0
+          }
         ]
       },
       {
@@ -1748,6 +1796,16 @@
           {
             "id": 136,
             "text": "Rendez vous au 136"
+          },
+          {
+            "id": 127,
+            "text": "Rendez vous au 127"
+          }
+        ],
+        "inventory": [
+          {
+            "name": "bague",
+            "LifePointsAdd": 25
           },
           {
             "id": 127,

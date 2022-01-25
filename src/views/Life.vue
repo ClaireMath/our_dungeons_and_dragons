@@ -85,3 +85,14 @@ Et maintenant, passons au sortilège.
         </p>
     </div>
 </template>
+
+<style scoped>
+p {
+    text-align: justify;
+    line-height: 140%;
+    width: 80%;
+    position: relative;
+    left: 10%
+
+}
+</style>
