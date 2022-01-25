@@ -3,6 +3,10 @@
     <div id="menuItems">
       <h3 id="hp">Points de vie</h3>
 
+      <div id="hpBar">
+        <div>{{ lifePoints }}/{{ startingLifePoints }}</div>
+      </div>
+
       <h3 id="inventaire">Inventaire</h3>
 
       <h3 id="sorts">Sorts</h3>
@@ -12,6 +16,7 @@
       <h3 id="restart">Recommencer</h3>
 
       <h3 id="sound">Son</h3>
+      <h3></h3>
     </div>
     <div id="leftBtn">
       <div id="lStar">
@@ -31,11 +36,27 @@ export default {
   name: "LeftPage",
   data() {
     return {
+      startingLifePoints: 20,
+      lifePoints: 10,
       pageOpened: false,
     };
   },
+
   methods: {
     toggleLeft() {
+      let hpBar = document.getElementById("hpBar");
+
+      console.log(hpBar);
+      let lifePoints = this.lifePoints;
+
+      let startingLifePoints = this.startingLifePoints;
+      console.log(lifePoints);
+      let lifeBar = lifePoints / startingLifePoints;
+      lifeBar = lifeBar*100;
+      let lBar = lifeBar + "%";
+      console.log(lBar);
+      hpBar.style.setProperty("--lifeBar", lBar);
+      
       let leftPage = document.getElementById("leftPage");
       //let leftBtn = document.getElementById("leftBtn");
       let lStar = document.getElementById("lStar");
@@ -47,6 +68,7 @@ export default {
       let sound = document.getElementById("sound");
       this.pageOpened = !this.pageOpened;
       if (this.pageOpened == true) {
+        
         //leftBtn.style.left = "50px";
         leftPage.style.cssText =
           "transition-property: width; transition-duration: 1000ms; width: 200px";
@@ -55,37 +77,48 @@ export default {
 
         hp.style.cssText =
           "transition-property: left; transition-duration: 1000ms; left: 50px";
+        hpBar.style.cssText =
+          "transition-property: left; transition-duration: 1000ms; left: 50px";
         inv.style.cssText =
           "transition-property: left; transition-duration: 1000ms; left: 50px";
         sorts.style.cssText =
           "transition-property: left; transition-duration: 1000ms; left: 50px";
-        
-          save.style.cssText =
+        save.style.cssText =
           "transition-property: left; transition-duration: 1000ms; left: 50px";
         restart.style.cssText =
           "transition-property: left; transition-duration: 1000ms; left: 50px";
         sound.style.cssText =
           "transition-property: left; transition-duration: 1000ms; left: 50px";
+          hpBar.style.setProperty("--lifeBar", lBar);
       } else {
         leftPage.style.width = "0px";
         //leftBtn.style.left = "-126px";
         lStar.style.transform = "rotate(0deg)";
         hp.style.left = "-200px";
+        hpBar.style.left = "-200px";
         inv.style.left = "-200px";
         sorts.style.left = "-200px";
-        
+
         save.style.left = "-200px";
         restart.style.left = "-200px";
         sound.style.left = "-200px";
+        hpBar.style.setProperty("--lifeBar", lBar);
       }
       console.log(this.pageOpened);
       console.log(document.getElementById("leftPage").style.width);
     },
+    
   },
+  
 };
+
 </script>
 
 <style scoped>
+:root {
+  --lifeBar: "";
+}
+
 @font-face {
   font-family: "Augusta";
   src: url("../assets/augusta/Augusta.ttf");
@@ -141,6 +174,18 @@ export default {
 #hp {
   position: relative;
   left: -200px;
+}
+#hpBar {
+  background: linear-gradient(to top, red var(--lifeBar), #eee0ee00 0%);
+  border: solid;
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  position: relative;
+  left: -200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 #inventaire {
   position: relative;

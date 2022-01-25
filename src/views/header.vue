@@ -1,6 +1,6 @@
 <template>
     <header>
-      <h1>Il castillo de las Noches</h1>
+      <h1>Das Schloss der Dunkelheit</h1>
       <div class="divNav">
       <router-link to="/">| Accueil |</router-link>
       <router-link to="/Rules"> Règles |</router-link>

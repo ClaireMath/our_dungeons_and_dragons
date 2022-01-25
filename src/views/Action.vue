@@ -74,8 +74,9 @@
         </div>
       </div>
       <div id="game">
+        
         <p class="paragraphe" v-html="MyJson.book[Id].paragraph"></p>
-        <img id="pageImg" src="/'MyJson.book[Id].img'"/>
+        <img id="pageImg" v-bind:src="MyJson.book[Id].img"/>
         <div class="combat">
           <h1>Fight</h1>
           <button @click="closeWindow">X</button>
@@ -163,6 +164,7 @@ import LeftPage from "./LeftPage.vue";
 //import RightPage from "./RightPage.vue";
 import json from "../assets/data.json";
 
+
 export default {
   components: { LeftPage },
   name: "Action",
@@ -188,6 +190,7 @@ export default {
       enemyArmor: 0,
       potion: "",
       log: [],
+      img: ""
     };
   },
   created: function () {
@@ -385,7 +388,7 @@ h3 {
       rgba(227, 202, 171, 0.7),
       rgba(227, 202, 171, 0.7)
     ),
-    url("../assets/Bat.png"), url("../assets/scrollBack.jpeg");
+  url("../assets/Bat.png"), url("../assets/scrollBack.jpeg");
   background-repeat: no-repeat;
   background-position: center;
   position: relative;
@@ -525,7 +528,7 @@ p {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: greenyellow;
+  /*background-color: greenyellow;*/
 }
 .container {
   width: 100%;
