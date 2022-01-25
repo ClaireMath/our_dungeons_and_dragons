@@ -74,10 +74,9 @@
         </div>
       </div>
       <div id="game">
-        
         <p class="paragraphe" v-html="MyJson.book[Id].paragraph"></p>
-        <img id="pageImg" v-bind:src="MyJson.book[Id].img"/>
-
+        
+         <!--<img :src="require(MyJson.book[Id].img)" />-->
         <div class="combat">
           <h1>Fight</h1>
           <button @click="closeWindow">X</button>
@@ -137,7 +136,7 @@
           <div class="action">
             <button @click="JoueurHitEnemy" class="btn">Attaque</button>
             <button @click="EnemyHitJoueur" class="btn">Attaque Ennemie</button>
-            <hr>
+            <hr />
             <button class="btn">Doigt de feu I</button>
           </div>
         </div>
@@ -165,7 +164,6 @@ import LeftPage from "./LeftPage.vue";
 //import RightPage from "./RightPage.vue";
 import json from "../assets/data.json";
 
-
 export default {
   components: { LeftPage },
   name: "Action",
@@ -191,7 +189,7 @@ export default {
       enemyArmor: 0,
       potion: "",
       log: [],
-      img: ""
+      img: "",
     };
   },
   created: function () {
@@ -201,16 +199,14 @@ export default {
     this.enemyArmor = this.MyJson.book[this.Id].enemy[0].armor;
     // this.getFirstLifePoints();
     // this.fight("player")
-    
   },
 
   methods: {
-
-    closeWindow(){
+    closeWindow() {
       let div = document.getElementsByClassName("combat");
       div[0].style.display = "none";
     },
-    
+
     goTo(nextid) {
       this.$router.push("?id=" + nextid);
       window.location.reload();
@@ -313,21 +309,21 @@ export default {
 
     EnemyHitJoueur() {
       this.throwTheDice(2);
-      
 
       let total = this.randomDice1 + this.randomDice2;
-      
+
       if (total >= 6) {
-        
         let damage = total - 6 + this.enemyWeapon - this.playerArmor;
-        
-        this.log.push("L'ennemi réussit à vous toucher, il vous inflige: "+ damage +" points de dégats")
+
+        this.log.push(
+          "L'ennemi réussit à vous toucher, il vous inflige: " +
+            damage +
+            " points de dégats"
+        );
         this.remainingLifePoints = this.startingLifePoints - damage;
         this.lifePoints = this.remainingLifePoints;
-        
-        
-      }else{
-        this.log.push("L'ennemie vous rate")
+      } else {
+        this.log.push("L'ennemie vous rate");
       }
     },
     fight(whoStart) {
@@ -361,7 +357,7 @@ export default {
 *::before {
   margin: 0;
   padding: 0;
-  box-sizing:  border-box;
+  box-sizing: border-box;
   outline: none;
 }
 
@@ -389,7 +385,7 @@ h3 {
       rgba(227, 202, 171, 0.7),
       rgba(227, 202, 171, 0.7)
     ),
-  url("../assets/Bat.png"), url("../assets/scrollBack.jpeg");
+    url("../assets/Bat.png"), url("../assets/scrollBack.jpeg");
   background-repeat: no-repeat;
   background-position: center;
   position: relative;
@@ -423,7 +419,6 @@ h3 {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  
 }
 
 .dicePackage {
@@ -533,7 +528,7 @@ p {
 }
 .container {
   width: 100%;
-  
+
   display: flex;
   flex-direction: row;
   background-color: yellow;
@@ -602,8 +597,7 @@ p {
   margin-bottom: 20px;
 }
 
-.fightDice
-{
+.fightDice {
   display: flex;
   justify-content: center;
 }
