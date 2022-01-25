@@ -136,7 +136,14 @@
             <button @click="JoueurHitEnemy" class="btn">Attaque</button>
             <button @click="EnemyHitJoueur" class="btn">Attaque Ennemie</button>
             <hr>
-            <button class="btn">Doigt de feu I</button>
+            <div class="divSorts">
+            <button @click="FingerAttack" class="btn">Doigt de feu I</button>
+         
+            <button @click="FireBallAttack" class="btn">Boules de feu I</button>
+            <button @click="FireBallAttack" class="btn">Boules de feu II</button>
+             
+          </div>
+            <!-- <button class="btn">Doigt de feu I</button> -->
           </div>
         </div>
         <div class="divOfChoicesBtn">
@@ -201,6 +208,9 @@ export default {
   },
 
   methods: {
+
+  
+
 
     closeWindow(){
       let div = document.getElementsByClassName("combat");
