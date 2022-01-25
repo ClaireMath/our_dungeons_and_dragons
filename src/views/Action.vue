@@ -144,8 +144,8 @@
             <div class="divSorts">
             <button @click="FingerAttack" class="btn">Doigt de feu I</button>
          
-            <button @click="FireBallAttack" class="btn">Boules de feu I</button>
-            <button @click="FireBallAttack" class="btn">Boules de feu II</button>
+            <button @click="FireBallAttack1" class="btn">Boules de feu I</button>
+            <button @click="FireBallAttack2" class="btn">Boules de feu II</button>
              
           </div>
             <!-- <button class="btn">Doigt de feu I</button> -->
@@ -227,11 +227,36 @@ export default {
   },
 
   methods: {
-    // AttackFingerFire() {
-    // let div = divSorts.querySelectorAll(".btn");
-    //   console.log(div);
-    //    div.style.display = "none";
-    // },
+
+    AddFingertoLife() {
+      let elem = document.querySelectorAll(".btn");
+      this.enemyLifePoints - damagePoints;
+    },
+
+    FingerAttack() {
+    let div = document.querySelectorAll(".btn");
+      console.log(div[3]);
+  div[3].style.visibility = "hidden";
+
+      if (this.FingerAttack) {
+        let damagePoints = 10,
+        this.AddFingertoLife();
+        
+      }
+    },
+
+FireBallAttack1() {
+let div = document.querySelectorAll(".btn");
+      console.log(div[4]);
+       div[4].style.visibility = "hidden";
+},
+
+FireBallAttack2() {
+let div = document.querySelectorAll(".btn");
+      console.log(div[5]);
+       div[5].style.visibility = "hidden";
+},
+
 
     unDisplayMovement() {
       let elem = document.getElementById("movementButton");
