@@ -77,6 +77,7 @@
         
         <p class="paragraphe" v-html="MyJson.book[Id].paragraph"></p>
         <img id="pageImg" v-bind:src="MyJson.book[Id].img"/>
+
         <div class="combat">
           <h1>Fight</h1>
           <button @click="closeWindow">X</button>
