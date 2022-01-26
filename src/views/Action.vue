@@ -217,9 +217,9 @@ export default {
   },
   created: function () {
     this.Id = this.$route.query.id;
-    this.enemyLifePoints = this.MyJson.book[this.Id].enemy[0].lifePoints;
-    this.enemyWeapon = this.MyJson.book[this.Id].enemy[0].attack;
-    this.enemyArmor = this.MyJson.book[this.Id].enemy[0].armor;
+    this.enemyLifePoints = this.MyJson.book[this.Id].ennemie[0].enemyLifePoints;
+    this.enemyWeapon = this.MyJson.book[this.Id].ennemie[0].attack;
+    this.enemyArmor = this.MyJson.book[this.Id].ennemie[0].armor;
     // this.getFirstLifePoints();
     // this.fight("player")
   },
@@ -236,7 +236,7 @@ export default {
       div[3].style.visibility = "hidden";
       let damagePoints = 10;
       console.log(damagePoints);
-      let enemyLifePoints = this.MyJson.book[this.Id].ennemie[0].lifePoints;
+      let enemyLifePoints = this.MyJson.book[this.Id].ennemie[0].enemyLifePoints;
       this.enemyLifePoints = enemyLifePoints - damagePoints;
       console.log(this.enemyLifePoints);
     
