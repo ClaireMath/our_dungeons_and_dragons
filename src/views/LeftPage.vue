@@ -9,15 +9,10 @@
 
       <h3 id="inventaire">Inventaire</h3>
 
-      <h3 id="sorts">Sorts</h3>
-
       <h3 id="dream">Temps du rêve</h3>
 
-      <h3 id="save">Sauvergarder</h3>
-
-      <h3 id="restart">Recommencer</h3>
-
       <h3 id="param" @click="emitOpenParam">Paramètres</h3>
+
       <h3></h3>
     </div>
     <div id="leftBtn">
@@ -64,11 +59,8 @@ export default {
       let lStar = document.getElementById("lStar");
       let hp = document.getElementById("hp");
       let inv = document.getElementById("inventaire");
-      let sorts = document.getElementById("sorts");
       let dream = document.getElementById("dream");
-      let save = document.getElementById("save");
-      let restart = document.getElementById("restart");
-      let sound = document.getElementById("param");
+      let param = document.getElementById("param");
       this.pageOpened = !this.pageOpened;
       if (this.pageOpened == true) {
         
@@ -84,19 +76,11 @@ export default {
           "transition-property: left; transition-duration: 1000ms; left: 50px";
         inv.style.cssText =
           "transition-property: left; transition-duration: 1000ms; left: 50px";
-
         dream.style.cssText =
           "transition-property: left; transition-duration: 1000ms; left: 50px";
-
-        sorts.style.cssText =
+        param.style.cssText =
           "transition-property: left; transition-duration: 1000ms; left: 50px";
-        save.style.cssText =
-          "transition-property: left; transition-duration: 1000ms; left: 50px";
-        restart.style.cssText =
-          "transition-property: left; transition-duration: 1000ms; left: 50px";
-        sound.style.cssText =
-          "transition-property: left; transition-duration: 1000ms; left: 50px";
-          hpBar.style.setProperty("--lifeBar", lBar);
+        hpBar.style.setProperty("--lifeBar", lBar);
       } else {
         leftPage.style.width = "0px";
         //leftBtn.style.left = "-126px";
@@ -105,11 +89,7 @@ export default {
         hpBar.style.left = "-200px";
         inv.style.left = "-200px";
         dream.style.left = "-200px";
-        sorts.style.left = "-200px";
-
-        save.style.left = "-200px";
-        restart.style.left = "-200px";
-        sound.style.left = "-200px";
+        param.style.left = "-200px";
         hpBar.style.setProperty("--lifeBar", lBar);
       }
       console.log(this.pageOpened);
@@ -207,28 +187,13 @@ export default {
   left: -200px;
   cursor:pointer;
 }
-#sorts {
-  position: relative;
-  left: -200px;
-  cursor:pointer;
-}
 
-#save {
-  position: relative;
-  left: -200px;
-  cursor:pointer;
-}
 
 #dream {
    position: relative;
   left: -200px;
 }
 
-#restart {
-  position: relative;
-  left: -200px;
-  cursor:pointer;
-}
 #param {
   position: relative;
   left: -200px;
