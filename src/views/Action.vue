@@ -6,7 +6,11 @@
     <div class="superDiv">
       <div class="topDiv">
         <div class="firstElofTopDiv">
-          <button @click="getFirstLifePoints()" class="btn startBtn" id="startBtn">
+          <button
+            @click="getFirstLifePoints()"
+            class="btn startBtn"
+            id="startBtn"
+          >
             Commencer le jeu !
           </button>
 
@@ -77,7 +81,7 @@
 
       <div id="game">
         <p class="paragraphe" v-html="MyJson.book[Id].paragraph"></p>
-        <Param ref="param"/>
+        <Param ref="param" />
         <div class="combat" id="combat">
           <h1>Combat</h1>
           <div @click="closeWindow" class="close-container">
@@ -92,7 +96,7 @@
               <h4>Points d'armure: {{ playerArmor }}</h4>
             </div>
             <div class="enemy">
-              <h2>{{name}}</h2>
+              <h2>{{ name }}</h2>
               <h4>Points de vie: {{ enemyLifePoints }}</h4>
               <h4>Dégats de l'arme: {{ enemyWeapon }}</h4>
               <h4>Points d'armure: {{ enemyArmor }}</h4>
@@ -138,44 +142,60 @@
             </div>
           </div>
           <div class="action">
-            <button @click="JoueurHitEnemy" class="btn">Attaque</button>
-            <button @click="EnemyHitJoueur" class="btn">Attaque Ennemi</button>
-            <hr>
+            <button @click="JoueurHitEnemy" class="btn btnAttack">
+              Attaquer {{ name }}
+            </button>
+            <button @click="EnemyHitJoueur" class="btn btnAttack">
+              {{ name }} m'attaque
+            </button>
+            <button
+              @click="fight({ playerInitiative })"
+              class="btn startFightBtn"
+            >
+              Commencer la bagarre {{ playerInitiative }}
+            </button>
+            <hr />
             <div class="divSorts">
-            <button @click="FingerAttack" class="btn">Doigts de feu I</button>
-            <button @click="FingerAttack2" class="btn">Doigts de feu II</button>
-         
-            <button @click="FireBallAttack1" class="btn">Boule de feu I</button>
-            <button @click="FireBallAttack2" class="btn">Boule de feu II</button>
-             
-          </div>
+              <button @click="FingerAttack" class="btn fireFingerBtn">
+                Doigts de feu I ({{ remainingFireFingers1 }}/5)
+              </button>
+              <button @click="FingerAttack2" class="btn fireFingerBtn">
+                Doigts de feu II ({{ remainingFireFingers2 }}/5)
+              </button>
+
+              <button @click="FireBallAttack1" class="btn fireBallBtn">
+                Boule de feu I
+              </button>
+              <button @click="FireBallAttack2" class="btn fireBallBtn">
+                Boule de feu II
+              </button>
+            </div>
             <!-- <button class="btn">Doigt de feu I</button> -->
           </div>
-          
         </div>
         <div class="divOfChoicesBtn">
-            <div id="movementButton">
-              <div
-                v-for="choices in MyJson['book'][Id]['choices']"
-                :key="choices['text']"
-              >
-                <input
-                  @click="goTo(choices['id'])"
-                  type="button"
-                  class="btn btnChoices"
-                  v-model="choices['text']"
-                />
-              </div>
-            </div>
-
-            <button
-              class="btn btnChoices"
-              id="displayFight"
-              @click="displayFightDiv"
+          <div id="movementButton">
+            <div
+              v-for="choices in MyJson['book'][Id]['choices']"
+              :key="choices['text']"
             >
-              Combat
-            </button>
+              <input
+                @click="goTo(choices['id'])"
+                type="button"
+                class="btn btnChoices"
+                v-model="choices['text']"
+              />
+            </div>
           </div>
+
+          <button
+            class="btn btnChoices"
+            id="displayFight"
+            @click="displayFightDiv"
+          >
+            Combat
+          </button>
+        </div>
       </div>
     </div>
   </div>
@@ -187,7 +207,7 @@ import LeftPage from "./LeftPage.vue";
 //import RightPage from "./RightPage.vue";
 import json from "../assets/data.json";
 
-import Param from './param.vue';
+import Param from "./param.vue";
 
 export default {
   components: { LeftPage, Param },
@@ -210,15 +230,19 @@ export default {
       enemyLifePoints: 0,
       fireFingerDamagePoints: 10,
       spellDamagePoints: 75,
-      weapon: 5,
+      weapon: null,
       enemyWeapon: 0,
       playerArmor: 0,
       enemyArmor: 0,
+      toHitEnemy: 0,
       counterFinger1: 0,
       counterFinger2: 0,
+      remainingFireFingers1: 5,
+      remainingFireFingers2: 5,
       potion: "",
       log: [],
       img: "",
+      playerInitiative: 0,
     };
   },
   created: function () {
@@ -227,6 +251,19 @@ export default {
     this.enemyLifePoints = this.MyJson.book[this.Id].enemy[0].enemyLifePoints;
     this.enemyWeapon = this.MyJson.book[this.Id].enemy[0].enemyAttack;
     this.enemyArmor = this.MyJson.book[this.Id].enemy[0].enemyArmor;
+    this.playerInitiative = this.MyJson.book[this.Id].enemy[0].playerInitiative;
+    this.toHitEnemy = this.MyJson.book[this.Id].enemy[0].toHitEnemy;
+    
+    if(this.MyJson.book[this.Id].enemy[0].playerWeapon) {
+      this.weapon = 5;
+    } else {
+      this.weapon = 0;
+    }
+    console.log("this.weapon = " + this.weapon);
+    
+    this.weapon = this.MyJson.book[this.Id].enemy[0].playerWeapon;
+
+    console.log("playerInitiative : " + this.playerInitiative);
     // this.getFirstLifePoints();
     // this.fight("player")
   },
@@ -235,57 +272,52 @@ export default {
   },
 
   methods: {
-
-
     FingerAttack() {
-    let div = document.querySelectorAll(".btn");
+      let fireFingerBtn1 = document.getElementsByClassName("fireFingerBtn");
       this.enemyLifePoints = this.enemyLifePoints - this.fireFingerDamagePoints;
       this.counterFinger1 += 1;
+      this.remainingFireFingers1 -= 1;
       if (this.counterFinger1 >= 5) {
-        div[3].style.display = "none";
+        fireFingerBtn1[0].style.display = "none";
       }
-
-
-     
     },
 
     FingerAttack2() {
-    let div = document.querySelectorAll(".btn");
+      let fireFingerBtn2 = document.getElementsByClassName("fireFingerBtn");
       this.enemyLifePoints = this.enemyLifePoints - this.fireFingerDamagePoints;
       this.counterFinger2 += 1;
+      this.remainingFireFingers2 -= 1;
+
       if (this.counterFinger2 >= 5) {
-        div[4].style.display = "none";
+        fireFingerBtn2[1].style.display = "none";
       }
-    
     },
 
-FireBallAttack1() {
-let div = document.querySelectorAll(".btn");
-       div[5].style.display = "none";
+    FireBallAttack1() {
+      let fireBallBtn = document.getElementsByClassName("fireBallBtn");
+      fireBallBtn[0].style.display = "none";
       this.enemyLifePoints = this.enemyLifePoints - this.spellDamagePoints;
-},
+    },
 
-FireBallAttack2() {
-let div = document.querySelectorAll(".btn");
-       div[6].style.display = "none";
+    FireBallAttack2() {
+      let fireBallBtn = document.getElementsByClassName("fireBallBtn");
+      fireBallBtn[1].style.display = "none";
       this.enemyLifePoints = this.enemyLifePoints - this.spellDamagePoints;
-      
-},
-
+    },
 
     // AttackFingerFire() {
     // let div = divSorts.querySelectorAll(".btn");
     //   console.log(div);
     //    div.style.display = "none";
     // },
-    openMenu(message){
-      console.log(message)
-      if(message.message == "parametre"){
-        console.log("ici")
+    openMenu(message) {
+      console.log(message);
+      if (message.message == "parametre") {
+        console.log("ici");
         this.$refs.param.open();
       }
     },
-    unDisplayMovement() {
+    hideMovement() {
       let elem = document.getElementById("movementButton");
       elem.style.display = "none";
     },
@@ -295,11 +327,11 @@ let div = document.querySelectorAll(".btn");
     },
     verifCombat() {
       if (this.MyJson.book[this.Id].enemy != undefined) {
-        this.unDisplayMovement();
+        this.hideMovement();
 
-        this.enemyLifePoints = this.MyJson.book[this.Id].enemy[0].enemyLifePoints;
-        this.enemyWeapon = this.MyJson.book[this.Id].enemy[0].enemyAttack;
-        this.enemyArmor = this.MyJson.book[this.Id].enemy[0].enemyArmor;
+        // this.enemyLifePoints = this.MyJson.book[this.Id].enemy[0].enemyLifePoints;
+        // this.enemyWeapon = this.MyJson.book[this.Id].enemy[0].enemyAttack;
+        // this.enemyArmor = this.MyJson.book[this.Id].enemy[0].enemyArmor;
       } else {
         var elem = document.getElementById("displayFight");
         elem.style.display = "none";
@@ -310,11 +342,9 @@ let div = document.querySelectorAll(".btn");
 
       div.style.display = "block";
       this.enemyLifePoints = this.MyJson.book[this.Id].enemy[0].enemyLifePoints;
-      console.log("enemy life point =" + this.enemyLifePoints);
+      console.log("enemy life points = " + this.enemyLifePoints);
     },
-  
 
-  
     closeWindow() {
       let div = document.getElementsByClassName("combat");
       div[0].style.display = "none";
@@ -334,7 +364,6 @@ let div = document.querySelectorAll(".btn");
       //audio.play();
     },
 
-
     throwTheDice(nbOfDice) {
       if (nbOfDice == 1) {
         this.playSound();
@@ -345,9 +374,9 @@ let div = document.querySelectorAll(".btn");
         this.dice2 = false;
         this.gif1 = true;
         this.gif2 = false;
-        console.log("tets");
-        console.log("if throwthedice : gif1 :" + this.gif1);
-        console.log("if throwthedice : dé :" + this.dice1);
+        // console.log("tets");
+        // console.log("if throwthedice : gif1 :" + this.gif1);
+        // console.log("if throwthedice : dé :" + this.dice1);
         this.randomDice1 = Math.floor(6 * Math.random()) + 1;
         setTimeout(this.diceAnim, 2000, 1);
       } else {
@@ -358,8 +387,8 @@ let div = document.querySelectorAll(".btn");
         this.dice2 = false;
         this.gif1 = true;
         this.gif2 = true;
-        console.log("else throwthedice : gif1 :" + this.gif1);
-        console.log("else throwthedice : dé :" + this.dice1);
+        // console.log("else throwthedice : gif1 :" + this.gif1);
+        // console.log("else throwthedice : dé :" + this.dice1);
         // this.dice1 = true;
         this.randomDice1 = Math.floor(6 * Math.random()) + 1;
         this.randomDice2 = Math.floor(6 * Math.random()) + 1;
@@ -371,36 +400,36 @@ let div = document.querySelectorAll(".btn");
     },
 
     diceAnim(nbOfDice) {
-      console.log("cest diceanim ici !");
+      // console.log("cest diceanim ici !");
       if (nbOfDice == 1) {
         this.gif1 = false;
         this.dice1 = true;
-        console.log("diceAnim : gif1 :" + this.gif1);
-        console.log("diceAnim : dé :" + this.dice1);
+        // console.log("diceAnim : gif1 :" + this.gif1);
+        // console.log("diceAnim : dé :" + this.dice1);
       } else {
         this.gif1 = false;
         this.gif2 = false;
         this.dice1 = true;
         this.dice2 = true;
-        console.log("diceAnim else car 2 dés : gif1 :" + this.gif1);
-        console.log("diceAnim else car 2 dés : dé : " + this.dice1);
+        // console.log("diceAnim else car 2 dés : gif1 :" + this.gif1);
+        // console.log("diceAnim else car 2 dés : dé : " + this.dice1);
       }
     },
 
     getFirstLifePoints() {
-      let startBtn = document.getElementById('startBtn');
-      startBtn.style.display="none";
+      let startBtn = document.getElementById("startBtn");
+      startBtn.style.display = "none";
       this.gif1 = true;
       this.gif2 = true;
-      console.log("getFirstLifePoints : gif1 :" + this.gif1);
-      console.log("getFirstLifePoints :  dé :" + this.dice1);
+      // console.log("getFirstLifePoints : gif1 :" + this.gif1);
+      // console.log("getFirstLifePoints :  dé :" + this.dice1);
       this.throwTheDice(2);
       this.lifePoints = (this.randomDice1 + this.randomDice2) * 4;
     },
     JoueurHitEnemy() {
-      this.log.push("C'est à vous d'attaquer.");
-      this.enemyLifePoints;
-      console.log(this.enemyLifePoints);
+      // this.log.push("C'est à vous d'attaquer.");
+      // this.enemyLifePoints;
+      // console.log(this.enemyLifePoints);
       //A aller chercher dans le json quand il sera mis en forme
 
       //le joueur attaque l'ennemi
@@ -411,10 +440,10 @@ let div = document.querySelectorAll(".btn");
       let total = this.randomDice1 + this.randomDice2;
       this.log.push("Vous attaquez de :  " + total + " (total des dés).");
 
-      if (total >= 6) {
+      if (total >= this.toHitEnemy) {
         this.log.push("Le coup est réussi.");
 
-        let damage = total - 6 + this.weapon - this.enemyArmor;
+        let damage = total - this.toHitEnemy + this.weapon - this.enemyArmor;
         this.log.push(
           "Vous faites à l'ennemi :  " + damage + " points de dégats."
         );
@@ -426,7 +455,6 @@ let div = document.querySelectorAll(".btn");
       if (this.enemyLifePoints <= 0) {
         this.displayMovement();
       }
-      
     },
 
     EnemyHitJoueur() {
@@ -448,29 +476,53 @@ let div = document.querySelectorAll(".btn");
         this.log.push("L'ennemi vous rate.");
       }
     },
-    fight(whoStart) {
-      if (whoStart == "player") {
-        while (this.enemyLifePoints > 5 || this.lifePoints > 0) {
-          this.JoueurHitEnemy();
-          if (this.enemyLifePoints <= 5) {
-            console.log("l'ennemi est assommé");
-          } else {
-            this.EnemyHitJoueur();
-          }
+    // fight(whoStart) {
+    //   if (whoStart == "player") {
+    //     while (this.enemyLifePoints > 5 || this.lifePoints > 0) {
+    //       this.JoueurHitEnemy();
+    //       if (this.enemyLifePoints <= 5) {
+    //         console.log("l'ennemi est assommé");
+    //       } else {
+    //         this.EnemyHitJoueur();
+    //       }
+    //     }
+    //   } else {
+    //     this.log.push("L'ennemie vous rate");
+    //   }
+
+    //   if (this.lifePoints <= 0) {
+    //     this.goTo(14);
+    //   }
+    // },
+
+    fight(playerInitiative) {
+      if (playerInitiative == 1) {
+        this.log.push("Vous commencez à frapper.");
+        this.JoueurHitEnemy();
+        if (this.enemyLifePoints <= 5) {
+          console.log("l'ennemi est assommé");
+        } else {
+          this.EnemyHitJoueur();
         }
+      } else if (playerInitiative == 2) {
+        this.log.push("L'ennemi commence");
+        this.EnemyHitJoueur();
       } else {
-        this.log.push("L'ennemie vous rate");
+        this.log.push(
+          "Veuillez lancer les dés pour déterminer qui commence à frapper, le score de gauche sera le vôtre, celui de droite, celui de votre adversaire."
+        );
+        let btnAttack = document.getElementsByClassName("btnAttack");
+        btnAttack[0].style.display = "block";
+        btnAttack[1].style.display = "block";
+        let startFightBtn = document.getElementsByClassName("startFightBtn");
+        startFightBtn[0].style.display = "none";
       }
 
       if (this.lifePoints <= 0) {
         this.goTo(14);
       }
     },
-
-    
   },
-  
-  
 };
 </script>
 
@@ -487,10 +539,10 @@ let div = document.querySelectorAll(".btn");
   outline: none;
 }
 
-@font-face {
+/*@font-face {
   font-family: "Irish";
   src: url("../assets/IrishUncialfabeta-Bold.ttf");
-}
+} */
 html,
 body {
   height: 100%;
@@ -511,7 +563,7 @@ h3 {
       rgba(227, 202, 171, 0.7),
       rgba(227, 202, 171, 0.7)
     ),
-     url("../assets/scrollBack.jpeg");
+    url("../assets/scrollBack.jpeg");
   background-repeat: no-repeat;
   background-position: center;
   position: relative;
@@ -613,7 +665,7 @@ h3 {
 }
 
 p {
-  font-family: Irish;
+  /*font-family: Irish;*/
   padding: 10px;
 }
 .diceThrow {
@@ -646,7 +698,7 @@ p {
   position: absolute;
   z-index: 10;
   box-shadow: 17px 14px 24px 5px rgba(0, 0, 0, 0.14);
-  display: none; 
+  display: none;
 }
 
 #game {
@@ -729,6 +781,9 @@ p {
 .btnChoices {
   margin-bottom: 20px;
 }
+.btnAttack {
+  display: none;
+}
 
 .fightDice {
   display: flex;
@@ -741,7 +796,7 @@ p {
   justify-content: space-evenly;
 
   width: 100%;
-  background-color: aqua;
+  /*background-color: aqua;*/
 }
 .close-container {
   position: relative;
@@ -818,19 +873,21 @@ p {
 }
 
 .btnSpell {
-width: 165px;
+  width: 165px;
 }
-table, th, td {
+table,
+th,
+td {
   border: 1px solid black;
   border-collapse: collapse;
 }
 table {
-width: 100%;
+  width: 100%;
 }
 th {
-height: 50px;
+  height: 50px;
 }
 td {
-height: 50px;
+  height: 50px;
 }
 </style>
