@@ -6,7 +6,7 @@
     <div class="superDiv">
       <div class="topDiv">
         <div class="firstElofTopDiv">
-          <button @click="getFirstLifePoints()" class="btn startBtn">
+          <button @click="getFirstLifePoints()" class="btn startBtn" id="startBtn">
             Commencer le jeu !
           </button>
 
@@ -388,6 +388,8 @@ let div = document.querySelectorAll(".btn");
     },
 
     getFirstLifePoints() {
+      let startBtn = document.getElementById('startBtn');
+      startBtn.style.display="none";
       this.gif1 = true;
       this.gif2 = true;
       console.log("getFirstLifePoints : gif1 :" + this.gif1);
@@ -418,7 +420,7 @@ let div = document.querySelectorAll(".btn");
         );
         this.enemyLifePoints = this.enemyLifePoints - damage;
         this.log.push(
-          "il reste à l'ennemi : " + this.enemyLifePoints + " points."
+          "Il reste à l'ennemi : " + this.enemyLifePoints + " points."
         );
       }
       if (this.enemyLifePoints <= 0) {
@@ -436,14 +438,14 @@ let div = document.querySelectorAll(".btn");
         let damage = total - 6 + this.enemyWeapon - this.playerArmor;
 
         this.log.push(
-          "L'ennemi réussit à vous toucher, il vous inflige: " +
+          "L'ennemi réussit à vous toucher, il vous inflige : " +
             damage +
-            " points de dégats"
+            " points de dégats."
         );
         this.remainingLifePoints = this.startingLifePoints - damage;
         this.lifePoints = this.remainingLifePoints;
       } else {
-        this.log.push("L'ennemie vous rate");
+        this.log.push("L'ennemi vous rate.");
       }
     },
     fight(whoStart) {
@@ -797,8 +799,9 @@ p {
   justify-content: space-evenly;
   align-items: center;
 }
-.divSorts {
-  width: 100%;
+.divSpells {
+  width: 98%;
+  margin-left: 1%;
   background-color: green;
   height: 50px;
   display: flex;
@@ -807,9 +810,27 @@ p {
 }
 .divFightBtn {
   width: 100%;
+  height: 300px;
   display: flex;
   flex-direction: column;
   align-items: space-evenly;
   justify-content: space-around;
+}
+
+.btnSpell {
+width: 165px;
+}
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+table {
+width: 100%;
+}
+th {
+height: 50px;
+}
+td {
+height: 50px;
 }
 </style>
