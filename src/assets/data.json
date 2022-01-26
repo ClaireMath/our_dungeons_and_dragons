@@ -24,7 +24,8 @@
           "maxDamage": 10,
           "playerArmor": false,
           "playerWeapon": false,
-          "playerInitiative": true
+          "playerInitiative": true,
+          "doubleDamage": true
         }
       ]
     },

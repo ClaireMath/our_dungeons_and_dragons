@@ -29,18 +29,27 @@
 </template>
 
 <script>
+import Action from "./Action";
 export default {
   name: "LeftPage",
   data() {
     return {
-      startingLifePoints: 20,
-      lifePoints: 10,
+      startingLifePoints: 0,
+      lifePoints: 0,
       pageOpened: false,
     };
   },
 
+  created: function () {
+    this.startingLifePoints = Action.startingLifePoints;
+    this.lifePoints = Action.lifePoints;
+  },
+
   methods: {
     toggleLeft() {
+      this.startingLifePoints = Action.startingLifePoints;
+    this.lifePoints = Action.lifePoints;
+    console.log("starting life points" + this.startingLifePoints);
       let hpBar = document.getElementById("hpBar");
 
       console.log(hpBar);
