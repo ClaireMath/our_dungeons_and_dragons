@@ -88,4 +88,9 @@ body {
   height: 100%;
   width: 100%;
 }
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+  
+}
 </style>

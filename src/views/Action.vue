@@ -6,7 +6,7 @@
     <div class="superDiv">
       <div class="topDiv">
         <div class="firstElofTopDiv">
-          <button @click="getFirstLifePoints()" class="btn startBtn">
+          <button @click="getFirstLifePoints()" class="btn startBtn" id="startBtn">
             Commencer le jeu !
           </button>
 
@@ -145,29 +145,57 @@
                   Attaque Ennemi
                 </button>
               </div>
-              <div class="divSorts">
+              <div class="divSpells">
                 <table>
-                  <thead>
-                    <th></th>
-                    <th>description</th>
-                    <th>Nombre de sorts restants</th>
-                    <th>Dégats</th>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <button class="btn">Doigt de feu I</button>
-                    </tr>
-                    <tr>
-                      blablabla
-                    </tr>
-                    <tr>
-                      9
-                    </tr>
-                    <tr>
-                      75
-                    </tr>
-                  </tbody>
-                </table>
+      <thead>
+        <th>Sorts</th>
+        <th>Description</th>
+        <th>Restants</th>
+        <th>Dommages</th>
+      </thead>
+      <tbody>
+        <tr>
+        <td>
+          <button class="btn btnSpell">Doigt de feu I</button>
+    </td>
+       
+        <td>Blablabla 2
+        </td>
+        <td>2</td>
+        <td>5</td>
+        </tr>
+         <tr>
+        <td>
+          <button class="btn btnSpell">Doigt de feu II</button>
+    </td>
+       
+        <td>Blablabla
+        </td>
+        <td>3</td>
+        <td>6</td>
+        </tr>
+           <tr>
+        <td>
+          <button class="btn btnSpell">Boule de feu I</button>
+    </td>
+       
+        <td>Blablabla
+        </td>
+        <td>3</td>
+        <td>6</td>
+        </tr>
+           <tr>
+        <td>
+          <button class="btn btnSpell">Boule de feu II</button>
+    </td>
+       
+        <td>Blablabla
+        </td>
+        <td>3</td>
+        <td>6</td>
+        </tr>
+      </tbody>
+    </table>
               </div>
             </div>
           </div>
@@ -348,6 +376,8 @@ export default {
     },
 
     getFirstLifePoints() {
+      let startBtn = document.getElementById('startBtn');
+      startBtn.style.display="none";
       this.gif1 = true;
       this.gif2 = true;
       console.log("getFirstLifePoints : gif1 :" + this.gif1);
@@ -378,7 +408,7 @@ export default {
         );
         this.enemyLifePoints = this.enemyLifePoints - damage;
         this.log.push(
-          "il reste à l'ennemi : " + this.enemyLifePoints + " points."
+          "Il reste à l'ennemi : " + this.enemyLifePoints + " points."
         );
       }
       if (this.enemyLifePoints <= 0) {
@@ -396,14 +426,14 @@ export default {
         let damage = total - 6 + this.enemyWeapon - this.playerArmor;
 
         this.log.push(
-          "L'ennemi réussit à vous toucher, il vous inflige: " +
+          "L'ennemi réussit à vous toucher, il vous inflige : " +
             damage +
-            " points de dégats"
+            " points de dégats."
         );
         this.remainingLifePoints = this.lifePoints - damage;
         this.lifePoints = this.remainingLifePoints;
       } else {
-        this.log.push("L'ennemie vous rate");
+        this.log.push("L'ennemi vous rate.");
       }
 
       if (this.lifePoints <= 0) {
@@ -736,8 +766,9 @@ p {
   justify-content: space-evenly;
   align-items: center;
 }
-.divSorts {
-  width: 100%;
+.divSpells {
+  width: 98%;
+  margin-left: 1%;
   background-color: green;
   height: 50px;
   display: flex;
@@ -746,9 +777,27 @@ p {
 }
 .divFightBtn {
   width: 100%;
+  height: 300px;
   display: flex;
   flex-direction: column;
   align-items: space-evenly;
   justify-content: space-around;
+}
+
+.btnSpell {
+width: 165px;
+}
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+table {
+width: 100%;
+}
+th {
+height: 50px;
+}
+td {
+height: 50px;
 }
 </style>
