@@ -1,6 +1,5 @@
 <template>
   <div class="big_ctn">
-    <div><image-Display/></div>
     <!--<img class="backgroundImg" src="../assets/scrollBack.jpeg" alt="background">-->
     <!-- <div class="gameContainer"> -->
     <div><LeftPage /></div>
@@ -9,12 +8,12 @@
         <div class="firstElofTopDiv">
           <button @click="getFirstLifePoints()" class="btn startBtn">
             Commencer le jeu !
-        </button>
+          </button>
           <p v-if="startingLifePoints" class="startingLifePoints">
             Vous partez avec {{ startingLifePoints }} points de vie.
           </p>
         </div>
-
+        <!--<div><image-Display /><img :src="require('../assets/' + img)"/></div>-->
         <div class="dicePackage">
           <div class="diceHidden">
             <div v-if="diceResult" class="diceResult">
@@ -76,8 +75,8 @@
       </div>
       <div id="game">
         <p class="paragraphe" v-html="MyJson.book[Id].paragraph"></p>
-        
-         <!--<img :src="require(MyJson.book[Id].img)" />-->
+
+        <img :src="require('../assets/' + MyJson.book[Id].img)" />
         <div class="combat">
           <h1>Fight</h1>
           <button @click="closeWindow">X</button>
@@ -164,11 +163,10 @@ import LeftPage from "./LeftPage.vue";
 //import toggleLeft from "./LeftPage.vue";
 //import RightPage from "./RightPage.vue";
 import json from "../assets/data.json";
-import imageDisplay from "../components/imageDisplay.vue";
-
+//import imageDisplay from "../components/imageDisplay.vue";
 
 export default {
-  components: { LeftPage, imageDisplay },
+  components: { LeftPage},
   name: "Action",
   props: {},
   data() {
@@ -221,6 +219,7 @@ export default {
       );
       audio.play();
     },
+
 
     throwTheDice(nbOfDice) {
       if (nbOfDice == 1) {
@@ -350,15 +349,18 @@ export default {
         }
       }
     },
-    display() {
-      imageDisplay();
 
-    }
+    
   },
+  
+  
 };
 </script>
 
 <style scoped>
+:root {
+  --backgroungImg: "";
+}
 *,
 *::after,
 *::before {
@@ -392,7 +394,7 @@ h3 {
       rgba(227, 202, 171, 0.7),
       rgba(227, 202, 171, 0.7)
     ),
-    url("../assets/Bat.png"), url("../assets/scrollBack.jpeg");
+     url("../assets/scrollBack.jpeg");
   background-repeat: no-repeat;
   background-position: center;
   position: relative;
