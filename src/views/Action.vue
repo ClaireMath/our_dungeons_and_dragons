@@ -139,14 +139,14 @@
           </div>
           <div class="action">
             <button @click="JoueurHitEnemy" class="btn">Attaque</button>
-            <button @click="EnemyHitJoueur" class="btn">Attaque Ennemie</button>
+            <button @click="EnemyHitJoueur" class="btn">Attaque Ennemi</button>
             <hr>
             <div class="divSorts">
-            <button @click="FingerAttack" class="btn">Doigt de feu I</button>
-            <button @click="FingerAttack2" class="btn">Doigt de feu II</button>
+            <button @click="FingerAttack" class="btn">Doigts de feu I</button>
+            <button @click="FingerAttack2" class="btn">Doigts de feu II</button>
          
-            <button @click="FireBallAttack1" class="btn">Boules de feu I</button>
-            <button @click="FireBallAttack2" class="btn">Boules de feu II</button>
+            <button @click="FireBallAttack1" class="btn">Boule de feu I</button>
+            <button @click="FireBallAttack2" class="btn">Boule de feu II</button>
              
           </div>
             <!-- <button class="btn">Doigt de feu I</button> -->
@@ -206,10 +206,14 @@ export default {
       lifePoints: 0,
       remainingLifePoints: 0,
       enemyLifePoints: 0,
+      fireFingerDamagePoints: 10,
+      spellDamagePoints: 75,
       weapon: 5,
       enemyWeapon: 0,
       playerArmor: 0,
       enemyArmor: 0,
+      counterFinger1: 0,
+      counterFinger2: 0,
       potion: "",
       log: [],
       img: "",
@@ -217,9 +221,9 @@ export default {
   },
   created: function () {
     this.Id = this.$route.query.id;
-    this.enemyLifePoints = this.MyJson.book[this.Id].ennemie[0].enemyLifePoints;
-    this.enemyWeapon = this.MyJson.book[this.Id].ennemie[0].attack;
-    this.enemyArmor = this.MyJson.book[this.Id].ennemie[0].armor;
+    this.enemyLifePoints = this.MyJson.book[this.Id].enemy[0].enemyLifePoints;
+    this.enemyWeapon = this.MyJson.book[this.Id].enemy[0].enemyAttack;
+    this.enemyArmor = this.MyJson.book[this.Id].enemy[0].enemyArmor;
     // this.getFirstLifePoints();
     // this.fight("player")
   },
@@ -232,48 +236,36 @@ export default {
 
     FingerAttack() {
     let div = document.querySelectorAll(".btn");
-      console.log(div[3]);
-      div[3].style.visibility = "hidden";
-      let damagePoints = 10;
-      console.log(damagePoints);
-      let enemyLifePoints = this.MyJson.book[this.Id].ennemie[0].enemyLifePoints;
-      this.enemyLifePoints = enemyLifePoints - damagePoints;
-      console.log(this.enemyLifePoints);
-    
+      this.enemyLifePoints = this.enemyLifePoints - this.fireFingerDamagePoints;
+      this.counterFinger1 += 1;
+      if (this.counterFinger1 >= 5) {
+        div[3].style.display = "none";
+      }
+
+
+     
     },
 
     FingerAttack2() {
     let div = document.querySelectorAll(".btn");
-      console.log(div[4]);
-      div[4].style.visibility = "hidden";
-      let damagePoints = 10;
-      console.log(damagePoints);
-      let enemyLifePoints = this.MyJson.book[this.Id].ennemie[0].lifePoints;
-      this.enemyLifePoints = enemyLifePoints - damagePoints;
-      console.log(this.enemyLifePoints);
+      this.enemyLifePoints = this.enemyLifePoints - this.fireFingerDamagePoints;
+      this.counterFinger2 += 1;
+      if (this.counterFinger2 >= 5) {
+        div[4].style.display = "none";
+      }
     
     },
 
 FireBallAttack1() {
 let div = document.querySelectorAll(".btn");
-      console.log(div[5]);
        div[5].style.display = "none";
-       let spellDamagePoints = 75;
-      console.log(spellDamagePoints);
-      
-      this.enemyLifePoints = parseInt(this.enemyLifePoints) - parseInt(spellDamagePoints);
-      console.log("enemy life point =" + parseInt(this.enemyLifePoints));
+      this.enemyLifePoints = this.enemyLifePoints - this.spellDamagePoints;
 },
 
 FireBallAttack2() {
 let div = document.querySelectorAll(".btn");
-      console.log(div[6]);
        div[6].style.display = "none";
-       let spellDamagePoints = 75;
-      console.log(spellDamagePoints);
-      let enemyLifePoints2 = this.enemyLifePoints;
-      this.enemyLifePoints2 = enemyLifePoints2 - spellDamagePoints;
-      console.log(this.enemyLifePoints2);
+      this.enemyLifePoints = this.enemyLifePoints - this.spellDamagePoints;
       
 },
 
@@ -287,12 +279,12 @@ let div = document.querySelectorAll(".btn");
       elem.style.display = "block";
     },
     verifCombat() {
-      if (this.MyJson.book[this.Id].ennemie != undefined) {
+      if (this.MyJson.book[this.Id].enemy != undefined) {
         this.unDisplayMovement();
 
-        this.enemyLifePoints = this.MyJson.book[this.Id].ennemie[0].vie;
-        this.enemyWeapon = this.MyJson.book[this.Id].ennemie[0].attaque;
-        this.enemyArmor = this.MyJson.book[this.Id].ennemie[0].defense;
+        this.enemyLifePoints = this.MyJson.book[this.Id].enemy[0].enemyLifePoints;
+        this.enemyWeapon = this.MyJson.book[this.Id].enemy[0].enemyAttack;
+        this.enemyArmor = this.MyJson.book[this.Id].enemy[0].enemyArmor;
       } else {
         var elem = document.getElementById("displayFight");
         elem.style.display = "none";
@@ -302,7 +294,7 @@ let div = document.querySelectorAll(".btn");
       var div = document.getElementById("combat");
 
       div.style.display = "block";
-      this.enemyLifePoints = this.MyJson.book[this.Id].ennemie[0].lifePoints;
+      this.enemyLifePoints = this.MyJson.book[this.Id].enemy[0].enemyLifePoints;
       console.log("enemy life point =" + this.enemyLifePoints);
     },
   
