@@ -1,7 +1,7 @@
 <template>
   <div id="app">
 
-    <div><Header/></div>
+    <Header/>
 
 
     <!--<div id="nav">
@@ -9,7 +9,6 @@
       <router-link to="/about">About</router-link> |
       <router-link to="/action">Let's play !</router-link>
     </div>-->
-
     <!-- <div id="nav">
       <router-link to="/">Home</router-link> |
       <router-link to="/about">About</router-link> |
@@ -38,11 +37,13 @@ import Header from './views/header.vue';
 import Footer from './views/Footer.vue';
 
 
+
 export default {
   name: 'App',
   components: {
     Header, Footer
     
+      
    
   }
 }

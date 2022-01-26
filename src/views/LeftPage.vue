@@ -15,7 +15,7 @@
 
       <h3 id="restart">Recommencer</h3>
 
-      <h3 id="sound">Son</h3>
+      <h3 id="param" @click="emitOpenParam">Paramètres</h3>
       <h3></h3>
     </div>
     <div id="leftBtn">
@@ -65,7 +65,7 @@ export default {
       let sorts = document.getElementById("sorts");
       let save = document.getElementById("save");
       let restart = document.getElementById("restart");
-      let sound = document.getElementById("sound");
+      let sound = document.getElementById("param");
       this.pageOpened = !this.pageOpened;
       if (this.pageOpened == true) {
         
@@ -107,6 +107,10 @@ export default {
       console.log(this.pageOpened);
       console.log(document.getElementById("leftPage").style.width);
     },
+    emitOpenParam(){
+      
+      this.$emit("openParam",{message: "parametre"})
+    }
     
   },
   
@@ -190,23 +194,28 @@ export default {
 #inventaire {
   position: relative;
   left: -200px;
+  cursor:pointer;
 }
 #sorts {
   position: relative;
   left: -200px;
+  cursor:pointer;
 }
 
 #save {
   position: relative;
   left: -200px;
+  cursor:pointer;
 }
 #restart {
   position: relative;
   left: -200px;
+  cursor:pointer;
 }
-#sound {
+#param {
   position: relative;
   left: -200px;
+  cursor:pointer;
 }
 
 h3 {
