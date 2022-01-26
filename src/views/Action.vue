@@ -77,7 +77,6 @@
 
       <div id="game">
         <p class="paragraphe" v-html="MyJson.book[Id].paragraph"></p>
-<<<<<<< HEAD
         
         <div class="combat" id="combat">
           <h1>Combat</h1>
@@ -85,13 +84,6 @@
             <div class="leftright"></div>
             <div class="rightleft"></div>
           </div>
-=======
-
-        <img :src="require('../assets/' + MyJson.book[Id].img)" />
-        <div class="combat">
-          <h1>Fight</h1>
-          <button @click="closeWindow">X</button>
->>>>>>> Baptiste
           <div class="container">
             <div class="player">
               <h2>Joueur</h2>
@@ -146,7 +138,6 @@
             </div>
           </div>
           <div class="action">
-<<<<<<< HEAD
             <div class="divFightBtn">
               <div class="divAttackBtn">
                 <button @click="JoueurHitEnemy" class="btn">Attaque</button>
@@ -179,12 +170,6 @@
                 </table>
               </div>
             </div>
-=======
-            <button @click="JoueurHitEnemy" class="btn">Attaque</button>
-            <button @click="EnemyHitJoueur" class="btn">Attaque Ennemie</button>
-            <hr />
-            <button class="btn">Doigt de feu I</button>
->>>>>>> Baptiste
           </div>
           <div class="divOfChoicesBtn">
             <div id="movementButton">
@@ -255,7 +240,6 @@ export default {
     this.enemyLifePoints = this.MyJson.book[this.Id].enemy[0].lifePoints;
     this.enemyWeapon = this.MyJson.book[this.Id].enemy[0].attack;
     this.enemyArmor = this.MyJson.book[this.Id].enemy[0].armor;
-<<<<<<< HEAD
     // this.getFirstLifePoints();
     // this.fight("player")
   },
@@ -294,13 +278,9 @@ export default {
       var div = document.getElementById("combat");
       div.style.display = "block";
     },
-=======
-    let img = this.imageDisplay();
-    console.log(img);
-  },
+  
 
-  methods: {
->>>>>>> Baptiste
+  
     closeWindow() {
       let div = document.getElementsByClassName("combat");
       div[0].style.display = "none";
