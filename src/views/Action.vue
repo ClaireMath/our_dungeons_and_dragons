@@ -86,13 +86,13 @@
           </div>
           <div class="container">
             <div class="player">
-              <h2>Joueur</h2>
+              <h2>Pip</h2>
               <h4>Points de vie: {{ lifePoints }}</h4>
               <h4>Dégats de l'arme: {{ weapon }}</h4>
               <h4>Points d'armure: {{ playerArmor }}</h4>
             </div>
             <div class="enemy">
-              <h2>Ennemi</h2>
+              <h2>{{name}}</h2>
               <h4>Points de vie: {{ enemyLifePoints }}</h4>
               <h4>Dégats de l'arme: {{ enemyWeapon }}</h4>
               <h4>Points d'armure: {{ enemyArmor }}</h4>
@@ -223,6 +223,7 @@ export default {
   },
   created: function () {
     this.Id = this.$route.query.id;
+    this.name = this.MyJson.book[this.Id].enemy[0].name;
     this.enemyLifePoints = this.MyJson.book[this.Id].enemy[0].enemyLifePoints;
     this.enemyWeapon = this.MyJson.book[this.Id].enemy[0].enemyAttack;
     this.enemyArmor = this.MyJson.book[this.Id].enemy[0].enemyArmor;
