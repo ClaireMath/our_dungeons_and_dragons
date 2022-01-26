@@ -143,6 +143,7 @@
             <hr>
             <div class="divSorts">
             <button @click="FingerAttack" class="btn">Doigt de feu I</button>
+            <button @click="FingerAttack2" class="btn">Doigt de feu II</button>
          
             <button @click="FireBallAttack1" class="btn">Boules de feu I</button>
             <button @click="FireBallAttack2" class="btn">Boules de feu II</button>
@@ -228,33 +229,52 @@ export default {
 
   methods: {
 
-    AddFingertoLife() {
-      let elem = document.querySelectorAll(".btn");
-      this.enemyLifePoints - damagePoints;
-    },
 
     FingerAttack() {
     let div = document.querySelectorAll(".btn");
       console.log(div[3]);
-  div[3].style.visibility = "hidden";
+      div[3].style.visibility = "hidden";
+      let damagePoints = 10;
+      console.log(damagePoints);
+      let enemyLifePoints = this.MyJson.book[this.Id].ennemie[0].lifePoints;
+      this.enemyLifePoints = enemyLifePoints - damagePoints;
+      console.log(this.enemyLifePoints);
+    
+    },
 
-      if (this.FingerAttack) {
-        let damagePoints = 10,
-        this.AddFingertoLife();
-        
-      }
+    FingerAttack2() {
+    let div = document.querySelectorAll(".btn");
+      console.log(div[4]);
+      div[4].style.visibility = "hidden";
+      let damagePoints = 10;
+      console.log(damagePoints);
+      let enemyLifePoints = this.MyJson.book[this.Id].ennemie[0].lifePoints;
+      this.enemyLifePoints = enemyLifePoints - damagePoints;
+      console.log(this.enemyLifePoints);
+    
     },
 
 FireBallAttack1() {
 let div = document.querySelectorAll(".btn");
-      console.log(div[4]);
-       div[4].style.visibility = "hidden";
+      console.log(div[5]);
+       div[5].style.display = "none";
+       let spellDamagePoints = 75;
+      console.log(spellDamagePoints);
+      
+      this.enemyLifePoints = parseInt(this.enemyLifePoints) - parseInt(spellDamagePoints);
+      console.log("enemy life point =" + parseInt(this.enemyLifePoints));
 },
 
 FireBallAttack2() {
 let div = document.querySelectorAll(".btn");
-      console.log(div[5]);
-       div[5].style.visibility = "hidden";
+      console.log(div[6]);
+       div[6].style.display = "none";
+       let spellDamagePoints = 75;
+      console.log(spellDamagePoints);
+      let enemyLifePoints2 = this.enemyLifePoints;
+      this.enemyLifePoints2 = enemyLifePoints2 - spellDamagePoints;
+      console.log(this.enemyLifePoints2);
+      
 },
 
 
@@ -280,7 +300,10 @@ let div = document.querySelectorAll(".btn");
     },
     displayFightDiv() {
       var div = document.getElementById("combat");
+
       div.style.display = "block";
+      this.enemyLifePoints = this.MyJson.book[this.Id].ennemie[0].lifePoints;
+      console.log("enemy life point =" + this.enemyLifePoints);
     },
     closeWindow() {
       let div = document.getElementsByClassName("combat");
