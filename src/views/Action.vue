@@ -77,7 +77,7 @@
 
       <div id="game">
         <p class="paragraphe" v-html="MyJson.book[Id].paragraph"></p>
-
+        
         <div class="combat" id="combat">
           <h1>Combat</h1>
           <div @click="closeWindow" class="close-container">
