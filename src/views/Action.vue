@@ -76,17 +76,17 @@
       <div id="game">
         <p class="paragraphe" v-html="MyJson.book[Id].paragraph"></p>
 
-        <!-- <div class="combat">
+         <div class="combat">
           <h1>Fight</h1>
           <div class="container">
             <div class="player">
               <h2>Player</h2>
               <h4>Points de vie: {{ lifePoints }}</h4>
-              <h4>Dégat de l'arme: {{ weapon }}</h4>
-              <h4>Point d'armure: {{ playerArmor }}</h4>
+              <h4>Dégats de l'arme: {{ weapon }}</h4>
+              <h4>Points d'armure: {{ playerArmor }}</h4>
             </div>
             <div class="enemy">
-              <h2>Enemy</h2>
+              <h2>Ennemi</h2>
               <h4>Points de vie: {{ enemyLifePoints }}</h4>
               <h4>Dégat de l'arme: {{ enemyWeapon }}</h4>
               <h4>Point d'armure: {{ enemyArmor }}</h4>
@@ -100,7 +100,7 @@
           <div class="action">
             <button @click="JoueurHitEnemy">Attaquer</button>
           </div>
-        </div> -->
+        </div>
         <div class="divOfChoicesBtn">
           <div
             v-for="choices in MyJson['book'][Id]['choices']"
@@ -467,7 +467,7 @@ p {
   margin-left: 20px;
   top: 0px;
   position: relative;
-  z-index: ;
+  
   width: 210px;
   height: 40px;
 }

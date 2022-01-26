@@ -113,6 +113,7 @@ export default {
 }
 
 #lStar {
+  cursor: pointer;
   width: 150px;
   transition-property: transform;
   transition-duration: 1000ms;
