@@ -19,7 +19,7 @@
           "name": "Jake le teigneux",
           "enemyLifePoints": 20,
           "enemyAttack": 0,
-        "enemyArmor": 0,
+          "enemyArmor": 0,
           "toHitEnemy": 8,
           "maxDamage": 10,
           "playerArmor": false,
