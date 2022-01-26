@@ -1,5 +1,6 @@
 <template>
   <div class="big_ctn">
+    <div><image-Display/></div>
     <!--<img class="backgroundImg" src="../assets/scrollBack.jpeg" alt="background">-->
     <!-- <div class="gameContainer"> -->
     <div><LeftPage /></div>
@@ -8,7 +9,7 @@
         <div class="firstElofTopDiv">
           <button @click="getFirstLifePoints()" class="btn startBtn">
             Commencer le jeu !
-          </button>
+        </button>
           <p v-if="startingLifePoints" class="startingLifePoints">
             Vous partez avec {{ startingLifePoints }} points de vie.
           </p>
@@ -163,9 +164,11 @@ import LeftPage from "./LeftPage.vue";
 //import toggleLeft from "./LeftPage.vue";
 //import RightPage from "./RightPage.vue";
 import json from "../assets/data.json";
+import imageDisplay from "../components/imageDisplay.vue";
+
 
 export default {
-  components: { LeftPage },
+  components: { LeftPage, imageDisplay },
   name: "Action",
   props: {},
   data() {
@@ -197,8 +200,8 @@ export default {
     this.enemyLifePoints = this.MyJson.book[this.Id].enemy[0].lifePoints;
     this.enemyWeapon = this.MyJson.book[this.Id].enemy[0].attack;
     this.enemyArmor = this.MyJson.book[this.Id].enemy[0].armor;
-    // this.getFirstLifePoints();
-    // this.fight("player")
+    let img = this.imageDisplay();
+    console.log(img);
   },
 
   methods: {
@@ -347,6 +350,10 @@ export default {
         }
       }
     },
+    display() {
+      imageDisplay();
+
+    }
   },
 };
 </script>

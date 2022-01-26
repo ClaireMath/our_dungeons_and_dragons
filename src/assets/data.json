@@ -17,10 +17,10 @@
         "ennemie": [
         {
           "name": "Jake le teigneux",
-          "lifePoints": 20,
-          "attack": 0,
-          "armor": 0,
-          "defense": 8,
+          "enemyLifePoints": 20,
+          "enemyAttack": 0,
+        "enemyArmor": 0,
+          "toHitEnemy": 8,
           "maxDamage": 10,
           "playerArmor": false,
           "playerWeapon": false,
@@ -154,9 +154,9 @@
       "ennemie": [
         {
           "name": "Sanglier",
-          "lifePoints": 25,
-          "attack": 4,
-          "armor": 0,
+          "enemyLifePoints": 25,
+          "enemyAttack": 4,
+          "enemyArmor": 0,
           "playerArmor": false,
           "playerWeapon": true
         }
@@ -310,9 +310,9 @@
       "ennemie": [
         {
           "name": "Loup",
-          "lifePoints": 20,
-          "attack": 3,
-          "armor": 0,
+          "enemyLifePoints": 20,
+          "enemyAttack": 3,
+          "enemyArmor": 0,
           "playerArmor": false,
           "playerWeapon": true,
           "playerInitiative": true
@@ -415,21 +415,21 @@
       "ennemie": [
         {
           "name": "Molosse 1",
-          "lifePoints": 20,
-          "attack": 3,
-          "armor": 0,
+          "enemyLifePoints": 20,
+          "enemyAttack": 3,
+          "enemyArmor": 0,
           "playerArmor": true,
           "playerWeapon": true,
-          "toHit": 5
+          "toHitPlayer": 5
         },
         {
           "name": "Molosse 2",
-          "lifePoints": 20,
-          "attack": 3,
-          "armor": 0,
+          "enemyLifePoints": 20,
+          "enemyAttack": 3,
+          "enemyArmor": 0,
           "playerArmor": true,
           "playerWeapon": true,
-          "toHit": 5
+          "toHitPlayer": 5
         }
       ]
     },
@@ -549,12 +549,12 @@
       "ennemie": [
         {
           "name": "Tas de terreau",
-          "lifePoints": 35,
-          "attack": 4,
-          "armor": 0,
+          "enemyLifePoints": 35,
+          "enemyAttack": 4,
+          "enemyArmor": 0,
           "playerArmor": true,
           "playerWeapon": true,
-          "toHit": 5,
+          "toHitPlayer": 5,
           "bribe": 1
         }
       ]
@@ -679,9 +679,9 @@
       "ennemie": [
         {
           "name": "Zombie 1",
-          "lifePoints": 1,
-          "attack": 0,
-          "armor": 0,
+          "enemyLifePoints": 1,
+          "enemyAttack": 0,
+          "enemyArmor": 0,
           "playerArmor": true,
           "playerWeapon": true,
           "bribe": 2,
@@ -689,9 +689,9 @@
         },
         {
           "name": "Zombie 2",
-          "lifePoints": 1,
-          "attack": 0,
-          "armor": 0,
+          "enemyLifePoints": 1,
+          "enemyAttack": 0,
+          "enemyArmor": 0,
           "playerArmor": true,
           "playerWeapon": true,
           "bribe": 2,
@@ -699,9 +699,9 @@
         },
         {
           "name": "Zombie 3",
-          "lifePoints": 1,
-          "attack": 0,
-          "armor": 0,
+          "enemyLifePoints": 1,
+          "enemyAttack": 0,
+          "enemyArmor": 0,
           "playerArmor": true,
           "playerWeapon": true,
           "bribe": 2,
@@ -709,9 +709,9 @@
         },
         {
           "name": "Zombie 4",
-          "lifePoints": 1,
-          "attack": 0,
-          "armor": 0,
+          "enemyLifePoints": 1,
+          "enemyAttack": 0,
+          "enemyArmor": 0,
           "playerArmor": true,
           "playerWeapon": true,
           "bribe": 2,
@@ -719,9 +719,9 @@
         },
         {
           "name": "Zombie 5",
-          "lifePoints": 1,
-          "attack": 0,
-          "armor": 0,
+          "enemyLifePoints": 1,
+          "enemyAttack": 0,
+          "enemyArmor": 0,
           "playerArmor": true,
           "playerWeapon": true,
           "bribe": 2,
@@ -729,9 +729,9 @@
         },
         {
           "name": "Zombie 6",
-          "lifePoints": 1,
-          "attack": 0,
-          "armor": 0,
+          "enemyLifePoints": 1,
+          "enemyAttack": 0,
+          "enemyArmor": 0,
           "playerArmor": true,
           "playerWeapon": true,
           "bribe": 2,
@@ -783,9 +783,9 @@
       "ennemie": [
         {
           "name": "Squelette",
-          "lifePoints": 1,
-          "attack": 0,
-          "armor": 0,
+          "enemyLifePoints": 1,
+          "enemyAttack": 0,
+          "enemyArmor": 0,
           "playerArmor": true,
           "playerWeapon": true,
           "toHitEnemy": 10
@@ -832,12 +832,12 @@
       "ennemie": [
         {
           "name": "Vieillard",
-          "lifePoints": 25,
-          "attack": 0,
-          "armor": 0,
+          "enemyLifePoints": 25,
+          "enemyAttack": 0,
+          "enemyArmor": 0,
           "playerArmor": true,
           "playerWeapon": true,
-          "Initiative": false
+          "playerInitiative": false
         }
       ]
     },
@@ -1013,12 +1013,12 @@
       "ennemie": [
         {
           "name": "Araignée",
-          "lifePoints": 33,
-          "attack": 3,
-          "armor": 0,
+          "enemyLifePoints": 33,
+          "enemyAttack": 3,
+          "enemyArmor": 0,
           "playerArmor": true,
           "playerWeapon": true,
-          "toHit": 4,
+          "toHitPlayer": 4,
           "poison": 3
         }
       ]
@@ -1157,12 +1157,12 @@
       "ennemie": [
         {
           "name": "Serpent",
-          "lifePoints": 12,
-          "attack": 99,
-          "armor": 0,
+          "enemyLifePoints": 12,
+          "enemyAttack": 99,
+          "enemyArmor": 0,
           "playerArmor": true,
           "playerWeapon": true,
-          "toHit": 6
+          "toHitPlayer": 6
         }
       ]
     },
@@ -1338,21 +1338,21 @@
       "ennemie": [
         {
           "name": "Garde 1",
-          "lifePoints": 12,
-          "attack": 2,
-          "armor": 2,
+          "enemyLifePoints": 12,
+          "enemyAttack": 2,
+          "enemyArmor": 2,
           "playerArmor": true,
           "playerWeapon": true,
-          "initiative": false
+          "playerInitiative": false
         },
         {
           "name": "Garde 2",
-          "lifePoints": 12,
-          "attack": 2,
-          "armor": 2,
+          "enemyLifePoints": 12,
+          "enemyAttack": 2,
+          "enemyArmor": 2,
           "playerArmor": true,
           "playerWeapon": true,
-          "initiative": false
+          "playerInitiative": false
         }
       ]
     },
@@ -1406,12 +1406,12 @@
       "ennemie": [
         {
           "name": "???",
-          "lifePoints": 40,
-          "attack": 5,
-          "armor": 0,
+          "enemyLifePoints": 40,
+          "enemyAttack": 5,
+          "enemyArmor": 0,
           "playerArmor": true,
           "playerWeapon": true,
-          "toHit": 6
+          "toHitPlayer": 6
         }
       ]
     },
@@ -1487,21 +1487,21 @@
       "ennemie": [
         {
           "name": "Garde 1",
-          "lifePoints": 12,
-          "attack": 2,
-          "armor": 2,
+          "enemyLifePoints": 12,
+          "enemyAttack": 2,
+          "enemyArmor": 2,
           "playerArmor": true,
           "playerWeapon": true,
-          "initiative": true
+          "playerInitiative": true
         },
         {
           "name": "Garde 2",
-          "lifePoints": 12,
-          "attack": 2,
-          "armor": 2,
+          "enemyLifePoints": 12,
+          "enemyAttack": 2,
+          "enemyArmor": 2,
           "playerArmor": true,
           "playerWeapon": true,
-          "initiative": true
+          "playerInitiative": true
         }
       ]
     },
@@ -1531,13 +1531,13 @@
       "ennemie": [
         {
           "name": "Farfadet",
-          "lifePoints": 40,
-          "attack": 0,
-          "armor": 0,
+          "enemyLifePoints": 40,
+          "enemyAttack": 0,
+          "enemyArmor": 0,
           "playerArmor": true,
           "playerWeapon": true,
-          "initiative": true,
-          "toHit": 6
+          "playerInitiative": true,
+          "toHitPlayer": 6
         }
       ]
     },
@@ -1567,13 +1567,13 @@
       "ennemie": [
         {
           "name": "Garde",
-          "lifePoints": 20,
-          "attack": 2,
-          "armor": 2,
+          "enemyLifePoints": 20,
+          "enemyAttack": 2,
+          "enemyArmor": 2,
           "playerArmor": true,
           "playerWeapon": true,
-          "initiative": false,
-          "toHit": 3,
+          "playerInitiative": false,
+          "toHitPlayer": 3,
           "bribe": 3
         }
       ]
@@ -1927,22 +1927,22 @@
       "ennemie": [
         {
           "name": "Molosse 1",
-          "lifePoints": 25,
-          "attack": 4,
-          "armor": 0,
+          "enemyLifePoints": 25,
+          "enemyAttack": 4,
+          "enemyArmor": 0,
           "playerArmor": true,
           "playerWeapon": true,
-          "initiative": true,
+          "playerInitiative": true,
           "bribe": 4
         },
         {
           "name": "Molosse 2",
-          "lifePoints": 25,
-          "attack": 4,
-          "armor": 0,
+          "enemyLifePoints": 25,
+          "enemyAttack": 4,
+          "enemyArmor": 0,
           "playerArmor": true,
           "playerWeapon": true,
-          "initiative": true,
+          "playerInitiative": true,
           "bribe": 4
         }
       ]
@@ -2072,13 +2072,13 @@
       "ennemie": [
         {
           "name": "Ansalom",
-          "lifePoints": 150,
+          "enemyLifePoints": 150,
           "magicAttack": 10,
-          "armor": 0,
+          "enemyArmor": 0,
           "playerArmor": true,
           "playerWeapon": true,
-          "initiative": true,
-          "toHit": 5
+          "playerInitiative": true,
+          "toHitPlayer": 5
         }
       ]
     },
@@ -2154,14 +2154,14 @@
       "ennemie": [
         {
           "name": "Garde",
-          "lifePoints": 20,
-          "attack": 2,
-          "armor": 1,
+          "enemyLifePoints": 20,
+          "enemyAttack": 2,
+          "enemyArmor": 1,
           "playerArmor": true,
           "playerWeapon": true,
-          "initiative": true,
+          "playerInitiative": true,
           "bribe": 3,
-          "toHit": 7
+          "toHitPlayer": 7
         }
       ]
     },
@@ -2195,12 +2195,12 @@
       "ennemie": [
         {
           "name": "Démon",
-          "lifePoints": 40,
-          "attack": 5,
-          "armor": 4,
+          "enemyLifePoints": 40,
+          "enemyAttack": 5,
+          "enemyArmor": 4,
           "playerArmor": true,
           "playerWeapon": true,
-          "initiative": true,
+          "playerInitiative": true,
           "toHitEnemy": 8
         }
       ]
@@ -2246,9 +2246,9 @@
       "ennemie": [
         {
           "name": "Vampire",
-          "lifePoints": 25,
-          "attack": 0,
-          "armor": 0,
+          "enemyLifePoints": 25,
+          "enemyAttack": 0,
+          "enemyArmor": 0,
           "playerArmor": true,
           "playerWeapon": true,
           "bribe": 4,
