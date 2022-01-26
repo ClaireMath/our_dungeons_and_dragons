@@ -14,7 +14,7 @@
             Vous partez avec {{ startingLifePoints }} points de vie.
           </p>
         </div>
-
+        <!--<div><image-Display /><img :src="require('../assets/' + img)"/></div>-->
         <div class="dicePackage">
           <div class="diceHidden">
             <div v-if="diceResult" class="diceResult">
@@ -77,7 +77,7 @@
 
       <div id="game">
         <p class="paragraphe" v-html="MyJson.book[Id].paragraph"></p>
-
+        
         <div class="combat" id="combat">
           <h1>Combat</h1>
           <div @click="closeWindow" class="close-container">
@@ -185,10 +185,10 @@ import LeftPage from "./LeftPage.vue";
 //import toggleLeft from "./LeftPage.vue";
 //import RightPage from "./RightPage.vue";
 import json from "../assets/data.json";
-
+//import imageDisplay from "../components/imageDisplay.vue";
 
 export default {
-  components: { LeftPage },
+  components: { LeftPage},
   name: "Action",
   props: {},
   data() {
@@ -212,7 +212,7 @@ export default {
       enemyArmor: 0,
       potion: "",
       log: [],
-      img: ""
+      img: "",
     };
   },
   created: function () {
@@ -305,6 +305,9 @@ let div = document.querySelectorAll(".btn");
       this.enemyLifePoints = this.MyJson.book[this.Id].ennemie[0].lifePoints;
       console.log("enemy life point =" + this.enemyLifePoints);
     },
+  
+
+  
     closeWindow() {
       let div = document.getElementsByClassName("combat");
       div[0].style.display = "none";
@@ -321,6 +324,7 @@ let div = document.querySelectorAll(".btn");
       );
       audio.play();
     },
+
 
     throwTheDice(nbOfDice) {
       if (nbOfDice == 1) {
@@ -427,8 +431,22 @@ let div = document.querySelectorAll(".btn");
             damage +
             " points de dégats"
         );
-        this.remainingLifePoints = this.lifePoints - damage;
+        this.remainingLifePoints = this.startingLifePoints - damage;
         this.lifePoints = this.remainingLifePoints;
+      } else {
+        this.log.push("L'ennemie vous rate");
+      }
+    },
+    fight(whoStart) {
+      if (whoStart == "player") {
+        while (this.enemyLifePoints > 5 || this.lifePoints > 0) {
+          this.JoueurHitEnemy();
+          if (this.enemyLifePoints <= 5) {
+            console.log("l'ennemi est assommé");
+          } else {
+            this.EnemyHitJoueur();
+          }
+        }
       } else {
         this.log.push("L'ennemie vous rate");
       }
@@ -437,11 +455,18 @@ let div = document.querySelectorAll(".btn");
         this.goTo(14);
       }
     },
+
+    
   },
+  
+  
 };
 </script>
 
 <style scoped>
+:root {
+  --backgroungImg: "";
+}
 *,
 *::after,
 *::before {
@@ -475,7 +500,7 @@ h3 {
       rgba(227, 202, 171, 0.7),
       rgba(227, 202, 171, 0.7)
     ),
-  url("../assets/Bat.png"), url("../assets/scrollBack.jpeg");
+     url("../assets/scrollBack.jpeg");
   background-repeat: no-repeat;
   background-position: center;
   position: relative;

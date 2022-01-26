@@ -184,7 +184,8 @@ export default {
   left: -200px;
 }
 #hpBar {
-  background: linear-gradient(to top, red var(--lifeBar), #eee0ee00 0%);
+
+  background: linear-gradient(to top, red var(--lifeBar), #eee0ee66 0%);
   border: solid;
   border-radius: 50%;
   width: 100px;
@@ -194,6 +195,8 @@ export default {
   display: flex;
   align-items: center;
   justify-content: center;
+  font-family: Augusta;
+  font-size: 1.2em;
 }
 #inventaire {
   position: relative;
