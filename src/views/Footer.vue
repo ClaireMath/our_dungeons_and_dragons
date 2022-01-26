@@ -2,10 +2,8 @@
   <div class="footer">
     <footer>
       <div class="divNav">
-      <router-link to="/">| Accueil |</router-link>
-      <router-link to="/Rules"> Règles |</router-link>
-      <router-link to="/Action/?id=0"> Jouer |</router-link>
-      <router-link to="/About"> À propos |</router-link>
+      <span>Mention Légales</span><br>
+      <span>© 2022 QUEST STORIES</span>
     </div>
     
     </footer>

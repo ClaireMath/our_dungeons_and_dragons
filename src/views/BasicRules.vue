@@ -66,3 +66,14 @@ Voilà ma proposition. Voilà le sortilège. Mais vous avez deux choses à faire
 que nous ne partions. Deux démarches où intervient l'arithmétique.</p>
 </div>
 </template>
+
+<style scoped>
+p {
+    
+    text-align: justify;
+    line-height: 140%;
+    width: 80%;
+    position: relative;
+    left: 10%
+}
+</style>
