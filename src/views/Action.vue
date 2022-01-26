@@ -2,7 +2,7 @@
   <div class="big_ctn">
     <!--<img class="backgroundImg" src="../assets/scrollBack.jpeg" alt="background">-->
     <!-- <div class="gameContainer"> -->
-    <div><LeftPage /></div>
+    <div><LeftPage @openParam="openMenu" /></div>
     <div class="superDiv">
       <div class="topDiv">
         <div class="firstElofTopDiv">
@@ -77,7 +77,7 @@
 
       <div id="game">
         <p class="paragraphe" v-html="MyJson.book[Id].paragraph"></p>
-        
+        <Param ref="param"/>
         <div class="combat" id="combat">
           <h1>Combat</h1>
           <div @click="closeWindow" class="close-container">
@@ -151,7 +151,9 @@
           </div>
             <!-- <button class="btn">Doigt de feu I</button> -->
           </div>
-          <div class="divOfChoicesBtn">
+          
+        </div>
+        <div class="divOfChoicesBtn">
             <div id="movementButton">
               <div
                 v-for="choices in MyJson['book'][Id]['choices']"
@@ -174,7 +176,6 @@
               Combat
             </button>
           </div>
-        </div>
       </div>
     </div>
   </div>
@@ -185,10 +186,11 @@ import LeftPage from "./LeftPage.vue";
 //import toggleLeft from "./LeftPage.vue";
 //import RightPage from "./RightPage.vue";
 import json from "../assets/data.json";
-//import imageDisplay from "../components/imageDisplay.vue";
+
+import Param from './param.vue';
 
 export default {
-  components: { LeftPage},
+  components: { LeftPage, Param },
   name: "Action",
   props: {},
   data() {
@@ -270,6 +272,18 @@ let div = document.querySelectorAll(".btn");
 },
 
 
+    // AttackFingerFire() {
+    // let div = divSorts.querySelectorAll(".btn");
+    //   console.log(div);
+    //    div.style.display = "none";
+    // },
+    openMenu(message){
+      console.log(message)
+      if(message.message == "parametre"){
+        console.log("ici")
+        this.$refs.param.open();
+      }
+    },
     unDisplayMovement() {
       let elem = document.getElementById("movementButton");
       elem.style.display = "none";
@@ -314,7 +328,9 @@ let div = document.querySelectorAll(".btn");
       var audio = new Audio(
         "http://soundbible.com/mp3/Shake And Roll Dice-SoundBible.com-591494296.mp3"
       );
-      audio.play();
+      //audio.volume = 0;
+      this.$refs.param.playSound(audio);
+      //audio.play();
     },
 
 
@@ -627,7 +643,7 @@ p {
   position: absolute;
   z-index: 10;
   box-shadow: 17px 14px 24px 5px rgba(0, 0, 0, 0.14);
-  /* display: none; */
+  display: none; 
 }
 
 #game {
