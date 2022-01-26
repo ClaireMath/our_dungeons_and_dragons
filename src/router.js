@@ -17,6 +17,8 @@ import LeftPage from "./views/LeftPage.vue";
 import Life from "./views/Life.vue";
 import Magic from "./views/Magic.vue";
 import RightPage from "./views/RightPage.vue";
+import Tableau from "./views/Tableau.vue";
+
 
 
 
@@ -109,6 +111,11 @@ export default new Router({
     path: "/RightPage",
     name: "RightPage",
     component: RightPage
+  },
+  {
+    path: "/Tableau",
+    name: "Tableau",
+    component: Tableau
   },
 
 

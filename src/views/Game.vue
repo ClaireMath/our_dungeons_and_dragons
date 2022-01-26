@@ -134,26 +134,24 @@ export default {
     getFirstLifePoints() {
       this.gif1 = true;
       this.gif2 = true;
-      console.log("getFirstLifePoints : gif1 :" + this.gif1);
-      console.log("getFirstLifePoints :  dé :" + this.dice1);
       this.throwTheDice(2);
       this.startingLifePoints = (this.randomDice1 + this.randomDice2) * 4;
     },
 
     diceAnim(nbOfDice) {
-      console.log("cest diceanim ici !");
+      // console.log("cest diceanim ici !");
       if (nbOfDice == 1) {
         this.gif1 = false;
         this.dice1 = true;
-        console.log("diceAnim : gif1 :" + this.gif1);
-        console.log("diceAnim : dé :" + this.dice1);
+        // console.log("diceAnim : gif1 :" + this.gif1);
+        // console.log("diceAnim : dé :" + this.dice1);
       } else {
         this.gif1 = false;
         this.gif2 = false;
         this.dice1 = true;
         this.dice2 = true;
-        console.log("diceAnim else car 2 dés : gif1 :" + this.gif1);
-        console.log("diceAnim else car 2 dés : dé : " + this.dice1);
+        // console.log("diceAnim else car 2 dés : gif1 :" + this.gif1);
+        // console.log("diceAnim else car 2 dés : dé : " + this.dice1);
       }
     },
 
@@ -165,9 +163,8 @@ export default {
         this.dice1 = false;
         this.dice2 = false;
         this.gif1 = true;
-        console.log("tets");
-        console.log("if throwthedice : gif1 :" + this.gif1);
-        console.log("if throwthedice : dé :" + this.dice1);
+        // console.log("if throwthedice : gif1 :" + this.gif1);
+        // console.log("if throwthedice : dé :" + this.dice1);
         this.randomDice1 = Math.floor(6 * Math.random()) + 1;
         setTimeout(this.diceAnim, 2000, 1);
       } else {
@@ -178,8 +175,8 @@ export default {
         this.dice2 = false;
         this.gif1 = true;
         this.gif2 = true;
-        console.log("else throwthedice : gif1 :" + this.gif1);
-        console.log("else throwthedice : dé :" + this.dice1);
+        // console.log("else throwthedice : gif1 :" + this.gif1);
+        // console.log("else throwthedice : dé :" + this.dice1);
         // this.dice1 = true;
         this.randomDice1 = Math.floor(6 * Math.random()) + 1;
         this.randomDice2 = Math.floor(6 * Math.random()) + 1;
@@ -197,7 +194,7 @@ export default {
 
     JoueurHitEnemy() {
       this.enemyLifePoints = 20;
-      console.log(this.enemyLifePoints);
+      // console.log(this.enemyLifePoints);
       //A aller chercher dans le json quand il sera mis en forme
 
       //le joueur attaque l'ennemi
@@ -206,12 +203,12 @@ export default {
       //calcul du resultat
 
       let total = this.randomDice1 + this.randomDice2;
-      console.log("Vous attaquez de:  " + total + "total des dés");
+      // console.log("Vous attaquez de:  " + total + "total des dés");
       if (total >= 6) {
-        console.log("le coup est reussi");
+        // console.log("le coup est reussi");
         let damage = total - 6 + this.weapon - this.enemyArmor;
         this.enemyLifePoints = this.enemyLifePoints - damage;
-        console.log("il reste à l'ennemi :" + this.enemyLifePoints);
+        // console.log("il reste à l'ennemi :" + this.enemyLifePoints);
       }
     },
 
@@ -219,22 +216,22 @@ export default {
       this.throwTheDice(2);
 
       let total = this.randomDice1 + this.randomDice2;
-      console.log("total des dés : " + total);
+      // console.log("total des dés : " + total);
       if (total >= 6) {
-        console.log("le coup est reussi car score égal ou supérieur à 6");
+        // console.log("le coup est reussi car score égal ou supérieur à 6");
         let damage = total - 6 + this.enemyWeapon - this.playerArmor;
-        console.log("enemyweapon : " + this.enemyWeapon);
-        console.log("playerarmor : " + this.playerArmor);
-        console.log(
-          "damage = (total des dés moins 6 + l'arme de l'ennemi - l'armure du joueur)" +
-            damage
-        );
+        // console.log("enemyweapon : " + this.enemyWeapon);
+        // console.log("playerarmor : " + this.playerArmor);
+        // console.log(
+        //   "damage = (total des dés moins 6 + l'arme de l'ennemi - l'armure du joueur)" +
+        //     damage
+        // );
         this.remainingLifePoints = this.startingLifePoints - damage;
         this.lifePoints = this.remainingLifePoints;
-        console.log(
-          "lifepoints restants du héro : " + this.remainingLifePoints
-        );
-        console.log("lifepoints : " + this.lifePoints);
+        // console.log(
+        //   "lifepoints restants du héro : " + this.remainingLifePoints
+        // );
+        // console.log("lifepoints : " + this.lifePoints);
       }
     },
     fight(whoStart) {

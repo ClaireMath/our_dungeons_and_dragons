@@ -9,6 +9,7 @@ import RulesCard from '../views/RulesCard.vue'
 import Life from "../views/Life.vue"
 import Magic from "../views/Magic.vue"
 import Rules from "../views/Rules.vue"
+import Tableau from "../views/Tableau.vue"
 
 Vue.use(VueRouter)
 
@@ -35,6 +36,11 @@ const routes = [
   path: "/About",
   name: "About",
   component: About
+},
+{
+  path: "/Tableau",
+  name: "Tableau",
+  component: Tableau
 },
 
 {
