@@ -128,6 +128,7 @@ export default{
     
     cursor: pointer;
 }
+
 .btn
 {
     width: 25px;

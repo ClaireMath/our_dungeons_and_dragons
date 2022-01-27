@@ -1,7 +1,7 @@
 <template>
   <div id="app">
 
-    <Header/>
+    <Header/> 
 
 
     <!--<div id="nav">
@@ -18,7 +18,7 @@
 
 
     <!-- <h1>Hello and Welcome brave knight !</h1> -->
-    <!-- <Home/> -->
+    <Home/>
 
 
     
@@ -38,10 +38,12 @@ import Footer from './views/Footer.vue';
 
 
 
+
 export default {
   name: 'App',
   components: {
-    Header, Footer
+    Header, Footer,
+    
     
       
    
