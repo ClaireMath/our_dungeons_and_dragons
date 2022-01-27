@@ -143,16 +143,13 @@
           </div>
           <div class="action">
             <button @click="JoueurHitEnemy" class="btn btnAttack">
-              Attaquer {{ name }}
+              Attaquez {{ name }}
             </button>
             <button @click="EnemyHitJoueur" class="btn btnAttack">
-              {{ name }} m'attaque
+              {{ name }} vous attaque
             </button>
-            <button
-              @click="fight({ playerInitiative })"
-              class="btn startFightBtn"
-            >
-              Commencer la bagarre {{ playerInitiative }}
+            <button @click="fight()" class="btn startFightBtn">
+              Commencer la bagarre
             </button>
             <hr />
             <div class="divSorts">
@@ -235,6 +232,7 @@ export default {
       playerArmor: 0,
       enemyArmor: 0,
       toHitEnemy: 0,
+      toHitPlayer: 0,
       counterFinger1: 0,
       counterFinger2: 0,
       remainingFireFingers1: 5,
@@ -243,6 +241,7 @@ export default {
       log: [],
       img: "",
       playerInitiative: 0,
+      playerStarts: null,
     };
   },
   created: function () {
@@ -253,17 +252,22 @@ export default {
     this.enemyArmor = this.MyJson.book[this.Id].enemy[0].enemyArmor;
     this.playerInitiative = this.MyJson.book[this.Id].enemy[0].playerInitiative;
     this.toHitEnemy = this.MyJson.book[this.Id].enemy[0].toHitEnemy;
-    
-    if(this.MyJson.book[this.Id].enemy[0].playerWeapon) {
+    this.toHitPlayer = this.MyJson.book[this.Id].enemy[0].toHitPlayer;
+    this.enemyAttack = this.MyJson.book[this.Id].enemy[0].enemyAttack;
+
+    if (this.MyJson.book[this.Id].enemy[0].playerWeapon) {
       this.weapon = 5;
     } else {
       this.weapon = 0;
     }
-    console.log("this.weapon = " + this.weapon);
-    
-    this.weapon = this.MyJson.book[this.Id].enemy[0].playerWeapon;
 
-    console.log("playerInitiative : " + this.playerInitiative);
+    if (this.MyJson.book[this.Id].enemy[0].playerArmor) {
+      this.playerArmor = 3;
+    } else {
+      this.playerArmor = 0;
+    }
+    // console.log("this.weapon = " + this.weapon);
+    // console.log("playerInitiative : " + this.playerInitiative);
     // this.getFirstLifePoints();
     // this.fight("player")
   },
@@ -392,7 +396,12 @@ export default {
         // this.dice1 = true;
         this.randomDice1 = Math.floor(6 * Math.random()) + 1;
         this.randomDice2 = Math.floor(6 * Math.random()) + 1;
-
+        console.log(
+          "randomdice1 : " +
+            this.randomDice1 +
+            " randomdice2 : " +
+            this.randomDice2
+        );
         // attention dans le settimeout, le paramètre de notre fonction diceAnim
         // se place après le temps en milisecondes, aussi curieux que cela puisse paraitre
         setTimeout(this.diceAnim, 1500, 2);
@@ -431,7 +440,9 @@ export default {
       // this.enemyLifePoints;
       // console.log(this.enemyLifePoints);
       //A aller chercher dans le json quand il sera mis en forme
-
+      let btnAttack = document.getElementsByClassName("btnAttack");
+      btnAttack[0].style.display = "none";
+      btnAttack[1].style.display = "block";
       //le joueur attaque l'ennemi
       //il lance les dés
       this.throwTheDice(2);
@@ -439,41 +450,56 @@ export default {
 
       let total = this.randomDice1 + this.randomDice2;
       this.log.push("Vous attaquez de :  " + total + " (total des dés).");
-
+      this.log.shift();
       if (total >= this.toHitEnemy) {
         this.log.push("Le coup est réussi.");
-
+        this.log.shift();
         let damage = total - this.toHitEnemy + this.weapon - this.enemyArmor;
-        this.log.push(
-          "Vous faites à l'ennemi :  " + damage + " points de dégats."
-        );
+
         this.enemyLifePoints = this.enemyLifePoints - damage;
         this.log.push(
-          "Il reste à l'ennemi : " + this.enemyLifePoints + " points."
+          "Vous faites à l'ennemi :  " +
+            damage +
+            " points de dégats. Il reste à l'ennemi : " +
+            this.enemyLifePoints +
+            " points."
         );
-      }
-      if (this.enemyLifePoints <= 0) {
-        this.displayMovement();
+        this.log.shift();
+        if (this.enemyLifePoints <= 0) {
+          this.displayMovement();
+        }
+      } else {
+        this.log.push("Sapristi! Vous l'avez manqué !");
+        this.log.shift();
       }
     },
 
     EnemyHitJoueur() {
+      let btnAttack = document.getElementsByClassName("btnAttack");
+      btnAttack[1].style.display = "none";
+      btnAttack[0].style.display = "block";
       this.throwTheDice(2);
 
       let total = this.randomDice1 + this.randomDice2;
 
-      if (total >= 6) {
-        let damage = total - 6 + this.enemyWeapon - this.playerArmor;
+      if (total >= this.toHitPlayer) {
+        let damage =
+          total - this.toHitPlayer + this.enemyAttack - this.playerArmor;
 
         this.log.push(
           "L'ennemi réussit à vous toucher, il vous inflige : " +
             damage +
             " points de dégats."
         );
-        this.remainingLifePoints = this.startingLifePoints - damage;
+        // this.log.shift();
+
+        this.remainingLifePoints = this.lifePoints - damage;
         this.lifePoints = this.remainingLifePoints;
+        this.log.push("Il vous reste : " + this.lifePoints + " points de vie.");
+        this.log.shift();
       } else {
         this.log.push("L'ennemi vous rate.");
+        this.log.shift();
       }
     },
     // fight(whoStart) {
@@ -495,31 +521,74 @@ export default {
     //   }
     // },
 
-    fight(playerInitiative) {
-      if (playerInitiative == 1) {
-        this.log.push("Vous commencez à frapper.");
-        this.JoueurHitEnemy();
+    fight() {
+      console.log(this.playerInitiative == 1);
+      if (this.playerInitiative == 1) {
+        // console.log("this.playerInitiative : " + this.playerInitiative);
+        this.log.push("C'est à vous de commencer à frapper.");
+        // this.log.shift();
+        let btnAttack = document.getElementsByClassName("btnAttack");
+        btnAttack[0].style.display = "block";
+        btnAttack[1].style.display = "none";
+        let startFightBtn = document.getElementsByClassName("startFightBtn");
+        startFightBtn[0].style.display = "none";
+        // this.JoueurHitEnemy();
         if (this.enemyLifePoints <= 5) {
           console.log("l'ennemi est assommé");
         } else {
           this.EnemyHitJoueur();
         }
-      } else if (playerInitiative == 2) {
+      } else if (this.playerInitiative == 2) {
+        // console.log("this.playerInitiative : " + this.playerInitiative);
         this.log.push("L'ennemi commence");
+        // this.log.shift();
         this.EnemyHitJoueur();
       } else {
+        // console.log("this.playerInitiative : " + this.playerInitiative);
         this.log.push(
-          "Veuillez lancer les dés pour déterminer qui commence à frapper, le score de gauche sera le vôtre, celui de droite, celui de votre adversaire."
+          "Les dés ont été lancés pour déterminer qui commence, le score affiché à gauche sera le vôtre."
         );
-        let btnAttack = document.getElementsByClassName("btnAttack");
-        btnAttack[0].style.display = "block";
-        btnAttack[1].style.display = "block";
-        let startFightBtn = document.getElementsByClassName("startFightBtn");
-        startFightBtn[0].style.display = "none";
+        // this.log.shift();
+        this.throwTheDice(2);
+        console.log(
+          "randomdice1 : " +
+            parseInt(this.randomDice1) +
+            " randomdice2 : " +
+            this.randomDice2
+        );
+
+        this.whoStarts();
       }
 
       if (this.lifePoints <= 0) {
         this.goTo(14);
+      }
+    },
+    whoStarts() {
+      console.log(
+        "randomdice1 : " +
+          parseInt(this.randomDice1) +
+          " randomdice2 : " +
+          this.randomDice2
+      );
+
+      if (this.randomDice1 == this.randomDice2) {
+        this.log.push(
+          "Egalité, les dés ont été relancés. Veuillez cliquer sur le bouton d'attaque"
+        );
+        this.throwTheDice();
+        return this.whoStarts();
+      } else if (this.randomDice1 > this.randomDice2) {
+        // signifie que c'est le joueur qui commence
+        let btnAttack = document.getElementsByClassName("btnAttack");
+        btnAttack[0].style.display = "block";
+        let startFightBtn = document.getElementsByClassName("startFightBtn");
+        startFightBtn[0].style.display = "none";
+      } else if (this.randomDice1 < this.randomDice2) {
+        let btnAttack = document.getElementsByClassName("btnAttack");
+        btnAttack[1].style.display = "block";
+        let startFightBtn = document.getElementsByClassName("startFightBtn");
+        startFightBtn[0].style.display = "none";
       }
     },
   },
@@ -783,6 +852,7 @@ p {
 }
 .btnAttack {
   display: none;
+  margin: auto;
 }
 
 .fightDice {

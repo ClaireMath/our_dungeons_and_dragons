@@ -25,7 +25,8 @@
           "playerArmor": false,
           "playerWeapon": false,
           "playerInitiative": 3,
-          "doubleDamage": true
+          "doubleDamage": true,
+          "toHitPlayer": 6
         }
       ]
     },
@@ -160,8 +161,10 @@
           "enemyAttack": 4,
           "enemyArmor": 0,
           "toHitEnemy": 6,
+          "playerInitiative": 3,
           "playerArmor": false,
-          "playerWeapon": true
+          "playerWeapon": true,
+          "toHitPlayer": 6
         }
       ]
     },
@@ -319,7 +322,8 @@
           "toHitEnemy": 6,
           "playerArmor": false,
           "playerWeapon": true,
-          "playerInitiative": 1
+          "playerInitiative": 1,
+          "toHitPlayer": 6
         }
       ]
     },
@@ -423,6 +427,7 @@
           "enemyAttack": 3,
           "enemyArmor": 0,
           "toHitEnemy": 6,
+          "playerInitiative": 3,
           "playerArmor": true,
           "playerWeapon": true,
           "toHitPlayer": 5
@@ -433,6 +438,7 @@
           "enemyAttack": 3,
           "enemyArmor": 0,
           "toHitEnemy": 6,
+          "playerInitiative": 3,
           "playerArmor": true,
           "playerWeapon": true,
           "toHitPlayer": 5
@@ -559,6 +565,7 @@
           "enemyAttack": 4,
           "enemyArmor": 0,
           "toHitEnemy": 6,
+          "playerInitiative": 3,
           "playerArmor": true,
           "playerWeapon": true,
           "toHitPlayer": 5,
@@ -689,16 +696,19 @@
           "enemyLifePoints": 1,
           "enemyAttack": 0,
           "enemyArmor": 0,
+          "playerInitiative": 3,
           "playerArmor": true,
           "playerWeapon": true,
           "bribe": 2,
-          "toHitEnemy": 9
+          "toHitEnemy": 9,
+          "toHitPlayer": 6
         },
         {
           "name": "Zombie 2",
           "enemyLifePoints": 1,
           "enemyAttack": 0,
           "enemyArmor": 0,
+          "playerInitiative": 3,
           "playerArmor": true,
           "playerWeapon": true,
           "bribe": 2,
@@ -709,6 +719,7 @@
           "enemyLifePoints": 1,
           "enemyAttack": 0,
           "enemyArmor": 0,
+          "playerInitiative": 3,
           "playerArmor": true,
           "playerWeapon": true,
           "bribe": 2,
@@ -719,6 +730,7 @@
           "enemyLifePoints": 1,
           "enemyAttack": 0,
           "enemyArmor": 0,
+          "playerInitiative": 3,
           "playerArmor": true,
           "playerWeapon": true,
           "bribe": 2,
@@ -729,6 +741,7 @@
           "enemyLifePoints": 1,
           "enemyAttack": 0,
           "enemyArmor": 0,
+          "playerInitiative": 3,
           "playerArmor": true,
           "playerWeapon": true,
           "bribe": 2,
@@ -739,6 +752,7 @@
           "enemyLifePoints": 1,
           "enemyAttack": 0,
           "enemyArmor": 0,
+          "playerInitiative": 3,
           "playerArmor": true,
           "playerWeapon": true,
           "bribe": 2,
@@ -793,9 +807,11 @@
           "enemyLifePoints": 1,
           "enemyAttack": 0,
           "enemyArmor": 0,
+          "playerInitiative": 3,
           "playerArmor": true,
           "playerWeapon": true,
-          "toHitEnemy": 10
+          "toHitEnemy": 10,
+          "toHitPlayer": 6
         }
       ]
     },
@@ -845,7 +861,8 @@
           "toHitEnemy": 6,
           "playerArmor": true,
           "playerWeapon": true,
-          "playerInitiative": 2
+          "playerInitiative": 2,
+          "toHitPlayer": 6
         }
       ]
     },
@@ -1025,6 +1042,7 @@
           "enemyAttack": 3,
           "enemyArmor": 0,
           "toHitEnemy": 6,
+          "playerInitiative": 3,
           "playerArmor": true,
           "playerWeapon": true,
           "toHitPlayer": 4,
@@ -1170,6 +1188,7 @@
           "enemyAttack": 99,
           "enemyArmor": 0,
           "toHitEnemy": 6,
+          "playerInitiative": 3,
           "playerArmor": true,
           "playerWeapon": true,
           "toHitPlayer": 6
@@ -1354,7 +1373,8 @@
           "toHitEnemy": 6,
           "playerArmor": true,
           "playerWeapon": true,
-          "playerInitiative": 2
+          "playerInitiative": 2,
+          "toHitPlayer": 6
         },
         {
           "name": "Garde 2",
@@ -1422,6 +1442,7 @@
           "enemyAttack": 5,
           "enemyArmor": 0,
           "toHitEnemy": 6,
+          "playerInitiative": 3,
           "playerArmor": true,
           "∑rWeapon": true,
           "toHitPlayer": 6
@@ -1506,7 +1527,8 @@
           "toHitEnemy": 6,
           "playerArmor": true,
           "playerWeapon": true,
-          "playerInitiative": 1
+          "playerInitiative": 1,
+          "toHitPlayer": 6
         },
         {
           "name": "Garde 2",
@@ -1951,7 +1973,8 @@
           "playerArmor": true,
           "playerWeapon": true,
           "playerInitiative": 1,
-          "bribe": 4
+          "bribe": 4,
+          "toHitPlayer": 6
         },
         {
           "name": "Molosse 2",
@@ -2222,7 +2245,8 @@
           "playerArmor": true,
           "playerWeapon": true,
           "playerInitiative": 1,
-          "toHitEnemy": 8
+          "toHitEnemy": 8,
+          "toHitPlayer": 6
         }
       ]
     },
@@ -2271,10 +2295,12 @@
           "enemyAttack": 0,
           "enemyArmor": 0,
           "toHitEnemy": 6,
+          "playerInitiative": 3,
           "playerArmor": true,
           "playerWeapon": true,
           "bribe": 4,
-          "poison": 2
+          "poison": 2,
+          "toHitPlayer": 6
         }
       ]
     },
