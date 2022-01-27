@@ -202,8 +202,8 @@ export default {
 #dream {
    position: relative;
   left: -200px;
+  cursor:pointer;
 }
-
 #param {
   position: relative;
   left: -200px;
