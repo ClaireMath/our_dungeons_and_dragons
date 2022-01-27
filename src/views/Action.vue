@@ -273,11 +273,6 @@ let div = document.querySelectorAll(".btn");
 },
 
 
-    // AttackFingerFire() {
-    // let div = divSorts.querySelectorAll(".btn");
-    //   console.log(div);
-    //    div.style.display = "none";
-    // },
     openMenu(message){
       console.log(message)
       if(message.message == "parametre"){

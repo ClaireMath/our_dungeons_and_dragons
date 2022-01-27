@@ -14,7 +14,7 @@
           "text": "Rendez vous au 2"
         }
       ],
-        "enemy": [
+      "enemy": [
         {
           "name": "Jake le teigneux",
           "enemyLifePoints": 20,
@@ -2242,7 +2242,6 @@
           "id": 127,
           "text": "Rendez vous au 127"
         }
-        
       ],
       "enemy": [
         {
@@ -2358,6 +2357,62 @@
           "text": "Rendez vous au 33"
         }
       ]
+    },
+    {
+      "id": 160,
+      "paragraph": " Ce chapitre ne doit être consulté que si vous prenez la décision de dormir durant une aventure. Si les dés vous amènent à cette page, observez les règles suivantes : Vous entrez dans le Temps du Rêve avec le total de POINTS DE VIE que vous possédiez lorsque vous avez décidé de dormir. Vous entrez dans le Temps du Rêve sans armure ni autre protection, quelle qu'elle soit. Vous entrez dans le Temps du Rêve sans magie ni arme quelconque, à l'exception de ceJ'es qui auraient pu vous être remises lors d'une rencontre bien précise. Il se peut que vous ne rameniez rien d'un séjour au Temps du Rêve. Tout POINT DE VIE perdu dans le Temps du Rêve est déduit de votre total de POINTS DE VIE. Si vous êtes tué dans le Temps du Rêve, vous êtes effectivement mort et vous devez vous rendre directement au 14 fatidique. Maintenant, entrez dans le Temps du Rêve en lançant deux dés et en vous rendant directement à la section du Temps du Rêve indiquée par le total obtenu. Si vous survivez, retournez au paragraphe où vous aviez décidé de dormir."
+    },
+    {
+      "id": 161,
+      "paragraph": " Vous vous trouvez face à une petite créature volante en forme de cigare qui ne cesse de vous harceler. Bien qu'elle ne vous touche pas, à chaque passage elle émet une vibration qui altère votre cerveau et vous fait perdre 5 POINTS DE VIE. Cette créature est un Ronge-Méninges. Elle dispose de 15 POINTS DE VIE et frappe la première. Combattez-la au plus vite !"
+    },
+    {
+      "id": 162,
+      "paragraph": "Vous êtes pourchassé à travers un cimetière par un Vampire. Si l'abominable monstre vous attrappe, c'en est fait de vous ! Déjà vos jambes flageolent à cette idée. Pouvez-vous lui échapper? Testez la Force du vampire en lançant deux dés. Testez ensuite votre propre Force de la même façon. Comparez vos Forces respectives. Si le Vampire a une Force de 5 points supérieures à la vôtre... ",
+      "choices": [
+        {
+          "id": 14,
+          "text": "Rendez-vous au 14"
+        }
+      ]
+    },
+    {
+      "id": 163,
+      "paragraph": "Vous êtes dans la grande salle de banquet d'un château. Cette salle est déserte. Sur la table, devant vous, sont posés deux calices. L'un de cristal, l'autre de bronze. Dans l'un, il y a du vin, dans l'autre du poison, mais vous n'avez aucun moyen de les distinguer l'un de l'autre, et vous êtes obligé de boire le contenu de l'un d'eux. Tentez donc votre chance en lançant deux dés. Si vous obtenez plus de six, vous avez assez de chance pour choisir le bon calice. En revanche, si le chiffre que vous obtenez est inférieur ou égal à 6, vous avez bu le poison, auquel cas vous devez lancer encore deux dés et soustraire ce que vous obtiendrez de votre total de POINTS DE VIE."
+    },
+    {
+      "id": 164,
+      "paragraph": " Vous essayez de vous enfuir de l'échauguette d'une haute tour et vous avez réussi à vous glisser dans une étroite fenêtre, dans l'espoir de descendre en escalade la paroi extérieure de la tour. En dépit de bonnes prises pour le bout des doigts et des pieds, la surface de la pierre est très glissante. Lancez deux dés pour savoir si vous tombez. Vous faites moins de 6 et c'est la chute libre ! Pendant que vous tombez, relancez deux dés pour savoir si vous allez vous écraser au sol ou plonger dans l'eau des douves. Si vous faîtes moins de 6, vous vous écrasez au sol et vous perdez 10 POINTS DE VIE. Si vous faites 6, ou plus de 6 vous tombez dans le fossé sans perdre de POINTS DE VIE, mais vous devez encore lancer deux dés pour découvrir si vous savez nager. Si vous obtenez moins de 6, vous ne savez pas nager, vous coulez à pic",
+      "choices": [
+        {
+          "id": 14,
+          "text": "Rendez-vous au 14"
+        }
+      ]
+    },
+    {
+      "id": 165,
+      "paragraph": " Vous marchez dans un superbe jardin clos par des murs, savourant la chaleur du soleil, quand vous êtes attaqué par un essaim d'abeilles. Chaque piqûre d'abeille vous coûte 1 POINT DE VIE. Lancez un dé pour savoir le nombre d'abeilles qui vont réussir à vous piquer. L'un des sortilèges de Merlin a échoué et vous a transformé en pied de céleri. Vous poussez maintenant tranquillement dans un potager. C'est une existence supportable car vous avez à vos côtés des choux et des choux-fleurs à qui parler, mais la chèvre de Merlin a enfoncé la clôture et elle se rapproche dangereusement de vous en broutant. Lancez un dé pour savoir si elle aime le céleri... Si vous faites moins de 6, elle va vous grignoter 5 POINTS DE VIE avant de s'attaquer aux carottes de Merlin "
+    },
+    {
+      "id": 166,
+      "paragraph": " Vous combattez le Chevalier Noir, un redoutable scélérat disposant de 25 POINTS DE VIE. Vous portez une armure qui vous permet de déduire 5 points, des Points de Dommage que le Chevalier peut vous infliger. L'armure de votre adversaire est plus robuste, elle peut absorber 6 Points de Dommage. La lance utilisée par le Chevalier Noir lui donne 10 Points de Dommage supplémentaires à chaque fois qu'il vous portera un coup. Cependant, votre lance a été baptisée par l'archevêque de Canterbury et elle vous permet d'ajouter 12 Points de Dommage supplémentaire à chaque coup que vous porterez. Le roi Arthur lance deux dés pour décider de celui qui frappera en premier. S'il obtient de 2 à 6, c'est le Chevalier Noir qui prend l'initiative. S'il obtient de 7 à 12, c'est vous qui commencez. "
+    },
+    {
+      "id": 167,
+      "paragraph": " Vous vous trouvez dans un sinistre couloir face à un énorme Monstre du Sommeil couvert de poils. Vous n'avez ni armes ni armure mais, près de vous, sont posés deux coffrets. Vous n'avez le temps d'en ouvrir qu'un seul avant que le Monstre du Sommeil ne vous attaque. Lancez un dé. Si vous faites de 1 à 3, vous trouvez une dague magique qui vous permet de trucider instantanément le Monstre. De 4 à 6, le coffret que vous ouvrez est rempli de gaz soporifique. Autrement dit, vous voilà obligé de vous endormir et de lancer à nouveau les dés pour savoir si vous allez faire un nouveau voyage dans le Temps du Rêve. "
+    },
+    {
+      "id": 168,
+      "paragraph": " Vous chassez le sanglier dans la forêt, armé d'un arc et de sept flèches. Chaque flèche vous permet de marquer 10 Points de Dommage si elle frappe sa cible et il vous faut obtenir plus de 6 avec deux dés pour l'atteindre. Vous entrez dans une clairière et vous y découvrez un Ogre gigantesque sur le point de dévorer une ravissante jeune fille. Vous avez le temps de tirer vos sept flèches avant que l'Ogre ne puisse vous atteindre. L'Ogre a 40 POINTS DE VIE et il est si fort qu'il inflige 15 Points de Dommage supplémentaires à chaque coup qu'il porte de son énorme massue. Vous avez donc sept chances de le tuer avant qu'il ne vous touche et, comme il est très lent, une chance supplémentaire de l'achever de vos mains nues avant qu'il n'abatte sur vous son terrible gourdin "
+    },
+    {
+      "id": 169,
+      "paragraph": "A la suite d'un désaccord avec le roi Arthur sur la question de savoir si la terre était plate ou ronde, vous avez été jeté sans eau ni nourriture au fond d'une sinistre oubliette. La durée de votre séjour dans ce cul-de-basse-fosse dépend des résultats de votre prochain lancer de dé. (Un seul dé.) Pour chaque point  marqué jusqu'à un maximum de 6, vous y restez un jour et vous perdez 1 POINT DE VIE avant que la colère du Roi ne s'apaise."
+    },
+    {
+      "id": 170,
+      "paragraph": " Vous vous trouvez sur le sommet d'une haute montagne en pleine bataille magique avec un malfaisant Sorcier qui occupe, lui, le sommet d'une montagne voisine. Dans cette bataille, vous émettez l'un contre l'autre de puissantes ondes magiques de feu bleuâtres. Tant que vous êtes deux à pratiquer ce bombardement réciproque d'ondes, un effet magique les neutralise et les rend inoffensives. Mais, tôt ou tard, l'un de vous va se trouver à court d'ondes. Lancez donc un dé pour savoir combien il reste d'ondes au Sorcier votre ennemi, et un dé pour savoir combien il vous en reste à vous. Celui des deux qui détient le plus grand nombre d'ondes divise par deux le total de POINTS DE VIE de son adversaire et gagne la bataille "
     }
   ]
 }

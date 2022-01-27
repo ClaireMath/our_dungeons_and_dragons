@@ -17,6 +17,7 @@ import LeftPage from "./views/LeftPage.vue";
 import Life from "./views/Life.vue";
 import Magic from "./views/Magic.vue";
 import RightPage from "./views/RightPage.vue";
+import Dream from "./views/Dream.vue";
 
 
 
@@ -110,6 +111,12 @@ export default new Router({
     name: "RightPage",
     component: RightPage
   },
+
+  {
+    path: "/Dream",
+    name: "Dream",
+    component: Dream
+  },  
 
 
 
