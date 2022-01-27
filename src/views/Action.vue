@@ -1,8 +1,12 @@
 <template>
   <div class="big_ctn">
-    <!--<div id="backgroundImg">-->
-    <!-- <div class="gameContainer"> -->
-    <div><LeftPage @openParam="openMenu" :lifePoints="lifePoints" :startingLifePoints="startingLifePoints"/></div>
+    <div>
+      <LeftPage
+        @openParam="openMenu"
+        :lifePoints="lifePoints"
+        :startingLifePoints="startingLifePoints"
+      />
+    </div>
     <div class="superDiv">
       <div class="topDiv">
         <div class="firstElofTopDiv">
@@ -80,8 +84,34 @@
       </div>
 
       <div id="game">
-        <h2 class="pTitle" v-html="MyJson.book[Id].pTitle"></h2>
-        <p class="paragraphe" v-html="MyJson.book[Id].paragraph"></p>
+        <div id="scrollable">
+          <h2 class="pTitle" v-html="MyJson.book[Id].pTitle"></h2>
+          <p class="paragraphe" v-html="MyJson.book[Id].paragraph"></p>
+          <img :src="require('../assets/' + MyJson.book[Id].img)" />
+          <div class="divOfChoicesBtn">
+            <div id="movementButton">
+              <div
+                v-for="choices in MyJson['book'][Id]['choices']"
+                :key="choices['text']"
+              >
+                <input
+                  @click="goTo(choices['id'])"
+                  type="button"
+                  class="btn btnChoices"
+                  v-model="choices['text']"
+                />
+              </div>
+            </div>
+
+            <button
+              class="btn btnChoices"
+              id="displayFight"
+              @click="displayFightDiv"
+            >
+              Combat
+            </button>
+          </div>
+        </div>
         <Param ref="param" />
         <div class="combat" id="combat">
           <h1>Combat</h1>
@@ -162,29 +192,6 @@
             <!-- <button class="btn">Doigt de feu I</button> -->
           </div>
         </div>
-        <div class="divOfChoicesBtn">
-          <div id="movementButton">
-            <div
-              v-for="choices in MyJson['book'][Id]['choices']"
-              :key="choices['text']"
-            >
-              <input
-                @click="goTo(choices['id'])"
-                type="button"
-                class="btn btnChoices"
-                v-model="choices['text']"
-              />
-            </div>
-          </div>
-
-          <button
-            class="btn btnChoices"
-            id="displayFight"
-            @click="displayFightDiv"
-          >
-            Combat
-          </button>
-        </div>
       </div>
     </div>
   </div>
@@ -238,16 +245,9 @@ export default {
   },
   mounted() {
     this.verifCombat();
-    this.displayBackground();
   },
 
   methods: {
-    displayBackground() {
-      let backgroundImg = document.getElementById("backgroundImg");
-      let bckGrImg = "../assets/" + this.MyJson.book[this.Id].img;
-      console.log(bckGrImg);
-      backgroundImg.style.setProperty("--bckGrImg", bckGrImg);
-    },
     FingerAttack() {
       let div = document.querySelectorAll(".btn");
       this.enemyLifePoints = this.enemyLifePoints - this.fireFingerDamagePoints;
@@ -474,9 +474,7 @@ export default {
 </script>
 
 <style scoped>
-:root {
-  --bckGrImg: "";
-}
+
 *,
 *::after,
 *::before {
@@ -492,7 +490,7 @@ export default {
 }
 html,
 body {
-  height: 100%;
+  max-height: 100vh;
   width: 100%;
 }
 
@@ -502,15 +500,14 @@ h3 {
 .big_ctn {
   width: 100%;
   display: flex;
-  background-color: #634b30;
 
   justify-content: center;
   align-items: flex-start;
   background-image: linear-gradient(
-      rgba(227, 202, 171, 0.7),
-      rgba(227, 202, 171, 0.7)
+      rgba(255, 255, 255, 0.5),
+      rgba(0, 0, 0, 0.5)
     ),
-    url var(--bckGrImg), url ("../assets/scrollBack.jpeg");
+    url("../assets/scrollBack.jpeg");
   background-repeat: no-repeat;
   background-position: center;
   position: relative;
@@ -606,9 +603,13 @@ h3 {
   height: 60px;
 }
 .paragraphe {
+  text-align: justify;
+}
+
+#scrollable {
   height: 60vh;
   overflow: auto;
-  text-align: justify;
+  margin-bottom: -300px;
 }
 
 p {

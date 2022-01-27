@@ -67,6 +67,7 @@
       "id": 5,
       "pTitle" : "1",
       "paragraph": "Ça se présente mal, Pip. Ils sont trop nombreux, ces hommes-là, trop forts et trop rapides en besogne. Ils veulent vous hisser sur cet énorme et sinistre cheval noir et ils menacent, si vous vous montrez rétif, de vous fourrer dans un sac pour vous emporter. Ce n'est sans doute qu'une manœuvre d'intimidation mais, tout de même, vous feriez bien d'accepter ce qu'ils vous demandent, en vous rendant au 4. ",
+      "img": "Bat.png",
       "choices": [
         {
           "id": 4,

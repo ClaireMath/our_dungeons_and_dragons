@@ -29,7 +29,6 @@
 </template>
 
 <script>
-import Action from "./Action";
 export default {
   
   name: "LeftPage",
