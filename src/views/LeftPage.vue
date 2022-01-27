@@ -9,7 +9,7 @@
 
       <h3 id="inventaire" @click="emitOpenInventaire">Inventaire</h3>
 
-      <h3 id="dream">Temps du rêve</h3>
+     <router-link to="/Dream?id=160"><h3 id="dream">Temps du rêve</h3></router-link>
 
       <h3 id="param" @click="emitOpenParam">Paramètres</h3>
 

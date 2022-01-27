@@ -10,6 +10,7 @@ import Life from "../views/Life.vue"
 import Magic from "../views/Magic.vue"
 import Rules from "../views/Rules.vue"
 import Tableau from "../views/Tableau.vue"
+import Dream from "../views/Dream.vue"
 
 Vue.use(VueRouter)
 
@@ -26,6 +27,13 @@ const routes = [
     name: "Action",
     component: Action
   },
+
+  {
+    path: "/dream/:id",
+    name: "Dream",
+    component: Dream
+  },
+
   {
     path: "/game/:id",
     name: "Game",

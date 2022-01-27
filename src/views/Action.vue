@@ -280,15 +280,10 @@ export default {
       this.enemyLifePoints = this.enemyLifePoints - this.spellDamagePoints;
     },
 
-    // AttackFingerFire() {
-    // let div = divSorts.querySelectorAll(".btn");
-    //   console.log(div);
-    //    div.style.display = "none";
-    // },
-    openMenu(message) {
-      console.log(message);
-      if (message.message == "parametre") {
-        console.log("ici");
+    openMenu(message){
+      console.log(message)
+      if(message.message == "parametre"){
+        console.log("ici")
         this.$refs.param.open();
       }else if(message.message == "inventaire"){
         this.$refs.inventaire.open();

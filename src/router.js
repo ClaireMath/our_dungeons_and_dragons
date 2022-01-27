@@ -19,6 +19,7 @@ import Magic from "./views/Magic.vue";
 import RightPage from "./views/RightPage.vue";
 import Tableau from "./views/Tableau.vue";
 
+import Dream from "./views/Dream.vue";
 
 
 
@@ -117,6 +118,12 @@ export default new Router({
     name: "Tableau",
     component: Tableau
   },
+
+  {
+    path: "/Dream",
+    name: "Dream",
+    component: Dream
+  },  
 
 
 
