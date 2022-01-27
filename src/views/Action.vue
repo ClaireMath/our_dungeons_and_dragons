@@ -1,12 +1,16 @@
 <template>
   <div class="big_ctn">
-    <!--<img class="backgroundImg" src="../assets/scrollBack.jpeg" alt="background">-->
+    <!--<div id="backgroundImg">-->
     <!-- <div class="gameContainer"> -->
-    <div><LeftPage @openParam="openMenu" /></div>
+    <div><LeftPage @openParam="openMenu" :lifePoints="lifePoints" :startingLifePoints="startingLifePoints"/></div>
     <div class="superDiv">
       <div class="topDiv">
         <div class="firstElofTopDiv">
-          <button @click="getFirstLifePoints()" class="btn startBtn" id="startBtn">
+          <button
+            @click="getFirstLifePoints()"
+            class="btn startBtn"
+            id="startBtn"
+          >
             Commencer le jeu !
           </button>
 
@@ -76,8 +80,9 @@
       </div>
 
       <div id="game">
+        <h2 class="pTitle" v-html="MyJson.book[Id].pTitle"></h2>
         <p class="paragraphe" v-html="MyJson.book[Id].paragraph"></p>
-        <Param ref="param"/>
+        <Param ref="param" />
         <div class="combat" id="combat">
           <h1>Combat</h1>
           <div @click="closeWindow" class="close-container">
@@ -92,7 +97,7 @@
               <h4>Points d'armure: {{ playerArmor }}</h4>
             </div>
             <div class="enemy">
-              <h2>{{name}}</h2>
+              <h2>{{ name }}</h2>
               <h4>Points de vie: {{ enemyLifePoints }}</h4>
               <h4>Dégats de l'arme: {{ enemyWeapon }}</h4>
               <h4>Points d'armure: {{ enemyArmor }}</h4>
@@ -140,42 +145,46 @@
           <div class="action">
             <button @click="JoueurHitEnemy" class="btn">Attaque</button>
             <button @click="EnemyHitJoueur" class="btn">Attaque Ennemi</button>
-            <hr>
+            <hr />
             <div class="divSorts">
-            <button @click="FingerAttack" class="btn">Doigts de feu I</button>
-            <button @click="FingerAttack2" class="btn">Doigts de feu II</button>
-         
-            <button @click="FireBallAttack1" class="btn">Boule de feu I</button>
-            <button @click="FireBallAttack2" class="btn">Boule de feu II</button>
-             
-          </div>
+              <button @click="FingerAttack" class="btn">Doigts de feu I</button>
+              <button @click="FingerAttack2" class="btn">
+                Doigts de feu II
+              </button>
+
+              <button @click="FireBallAttack1" class="btn">
+                Boule de feu I
+              </button>
+              <button @click="FireBallAttack2" class="btn">
+                Boule de feu II
+              </button>
+            </div>
             <!-- <button class="btn">Doigt de feu I</button> -->
           </div>
-          
         </div>
         <div class="divOfChoicesBtn">
-            <div id="movementButton">
-              <div
-                v-for="choices in MyJson['book'][Id]['choices']"
-                :key="choices['text']"
-              >
-                <input
-                  @click="goTo(choices['id'])"
-                  type="button"
-                  class="btn btnChoices"
-                  v-model="choices['text']"
-                />
-              </div>
-            </div>
-
-            <button
-              class="btn btnChoices"
-              id="displayFight"
-              @click="displayFightDiv"
+          <div id="movementButton">
+            <div
+              v-for="choices in MyJson['book'][Id]['choices']"
+              :key="choices['text']"
             >
-              Combat
-            </button>
+              <input
+                @click="goTo(choices['id'])"
+                type="button"
+                class="btn btnChoices"
+                v-model="choices['text']"
+              />
+            </div>
           </div>
+
+          <button
+            class="btn btnChoices"
+            id="displayFight"
+            @click="displayFightDiv"
+          >
+            Combat
+          </button>
+        </div>
       </div>
     </div>
   </div>
@@ -183,16 +192,12 @@
 
 <script>
 import LeftPage from "./LeftPage.vue";
-//import toggleLeft from "./LeftPage.vue";
-//import RightPage from "./RightPage.vue";
 import json from "../assets/data.json";
-
-import Param from './param.vue';
+import Param from "./param.vue";
 
 export default {
   components: { LeftPage, Param },
   name: "Action",
-  props: {},
   data() {
     return {
       Id: null,
@@ -204,8 +209,8 @@ export default {
       diceResult: null,
       randomDice1: null,
       randomDice2: null,
-      startingLifePoints: 0,
-      lifePoints: 0,
+      startingLifePoints: 20,
+      lifePoints: 20,
       remainingLifePoints: 0,
       enemyLifePoints: 0,
       fireFingerDamagePoints: 10,
@@ -227,61 +232,61 @@ export default {
     this.enemyLifePoints = this.MyJson.book[this.Id].enemy[0].enemyLifePoints;
     this.enemyWeapon = this.MyJson.book[this.Id].enemy[0].enemyAttack;
     this.enemyArmor = this.MyJson.book[this.Id].enemy[0].enemyArmor;
+
     // this.getFirstLifePoints();
     // this.fight("player")
   },
   mounted() {
     this.verifCombat();
+    this.displayBackground();
   },
 
   methods: {
-
-
+    displayBackground() {
+      let backgroundImg = document.getElementById("backgroundImg");
+      let bckGrImg = "../assets/" + this.MyJson.book[this.Id].img;
+      console.log(bckGrImg);
+      backgroundImg.style.setProperty("--bckGrImg", bckGrImg);
+    },
     FingerAttack() {
-    let div = document.querySelectorAll(".btn");
+      let div = document.querySelectorAll(".btn");
       this.enemyLifePoints = this.enemyLifePoints - this.fireFingerDamagePoints;
       this.counterFinger1 += 1;
       if (this.counterFinger1 >= 5) {
         div[3].style.display = "none";
       }
-
-
-     
     },
 
     FingerAttack2() {
-    let div = document.querySelectorAll(".btn");
+      let div = document.querySelectorAll(".btn");
       this.enemyLifePoints = this.enemyLifePoints - this.fireFingerDamagePoints;
       this.counterFinger2 += 1;
       if (this.counterFinger2 >= 5) {
         div[4].style.display = "none";
       }
-    
     },
 
-FireBallAttack1() {
-let div = document.querySelectorAll(".btn");
-       div[5].style.display = "none";
+    FireBallAttack1() {
+      let div = document.querySelectorAll(".btn");
+      div[5].style.display = "none";
       this.enemyLifePoints = this.enemyLifePoints - this.spellDamagePoints;
-},
+    },
 
-FireBallAttack2() {
-let div = document.querySelectorAll(".btn");
-       div[6].style.display = "none";
+    FireBallAttack2() {
+      let div = document.querySelectorAll(".btn");
+      div[6].style.display = "none";
       this.enemyLifePoints = this.enemyLifePoints - this.spellDamagePoints;
-      
-},
-
+    },
 
     // AttackFingerFire() {
     // let div = divSorts.querySelectorAll(".btn");
     //   console.log(div);
     //    div.style.display = "none";
     // },
-    openMenu(message){
-      console.log(message)
-      if(message.message == "parametre"){
-        console.log("ici")
+    openMenu(message) {
+      console.log(message);
+      if (message.message == "parametre") {
+        console.log("ici");
         this.$refs.param.open();
       }
     },
@@ -297,7 +302,9 @@ let div = document.querySelectorAll(".btn");
       if (this.MyJson.book[this.Id].enemy != undefined) {
         this.unDisplayMovement();
 
-        this.enemyLifePoints = this.MyJson.book[this.Id].enemy[0].enemyLifePoints;
+        this.enemyLifePoints = this.MyJson.book[
+          this.Id
+        ].enemy[0].enemyLifePoints;
         this.enemyWeapon = this.MyJson.book[this.Id].enemy[0].enemyAttack;
         this.enemyArmor = this.MyJson.book[this.Id].enemy[0].enemyArmor;
       } else {
@@ -312,9 +319,7 @@ let div = document.querySelectorAll(".btn");
       this.enemyLifePoints = this.MyJson.book[this.Id].enemy[0].enemyLifePoints;
       console.log("enemy life point =" + this.enemyLifePoints);
     },
-  
 
-  
     closeWindow() {
       let div = document.getElementsByClassName("combat");
       div[0].style.display = "none";
@@ -333,7 +338,6 @@ let div = document.querySelectorAll(".btn");
       this.$refs.param.playSound(audio);
       //audio.play();
     },
-
 
     throwTheDice(nbOfDice) {
       if (nbOfDice == 1) {
@@ -388,8 +392,8 @@ let div = document.querySelectorAll(".btn");
     },
 
     getFirstLifePoints() {
-      let startBtn = document.getElementById('startBtn');
-      startBtn.style.display="none";
+      let startBtn = document.getElementById("startBtn");
+      startBtn.style.display = "none";
       this.gif1 = true;
       this.gif2 = true;
       console.log("getFirstLifePoints : gif1 :" + this.gif1);
@@ -426,7 +430,6 @@ let div = document.querySelectorAll(".btn");
       if (this.enemyLifePoints <= 0) {
         this.displayMovement();
       }
-      
     },
 
     EnemyHitJoueur() {
@@ -466,17 +469,13 @@ let div = document.querySelectorAll(".btn");
         this.goTo(14);
       }
     },
-
-    
   },
-  
-  
 };
 </script>
 
 <style scoped>
 :root {
-  --backgroungImg: "";
+  --bckGrImg: "";
 }
 *,
 *::after,
@@ -511,7 +510,7 @@ h3 {
       rgba(227, 202, 171, 0.7),
       rgba(227, 202, 171, 0.7)
     ),
-     url("../assets/scrollBack.jpeg");
+    url var(--bckGrImg), url ("../assets/scrollBack.jpeg");
   background-repeat: no-repeat;
   background-position: center;
   position: relative;
@@ -586,7 +585,7 @@ h3 {
   justify-content: space-between;
 }
 
-.backgroundImg {
+#backgroundImg {
   position: relative;
   z-index: -2;
   object-fit: cover;
@@ -614,6 +613,7 @@ h3 {
 
 p {
   font-family: Irish;
+  font-size: 1.2em;
   padding: 10px;
 }
 .diceThrow {
@@ -646,7 +646,7 @@ p {
   position: absolute;
   z-index: 10;
   box-shadow: 17px 14px 24px 5px rgba(0, 0, 0, 0.14);
-  display: none; 
+  display: none;
 }
 
 #game {
@@ -656,6 +656,11 @@ p {
   align-items: center;
   /*background-color: greenyellow;*/
 }
+
+.pTitle {
+  font-family: Irish;
+}
+
 .container {
   width: 100%;
 
@@ -818,19 +823,21 @@ p {
 }
 
 .btnSpell {
-width: 165px;
+  width: 165px;
 }
-table, th, td {
+table,
+th,
+td {
   border: 1px solid black;
   border-collapse: collapse;
 }
 table {
-width: 100%;
+  width: 100%;
 }
 th {
-height: 50px;
+  height: 50px;
 }
 td {
-height: 50px;
+  height: 50px;
 }
 </style>

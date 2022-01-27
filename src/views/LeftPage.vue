@@ -31,40 +31,37 @@
 <script>
 import Action from "./Action";
 export default {
+  
   name: "LeftPage",
+  props: {
+    lifePoints: Number,
+    startingLifePoints: Number
+  },
   data() {
     return {
-      startingLifePoints: 0,
-      lifePoints: 0,
+    
       pageOpened: false,
     };
   },
 
   created: function () {
-    this.startingLifePoints = Action.startingLifePoints;
-    this.lifePoints = Action.lifePoints;
   },
 
   methods: {
     toggleLeft() {
-      this.startingLifePoints = Action.startingLifePoints;
-    this.lifePoints = Action.lifePoints;
-    console.log("starting life points" + this.startingLifePoints);
-      let hpBar = document.getElementById("hpBar");
-
-      console.log(hpBar);
-      let lifePoints = this.lifePoints;
-
+      console.log("starting lp " + startingLifePoints);
       let startingLifePoints = this.startingLifePoints;
-      console.log(lifePoints);
-      let lifeBar = lifePoints / startingLifePoints;
-      lifeBar = lifeBar*100;
-      let lBar = lifeBar + "%";
-      console.log(lBar);
-      hpBar.style.setProperty("--lifeBar", lBar);
+      console.log("starting life points : " + startingLifePoints);
+      let hpBar = document.getElementById("hpBar");
+      let lifePoints = this.lifePoints;
       
+      let lifeBar = lifePoints / startingLifePoints;
+      lifeBar = lifeBar * 100;
+      let lBar = lifeBar + "%";
+      console.log("Life bar " + lBar);
+      hpBar.style.setProperty("--lifeBar", lBar);
+
       let leftPage = document.getElementById("leftPage");
-      //let leftBtn = document.getElementById("leftBtn");
       let lStar = document.getElementById("lStar");
       let hp = document.getElementById("hp");
       let inv = document.getElementById("inventaire");
@@ -72,13 +69,10 @@ export default {
       let param = document.getElementById("param");
       this.pageOpened = !this.pageOpened;
       if (this.pageOpened == true) {
-        
-        //leftBtn.style.left = "50px";
         leftPage.style.cssText =
           "transition-property: width; transition-duration: 1000ms; width: 200px";
-
-        lStar.style.cssText = "transform: rotate(90deg)";
-
+        lStar.style.cssText = 
+          "transform: rotate(90deg)";
         hp.style.cssText =
           "transition-property: left; transition-duration: 1000ms; left: 50px";
         hpBar.style.cssText =
@@ -92,7 +86,6 @@ export default {
         hpBar.style.setProperty("--lifeBar", lBar);
       } else {
         leftPage.style.width = "0px";
-        //leftBtn.style.left = "-126px";
         lStar.style.transform = "rotate(0deg)";
         hp.style.left = "-200px";
         hpBar.style.left = "-200px";
@@ -101,18 +94,12 @@ export default {
         param.style.left = "-200px";
         hpBar.style.setProperty("--lifeBar", lBar);
       }
-      console.log(this.pageOpened);
-      console.log(document.getElementById("leftPage").style.width);
     },
-    emitOpenParam(){
-      
-      this.$emit("openParam",{message: "parametre"})
-    }
-    
+    emitOpenParam() {
+      this.$emit("openParam", { message: "parametre" });
+    },
   },
-  
 };
-
 </script>
 
 <style scoped>
@@ -178,7 +165,6 @@ export default {
   left: -200px;
 }
 #hpBar {
-
   background: linear-gradient(to top, red var(--lifeBar), #eee0ee66 0%);
   border: solid;
   border-radius: 50%;
@@ -195,19 +181,18 @@ export default {
 #inventaire {
   position: relative;
   left: -200px;
-  cursor:pointer;
+  cursor: pointer;
 }
 
-
 #dream {
-   position: relative;
+  position: relative;
   left: -200px;
 }
 
 #param {
   position: relative;
   left: -200px;
-  cursor:pointer;
+  cursor: pointer;
 }
 
 h3 {
@@ -225,6 +210,3 @@ h3:hover {
     0 0 60px #fff, 0 0 70px #fff, 0 0 80px #fff;
 }
 </style>
-.star:active{
-  transform: rotate(0deg);
-}
