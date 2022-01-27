@@ -7,7 +7,7 @@
         <div>{{ lifePoints }}/{{ startingLifePoints }}</div>
       </div>
 
-      <h3 id="inventaire">Inventaire</h3>
+      <h3 id="inventaire" @click="emitOpenInventaire">Inventaire</h3>
 
       <h3 id="dream">Temps du rêve</h3>
 
@@ -107,6 +107,9 @@ export default {
     emitOpenParam(){
       
       this.$emit("openParam",{message: "parametre"})
+    },
+    emitOpenInventaire(){
+      this.$emit("openParam",{message: "inventaire"})    
     }
     
   },
@@ -224,7 +227,8 @@ h3:hover {
   text-shadow: 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #fff, 0 0 50px #fff,
     0 0 60px #fff, 0 0 70px #fff, 0 0 80px #fff;
 }
-</style>
+
 .star:active{
   transform: rotate(0deg);
 }
+</style>

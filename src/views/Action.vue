@@ -78,6 +78,7 @@
       <div id="game">
         <p class="paragraphe" v-html="MyJson.book[Id].paragraph"></p>
         <Param ref="param"/>
+        <inventaire ref="inventaire"/>
         <div class="combat" id="combat">
           <h1>Combat</h1>
           <div @click="closeWindow" class="close-container">
@@ -188,9 +189,10 @@ import LeftPage from "./LeftPage.vue";
 import json from "../assets/data.json";
 
 import Param from './param.vue';
+import Inventaire from './Inventaire.vue';
 
 export default {
-  components: { LeftPage, Param },
+  components: { LeftPage, Param, Inventaire },
   name: "Action",
   props: {},
   data() {
@@ -283,6 +285,8 @@ let div = document.querySelectorAll(".btn");
       if(message.message == "parametre"){
         console.log("ici")
         this.$refs.param.open();
+      }else if(message.message == "inventaire"){
+        this.$refs.inventaire.open();
       }
     },
     unDisplayMovement() {
@@ -466,8 +470,16 @@ let div = document.querySelectorAll(".btn");
         this.goTo(14);
       }
     },
+    drinkPotion(nom){                             //a finir
+        if(nom == "Potions Curatives"){
+            this.throwTheDice(2);
+            this.lifePoints = this.lifePoints + (this.randomDice1+this.randomDice2)
+        }else if(nom == "Onguents"){
+          this.lifePoints = this.lifePoints + 5
+        }
+    }
 
-    
+
   },
   
   
