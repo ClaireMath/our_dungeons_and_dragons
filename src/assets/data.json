@@ -26,6 +26,7 @@
     },
     {
       "id": 2,
+      "img": "blank.png",
       "pTitle": "2",
       "paragraph": "Ça lui apprendra ! Il se sauve en reniflant. La prochaine fois, il réfléchira peut-être à deux fois avant de s'en prendre à un plus petit que lui. Bravo, Pip, vous vous en êtes bien tiré. On fera de vous un vrai chevalier. <br> Ne vous inquiétez pas pour vos POINTS DE VIE perdus (ou les siens). Vous les retrouverez. Vous en obtiendrez 1 pour chaque heure passée après la fin de la bagarre, jusqu'à revenir à votre total de départ. Demain, vous serez comme neuf. D'ici là, un petit  problème se pose. Vous êtes dans le pétrin. Incroyable comme il peut être difficile de se lancer dans une bagarre sérieuse sans se fourrer dans le pétrin. Il faut trouver une explication à donner à John. Il désapprouve formellement les rixes. <br> Eh oui, la vie est pleine de petits problèmes. Rendez-vous donc au 3, Pip, pour voir ce que vous réserve la suite de cette aventure. ",
       "choices": [
@@ -93,6 +94,7 @@
     },
     {
       "id": 7,
+      "img": "blank.png",
       "pTitle": "7",
       "paragraph": "A peine avez-vous prononcé les mots « Doigt de Feu 1 », qu'un Éclair jaillit du bout de votre index droit, frôlant la barbe de Merlin et mettant le feu à l'un des volumes reliés de cuir sur les étagères. Aussi étonnant que cela puisse paraître, Merlin paraît habitué à ce genre de phénomène et il se contente de lancer le contenu de l'encrier sur le livre pour l'éteindre. Rendez-vous au 8. ",
       "choices": [
@@ -120,6 +122,7 @@
     },
     {
       "id": 9,
+      "img": "blank.png",
       "pTitle": "9",
       "paragraph": "Vous suivez le sentier de droite qui se révèle extrêmement sinueux, sans rencontrer d'autre obstacle que les branches qui s'accrochent à vos vêtements, jusqu'à une clairière distante d'environ quatre cents mètres. A l'extrémité de cette clairière, le sentier se divise en deux à nouveau mais, avant que vous n'ayez opté pour l'une ou l'autre branche, un petit problème se pose à vous. Au milieu de la clairière, il y a un Loup. Un Loup énorme, d'aspect féroce qui. le nez levé, flaire autour de lui comme s'il avait senti l'odeur de votre sandwich au rosbif... Ou la vôtre. Il s'agit de prendre une décision, Pip. Et vite ! Vous pouvez vous sauver en courant par où vous êtes venu en espérant que le Loup ne se lancera pas à votre poursuite. Vous pouvez vous battre contre le Loup, puis choisir votre sentier si vous sortez vainqueur du combat. Vous pouvez essayer de l'amadouer en lui offrant l'un de vos sandwich au rosbif. Si vous vous sauvez, rendez-vous au 11. Si vous décidez de combattre le Loup, rendez-vous au 21. Si vous préférez tenter de l'amadouer, rendez-vous au 31. ",
       "choices": [
@@ -165,6 +168,7 @@
     },
     {
       "id": 11,
+      "img": "blank.png",
       "pTitle": "11",
       "paragraph": "Le Loup se rue à votre poursuite. Va-t-il vous rattraper ? Lancez un dé. Si vous faites 1, 2 ou 3, il vous saisit à la gorge. Si vous faites 4, 5 ou 6, vous réussissez à vous échapper en courant à toutes jambes sur le sentier de droite. Rendez-vous au 10. Que se passe-t-il si le Loup vous attrape ? Désolé, mais il vous dévore. Rendez-vous au 14. ",
       "choices": [
@@ -180,6 +184,7 @@
     },
     {
       "id": 12,
+      "img": "blank.png",
       "pTitle": "12",
       "paragraph": "Un cidre excellent. N'en abusez pas, cependant ! Lorsque vous vous serez bien régalé, rendez-vous au 32. ",
       "choices": [
@@ -191,6 +196,7 @@
     },
     {
       "id": 13,
+      "img": "blank.png",
       "pTitle": "13",
       "paragraph": "Dans le passage, vous remarquez une série d'ouvertures au-dessus de votre tête et vous n'avez que le temps de vous coller au mur pour éviter l'huile bouillante qui soudain en jaillit. Vous finissez cependant par franchir, sain et sauf, la herse. Rendez-vous au 32. ",
       "choices": [
@@ -214,6 +220,7 @@
     },
     {
       "id": 15,
+      "img": "blank.png",
       "pTitle": "15",
       "paragraph": "En atteignant le centre de la cour, vous tombez dans une trappe secrète, dissimulée sous une légère couche de terre. Rendez-vous au 36. ",
       "choices": [
@@ -225,6 +232,7 @@
     },
     {
       "id": 16,
+      "img": "blank.png",
       "pTitle": "16",
       "paragraph": "Si le vin a un drôle de goût, c'est parce qu'il est empoisonné ! Lancez deux dès pour voir l'effet qu'il a sur vous. Si vous faites : De 1 à 6 : vous vous tordez de douleur avant de vous écrouler, foudroyé. Rendez-vous au 14. De 7 à 12 : vous êtes malade comme un chien et vous perdez la moitié de vos POINTS DE VIE. Revenez en titubant au 32 et faites un nouveau choix. ",
       "choices": [
@@ -252,6 +260,7 @@
     },
     {
       "id": 18,
+      "img": "blank.png",
       "pTitle": "18",
       "paragraph": "Les charrettes sont en triste état, et pratiquement inutilisables. Deux des caisses renferment de vieux sacs, une troisième est pleine de pommes pourries, les deux autres sont vides. Trois des tonneaux contiennent du cidre, les autres, du vin. Si vous désirez goûter au cidre, rendez-vous au 12. Si vous désirez goûter au vin, rendezvous au 16. Si ce tas de vieilleries ne vous intéresse pas, vous pouvez vous diriger vers la porte à double battant rendez-vous au 33), ou vers l'escalier qui conduit au chemin de ronde (rendez-vous au 29). ",
       "choices": [
@@ -303,6 +312,7 @@
     },
     {
       "id": 21,
+      "img": "blank.png",
       "pTitle": "21",
       "paragraph": "Brave Pip ! Vous tirez votre fidèle épée, Excalibur Junior qui, ne l'oubliez pas, inflige 5 Points de Dommage supplémentaires si, toutefois, vous touchez la bête. — Salut, marmonne E.J. (Merlin n'a-t-il pas dit qu'il lui arrivait parfois de parler ?) Nous combattons les Loups, alors ? C'est plutôt dangereux à ton âge, tu ne crois pas ? Enfin, allons-y... Et, avant que vous n'ayez compris ce qui vous arrive, Excalibur Junior, au bout de votre bras, décrit un large moulinet vous permettant ainsi de frapper le premier. Quelle épée avisée ! Maintenant, lancez les dés. Le Loup est un adversaire coriace qui possède 20 POINTS DE VIE. Chaque fois qu'il réussit à vous atteindre il obtient, grâce à ses crocs, 3 Points de Dommage supplémentaires. Votre pourpoint en peau de dragon ne vous offrira aucune protection, car le Loup va chercher à vous déchirer les bras, les jambes et la gorge, qui ne sont pas protégés ; vous serez donc très vulnérable. Bonne chance, Pip, et que le meilleur gagne ! Si vous tuez le Loup, ou si vous l'assommez, vous avez le choix entre : Revenir sur vos pas, et prendre le sentier de gauche. Rendez-vous au 20. Continuer votre chemin, et prendre le nouveau sentier, à droite. Rendez-vous au 10. Continuer votre chemin, et prendre le sentier de gauche. Rendez-vous au 22. Si c'est le Loup qui vous tue, rendez-vous au 14. ",
       "choices": [
@@ -337,6 +347,7 @@
     },
     {
       "id": 22,
+      "img": "blank.png",
       "pTitle": "22",
       "paragraph": "Au bout de quelques pas, vous arrivez à une intersection : deux sentiers rejoignent votre chemin. Mais vous n'y prêtez pas attention, et vous continuez tout droit. Après avoir parcouru environ huit cents mètres, vous arrivez devant un rideau de feuillage qui vous barre la route. Vous le franchissez avec méfiance. Derrière, apparaît le Château des Ténèbres du sorcier Ansalom ! Rendez-vous au 19. ",
       "choices": [
@@ -348,6 +359,7 @@
     },
     {
       "id": 23,
+      "img": "blank.png",
       "pTitle": "23",
       "paragraph": "Après avoir traversé le pont-levis, vous vous engagez dans le passage voûté menant à la cour du château. Vous pouvez vous ruer vers la herse, et la franchir le plus rapidement possible si vous avez peur qu'elle ne s'abaisse brutalement, ou avancer en examinant attentivement ce qui vous entoure. Si vous choisissez de vous précipiter vers la herse, rendez-vous au 30. Si, vous méfiant, vous préférez avancer à pas comptés, rendez-vous au 13. ",
       "choices": [
@@ -378,6 +390,7 @@
     },
     {
       "id": 25,
+      "img": "blank.png",
       "pTitle": "25",
       "paragraph": "Comment? s'enquiert le Chevalier Noir. Vous avez dit Pip ? Eh bien, Pip, un jeune godelureau de votre espèce n'a rien à faire ici. On s'égare comme rien dans ces parages. J'en sais quelque chose. Je suis perdu depuis des semaines. Là-dessus, il ôte son casque et découvre un large visage rubicond à l'expression plutôt aimable. Je suis le roi Pellinore, à votre service, dit-il. Enfin, pas exactement à votre service car j'ai beaucoup à faire, mais je n'en suis pas moins ravi de faire votre connaissance. Il prend ensuite congé de vous, monté sur une vieille haridelle fourbue, et il s'enfonce dans les profondeurs de la forêt où il disparaît, ce vieux fou. Si vous cherchez avec soin, vous trouverez un sentier partant de la clairière qui vous mènera au 22. ",
       "choices": [
@@ -389,6 +402,7 @@
     },
     {
       "id": 26,
+      "img": "blank.png",
       "pTitle": "26",
       "paragraph": "L'odeur vous renseigne à l'instant même où vous ouvrez la porte. Des écuries. Assez mal entretenues à en juger par leur aspect. Pleines de paille moisie et de fumier, et vides. Si vous ne voulez pas perdre de temps ici, rendez- vous au 33 et refaites votre choix. Si vous voulez prendre le risque d'une fouille approfondie, rendez-vous au 41. ",
       "choices": [
@@ -404,6 +418,7 @@
     },
     {
       "id": 27,
+      "img": "blank.png",
       "pTitle": "27",
       "paragraph": "Fausse manœuvre, Pip. Ce sont des Poulets d'un genre particulier. Le sorcier Ansalom les a dressés à etre les gardiens de la cour du château. Les Poulets sauvages se ruent sur vous (sauvagement) et, bien qu'un de leurs coups de bec n'inflige que 1 Point de dommage, ils peuvent vous en donner tant et tant qu’ ils seraient tout à fait capables de vous mettre dans un triste état. Lancez deux dés. si vous faites : De 1 à 6, impossible de résister aux assauts furieux de cette volaille. Les coups de becs pleuvent sur vous, et c'en est fait de votre espoir de revenir en héros à Camelot car vous ne tardez pas à succomber. rendez-vous au 14. De 7 à 10, vous en réchappez ! Vous ne savez pas trop comment, mais vous en réchappez ! Vous perdez néanmoins, dans l'aventure, la moitié de vos POINTS DE VIE. Revenez au 32, et faites un nouveau choix. 11 ou 12, votre attitude belliqueuse stoppe net les poulets qui, bientôt, s'égayent en tous sens dans la cour. S'il vous est donné de rencontrer de nouveau des gardiens de cette sorte, la crainte que vous leur aspirez les fera fuir. Vous pouvez retourner tranquillement au 32 pour faire un nouveau choix. ",
       "choices": [
@@ -459,6 +474,7 @@
     },
     {
       "id": 29,
+      "img": "blank.png",
       "pTitle": "29",
       "paragraph": "Vous grimpez l'escalier de pierre menant au chemin de ronde et... Diable ! Le chemin de ronde et les tours sont gardés par une horde d'Insectes Archers ! Ces créatures terrifiantes ont près de deux mètres de haut et ressemblent singulièrement à des mantes religieuses, chacune armée d'un arc et d'un carquois de vingt flèches. Elles vont et viennent là-haut par centaines ! Pas question d'en combattre un tel nombre. Lancez deux dés pour voir si vous pouvez rebrousser chemin et redescendre sain et sauf dans la cour. Si VOUS faites : De 1 à 4, vous êtes criblé de 750 flèches qui vous tuent dans l'instant. Rendez-vous au 14. De 5 à 8, vous êtes blessé par trois flèches, et vous perdez 10 POINTS DE VIE. Mais vous réussissez néanmoins à regagner la cour. De 9 à 12, vous vous précipitez vers l'escalier, et v ous vous retrouvez dans la cour sain et sauf. Dans les deux derniers cas, retournez au paragraphe d'où vous venez et faites un nouveau choix. ",
       "choices": [
@@ -470,6 +486,7 @@
     },
     {
       "id": 30,
+      "img": "blank.png",
       "pTitle": "30",
       "paragraph": "Des jets d'huile bouillante jaillissent soudain d'ouvertures que vous n'aviez pas remarquées, au-dessus de votre tête. Vous perdez la moitié de vos POINTS DE VIE. Mais vous parvenez néanmoins à franchir la herse. Rendez-vous au 32. ",
       "choices": [
@@ -481,6 +498,7 @@
     },
     {
       "id": 31,
+      "img": "blank.png",
       "pTitle": "31",
       "paragraph": "Essayer de l'amadouer ? Une idée qui ne tient pas debout ! Enfin, vous avez choisi cette solution... Muni de votre sandwich au rosbif, avancez donc (à pas lents) vers ce Loup écumant. Puis, tendez la viande, en disant des gentillesses du genre de : « Oh, le gentil Loup... Oh, le beau Loup... Il est mignon ce Loup... Bon petit Loup... » Et lancez un dé. Si vous faites 3, ou plus (Dieu soit loué !), le Loup saisit la viande entre ses crocs et n'en fait qu'une bouchée. Puis, il vous lèche la main, et vous laisse suivre votre chemin en paix. Autrement dit, vous pouvez maintenant, soit revenir sur vos pas et prendre le sentier de gauche. Rendez-vous au 20. Soit continuer votre chemin et prendre le nouveau sentier de droite. Rendez-vous au 10. Soit continuer votre chemin et prendre le sentier de gauche. Rendez-vous au 22. Si vous faites 1 ou 2, le Loup vous égorge. Rendez- vous directement au 14. ",
       "choices": [
@@ -504,6 +522,7 @@
     },
     {
       "id": 32,
+      "img": "blank.png",
       "pTitle": "32",
       "paragraph": "Vous venez de pénétrer dans une vaste cour découverte au sol de terre battue. A cinquante mètres au nord, une porte en bois à double battant s'encadre dans le mur du fond de la cour. Près du mur est, sont rangées deux charrettes, six caisses et une douzaine de tonneaux. Contre le mur ouest, un escalier de pierre donne accès au chemin de ronde et aux tours. Dans la cour, une centaine de Poulets grattent la terre. Si vous vous dirigez vers la porte du mur nord, rendez-vous au 15. Si vous allez vers l'est pour examiner les charrettes et les tonneaux, rendez-vous au 18. Si vous allez à l'ouest pour gravir l'escalier du chemin de ronde, rendez-vous au 29. Si vous vous arrêtez pour bavarder avec les Poulets, rendez-vous au 27. ",
       "choices": [
@@ -555,6 +574,7 @@
     },
     {
       "id": 34,
+      "img": "blank.png",
       "pTitle": "34",
       "paragraph": "Pauvre Pip ! Les portes étaient faites de bon bois, à l'époque du roi Arthur. La preuve : votre épaule vous fait un mal de chien, et vous souffrez, de plus, d'un affreux mal de tête. Cette mésaventure vous fait perdre 3 points de vie, et il vous faudra faire, au minimum, 8 pour toucher un adversaire, lors de tout combat qui pourra se dérouler au cours des six paragraphes suivants. Maintenant retournez au 37, et faites un nouveau choix. ",
       "choices": [
@@ -594,6 +614,7 @@
     },
     {
       "id": 36,
+      "img": "blank.png",
       "pTitle": "36",
       "paragraph": "Vous vous retrouvez à l'extrémité d'un sombre couloir dallé de pierres, d'environ trois mètres de large et trois mètres de haut, aux parois de pierres brutes ruisselantes d'humidité, et tapissées de moisissures. (Si vous êtes tombé par la trappe, vous perdez 5 points de vie : il y a des chemins plus sûrs pour parvenir dans ce couloir). Devant vous, en direction du nord-est, vous distinguez sur une longueur d'environ vingt mètres le couloir obscur. Allumez donc une torche, Pip, ou une lanterne. Ceci vous permettra de constater qu'à son extrémité, le couloir semble déboucher dans une espèce de grotte. Vous décidez de suivre ce couloir. Rendez-vous au 53. ",
       "choices": [
@@ -605,6 +626,7 @@
     },
     {
       "id": 37,
+      "img": "blank.png",
       "pTitle": "37",
       "paragraph": "Devant vous s'amorce un couloir que vous suivez vers le nord pendant six mètres. Il tourne alors brusquement vers l'ouest, et se termine vingt-cinq mètres plus loin par une porte de bois massif. Le couloir est désert, et il ne semble pas recéler le moindre piège. Qu'allez-vous faire : Frapper poliment à la porte, et attendre que quelqu'un vous réponde ? Rendez-vous au 38. Vous ruer sur la porte pour essayer de l'enfoncer ? Rendez-vous au 34. Vous saisir de la lourde poignée de fer pour essayer d'ouvrir la porte ? Rendez-vous au 45. ",
       "choices": [
@@ -624,6 +646,7 @@
     },
     {
       "id": 38,
+      "img": "blank.png",
       "pTitle": "38",
       "paragraph": "Vous attendez quelques instants après avoir frappé, niais rien ne se passe. Retournez au 37, et faites un nouveau choix. ",
       "choices": [
@@ -635,6 +658,7 @@
     },
     {
       "id": 39,
+      "img": "blank.png",
       "pTitle": "39",
       "paragraph": "Tandis que l'immonde créature s'effondre, saignant de la chlorophylle par toutes ses blessures, vous remarquez sur le sol un objet à demi caché par son énorme masse. Vous vous penchez et vous reconnaissez une bourse de cuir. Vous l'ouvrez (prudemment), et vous découvrez à l'intérieur 10 bonnes Pièces d'Or. Pas tout à fait la rançon d'une reine, mais largement de quoi acheter une ribambelle de poulets pour votre mère adoptive avec assez d'argent de reste à consacrer à un tas de produits de nécessité pour la ferme (vous pouvez également tout dépenser en bonbons et autres sucreries). Fourrez cet or au fond de votre sac, Pip. Vous avez le droit de garder tout ce que vous découvrez. N'oubliez pas simplement que vous ne pouvez rien emporter avec vous si, par malheur, vous devez vous rendre au 14. Il n'y aura alors plus d'or. Ni rien de ce que vous aurez pu ramasser dans votre sac. Et tout ce que vous aurez pu trouver aura disparu des lieux à votre second passage. Enfin, pour le moment, cet or est à vous et, avec un peu de chance, votre , mission sera un succès. Quittez maintenant la grotte, et rendez- vous au 37. ",
       "choices": [
@@ -650,6 +674,7 @@
     },
     {
       "id": 40,
+      "img": "blank.png",
       "pTitle": "40",
       "paragraph": "Le couloir descend en pente très marquée sur presque toute sa longueur, puis il s'élargit brusquement pour former une sorte de caverne naturelle. Bien que trop irrégulière dans ses contours pour pouvoir en tracer une carte précise, cette caverne mesure approximativement douze mètres dans son axe nord- sud sur quinze mètres dans son axe est- ouest. Une large ouverture dans la paroi sud-est donne accès à une autre grotte. Autour de vous, le sol est jonché d'ossements blanchis dont certains ressemblent étrangement à des os humains. Si vous voulez fouiller cette grotte dans l'espoir d'y trouver quelque chose d'utile, rendezvous au 51. Si vous préférez ne pas perdre de temps et vous diriger vers l'autre grotte, rendez-vous au 54. ",
       "choices": [
@@ -665,6 +690,7 @@
     },
     {
       "id": 41,
+      "img": "blank.png",
       "pTitle": "41",
       "paragraph": "Un examen complet des écuries vous permet de découvrir un fragment de parchemin souillé, sur lequel est tracé un plan de la première cour montrant un passage secret, une trappe dissimulée en son centre. Ouvrez cette trappe et descendez les échelons scellés dans le mur. Rendez-vous au 36. ",
       "choices": [
@@ -676,6 +702,7 @@
     },
     {
       "id": 42,
+      "img": "blank.png",
       "pTitle": "42",
       "paragraph": "Bravo, Pip. Reprenez votre respiration, et fouillez les Zombies. L'un porte un anneau d'argent gravé d'étranges inscriptions. Vous le passez à votre doigt (ce faisant vous remarquez un léger tintement). Rendez-vous au 49. ",
       "choices": [
@@ -687,6 +714,7 @@
     },
     {
       "id": 43,
+      "img": "blank.png",
       "pTitle": "43",
       "paragraph": "Il vous faut quelque temps pour rallumer votre torche (les torches ne sont jamais d'un usage commode, surtout dans les situations critiques). Vous y parvenez non sans mal, et vous poussez un soupir de soulagement. Mais votre satisfaction est de courte durée. Vous n'êtes pas seul dans la fosse ! Se dirigeant dans votre direction, à deux ou trois mètres au plus de vous, s'avance une Araignée Géante. Cet énorme monstre velu est à peu près de la taille d'un gros chien, d'un très gros chien. Prestement, vous dégainez Excalibur Junior et vous vous avancez avec courage vers le monstre. — Hé ! Une seconde ! s'écrie Excalibur Junior. On ne peut pas se battre contre une créature de cette taille ! De plus, j'ai horreur des Araignées ! Vous voilà donc face à cette Araignée Géante, sans doute venimeuse, faut-il le dire, avec une épée qui vous tremble dans la main, une torche sur le point de s'éteindre et sans possibilité évidente de prendre la fuite. Une situation excitante, non ? Si vous êtes assez fou pour essayer d'obtenir une Réaction Amicale de ce monstre, rendezvous au 70. Si vous décidez de contraindre E. J. au combat, rendez-vous au 64. Si vous voulez tenter de vous échapper en essayant de bondir hors de la fosse, rendez-vous au 66. ",
       "choices": [
@@ -706,6 +734,7 @@
     },
     {
       "id": 44,
+      "img": "blank.png",
       "pTitle": "44",
       "paragraph": "La porte s'ouvre sur un vaste hall de dix mètres (axe nord-sud) sur vingt-cinq (axe estouest), entièrement revêtu, sol, murs et plafond, de marbre veiné de vert. A l'extrémité ouest du mur nord se découpe une ouverture fermée d'un rideau. Entre cette ouverture et vous, sur deux rangs de trois, se tiennent six (oui. six)... Zombies ! Sale affaire, Pip. Les Zombies ne sont nulle part jolis à regarder, mais ces six-là, même pour des Zombies, sont vraiment hideux. Et énormes. De plus, ils sont atrocement habillés de haillons rongés de moisissures. Les Zombies se déplacent lentement. (Ils se déplacent vers vous maintenant, Pip.) Vous avez donc tout le temps pour dégainer cette brave E.J. et frapper le premier coup. En fait, vous pouvez asséner deux coups d'épée avant que les Zombies ne puissent vous toucher de leurs mains purulentes. L'ennui, c'est qu'étant un mort vivant, un Zombie ne peut être anéanti que si vous faites 9, 10, 11 ou 12 en lançant les dés. Rien d'autre n'a d'effet. Vous menez ce combat de la façon suivante : Vous frappez un Zombie. Vous frappez un deuxième Zombie. Si vous ne l'avez pas neutralisé, le Zombie n° 1 riposte. Puis le Zombie n° 2. Puis le Zombie n° 3 vous porte un coup. Puis le Zombie n° 4. Puis le Zombie n° 5. Puis le Zombie n° 6. C'est à vous de porter un nouveau coup. Puis un autre. Vous poursuivez le combat en reprenant au 3. Les Zombies ne sont pas armés et n'infligent donc aucun Point de Dommage supplémentaire. Cependant, s'ils vous tuent (rendez-vous alors au 14), vous serez transformé en une sorte de demi-zombie. Dans ce cas, lorsque vous recommencerez cette aventure, jamais dans aucun combat, vous ne pourrez frapper le premier. Si vous êtes vainqueur, rendez-vous au 42. ",
       "choices": [
@@ -783,6 +812,7 @@
     },
     {
       "id": 45,
+      "img": "blank.png",
       "pTitle": "45",
       "paragraph": "Le croirez-vous, la porte s'ouvre avec lenteur. Ré flexion faite, à quoi d'autre servent les poignées quand on les tourne ? Vous vous trouvez sur le seuil d'une pièce de six mètres (axe est-ouest) sur quinze axe nord-sud) la porte étant ménagée dans les deux derniers mètres au nord du mur est. Cette pièce est éclairée par des torches fichées dans des appliques de fer scellées dans les murs. Par ailleurs, vous ne remarquez nul signe d'une quelconque présence. Un escalier de pierre mène à une petite porte au sommet du mur nord. Une deuxième porte (au niveau du sol) se découpe à l'extrémité sud du mur ouest. Si vous décidez de gravir l'escalier menant à la porte du haut, rendez-vous au 55. Si vous préférez traverser la salle en direction de la porte ouest, rendez-vous au 44. ",
       "choices": [
@@ -798,6 +828,7 @@
     },
     {
       "id": 46,
+      "img": "blank.png",
       "pTitle": "46",
       "paragraph": "Vous pouvez utiliser votre corde et vos crampons pour vous hisser hors de cette espèce de fosse. Revenez alors au 45, et faites un nouveau choix. Mais si vous préférez essayer de rallumer votre torche pour explorer le lieu où vous vous trouvez, rendez-vous au 43. ",
       "choices": [
@@ -813,6 +844,7 @@
     },
     {
       "id": 47,
+      "img": "blank.png",
       "pTitle": "47",
       "paragraph": "Amical ! A-t-on jamais vu un Squelette animé amical ? Celui-ci est un vieux sac d'os teigneux, prêt à vous mettre en pièces détachées. Dégainez Escalibur Junior, Pip. De quoi s'agit-il ? demande E. J. d'un ton endormi, soudain arrachée au petit somme qu'elle faisait dans son fourreau. On se bat contre des Squelettes, maintenant ? Hé, dis donc, tu ne pourrais pas t'entendre avec quelqu'un pour changer ?  A-t-on jamais entendu parler d'un Squelette animé amical ! glapissez-vous, excédé. Un peu de bon sens, E.J ! As-tu au moins gagné le premier lancer de dés ? demande E.J. posément. Pouvons-nous frapper les premiers ? Lancez les dés pour le Squelette et pour vous- même. Celui qui obtient le total le plus élevé porte le premier coup. Le Squelette est en position particulière en ce sens qu'il ne possède aucun point de vie (pour un Squelette, c'est normal, non ?). Vous n'avez donc qu'un seul moyen de l'éliminer : faire 10, 11 ou 12 avec deux dés. Il n'y a pas d'autre possibilité. Si vous réussissez à tuer le Squelette, rendez-vous au 131. Si vous échouez et qu'il vous tue (ce dont il est tout à fait capable, bien qu'il soit privé d'armes et qu'il ne vous inflige que les Points de Dommage donnés par les dés), rendezvous au 14. ",
       "choices": [
@@ -839,6 +871,7 @@
     },
     {
       "id": 48,
+      "img": "blank.png",
       "pTitle": "48",
       "paragraph": "Comme vous traversez la caverne, ce que vous preniez pour un tas de terreau se dresse soudain avec un rugissement et se précipite sur vous. Heureusement, vous avez le temps de dégainer Excalibur Junior, si bien que vous avez une bonne chance de frapper le premier coup. (Lancez un dé et, si vous obtenez plus de 1, vous frappez en effet le premier.) Le Monstre possède 35 points de vie et marque 4Points de Dommage chaque fois qu'il vous atteint en raison de sa force prodigieuse. De plus, il lui suffit d'un 5 ou mieux, pour vous toucher. Lancez vos dés pour voir comment va se dérouler le combat. Si le Monstre vous tue, rendez-vous au 14. Si vous êtes vainqueur, vous reprenez votre chemin et vous parvenez à l'ouverture située dans le mur nord de la grotte. Rendez-vous au 37. ",
       "choices": [
@@ -854,6 +887,7 @@
     },
     {
       "id": 49,
+      "img": "blank.png",
       "pTitle": "49",
       "paragraph": "Vous vous dirigez vers la porte, et vous tirez le rideau. Vous vous trouvez à l'entrée d'un couloir, éclairé par des torches et orienté vers le nord. Vous je suivez pendant dix mètres, et vous arrivez à un croisement. Rendez-vous au 75. ",
       "choices": [
@@ -892,6 +926,7 @@
     },
     {
       "id": 51,
+      "img": "blank.png",
       "pTitle": "51",
       "paragraph": "Rien. Rien du tout. Qu'est-ce que vous pensiez trouver dans un tas de vieux os ? Rendezvous au 54. ",
       "choices": [
@@ -903,6 +938,7 @@
     },
     {
       "id": 52,
+      "img": "blank.png",
       "pTitle": "52",
       "paragraph": "Es-tu venu me sauver ? demande le Squelette. Il y a si longtemps que je suis enchaîné à ce poteau de torture. Qui êtes-vous ? demandez-vous. La reine Guenièvre, répond vivement le Squelette qui ajoute : J'ai perdu pas mal de poids depuis qu'Ansalom m'a amenée ici. Vous n'en croyez pas un mot, bien sûr. D'abord, la reine Guenièvre est beaucoup plus petite que cet immense Squelette. Mais enfin, vous ne pouvez pas lui reprocher de tenter sa chance et vous répliquez : Allons, ne racontez pas de bêtises ! Si vous me dites la vérité, je vous laisse aller où bon vous semblera. Sinon, je vous réduis en chair à pâté avec ma fidèle Excalibur Junior. Très bien, je vais parler ! dit le Squelette. Je n'étais qu'un pauvre (quoique grand) garçon nommé Silas au service du méchant sorcier Ansa- lom. Un jour, je lui ai renversé de la soupe sur son kilt, il était habillé en Ecossais ce jour-là et, pour me punir, il m'a fait enchaîner à ce poteau à perpétuité. Mais il m'a aussi jeté un sort pour être sûr que je ne mourrais pas et que je souffrirais longtemps. Il est comme ça, figurez-vous. C'est arrivé voilà quelques jours seulement, et je ne serais sans doute pas aussi « squelettique » si les Molosses ne m'avaient pas dévoré jusqu'au dernier lambeau de chair. Cette histoire n'est pas plus invraisemblable qu'une autre après tout, aussi écartez-vous la main de la poignée de votre épée. Merci ! Merci ! glapit le Squelette d'une voix hystérique. Jamais je n'oublierai ce geste et, pour vous prouver ma gratitude, je vais vous expliquer comment atteindre la partie du château où Ansalom a caché la Reine. Et c'est ce qu'il fait. Grattez le sol de la première cour et vous découvrirez une trappe secrète. Ouvrez- la et descendez dans un couloir situé sous la cour, en empruntant les échelons scellés dans le mur. Rendez-vous au 36. ",
       "choices": [
@@ -934,6 +970,7 @@
     },
     {
       "id": 54,
+      "img": "blank.png",
       "pTitle": "54",
       "paragraph": "Vous pénétrez dans la deuxième grotte qui est sensiblement plus grande que la première. Là aussi, il est impossible d'en tracer un plan précis, mais ses dimensions sont approximativement de vingt mètres (axe nord-sud), sur quinze mètres (axe est-ouest). A l'extrémité la plus éloignée de la paroi nord de la grotte, vous distinguez une ouverture. Devant vous, s'élève ce qui vous semble être un imposant tas de terreau. Si vous voulez fouiller ce tas de terreau pour voir s'il cache un objet qui pourrait vous être utile, rendez- vous au 35. Mais vous pouvez également vous diriger vers l'ouverture que vous avez aperçue. Rendezvous au 48. ",
       "choices": [
@@ -949,6 +986,7 @@
     },
     {
       "id": 55,
+      "img": "blank.png",
       "pTitle": "55",
       "paragraph": "Vous gravissez l'escalier de pierre. Du moins, les cinq premières marches. Les suivantes, comme la porte, ne sont, malheureusement pour vous, qu'une illusion créée par le sorcier Ansalom. Vous vous en apercevez tout simplement parce que vous tombez dans le vide en voulant poser le pied sur la sixième marche. Vous êtes précipité dans l'obscurité et votre torche elle-même s'éteint alors que vous heurtez brutalement le sol. Vous mettez quelque temps à reprendre vos esprits. Lancez un dé pour savoir combien de points de vie vous avez perdus dans votre chute et rendez-vous au 46. ",
       "choices": [
@@ -960,6 +998,7 @@
     },
     {
       "id": 56,
+      "img": "blank.png",
       "pTitle": "56",
       "paragraph": "Il est vraiment dur à actionner, ce levier. Et en fait, il est quelque peu rouillé. Peut-être, en vous donnant du mal, en faisant appel à toutes vos forces... Lancez les dés pour voir si vous allez pouvoir manœuvrer le levier. Si vous faites 6 ou plus, il bouge. Rendez-vous au 65. Si vous faites moins de 6, vous pouvez soit renoncer, retournez alors au 71 et faites un nouveau choix, soit faire une autre tentative. ",
       "choices": [
@@ -975,6 +1014,7 @@
     },
     {
       "id": 57,
+      "img": "blank.png",
       "pTitle": "57",
       "paragraph": "Vous montez sur le bateau qui, aussitôt, s'éloigne sans bruit de la rive. Quelques minutes plus tard, vous ne voyez plus la terre. Seules les eaux calmes et sombres du lac reflètent les flancs lumineux du bateau. Dans son fourreau, à votre côté, E.J. continue à grommeler avec humeur. Soudain l'air devient plus frais. Où allez-vous donc ? Etait-ce une erreur de mettre le pied sur ce bateau (comme semble l'affirmer E.J.) ? Quelle force mystérieuse le guide? Ou, plus exactement, vers quelle destination est-il guidé ? Le voyage semble s'éterniser. Puis, au loin, sur l'horizon liquide, vous distinguez une sorte de lueur blanche. Et c'est en direction de cette lueur que glisse maintenant le bateau. Bientôt, la lumière se précise pour prendre la forme d'une île située au centre du lac, une île qui paraît illuminee d'un brillant clair de lune — encore qu'une lune souterraine soit manifestement inconcevable. Le bateau. finit par s'échouer sur une plage de sable. Comme vous en descendez, votre attention est aussitôt attirée par les hautes colonnes d'un temple grec édifie à une centaine de mètres de l'endroit où vous vous trouvez. Quant à votre embarcation, vous la voyez s'éloigner, puis disparaître rapidement dans l'obscurité où est  plongé le lac. Vous voilà comme un naufragé en compagnie de votre épée récalcitrante. Et maintenant, Pip, qu' allez vous faire ? Si vous voulez explorer l'île, rendez-vous au 60. Si vous choisissez le temple, rendezvous au 62. ",
       "choices": [
@@ -990,6 +1030,7 @@
     },
     {
       "id": 58,
+      "img": "blank.png",
       "pTitle": "58",
       "paragraph": "Pas de chance jusqu'ici, Pip. Peut-être devriez-vous retourner au 74 et essayer de lancer à nouveau ces bons vieux dés. ",
       "choices": [
@@ -1001,6 +1042,7 @@
     },
     {
       "id": 59,
+      "img": "blank.png",
       "pTitle": "59",
       "paragraph": "Il est vide. Du moins, il paraît vide. Mais quel est ce sifflement ? Un serpent invisible ? Non, c'est du gaz! Ne respirez pas, Pip ! Ne respirez pas ! Trop tard Vous avez inspiré une bonne bouffée de gaz. Lancez vite les dés ! Si vous faites 10 ou plus, vous survivez. Mais vous perdez néanmoins la moitié de vos points de vie Rendez-vous au 154. si vous faites moins de 10, vous êtes pris de vertiges, à vous glissez sur le sol. Rendezvous au 14. ",
       "choices": [
@@ -1016,6 +1058,7 @@
     },
     {
       "id": 60,
+      "img": "blank.png",
       "pTitle": "60",
       "paragraph": "Vous vous éloignez de la rive et le sol devient rocheux, semé çà et là de quelques buissons rabougris. Le clair de lune projette des ombres étranges parmi les rochers qu'il transforme en monstres grotesques jusqu'à ce que, vous en approchant, ils reprennent leur aspect normal. L'île, vous vous en apercevez rapidement, est très petite et vous n'y voyez rien de bien remarquable, mis à part le temple et l'orifice d'une caverne creusée dans la falaise de la côte nord. Si vous explorez la caverne, rendez-vous au 100. Si vous préférez vous diriger vers le temple, rendez- vous au 62. ",
       "choices": [
@@ -1031,6 +1074,7 @@
     },
     {
       "id": 61,
+      "img": "blank.png",
       "pTitle": "61",
       "paragraph": "Félicitations ! Vous avez réussi ! Maintenant, vous pouvez quitter cette salle en tirant simplement vers le bas la baguette tenue par la statue. Allez-y ! Vous ne risquez rien. Là, vous voyez ? La pièce se met de nouveau à pivoter découvrant la porte, ce qui vous permet de revenir au croisement. A présent, vous pouvez vous diriger vers le nord (rendez-vous au 74), vers l'est (rendez-vous au 76). ",
       "choices": [
@@ -1090,6 +1134,7 @@
     },
     {
       "id": 64,
+      "img": "blank.png",
       "pTitle": "64",
       "paragraph": "Le combat est inéluctable, quoi qu'en pense E.J.. L'Araignée dispose de 33 points de vie ; il lui faut faire 4 pour porter un coup, et chacun de ses coups inflige 3 Points de Dommage supplémentaires. Pire encore, elle est extrêmement venimeuse, si bien que si elle vous mord trois fois, vous risquerez d'être empoisonné. Lancez deux dés. A moins d'obtenir au minimum 6, vous ne survivrez pas au venin de l'Araignée. Si l'Araignée vous tue, rendez-vous au 14. Si vous tuez l'Araignée, rendez-vous au 80. ",
       "choices": [
@@ -1105,6 +1150,7 @@
     },
     {
       "id": 65,
+      "img": "blank.png",
       "pTitle": "65",
       "paragraph": "Oh, mon Dieu, le toit s'est écroulé. Vous êtes enseveli sous des milliers de tonnes de gravats, Pip. Et vous savez, bien entendu, ce que cela signifie. Vous avez raison. Rendezvous au 14. ",
       "choices": [
@@ -1116,6 +1162,7 @@
     },
     {
       "id": 66,
+      "img": "blank.png",
       "pTitle": "66",
       "paragraph": "Vous faites un bond désespéré vers le haut de la fosse, en essayant de vous accrocher comme vous le pouvez aux aspérités du mur, Excalibur Junior serrée entre vos dents. Lancez deux dés. Si vous faites de 1 à 6, vous retombez entre les pattes de l'Araignée (Beuh !). Rendez-vous au 64. Si vous faites de 7 à 12, vous parvenez tant bien que mal à vous extraire de la fosse. Rendez-vous au 45, et faites un nouveau choix. ",
       "choices": [
@@ -1131,6 +1178,7 @@
     },
     {
       "id": 67,
+      "img": "blank.png",
       "pTitle": "67",
       "paragraph": "Vous êtes férocement attaqué à la cheville. La cheville ? Oui, la cheville ! Et si c'est drôle, c'est aussi très douloureux. Vous perdez 4 points de vie. Récapitulons votre situation. Environné d'une nuit magique, vous ne voyez rien du tout. Votre torche est éteinte (et, bien que vous ne l'ayez pas vérifié, votre lanterne à huile ne fonctionne pas non plus). Vous êtes sauvagement attaqué au ras du sol. Qu'allez-vous faire ? Bien sûr, vous pouvez toujours essayer de riposter. Le seul problème, c'est que vous n'y voyez goutte. Vous ne pouvez donc que frapper à l'aveuglette. Ce qui ne vous laisse guère de chances de toucher, votre adversaire. Donc, si vous décidez de combattre, il faut que vous obteniez au minimum 10 pour porter un coup. A moins que vous n'essayiez de provoquer une Réaction Amicale, ce qui n'est guère tentant étant donné que la chose persiste à s'acharner sur vos chevilles. A moins que par un moyen quelconque, vous ne tentiez de percer l'obscurité ou de la dissiper. Mais tout est là. L'obscurité où vous êtes plongé est magique. Les torches ne s'allument pas. Les lampes non plus. La magie seule, sous une forme ou une autre, peut vous tirer d'affaire : une Boule de Feu, s'il vous en reste, un Doigt de Feu, si vous en possédez encore. Mais faut-il risquer de les gaspiller ici ou les garder pour des situations encore plus périlleuses ? Il y a, ainsi, des décisions bien difficiles à prendre dans la vie, Pip, quand on s'embarque dans des aventures magiques. Si vous décidez de combattre, rendez-vous au 90. Si vous tentez une Réaction Amicale, rendez-vous au 92. Si vous décidez d'utiliser une Boule de Feu ou un Doigt de Feu pour obtenir un peu de lumière, rendez-vous au 97. ",
       "choices": [
@@ -1150,6 +1198,7 @@
     },
     {
       "id": 68,
+      "img": "blank.png",
       "pTitle": "68",
       "paragraph": "Arrête, cesse, renonce, dit l'Araignée d'une voix féminine musicale qui vous résonne dans la tête. Rengaine donc cette absurde petite épée. Je n'ai aucune intention de te nuire. Vous parlez ! dites-vous, sidéré. Pas exactement, répond l'Araignée. En fait, j' utilise la télépathie qui te donne l'impression que je parle. Mais trêve de considérations techniques. Dois-je comprendre que tu te trouves dans ces lieux avec des intentions malveillantes à l'égard du sorcier Ansalom ? Vous hochez la tête, hésitant. Parfait, reprend l'Araignée. Je ne le porte pas dans mon cœur, moi non plus. Il me fait penser à une grosse mouche bleue. Répugnant de A à Z. Elle frotte ensemble, avec énergie, quatre de ses huit pattes. En tout cas, tu ne lui feras pas grand mal si tu restes enfermé ici. Veux-tu que je te tresse une corde pour sortir ? Si vous acceptez l'amicale proposition de l'Araignée, rendez-vous au 45 et faites un nouveau choix. Si vous décidez d'examiner la fosse de plus près, l'Araignée en sortira et disparaîtra, vous laissant libre d'agir à votre guise. Rendez-vous au 73. ",
       "choices": [
@@ -1165,6 +1214,7 @@
     },
     {
       "id": 69,
+      "img": "blank.png",
       "pTitle": "69",
       "paragraph": "Vous avez découvert une porte secrète. Bravo ! Rendez-vous au 91. ",
       "choices": [
@@ -1176,6 +1226,7 @@
     },
     {
       "id": 70,
+      "img": "blank.png",
       "pTitle": "70",
       "paragraph": "Eh bien, lancez les dés ! Si vous obtenez une Réaction Amicale, rendez-vous au 68. Sinon, rendez-vous au 64. ",
       "choices": [
@@ -1207,6 +1258,7 @@
     },
     {
       "id": 72,
+      "img": "blank.png",
       "pTitle": "72",
       "paragraph": "Avec appréhension, vous progressez dans l'obscurité totale, d'une main vous guidant à tâtons contre les aspérités de la paroi rocheuse, de l'autre serrant la poignée d'Excalibur Junior. Le bruit de respiration se fait plus proche, plus fort. — Qui est là ? vous écriez- vous. Le souffle s'interrompt. Rendez-vous donc au 67 avant que la tension nerveuse ne vous terrasse. ",
       "choices": [
@@ -1245,6 +1297,7 @@
     },
     {
       "id": 74,
+      "img": "blank.png",
       "pTitle": "74",
       "paragraph": "Vingt-cinq mètres plus loin, le couloir se termine contre un mur de pierre. Un couloir ne menant nulle part vous paraissant absurde, vos soupçons sont aussitôt éveillés — rien de plus normal. Vous commencez alors un examen méthodique des lieux, tâtant les murs à la recherche de fentes ou de fissures. Lancez deux dés pour savoir si vous trouvez quelque chose. Si vous faites 1, 2 ou 3, rendez-vous au 58. Si vous faites 4 ou plus, rendez-vous au 78. ",
       "choices": [
@@ -1260,6 +1313,7 @@
     },
     {
       "id": 75,
+      "img": "blank.png",
       "pTitle": "75",
       "paragraph": "Maintenant un choix s'offre à vous. Vous pouvez continuer vers le nord, ou prendre le couloir est, ou encore le couloir ouest. Vous tendez l'oreille, mais le silence est total, et rien de vous donne la moindre indication sur ce que vous devez faire. On se croirait au fond d'une tombe. Si, par hasard, quelque créature est embusquée dans un coin, elle doit attendre patiemment que vous vous approchiez d'elle. Alors, qu'allez-vous faire ?  Vous diriger vers le nord ? Rendez-vous au 74. Vous diriger vers l'ouest ? Rendezvous au 71. Vous diriger vers l'est ? Rendez-vous au 76. ",
       "choices": [
@@ -1295,6 +1349,7 @@
     },
     {
       "id": 77,
+      "img": "blank.png",
       "pTitle": "77",
       "paragraph": "N'écoutez pas le bruit de cette respiration, Pip. Il y va de votre vie. Vous tendez devant vous votre torche allumée, mais vous ne voyez rien. La torche n'éclaire rien ! Il y a de la magie là-dessous, Pip. Voyons, vous voulez toujours avancer ? Si oui, rendez-vous au 72. Sinon, vous pouvez revenir sur vos pas jusqu'au croisement, et faire un nouveau choix. Rendez-vous au 75. ",
       "choices": [
@@ -1322,6 +1377,7 @@
     },
     {
       "id": 79,
+      "img": "blank.png",
       "pTitle": "79",
       "paragraph": "Prêt à reprendre vos fouilles ? Si oui, rendez-vous au 69. Si vous en avez plus qu'assez de cette fosse, sortez-en et rendez-vous au 45, pour faire un nouveau choix. ",
       "choices": [
@@ -1337,6 +1393,7 @@
     },
     {
       "id": 80,
+      "img": "blank.png",
       "pTitle": "80",
       "paragraph": "Quel gâchis ! Des pattes dans tous les coins. Tout de même, vous avez tué l'Araignée, Pip, ce qui vaut mieux que l'inverse. Si vous voulez continuer à explorer cette fosse, rendez-vous au 73. Si vous préférez en sortir, rendez-vous au 45, et faites un nouveau choix.    ",
       "choices": [
@@ -1352,6 +1409,7 @@
     },
     {
       "id": 81,
+      "img": "blank.png",
       "pTitle": "81",
       "paragraph": "Plus de dix vers ! s'écrie Nosférax avec ravissement. Quelle œuvre sublime, quelle création poétique ! Quel travail d'Hercule ! Cet effort aussi doit être récompensé ! Et, de la poche de son pantalon, il sort un petit canard de bois peint de couleurs vives, jaune, rouge et marron, qu'il vous tend. Il semble qu'il possédait à l'origine des roulettes mais il les a perdues depuis. Ceci, dit Nosférax, est mon bien le plus précieux, et maintenant il est à toi. C'est un canard magique. Magique ? dites-vous en écho, réussissant à placer un mot pour la première fois depuis des siècles. Et qu'est-ce qu'il fait ? Je ne sais pas au juste, admet Nosférax. Et tu ne dois pas le savoir non plus. Mais si jamais tu te trouves en grand danger, victime d'un maléfice, tu peux crier : Canard magique Viens mon sauveur Je n 'ai pas peur Rends-toi alors sans délai au 119, où tu seras renseigné sur le pouvoir magique du canard ; mais ne va pas au 119 à moins d'avoir absolument besoin de ce canard car tu ne peux t'en servir qu'une fois, après quoi le charme est rompu. Nosférax bâille : Maintenant, mon cher petit ami, bien que j'aie eu grand plaisir à te rencontrer, je suis fatigué. Si tu veux bien m'excuser, je vais retourner dans mon cercueil et m'y reposer en attendant mon prochain visiteur. Sur quoi, il redéploie sa grande cape noire sur ses épaules, vous décoche un sourire éblouissant, saute dans son cercueil et referme le couvercle. Vous pouvez frapper autant qu'il vous plaira, il ne le rouvrira pas. Puisque vous n'avez apparemment plus rien à faire ici, retournez donc au 62 pour voir ce qui se passe dans le temple. ",
       "choices": [
@@ -1371,6 +1429,7 @@
     },
     {
       "id": 82,
+      "img": "blank.png",
       "pTitle": "82",
       "paragraph": "Crac ! La porte vole en morceaux dans un fracas horrible, et deux Gardes qui se trouvaient en faction de l'autre côté bondissent sur vous. Des colosses en armure de cuir, armés d'épée. Ils ont donc l'un et l'autre l'avantage de vous attaquer les premiers. Rendez-vous au 86.  ",
       "choices": [
@@ -1382,6 +1441,7 @@
     },
     {
       "id": 83,
+      "img": "blank.png",
       "pTitle": "83",
       "paragraph": "Sur le parchemin est inscrit un sortilège de téléportage ! Voilà bien une rareté, Pip, un genre de sortilège qui peut se révéler sans prix dans une situation critique. Dès que vous l'utilisez, vous vous retrouvez aussitôt au 14. Mais bien vivant, avec tout ce que vous possédez. Il vous suffit donc de revenir avec soin sur vos pas et d'éviter le danger particulier qui vous menaçait. Vous ne pouvez utiliser ce sortilège qu'une seule fois. Et s'il est toujours en votre possession à la fin de cette aventure, il vous sera possible de l'emporter avec vous dans vos futures missions. Rangez avec soin le parchemin. Cette salle n'offrant aucune issue, vous revenez au croisement pour faire un nouveau choix. Rendez-vous au 75. ",
       "choices": [
@@ -1393,6 +1453,7 @@
     },
     {
       "id": 84,
+      "img": "blank.png",
       "pTitle": "84",
       "paragraph": "Boum ! Rendez-vous au 14. ",
       "choices": [
@@ -1404,6 +1465,7 @@
     },
     {
       "id": 85,
+      "img": "blank.png",
       "pTitle": "85",
       "paragraph": "Quelle activité de ruche ! Ce sont les cuisines. Maîtres queux et marmitons s'affairent dans un grand tumulte mais sans faire grand-chose. Par bonheur, ils s'affairent tellement à prendre des airs affairés que personne ne remarque que vous avez ouvert la porte. Inutile de les déranger. Battez discrètement en retraite, et retournez au 107 pour faire un nouveau choix. ",
       "choices": [
@@ -1415,6 +1477,7 @@
     },
     {
       "id": 86,
+      "img": "blank.png",
       "pTitle": "86",
       "paragraph": "Vous voilà en pleine bagarre, Pip, que cela vous plaise ou non. Chaque Garde possède 15 POINTS DE VIE. Leurs épées infligent deux Points de Dommage supplémentaires, et leurs armures les protègent de 2 Points de Dommage que vous pouvez leur infliger. n oubliez pas qu'ils vous portent les premiers coups. Vous les combattez l'un après l'autre. Bonne chance ! Si vous êtes vainqueur, rendez-vous au 107. Sinon, rendez-vous au 14. ",
       "choices": [
@@ -1450,6 +1513,7 @@
     },
     {
       "id": 87,
+      "img": "blank.png",
       "pTitle": "87",
       "paragraph": "Charmant, murmure Nosférax d'un ton modeste et visiblement ravi, encore qu'il semble un peu surpris par les noms que vous avez cités. Vraiment charmant. il se met à arpenter à grands pas le sol de sa crypte à la façon d'un acteur shakespearien, déclamant les elucubrations suivantes : Oh, pour moi, quelle joie Quel émoi D'être apprécié comme il se doit Par un olibrius Plus malin, certes qu 'une puce. Il sourit : Une petite ode impromptue pour célébrer l'occasion. Mais venons-en au fait, puisque je rencontre si rarement un amateur éclairé capable d'apprécier mon génie. Puisque vous avez été assez aimable pour écouter mes petits vers, je vous rendrai ce compliment. Là-dessus, il sort de la poche de poitrine de son habit une feuille de parchemin vierge et, de sa poche intérieure, une plume tout à fait étrange (un examen attentif permet de constater qu'il s'agit d'une plume d'oie-stylo). Prenez ceci, dit-il, et composez-moi donc sur-le- champ une ode, une ballade, un limerick, un haï kai ou tout autre poème de ce genre pour notre plaisir et notre édification mutuels. Faites-le aussi long que possible mais assurez-vous qu'il soit sur une rime, comme ceci : Moi je m'en vais Traire le lait Et le lait trait Vous préviendrai Qu'aurons du lait Doux et bien frais Et ainsi de suite, selon votre inspiration. Ce Nosférax est manifestement quelque peu perturbé, mais plutôt sympathique. Il vaut mieux se concilier ses bonnes grâces et composer un poème comme il le souhaite. Qui sait les avantages que peuvent vous valoir un peu de courtoisie au temps de la Chevalerie. Utilisez la page blanche qui suit pour écrire votre poème et rendez-vous au 112. ",
       "choices": [
@@ -1461,6 +1525,7 @@
     },
     {
       "id": 88,
+      "img": "blank.png",
       "pTitle": "88",
       "paragraph": "Sur le rouleau de parchemin est écrit un sortilège curatif ! Voilà une trouvaille providentielle. La prochaine fois que vous verrez dangereusement diminuer votre total de POINTS DE VIE, vous n'aurez qu'à lire ce parchemin et vous retrouverez aussitôt votre total de départ de POINTS DE VIE. (Notez, cependant, que le sortilège n'est valable qu'une fois ; et n'ayez donc recours à lui qu'en cas d'extrême nécessité.) Cette pièce n'a pas d'issue. Vous revenez donc au croisement pour faire un nouveau choix. Rendez- vous au 75. ",
       "choices": [
@@ -1472,6 +1537,7 @@
     },
     {
       "id": 89,
+      "img": "blank.png",
       "pTitle": "89",
       "paragraph": "Allons bon ! C'est une salle des Gardes où se pressent pour le moins une centaine de puissants soldats chevelus. Ils jouent aux dés, boivent de la bière, aiguisent leurs épées. Ils n'ont rien de rassurant Vous n'auriez aucune chance de survivre à un combat avec cette bande de soudards. Fasse le ciel qu'ils ne vous aient pas remarqué ! lancez deux dés. Si vous faites de 1 à 6, rendez-vous au 140. Si vous faites de 7 à 12, rendez-vous au 145.     ",
       "choices": [
@@ -1487,6 +1553,7 @@
     },
     {
       "id": 90,
+      "img": "blank.png",
       "pTitle": "90",
       "paragraph": "Très bien, Pip, vous avez fait votre choix. Votre adversaire invisible dispose de 40 POINTS DE VIE. il a la faculté de voir dans l'obscurité. Il peut vous atteindre en faisant 6, et chacun de ses coups inflige 5 Points de Dommage supplémentaires. Si vous perdez la vie dans cet affrontement, ce qui est plus que probable, rendez-vous au 14. Si, par un miracle quelconque, vous sortez vainqueur de ce combat, rendez-vous au 110.   Au cœur du Château des Ténèbres ",
       "choices": [
@@ -1513,6 +1580,7 @@
     },
     {
       "id": 91,
+      "img": "blank.png",
       "pTitle": "91",
       "paragraph": "Une porte secrète particulièrement bien cachée. Un aventurier chevronné pourrait hanter ces parages durant des siècles sans jamais songer à chercher une porte dans un endroit pareil. Voyons, Pip, cela vaut toujours la peine d'aller voir ce qui se passe derrière une porte secrète. Mais pouvez-vous l'ouvrir ? Tout est là. Il arrive que ce soit très difficile. Lancez donc vité vos dés. Si vous faites de 1 à 6, rendez-vous au 94. Si vous faites de 7 à 12, rendez-vous au 118. ",
       "choices": [
@@ -1528,6 +1596,7 @@
     },
     {
       "id": 92,
+      "img": "blank.png",
       "pTitle": "92",
       "paragraph": "Vous êtes à coup sûr un optimiste. Lancez deux dés. Si vous faites de 1 à 9, rendez-vous au 115. Si vous faites 10, 11 ou 12, rendez-vous au 120. ",
       "choices": [
@@ -1543,6 +1612,7 @@
     },
     {
       "id": 93,
+      "img": "blank.png",
       "pTitle": "93",
       "paragraph": "Sur le parchemin est écrit un sortilège d'hypnose ! Si vous décidez d'utiliser ce sortilège contre un adversaire, vous devrez lancer deux dés pour savoir s'il est efficace. Si vous obtenez 5 ou plus, il agira. Si vous obtenez moins de 5, son effet est inexistant. Si le sortilège agit, votre adversaire tombera dans un état second et vous pourrez ne pas tenir compte de sa présence. Vous ne pouvez utiliser ce sortilège qu'une fois mais si vous n'en avez pas tiré parti au cours de cette aventure, vous pourrez l'emporter avec vous au cours de vos prochaines missions. Maintenant revenez au croisement, et faites un nouveau choix. Rendez-vous au 75. ",
       "choices": [
@@ -1554,6 +1624,7 @@
     },
     {
       "id": 94,
+      "img": "blank.png",
       "pTitle": "94",
       "paragraph": "Impossible d'ouvrir cette porte qui est complètement bloquée. Enfin vous êtes un aventurier déterminé qui n'a pas froid aux yeux : essayez de la défoncer d'un coup d'épaule, et rendez-vous au 82. ",
       "choices": [
@@ -1565,6 +1636,7 @@
     },
     {
       "id": 95,
+      "img": "blank.png",
       "pTitle": "95",
       "paragraph": "E.J. à la main, vous vous élancez le long du couloir comme une tornade. — Mordez la poussière, Gardes de l'infâme sorcier ; Ansalom ! vous écriez-vous. Nobles paroles, Pip, mais sont-elles suivies de résultat ? Vous portez le premier coup en raison de votre attaque surprise, ensuite c'est aux dés de décider de l'évolution du combat. Les Gardes possèdent chacun 15 POINTS DE VIE. Leurs épées vous infligeront 2 Points de Dommage supplémentaires ; en revanche, leurs armures les protègent de 2 Points de Dommage que vous pourrez leur infliger. Si vous perdez le combat rendez-vous au 14. Si vous êtes vainqueur, vous avez maintenant le choix entre : pénétrer dans la pièce dont ils avaient la garde. Rendez-vous au 138. revenir au croisement et prendre le couloir qui se dirige vers l'est. Rendez-vous au 130. revenir au croisement et continuer tout droit. Rendez-vous au 149. ",
       "choices": [
@@ -1608,6 +1680,7 @@
     },
     {
       "id": 96,
+      "img": "blank.png",
       "pTitle": "96",
       "paragraph": "Vous suivez le couloir qui aboutit vingt-cinq mètres plus loin à un croisement. Un coup d'oeil au sud vous permet d'entrevoir deux Gardes postés devant une porte. Heureusement, ils ne vous ont pas vu, mais ils ne manqueront pas de vous apercevoir si vous tentez de traverser le couloir ou si vous prenez la direction du nord. Au nord, le couloir vient buter, au bout de quinze mètres, sur une porte de bois massive. A l'est, le couloir se poursuit sur une dizaine de mètres avant de déboucher au haut d'un escalier mais, pour prendre cette direction, vous êtes obligé de traverser le couloir nord-ouest. A en juger par la disposition des lieux, vous ne pouvez qu'affronter les Gardes à moins que vous ne préfériez revenir au 107 pour faire un nouveau choix. Mais si vous vous sentez assez de courage pour affronter les Gardes, vous degainez E. J. et, en hurlant, vous vous précipitez sur eux. Rendez-vous au 95. ",
       "choices": [
@@ -1623,6 +1696,7 @@
     },
     {
       "id": 97,
+      "img": "blank.png",
       "pTitle": "97",
       "paragraph": "Par Jupiter ! (comme disaient les Romains), ça marche ! L'obscurité se dissipe, et votre torche qui était encore allumée (rappelez-vous), mais qui n'éclairait rien, vous permet maintenant de distinguer une petite pièce de dix mètres carrés environ, aux murs de pierre, et un Farfadet qui vous mordille furieusement les chevilles. Difficile de faire autrement que de le combattre, pour qu'il vous lâche ! Le Farfadet dispose de 40 POINTS DE VIE, et il lui faut faire 6 pour porter un coup. Si vous sortez vainqueur de ce combat, revenez au croisement, et faites un nouveau choix. Rendez-vous au 75. ",
       "choices": [
@@ -1646,6 +1720,7 @@
     },
     {
       "id": 98,
+      "img": "blank.png",
       "pTitle": "98",
       "paragraph": "Sur le parchemin est inscrit un sortilège d'antidote Si vous êtes assez sot pour avaler du poison avant la fin de cette aventure, vous pourrez l'utiliser pour vous soigner même si, selon les dés, le poison vous a tué. Vous ne pouvez utiliser ce sortilège qu'une fois. Comme il n'y a pas d'issue à cette pièce, vous revenez au croisement pour faire un nouveau choix. Rendez-vous au 75. ",
       "choices": [
@@ -1657,6 +1732,7 @@
     },
     {
       "id": 99,
+      "img": "blank.png",
       "pTitle": "99",
       "paragraph": "Alerte, Pip ! Pendant que vous cherchiez cette porte secrète, un Garde s'est approché subrepticement de vous et, sans vous laisser le temps de vous remettre de votre surprise, il vous porte un coup. Ce Garde dispose de 20 POINTS DE VIE. Il combat avec une épée qui lui permet d'infliger 2 Points de Dommage supplémentaires, et il porte une armure qui le protège de 2 Points de Dommage à déduire de ceux que vous pouvez lui infliger. En outre, c'est un combattant redoutable, et il ne lui faut faire que 3 pour vous toucher. si vous êtes vainqueur, rendez-vous au 150. Sinon, rendez-vous au 14. ",
       "choices": [
@@ -1685,6 +1761,7 @@
     },
     {
       "id": 100,
+      "img": "blank.png",
       "pTitle": "100",
       "paragraph": "Cette caverne est décidément bien singulière. Peut etre cela tient-il à la forme de son entrée : sous certains angles elle donne l'impression d'un crâne au rictus sardonique. Pure coïncidence, sans doute. Vous n'y pénétrez cependant pas moins avec appréhension, et même cette bonne vieille E.J. s'abstient de marmonner. Après quelques pas, l'entrée se rétrécie de façon singulière au point de se réduire à une simple fissure dans la paroi rocheuse. Pour s'y faufiler. il faut avancer de côté. Et vous tremblez à l'idée de faire quelque rencontre fâcheuse dans cette position critique. Mais aucun ennemi ne vous attaque et, bientôt, vous avez réussi à franchir cet étroit passage pour déboucher dans une sorte de petite grotte nue et vide à l'exeption d'un poteau indicateur planté en son centre. Un poteau indicateur ? Mais oui, sans aucun doute. ET à la réflexion, la présence de ce poteau n'est pas plus insolite que celle de bien d'autres objets que vous avez découverts dans le Château des Ténèbres du sorcier Ansalom. Le poteau désigne le nord, le sud, l'est et l'ouest. Les bras orientés vers le nord, le sud et l'ouest portent le même message : Nulle Part. le bras orienté vers l'est dit : Vers La Crypte de Nosfërax (monument antique).  a moins de trois mètres du poteau, dans la paroi est de la grotte, se découpe une porte de bois ornée d'une plaque de cuivre poli sur laquelle sont gravés ces mots : Crypte de Nosfèrax (prière de frapper ). La grotte ne présente aucune autre issue. Si vous n'avez pas encore exploré le temple et qui vous pensiez que le moment est parfaitement chois: de le faire, quittez la grotte, et rendez-vous au 62. Si vous êtes prêt à courir le risque d'entrer dans LA caverne de Nosfèrax, rendez-vous au 101. ",
       "choices": [
@@ -1700,6 +1777,7 @@
     },
     {
       "id": 101,
+      "img": "blank.png",
       "pTitle": "101",
       "paragraph": "La porte n'est pas fermée et elle s'ouvre en grinçant dès que vous la poussez. Vous vous trouvez dans une petite pièce de douze mètres carrés, au sol luisant de marbre noir et aux murs tendus de velours noir. Au centre de cette pièce est dressé un dais sur lequel repose un grand cercueil d'ébène. En dépit de l'immobilité de l'air, votre torche vacille de façon alarmante, projetant des ombres dansantes. Il fait froid et le silence est total. Vos pas résonnent tandis que vous vous approchez avec appréhension du cercueil Sur une large plaque d'argent fixée au dais, on peu: lire en lettres minuscules l'inscription suivante : Salut, brave guerrier, grand coureur d'aventures Tu viens d'accéder à l'antre de Nosfèrax Bâtie au temps jadis. Nosfèrax le rimeur, plus poète dit-on Que celui qui se nomme le sorcier Ansalom. Si tu veux éveiller ce féal d'Apollon Dormant dans le cercueil qui lui sert de maison Tu dois pour commencer répondre à la question : Que recèle l'énigme inscrite sur sa demeure. Et sans cesse montrant tes louanges par les pleurs, Même si c'était là artifice trompeur Nosfèrax aussitôt te montrera la voie. Ou bien ce jour sera celui de ton trépas. lorsque vous avez digéré cet échantillon franchement atroce de poésie, vous montez sur le dais et vous examinez la plaque fixée au couvercle du cercueil, sur laquelle vous pouvez lire : pour ouvrir le cercueil et faire la connaissance de nosférax le célèbre poète, suivez simplement les instructions mais suivez-les scrupuleusement, sinon le cercueil explosera, détruisant le Château des Tenèbres du sorcier Ansalom, le royaume d'Avalon, le monde entier, l'univers et, sans doute, vous- mème. Instructions Si le mot « si » est le second de cette phrase, frappez deux fois. Sinon, frappez trois fois, à moins que les oiseaux ne puissent voler, auquel cas ne frappez qu' une fois à l'exception  de ceux d'entre vous qui, connaissant Merlin, devraient frapper quatre fois à moins que le mot « si » ne soit le troisième dans la première phrase de ces instructions auquel cas vous ne devriez frapper qu'une fois. vous avez cinq secondes pour commencer à frapper avant que le cercueil n 'explose. Si vous frappez : Une fois, rendez-vous au 84. Deux fois, rendez-vous au 104. Trois fois, rendez-vous au 109. Quatre fois, rendez-vous au 102. ",
       "choices": [
@@ -1723,6 +1801,7 @@
     },
     {
       "id": 102,
+      "img": "blank.png",
       "pTitle": "102",
       "paragraph": "Vous vous reculez précipitamment, tandis que le couvercle s'entrebâille peu à peu. Une main gantée de blanc en émerge, agrippe le côté du cercueil puis, avec une lenteur terrifiante, Nosfèrax en personne commence à émerger de sa boîte capitonnée de velours et de satin. Nosfèrax est grand, mince, d'une blancheur de craie et vêtu (tenue singulière pour l'époque du roi Arthur) d'une longue cape noire par-dessus un habït de même couleur et une chemise et un nœud papillon blancs. Il a d'énormes yeux noirs. Ses deux canines supérieures chevauchent sa lèvre inférieure comme des crocs. Lentement, il tourne vers vous ses deux grands yeux sombres. N'attendez pas une seconde de plus, Pip. Filez au 111. ",
       "choices": [
@@ -1734,6 +1813,7 @@
     },
     {
       "id": 103,
+      "img": "blank.png",
       "pTitle": "103",
       "paragraph": "Le calice contient un liquide bleu-vert, clair et frais. au goût de miel et de cassis. En le buvant, vous sentez tout votre corps envahi d'un merveilleux bien- être, et vos POINTS DE VIE reviennent à leur total de départ. De plus, le liquide vous donne un privilège: temporaire de 25 POINTS DE VIE. Ce qui veut dire que vous disposez d'un supplément de 25 POINTS DE VIE qui vient s'ajouter à votre total de départ. Tout dommage subi par vous sera ainsi retranché de ces 25 derniers POINTS avant d'être déduit de vos POINTS DE VIE réels. Ce privilège est toutefois, souvenez-vous-en, provisoire, si bien qu'une fois utilise il est à jamais perdu. La Dame du Lac vous sourit : Vous sentez-vous mieux maintenant, Pip ? Vous acquiescez en lui souriant.  Eh bien, dit la Dame du Lac, j'ai encore un petit présent pour vous... Et elle prend sur l'autel la pierre scintillante qu'elle dépose au creux de votre main tendue. Ceci, reprend la Dame du Lac, est une Pierre de chance. Une pierre magique qui n'agit qu'en faveur des cœurs purs, des braves, des êtres loyaux et sincères. Tant que vous la posséderez vous pourrez ajouter ou soustraire 3 Points de tous vos lancers de dés. En d'autres termes, lorsque vous combattrez, vous pourrez ajouter 3 Points au total obtenu pour marquer un coup décisif ; ou bien ajouter 3 Points de Dommages supplémentaires si votre coup a déjà porté. En fait, dans tous les cas nécessitant un lancer de dés à partir de maintenant, vous pouvez ajouter ou retrancher 3 de votre total en vue d'atteindre le but visé. De plus, ajoute la Dame du Lac en faisant une profonde inspiration, si vous parvenez à survivre à votre présente aventure et à garder intacte la Pierre de Chance à votre sortie du Château des Ténèbres, vous pourrez conserver ce talisman et l'emporter dans vos futures aventures. Une pierre précieuse, Pip, rendez-vous compte ! Merci, Madame, dites-vous avec reconnaissance. Vous rangez avec précaution la pierre dans votre sac, et vous levez de nouveau les yeux vers la Dame du Lac pour la remercier une fois de plus. Mais à votre grande stupeur, la jeune femme et le temple semblent se dissoudre dans une espèce de brume qui, maintenant vous entoure de toute part. Cependant, aussi vite qu'elle était arrivée, la brume disparaît... et, n'en croyant pas vos yeux, vous vous retrouvez au croisement que vous avez quitté peu de temps auparavant ! Avez-vous été victime d'une illusion ? Fébrilement, vous fouillez votre sac : la Pierre de Chance s'y trouve. Fabuleux ! Maintenant, rendez-vous au 75. Mais notez bien ceci : vous ne pourrez plus jamais retrouver la porte secrète du nord, dans le présent comme dans l'avenir, par exemple en repassant par ce chemin, ou en tentant une nouvelle fois l'aventure si vous ne triomphez pas cette fois. ",
       "choices": [
@@ -1745,6 +1825,7 @@
     },
     {
       "id": 104,
+      "img": "blank.png",
       "pTitle": "104",
       "paragraph": "Boum ! Rendez-vous au 14. ",
       "choices": [
@@ -1756,6 +1837,7 @@
     },
     {
       "id": 105,
+      "img": "blank.png",
       "pTitle": "105",
       "paragraph": "Vous suivez le couloir sur une quinzaine de mètres- et vous parvenez devant une porte située sur votre droite. Quinze mètres plus loin, le couloir se termine sur une nouvelle porte. Si vous décidez de franchir la porte qui s'ouvre dans le mur de droite, rendez-vous au 89. Si vous préférez essayer d'ouvrir la porte située au bout du couloir, rendez-vous au 85. ",
       "choices": [
@@ -1771,6 +1853,7 @@
     },
     {
       "id": 106,
+      "img": "blank.png",
       "pTitle": "106",
       "paragraph": "Sur le parchemin est écrit un sortilège de mort ! Celui-ci est précieux, Pip, mais dangereux à manier. Si vous êtes traqué, sans espoir d'échapper à la mort et si vous utilisez le sortilège, il tuera instantanément un adversaire unique, si puissant ou si bien protégé qu'il soit. L'ennui, c'est que ce sortilège risque, par un choc en retour, de vous faire subir le  même sort. Si à un moment quelconque, vous décidez de vous en servir, vous devez lancer les dés. Si vous obtenez un double 6, un double 1 ou un double 3, le sortilège vous tue (et vous vous rendez au 14). Dans tous les autres cas, le sortilège tue votre adversaire. Vous ne pouvez tirer parti du sortilège qu'une seule fois, mais vous avez la possibilité de vous en munir lors de vos prochaines missions si vous ne l'avez pas utilisé au cours de cette aventure. puisque cette pièce est sans issue, revenez au croisement. et faites un nouveau choix. Rendez-vous au 75 ",
       "choices": [
@@ -1782,6 +1865,7 @@
     },
     {
       "id": 107,
+      "img": "blank.png",
       "pTitle": "107",
       "paragraph": "Vous avez le temps maintenant d'examiner le lieu où vous vous trouvez : une petite antichambre se poursuivant par un unique couloir bien éclairé orienté vers le nord. L'atmosphère y est très différente de celle de toutes les autres parties du -Château des Tenébres que vous avez déjà visitées. Vous avez l'impression qu'il est habité. En tendant l'oreille, avancez avec précaution. vous progressez le long du couloir qui se poursuit sur une quinzaine de mètres avant de déboucher dans un couloir orienté d'est en ouest. Vous jetez un bref coup d'oeil de part et d'autre. Le couloir est, pour le moment, désert mais il vous semble que, d'un instant à l'autre, quelqu'un peut apparaître. si vous décidez d'aller vers l'ouest en suivant le nouveau couloir, rendez-vous au 105. Si vous décidez d'aller vers l'est, rendez-vous au 96. Mais peut-être existe-t-il une nouvelle porte secrète ? si vous voulez examiner les murs pour la trouver, rendez-vous au 99. ",
       "choices": [
@@ -1801,6 +1885,7 @@
     },
     {
       "id": 108,
+      "img": "blank.png",
       "pTitle": "108",
       "paragraph": "Le temple et la Dame du Lac disparaissent brusquement. Rendez-vous au 75 et notez bien ceci : quoi que vous puissiez faire, quoi que puisse dire le Livre des Sortilèges, jamais vous ne pourrez retrouver la porte secrète ouvrant vers le nord. ",
       "choices": [
@@ -1812,6 +1897,7 @@
     },
     {
       "id": 109,
+      "img": "blank.png",
       "pTitle": "109",
       "paragraph": "Boum ! Rendez-vous au 14. ",
       "choices": [
@@ -1823,6 +1909,7 @@
     },
     {
       "id": 110,
+      "img": "blank.png",
       "pTitle": "110",
       "paragraph": "Quelle horreur ! Votre torche illumine soudain la pièce entière comme si l'obscurité magique venait d'être subitement dissipée. Et vous voyez devant vous le corps d'un Farfadet que vous venez de tuer Pauvre petit Farfadet ! N'empêche qu'il vous grignotait la cheville et qu'il vous a sérieusement secoué pendant le combat. Il n'existe aucune issue à cette pièce. Rendez-vous au 75 et faites un nouveau choix. ",
       "choices": [
@@ -1834,6 +1921,7 @@
     },
     {
       "id": 111,
+      "img": "blank.png",
       "pTitle": "111",
       "paragraph": "— Bonjour, mon canard, dit Nosférax. Quel plaisir de faire enfin la connaissance d'un visiteur intelligent. Ça vous change ! La plupart d'entre eux piquent des crises. Très pénible. Voyons, qu'est-ce que je peux faire pour vous ? Comme vous ne savez pas trop quelle réponse donner à cette question, vous vous contentez de le contempler, les yeux ronds, tandis qu'il s'extirpe de son cercueil et s'étire pour dégourdir ses articulations ankylosées. Vous ne savez donc pas ce que vous voulez ? s'enquiert Nosférax avec une aménité relative. C'est toujours comme ça, même chez les plus futés ! Aimez- vous mes poésies, au fait ? Je suis l'auteur des vers, sur la plaque. allez-vous vanter les mérites de sa poésie, le comparer à Milton, Keats, Shakespeare, Pam Ayres (il n'aura entendu parler d'aucun puisqu'ils sont nés après l'époque du roi Arthur) ? En ce cas, rendez- vous au 87. Préférez-vous lui dire la vérité ? Rendez-vous alors au 117. ",
       "choices": [
@@ -1849,6 +1937,7 @@
     },
     {
       "id": 112,
+      "img": "blank.png",
       "pTitle": "112",
       "paragraph": "Quel délice ! Quel pur chef-d'œuvre ! s'exclame Nosférax quand vous lui tendez votre poème terminé. Pour cette merveille, vous allez être richement récompensé. Et, pour chaque vers de votre poème, il vous offre une Pièce d'Or ! A combien se monte votre magot maintenant ? N'oubliez pas d'en conserver un compte précis. Voyons, dit Nosférax, comme je ne suis pas très calé en arithmétique, dites-moi si votre poème comporte plus de dix vers. Si, effectivement, votre poème a plus de dix vers, rendez-vous au 81. S'il ne compte que dix vers, ou moins, rendez-vous au 116. ",
       "choices": [
@@ -1864,6 +1953,7 @@
     },
     {
       "id": 113,
+      "img": "blank.png",
       "pTitle": "113",
       "paragraph": "Le parchemin est absolument vierge. Quelle poisse! Enfin vous avez votre or. Il n'existe pas d'issue à cette pièce. Mieux vaut pour vous retourner au 75 et faire un autre choix.  ",
       "choices": [
@@ -1875,6 +1965,7 @@
     },
     {
       "id": 114,
+      "img": "blank.png",
       "pTitle": "114",
       "paragraph": "Que contient cette bourse ? Encore de l'or ? Et comment ! Rendez-vous compte : cinquante Pièces d'Or et une Pièce de Cuivre à double face. Quelle chance incroyable ! Et ce n'est pas tout ! Coincé au fond de la bourse se trouve un rouleau de parchemin. L'aspect de ce rouleau vous est étrangement familier. C'est qu'il ressemble beaucoup à ceux que vous avez pu voir dans la forteresse en rondins de Merlin, ceux sur lesquels il écrit ses sortilèges. Lancez rapidement vos dés, Pip, pour savoir ce qui est écrit sur le parchemin. Si vous faites : 1ou 2, rendez-vous au 113. 3 ou 4, rendez-vous au 88. 5 ou 6, rendez-vous au 83. 7 ou 8, rendez-vous au 106. 9 ou 10, rendez-vous au 93.  ou 12, rendez-vous au 98. ",
       "choices": [
@@ -1906,6 +1997,7 @@
     },
     {
       "id": 115,
+      "img": "blank.png",
       "pTitle": "115",
       "paragraph": "Un coup de dés plutôt manqué, Pip. La pièce reste plongée dans l'obscurité et vous êtes toujours attaqué férocement. Si vous décidez de riposter, rendez-vous au 90. Si vous jugez possible une nouvelle tentative de Réaction Amicale, retranchez 4 points de votre total de POINTS DE VIE, et rendez-vous au 92. ",
       "choices": [
@@ -1921,6 +2013,7 @@
     },
     {
       "id": 116,
+      "img": "blank.png",
       "pTitle": "116",
       "paragraph": "Les œuvres courtes sont souvent les meilleures, soupire Nosférax, bien que certaines inflexions de sa voix vous donnent à penser qu'il est un peu déçu. Il s'étire et bâille. Maintenant, mon jeune ami, dit-il, si j'ai éprouvé le plus vif plaisir à bavarder avec un confrère en poésie, il faut que je me repose. Dépensez sagement votre or à faire quelque folie. Là-dessus, il s'enveloppe à nouveau de sa grande cape noire, vous décoche un sourire éblouissant et saute dans son cercueil dont il rabat le couvercle. Vous pouvez frapper tant que vous voudrez, il ne le rouvrira pas. Puisque vous n'avez guère d'autre solution, rendezvous au 62 et explorez le temple. ",
       "choices": [
@@ -1932,6 +2025,7 @@
     },
     {
       "id": 117,
+      "img": "blank.png",
       "pTitle": "117",
       "paragraph": "Nosférax plante ses crocs dans votre cou. Rendez- vous au 14. ",
       "choices": [
@@ -1943,6 +2037,7 @@
     },
     {
       "id": 118,
+      "img": "blank.png",
       "pTitle": "118",
       "paragraph": "Les portes n'ont pas de secret pour vous, Pip ! Celle- ci s'est ouverte sans un bruit. Heureusement car, de l'autre côté, se trouvent deux Gardes, des colosses à la mine rébarbative portant des armures de cuir et armés d'épées. Comme vous avez ouvert cette porte dans un parfait silence, vous avez l'avantage de la surprise, ce qui vous permet de porter le premier coup. Rendez-vous au 86. ",
       "choices": [
@@ -1954,12 +2049,14 @@
     },
     {
       "id": 119,
+      "img": "blank.png",
       "pTitle": "119",
       "paragraph": "Voici le secret du canard magique. Une fois — et une fois seulement — vous pourrez avoir recours au canard magique. Si vous utilisez son pouvoir, ce que vous allez maintenant faire, le canard annihilera instantanément tout sortilège mis en œuvre dans votre voisinage. Ainsi, les créatures invisibles deviendront visibles. Les Boules de Feu seront sans effet ; tout dommage magique (mais uniquement magique) subi à ce moment même de l'aventure, sera aussitôt neutralisé. Bref, en ce qui concerne la magie, le canard vous permettra de passer sain et sauf au paragraphe de votre choix. Enfin. Bien que vous ne puissiez utiliser qu'une fois le canard magique au cours d'une aventure, vous aurez la possibilité (pourvu que vous ne soyez pas tué et donc que vous ne l'ayez pas perdu) de l'emporter avec votre équipement lors de votre prochaine aventure. He Pip ! Aucune trace du sorcier Ansalom, Et nulle part où aller ? Revenez donc sur vos pas, Presque au début de l'aventure. Peut-être un détail vous a-t-il échappé ?  ",
       "choices": []
     },
     {
       "id": 120,
+      "img": "blank.png",
       "pTitle": "120",
       "paragraph": "L'obscurité se dissipe et, brusquement, votre torche éclaire une petite pièce. Vautré sur le sol et dégageant avec précaution ses dents de votre cheville, se trouve un Farfadet. — Palsanguienne ! s'écrie le Farfadet avec un fort accent, c'est'y pas malheureux que je sois là à vous boulotter la cheville en me disant que vous êtes peut- être ben un monstre ou même ce fléau de sorcier Ansalom. Ce que c'est que de ne pas réfléchir. Mais d'après le goût de votre sang, je me suis dit que vous étiez de la bonne race, alors permettez-moi de vous dédommager. Là-dessus, il vous tend une petite bourse de cuir et, à la façon des Farfadets, il disparaît à vos yeux. Rendez-vous au 114 pour voir ce que contient cette bourse. ",
       "choices": [
@@ -1971,6 +2068,7 @@
     },
     {
       "id": 121,
+      "img": "blank.png",
       "pTitle": "121",
       "paragraph": "Vous courez comme si vous aviez le diable à vos trousses (et bien que ce ne soit pas le cas, un Démon Invisible ne vaut guère mieux). Flac ! c'est le bruit que vous faites en vous heurtant au bord du cercle magique. Il semble bien que si vous pouvez y pénétrer assez aisément, pour en ressortir, c'est une autre paire de manches. Hâtivement, vous cherchez à tâtons votre voie autour du mur invisible. Pas moyen de sortir du cercle et le Démon se rapproche d'instant en instant. Retournez au 144 et battez-vous avec courage. ",
       "choices": [
@@ -1982,6 +2080,7 @@
     },
     {
       "id": 122,
+      "img": "blank.png",
       "pTitle": "122",
       "paragraph": "Vous avez atteint le milieu de la salle quand une voix douce vous murmure à l'oreille : — Il n'a pas besoin de Gardes, Pip. Je lui suffis... Vous vous figez sur place, puis vous vous retournez Face à vous, vous fixant d'un regard de glace, ave; un sourire rehaussé de longs crocs acérés, se tient m véritable, un authentique, garanti cent pour cent buveur de sang, Vampire ! Vous reste-t-il encore un peu d'ail, par hasard ? Si vous avez encore de l'ail (et pas de tricherie, surtout, si vous l'avez mangé, c'est fini), rendez-vous au 132. Sinon, rendez-vous au 147.  ",
       "choices": [
@@ -1997,6 +2096,7 @@
     },
     {
       "id": 123,
+      "img": "blank.png",
       "pTitle": "123",
       "paragraph": "Rien d'intéressant ici. Pas d'issue non plus. Retournez au 96 avant de décider d'un nouveau choix. ",
       "choices": [
@@ -2008,6 +2108,7 @@
     },
     {
       "id": 124,
+      "img": "blank.png",
       "pTitle": "124",
       "paragraph": "A pas lents et précautionneux, vous descendez les dernières marches. Le Garde ne s'éveille pas. Avec mille ruses, vous avancez la main pour lui prendre ses clefs. Lancez les dés pour voir si vous réussissez. Si vous faites de 2 à 6, rendez-vous au 142. Si vous faites de 7 à 12, rendez-vous au 126. ",
       "choices": [
@@ -2023,6 +2124,7 @@
     },
     {
       "id": 125,
+      "img": "blank.png",
       "pTitle": "125",
       "paragraph": "Vous êtes bien dans un cachot. Mais également dans une salle de torture. Regardez donc les fers scellés aux murs. Et la vierge de fer, cette espèce de plaçant en forme de cercueil garni de pointes à l'intérieur. Et le chevalet pour écarteler les victimes et les fers chauffés à blanc dans le brasier de charbons ardents Le sorcier Ansalom doit pouvoir causer de sérieux ennuis à ceux qui sont tombés en son pouvoir. Heureusement, il n'y a personne à torturer pour l'instant. Pas étonnant que le Garde se soit endormi Surveiller un cachot vide ne réclame guère de vigilance. Cette pièce n'a pas d'autre issue. Retournez donc au 96 et faites un nouveau choix. ",
       "choices": [
@@ -2034,6 +2136,7 @@
     },
     {
       "id": 126,
+      "img": "blank.png",
       "pTitle": "126",
       "paragraph": "Quelle maestria ! Vous avez donc subtilisé ses clefs au Garde qui dort toujours. Utilisezles pour ouvrir sans bruit la porte du cachot, et rendez-vous au 125. ",
       "choices": [
@@ -2045,6 +2148,7 @@
     },
     {
       "id": 127,
+      "img": "blank.png",
       "pTitle": "127",
       "paragraph": "Tandis que vous vous en approchez, un étrange phénomène se produit: la porte nord s'ouvre d'elle- même ! Vous vous trouvez sur le seuil d'une vaste salle du trône aux murs de granit, ornée d'une colonnade aux piliers de pierre noire. Entre chaque pilier se dresse un cierge noir haut de deux mètres qui dégage une entêtante et écœurante odeur d'encens. Au-delà des   colonnes de lourdes tentures violettes sont drapées. Au bout de la colonnade, des marches taillées dans un socle de granit donnent accès à un trône de granit massif grossièrement sculpté. Au pied du trône se tiennent deux des plus énormes Molosses noir de jais que vous ayez jamais vus. Des Molosses dont les yeux luisants dardent sur vous des regards féroces. Et sur le trône, est assis un personnage de haute taille aux cheveux et à la barbe noirs, vêtu d'une ample robe noire. L'atmosphère de menace qui émane de lui l'enveloppe comme une nuée d'orage. — Bienvenue, chétive créature, dit-il d'une voix tonnante. Il paraît que tu désires me voir. C'est lui, Pip, c'est lui ! Vous êtes face à face avec le sorcier Ansalom en personne ! ! ! Quelle bataille en perspective ! (Car vous allez le combattre, Pip, n'est-ce pas ? Sinon, à quoi bon vous être lancé dans cette périlleuse aventure ?) Et tout d'abord, une bonne nouvelle. Le sorcier Ansalom ne tentera aucune manœuvre agressive contre vous tant que vous n'aurez pas mis en déroute ses Molosses noirs. Maintenant, les mauvaises nouvelles. Chaque Molosse dispose de 25 POINTS DE VIE, et sa morsure inflige 4 points de dommage supplémentaires. Lancez les dés, Pip. Si les Molosses vous tuent, rendez-vous au 14. Si vous tuez les Molosses, faites une profonde inspiration, utilisez toute potion ou baume curatif en votre possession et rendez-vous au 137 ",
       "choices": [
@@ -2082,6 +2186,7 @@
     },
     {
       "id": 128,
+      "img": "blank.png",
       "pTitle": "128",
       "paragraph": "Lancez les dés pour voir si vos recherches ont donné un résultat valable. Si vous faites de 2 à 6, rendez-vous au 123. Si vous faites de 7 à 9, rendez-vous au 148. Si vous faites de 10 à 12, rendez-vous au 133. ",
       "choices": [
@@ -2101,6 +2206,7 @@
     },
     {
       "id": 129,
+      "img": "blank.png",
       "pTitle": "129",
       "paragraph": "Bravo, Pip. Vous vous êtes battu comme un lion et contre un sacré adversaire. Tandis que le Démon expire, il devient visible, avec ses écailles, sa peau visqueuse, ses cornes, ses crocs, sa queue, exactement tel que vous l'imaginiez. Et gigantesque, en plus. Mais mort maintenant : on ne peut plus mort. Et une fois le Démon mort, il est maintenant très facile de s'échapper du cercle. Rendez-vous au 128 et voyez, si vous ne l'avez déjà fait, s'il y a quelque chose d'intéressant dans ce fouillis. ",
       "choices": [
@@ -2112,6 +2218,7 @@
     },
     {
       "id": 130,
+      "img": "blank.png",
       "pTitle": "130",
       "paragraph": "Vous suivez tranquillement le couloir qui se dirige vers l'est, tout en notant qu'il est beaucoup moins éclairé que les autres. Les torches murales ont été remplacées par quelques lampes fumeuses très espacées les unes des autres. Et quand vous parvenez aux marches, vous constatez qu'elles se font de plus en plus rares à mesure que vous descendez. Au bas de l'escalier, il y a une porte massive dont la partie haute est formée    de barreaux à travers lesquels on entrevoit une sourde lueur rougeâtre. Cette porte es: munie d'une puissante serrure. Un Garde y est également posté. Par bonheur, il semble dormir à poings fermés. On dirait bien, Pip, que vous avez découvert les cachots ou, peut-être, quelque affreuse salle de torture. Ansalom garderait-il la Reine prisonnière ici ? Comment le savoir ? Si Vous décidez de tenter votre chance en essayant de subtiliser les clefs du Garde pour ouvrir la porte du cachot, rendez-vous au 124. Sinon, retournez au croisement, et faites un nouveau choix. Rendez-vous au 95. ",
       "choices": [
@@ -2127,6 +2234,7 @@
     },
     {
       "id": 131,
+      "img": "blank.png",
       "pTitle": "131",
       "paragraph": "Le Squelette n'étant plus qu'un tas d'ossements disloqués, vous avez tout loisir d'examiner le poteau de torture auquel il était enchaîné. C'est un poteau de torture plutôt banal, à l'exception toutefois d'un détail. Il semble mal ancré dans le sol. En fait, si vous exercez sur lui des poussées latérales, peut-être même va-t-il s'arracher du sol. Vous pouvez toujours vous contenter de quitter ce lieu sinistre, bien entendu, auquel cas vous n'avez qu'à retourner au 33 pour faire un nouveau choix. Mais si vous décidez de déraciner le poteau de torture, rendez-vous au 139. ",
       "choices": [
@@ -2142,6 +2250,7 @@
     },
     {
       "id": 132,
+      "img": "blank.png",
       "pTitle": "132",
       "paragraph": "Arrrrhhh ! Tel est le hurlement du Vampire à la vue de l'ail que vous lui montrez. Il se prend la gorge à deux mains en se convulsant d'angoisse. Arrrrhhh ! Ses genoux cèdent lentement sous lui. Son regard chavire. Son visage pâlit (enfin, il pâlit encore plus). Son corps entier frémit. Ses crocs se détachent. Il s'effondre comme un pantin sur le sol. Il commence alors à se ratatiner, à rapetisser, rapetisser, jusqu'à ce qu'il ne reste plus de lui qu'un minuscule tas de poussière, des lambeaux de vêtements calcinés et une bague ornée d'une pierre (d'une valeur de cinq cents Pièces d'Or au bas mot). Une vraie chance d'avoir eu cet ail sur vous, Pip ! Si vous voulez essayer d'ouvrir la porte du mur est, rendez-vous au 136. Si vous voulez essayer d'ouvrir la porte du mur nord, rendez-vous au 127. ",
       "choices": [
@@ -2157,6 +2266,7 @@
     },
     {
       "id": 133,
+      "img": "blank.png",
       "pTitle": "133",
       "paragraph": "Vous avez découvert une boule de cristal ! Tandis que vous la contemplez, des images se forment dans Sa matière transparente. Vous apercevez une jeune femme très belle, mais à la robe terreuse et déchirée, enchaînée au cœur d'un sinistre cachot. La Reine ! Ce ne peut être que la Reine ! Mais où se trouve-t- elle ? Hélas, le cristal ne vous le dit pas. Vous n'avez pas d'autre solution que de reprendre votre chemin. Et comme il n'existe pas d'issue à cette pièce, retournez au 96 avant de décider de votre prochaine étape.  ",
       "choices": [
@@ -2168,6 +2278,7 @@
     },
     {
       "id": 134,
+      "img": "blank.png",
       "pTitle": "134",
       "paragraph": "La persévérance est une vertu essentielle pour un aventurier digne de ce nom. Lancez les dés. Si vous faites plus de 3, rendez-vous au 143. Sinon, vous ne découvrez rien. Rendezvous au 107 et faites un nouveaux choix. ",
       "choices": [
@@ -2183,12 +2294,14 @@
     },
     {
       "id": 135,
+      "img": "blank.png",
       "pTitle": "135",
       "paragraph": "Comme vous vous tenez, triomphant, dans la salle iu trône mise sens dessus dessous, un léger bruit derrière le trône attire votre attention. Vous allez voir de plus près. Rien. Mais ce bruit était réel, pas d'erreur. Vous examinez le mur. Inutile d'être un aventurier aguerri ou un tueur de sorciers, pour lancer les dés cette fois : vous avez découvert une porte secrète ! Tandis que la dalle de granit pivote sur elle- même, vous savez avec certitude que les marches qu'elles révèlent ne peuvent mener qu'en un lieu : la geôle où l'abominable Sorcier (maintenant défunt) tient la courageuse reine Guenièvre prisonnière. Ça y est, Pip. Vous avez réussi. Votre mission est accomplie, vous êtes un aventurier de première classe, un phénix cinq étoiles. Maintenant, rendez- vous à la page 167. ",
       "choices": []
     },
     {
       "id": 136,
+      "img": "blank.png",
       "pTitle": "136",
       "paragraph": "Vous vous trouvez dans une vaste salle occupée par des couchettes alignées, chacune flanquée d'un petit coffre de bois. De toute évidence, c'est un dortoir, Pip. Et vide, de surcroît. Essayez donc la porte nord en vous rendant au 127. ",
       "choices": [
@@ -2200,6 +2313,7 @@
     },
     {
       "id": 137,
+      "img": "blank.png",
       "pTitle": "137",
       "paragraph": "Mes Molosses ! hurle le sorcier Ansalom. Tu as tué mes Molosses ! Et il bondit sur ses pieds, bras écartés, murmurant d'atroces malédictions. Etes- vous prêt à subir cette épreuve, Pip? Le sorcier Ansalom possède 150 POINTS DE VIE. Vous avez entendu ? 150 POINTS DE VIE. En plus, il dispose de dix Doigts de Feu lanceurs d'Éclairs, exactement comme ceux que Merlin vous a donnés. Avec toutefois une différence capitale : les Éclairs d'Ansalom n'atteignent pas automatiquement leur cible. Vous devez lancer les dés chaque fois qu'il en utilise un. A moins qu'il ne fasse au minimum 5, l'Éclair vous manque. Maintenant, Pip, que le combat magique commence ! Et puisse le meilleur sorcier gagner ! Si vous êtes vainqueur, soignez vos blessures et rendez-vous au 135. Sinon, rendez-vous au 14. ",
       "choices": [
@@ -2227,6 +2341,7 @@
     },
     {
       "id": 138,
+      "img": "blank.png",
       "pTitle": "138",
       "paragraph": "A certains égards, voici la pièce la plus étrange dans laquelle vous ayez jamais pénétré. S'il n'y a personne à l'intérieur, il n'y règne pas moins un prodigieux capharnaum. En fait, elle est encombrée d'un tel fatras hétéroclite qu'on peut difficilement juger de ses dimensions. Il y a un fourneau, des bancs, des étagères, des rayons, des placards, des sacs, des tonneaux, des futailles... La liste complète serait interminable. Au plafond pendent des lézards empaillés, des herbes séchées, des têtes réduites, quelques crânes luisants et un squelette entier. Au mur sont pendues des bannières brodées de sceaux mystiques. Sur le sol, dans l'un des rares espaces libres, est tracé un cercle au centre duquel sont inscrits  d'autres signes cabalistiques. Un seul coup d'œil suffit à vous renseigner : vous êtes — cela tombe sous le sens — dans le laboratoire magique du sorcier Ansalom. Voulez-vous l'explorer ? Rendez-vous au 128. Désirez-vous savoir ce qui va se passer si vous entrez dans le cercle magique ? Rendez-vous au 144. Préférez-vous quitter cet endroit au plus vite ? Rendez- vous au 96, et faites un nouveau choix. ",
       "choices": [
@@ -2246,6 +2361,7 @@
     },
     {
       "id": 139,
+      "img": "blank.png",
       "pTitle": "139",
       "paragraph": "Le poteau refuse de s'arracher du sol, mais il oscille latéralement avec un drôle de bruit, une sorte de grincement de rouages mécaniques sous vos pieds ! Une trappe vient de s'ouvrir, vous précipitant sur une espèce de toboggan sur lequel vous glissez à toute allure. Rendez-vous au 36 ",
       "choices": [
@@ -2257,6 +2373,7 @@
     },
     {
       "id": 140,
+      "img": "blank.png",
       "pTitle": "140",
       "paragraph": "L'affaire s'engage bien mal, Pip. Ils vous ont vu, c'est certain. Et ils sont rapides. Ils se ruent sur vous comme une avalanche. Vous ne pouvez rien faire. Certes, vous dégainez E.J. et vous vous battez comme un beau diable, mais ils sont vraiment trop nombreux... Alors, que va-t-il se passer?... Vous avez deviné... Rendez-vous au 14 ! ",
       "choices": [
@@ -2268,6 +2385,7 @@
     },
     {
       "id": 141,
+      "img": "blank.png",
       "pTitle": "141",
       "paragraph": "Les Molosses étaient en faction dans un but précis. Les chiens de ce genre ont un rôle bien défini et si le sorcier Ansalom ne s'en servait pas pour la chasse, il devait compter sur eux pour garder quelque chose. Mais quoi ? L'aventurier aguerri et rusé que vous êtes examine soigneusement les lieux autour de lui. Et que découvre-t-il ? Un coffret ! Ce n'est qu'un coffret de proportions modestes, et il s'en dégage une forte odeur de chien ; mais vous ne l'en ouvrez pas moins. Et, à l'intérieur, posé sur un de ces coussinets de velours bleu chers aux joailliers, repose un diamant monté en bague. Trouvaille intéressante ! Même vous qui manquez d'expérience en ces matières l'estimez au bas mot à 170 Pièces d'Or. En outre, cette pierre est peut-être magique : avec les anneaux trouvés dans le château d'un sorcier, on ne sait jamais ! Vous n'avez qu'à la frotter et à lancer deux dés pour savoir si elle est réellement douée de pouvoirs magiques. Si vous faites : De 2 à 6, rendez-vous au 146. De 7 à 9, rendez-vous au 153. De 10 à 12, rendez-vous au 156. ",
       "choices": [
@@ -2287,6 +2405,7 @@
     },
     {
       "id": 142,
+      "img": "blank.png",
       "pTitle": "142",
       "paragraph": "Il est réveillé ! Le Garde dispose de 20 POINTS DE VIE et il est armé d'une épée dont les coups infligent 2 Points de Dommage supplémentaires, mais il est encore un peu somnolent et il lui faut faire 7 pour vous atteindre. Son armure, également, laisse à désirer et elle ne le protège que de 1 Point de Dommage. Si vous êtes vainqueur, vous pouvez prendre les clefs et pénétrer dans le cachot. Rendezvous au 125. Sinon, rendez-vous au 14. ",
       "choices": [
@@ -2315,6 +2434,7 @@
     },
     {
       "id": 143,
+      "img": "blank.png",
       "pTitle": "143",
       "paragraph": "Vous avez une sacrée chance, Pip, vous avez découvert la Chambre du Trésor du sorcier Ansalom. Et quelle découverte ! Ouvrez grands vos yeux ! De l'or. de l'argent, des pierreries à profusion. Une véritable rançon de roi. Le vieil Ansalom a dû se livrer au brigandage durant de longues années pour amasser un magot pareil. Il y a même, dans un coin, une soue remplie de cochons couineurs. si vous prenez le temps de faire le compte de ces richesses, vous arriverez au total de 20 000 Pièces d'Or, 18 000 Pièces d'Argent, 25 émeraudes, chacune valant 500 Pièces d'Or, 61 rubis, chacun valant 100 Pièces d'Or, 77 diamants, chacun valant 1 000 Pièces d'Or, 18 cochons, chacun valant 3 Pièces -Argent. Quelle découverte ! Et tout cela est à vous si vous parvenez à tuer le sorcier Ansalom. Personne ne vous reprochera de vous approprier ce trésor puisque vous l'aurez loyalement gagné. (Mis à part les cochons que vous restituerez à leurs légitimes propriétaires.) Vous pouvez prendre dans l'immédiat toutes les pierres précieuses, et 500 Pièces d'Or — pas plus, l'or pèse lourd — et vous pourrez revenir plus tard pour emporter le reste, lorsque vous aurez réussi à vaincre le terrible Sorcier. Quel que soit votre choix, retournez au 107 avant de décider de votre prochaine étape. ",
       "choices": [
@@ -2326,6 +2446,7 @@
     },
     {
       "id": 144,
+      "img": "blank.png",
       "pTitle": "144",
       "paragraph": "Vous n'allez pas le croire, Pip, mais vous venez de provoquer l'intervention d'une des créatures les plus malfaisantes qui hantent le Château des Ténèbres du sorcier Ansalom. Il y a un Démon Invisible dans le cercle magique ! Cette créature (dont les écailles, la peau visqueuse, les crocs, les cornes et la queue, bref l'aspect repoussant, vous glaceraient le regard si vous pouviez la voir) possède 40 POINTS DE VIE. Étant invisible, elle frappe toujours la première. Elle vous inflige, à chaque coup de dents, 5 Points de Dommage et sa peau est si épaisse que vous devez déduire 4 Points de tout dommage que vous lui causez. De plus, son invisibilité la rend difficilement vulnérable et vous devez faire au moins un 8 pour pouvoir l'atteindre. Inutile d'essayer de l'amadouer. Avec elle, c'est l'affrontement ou la fuite ! Si vous décidez de fuir, rendez-vous au 121. Si vous décidez de l'affronter, ne reculez pas d'un pouce et battez-vous ! Si, par miracle, vous parvenez à tuer le Démon, rendez-vous au 129. Sinon... rendez-vous au 14. ",
       "choices": [
@@ -2357,6 +2478,7 @@
     },
     {
       "id": 145,
+      "img": "blank.png",
       "pTitle": "145",
       "paragraph": "Ouf ! Ils ne se sont aperçus de rien. Refermez doucement la porte, et rendez-vous au 107 pour faire un nouveau choix",
       "choices": [
@@ -2368,6 +2490,7 @@
     },
     {
       "id": 146,
+      "img": "blank.png",
       "pTitle": "146",
       "paragraph": "Vous avez beau frotter l'anneau, il ne manifeste aucun pouvoir magique mais, en revanche, cela vous permet de distinguer une inscription à peine visible à l'intérieur. Vous l'examinez de tout près en tenant la bague à la lumière et vous déchiffrez enfin ceci : HTCRRGT SWCVTG HQKU RQWT TGXGKNNGT NG XCORKTG Plutôt mystérieux ! Si vous parvenez à décoder ce texte, cela peut vous être utile ultérieurement. Mais, pour l'instant, retournez au 33 pour y décider de votre prochaine étape",
       "choices": [
@@ -2379,6 +2502,7 @@
     },
     {
       "id": 147,
+      "img": "blank.png",
       "pTitle": "147",
       "paragraph": "Petit goinfre, quelle idée d'avoir dévoré tout cet ail ! Maintenant, vous en êtes réduit à vous battre. Le Vampire possède 35 POINTS DE VIE (ou, dans son cas, POINTS DE MORT). Il n'est pas armé mais peu importe, puisque sa morsure est empoisonnée. S'il parvient à vous frapper deux fois de suite, vous êtes mort, mort sans discussion. Lancez les dés pour voir qui frappe le premier. Et ne vous tracassez pas à la pensée de devenir à votre tour un Vampire s'il vous tue, ce ne sont là que des contes de bonne femme... Du moins, selon tout probabilité. Si le Vampire vous tue, rendez-vous au 14. Si vous tuez le Vampire, vous avez le choix entre vous rendre au 136 par la porte est et vous rendre au 127 par la porte nord.",
       "choices": [
@@ -2410,6 +2534,7 @@
     },
     {
       "id": 148,
+      "img": "blank.png",
       "pTitle": "148",
       "paragraph": "Hum ! Une trouvaille intéressante. On dirait bien une baguette magique. Vous la soulevez, l'agitez, rien ne se passe. N'empêche qu'on dirait vraiment une baguette magique. Vous la braquez devant vous. Toujours rien. — Quel truc idiot ! marmonnez-vous. Et, aussitôt, la baguette magique émet une sorte de Globule lumineux aux reflets verts, qui semble s'accrocher au mur où il s'anime de légères pulsations. Après un bref essai et une erreur, vous savez comment utiliser la baguette à Globules. Vous la tendez en avant, vous dites : Truc Idiot et, de son extrémité part un Globule. Que ce Globule atteigne ou non l'objectif que vous avez visé dépend de votre lancer de dés. S'il touche au but, le Globule ne causera aucun dommage à votre adversaire mais il le maintiendra paralysé le temps que vous lui décochiez quatre coups d'affilée sans qu'il puisse riposter<br><br>. Maintenant, lancez un dé pour voir combien la baguette contient de Globules en réserve. Puisque le laboratoire n'a pas d'issue, retournez au 96 avant de décider de votre prochaine étape",
       "choices": [
@@ -2421,6 +2546,7 @@
     },
     {
       "id": 149,
+      "img": "blank.png",
       "pTitle": "149",
       "paragraph": "Le couloir nord se termine par une porte légèrement entrebâillée. Avec une extrême prudence, vous poussez le panneau pour l'ouvrir. Une salle de Gardes ! De toute évidence, il s'agit d'une salle de Gardes étant donné qu'y sont rassemblées quantité de pièces d'équipement militaire épées, boucliers, dagues, lances, rangées contre les murs, sans parler des tables, chaises, assiettes, gobelets, dés même, témoignant de la présence d'un nombre important de Gardes. Cette salle est vide, ce qui paraît bien louche, Pip. Il y a deux portes dans cette salle : l'une dans le mur est, l'autre dans le mur nord. Si vous décidez de pénétrer dans la salle des Gardes, rendez-vous au 122, sinon vous revenez au 95 pour faire un nouveau choix. ",
       "choices": [
@@ -2436,6 +2562,7 @@
     },
     {
       "id": 150,
+      "img": "blank.png",
       "pTitle": "150",
       "paragraph": "Un autre ennemi a mordu la poussière ! Vous ne vous débrouillez pas trop mal pour le moment, Pip. si vous voulez continuer à chercher une porte secrète, rendez-vous au 134. Sinon, retournez au 107 et faites un nouveau choix.",
       "choices": [
@@ -2451,6 +2578,7 @@
     },
     {
       "id": 151,
+      "img": "blank.png",
       "pTitle": "151",
       "paragraph": "Pas de doute, il y a anguille sous roche. Utilisez votre fidèle E.J. pour forcer le fond. Elle va protester mais n'en tenez pas compte. Ah, vous voyez bien, le coffre n'était pas vide. Il contient un compartiment caché avec 200 Pièces d'Or à l'intérieur, (que vous vous empressez de mettre dans votre sac à dos) ainsi qu'une gousse d'ail plutôt moisie, et vous remarquez les mots écrits sur le fond du coffre. Le texte est effacé mais vous parvenez à le déchiffrer : Ce que je t'offre Dans ce coffre Est plus précieux que l'or. C'est un trésor A conserver Pour en user Lorsque tu voudras traverser Arrivant par un couloir nord La salle des Gardes du fort. Plus précieux que l'or ? De l'or, il y en avait, certes, mais il n'y avait rien de plus précieux. Vous reprenez vos recherches pour vous assurer qu'il n'y a pas des pierreries cachées, mais sans résultat. Vous pouvez, bien sûr, ramasser la gousse d'ail si ça vous chante, bien que vous n'en voyiez guère l'utilité, d'autant que cet ail n'est vraiment plus mangeable. Retournez maintenant au 71 et là, faites un autre choix.",
       "choices": [
@@ -2462,6 +2590,7 @@
     },
     {
       "id": 152,
+      "img": "blank.png",
       "pTitle": "152",
       "paragraph": "Pas de doute, il y a anguille sous roche. Utilisez votre fidèle E.J. pour forcer le fond. Elle va protester mais n'en tenez pas compte. Ah, vous voyez bien, le coffre n'était pas vide. Il recèle un compartiment caché avec 200 Pièces d'O à l'intérieur. Retournez maintenant au 71 et faites un autre choix",
       "choices": [
@@ -2473,6 +2602,7 @@
     },
     {
       "id": 153,
+      "img": "blank.png",
       "pTitle": "153",
       "paragraph": "Elle a bien un pouvoir magique ! Si vous la portez à la main droite, elle vous vaudra un Éclair de Doigt de Feu supplémentaire. Si vous la portez à la main gauche, elle vous restituera 25 POINTS DE VIE. L'ennui, c'est que vous ne pouvez vous en servir qu'une fois. Rien ne vous oblige à décider immédiatement de la porter à telle ou telle main, mais une fois que vous l'aurez passée à un doigt, plus question de revenir sur votre choix. Maintenant, retournez donc au 33 pour y décider de la prochaine étape",
       "choices": [
@@ -2484,6 +2614,7 @@
     },
     {
       "id": 154,
+      "img": "blank.png",
       "pTitle": "154",
       "paragraph": "Après avoir péniblement repris votre souffle, l'idee vous vient de vous assurer que le coffre ne possède pas un double fond. Vous pouvez le savoir en lançant deux dés. Si vous faites de 2 à 6, rendez-vous au 151. Si vous faites de 6 à 12, rendez-vous au 152. ",
       "choices": [
@@ -2499,6 +2630,7 @@
     },
     {
       "id": 155,
+      "img": "blank.png",
       "pTitle": "155",
       "paragraph": "Ouf ! Vous en êtes venu à bout. Le vieux fou portait sur lui 70 Pièces d'Or, sans doute volées à tel ou tel aventurier qu'il a tué de sa dague. Vous pouvez les emporter avec vous. Et, sans doute, se révéleront- elles bientôt très utiles. Maintenant, vous pouvez revenir au 33 pour décider de votre prochaine étape.",
       "choices": [
@@ -2510,6 +2642,7 @@
     },
     {
       "id": 156,
+      "img": "blank.png",
       "pTitle": "156",
       "paragraph": "Elle ne semble pas posséder de pouvoir magique. Selon toute apparence, c'est une bague de valeur, certes, mais banale. Ceci dit, peut-être y a-t-il autre chose dans l'écrin. Jetez un coup d'oeil sous le coussinet de velours, Pip. Tiens, tiens, tiens, un fragment de parchemin. Lisez vite : Pour atteindre le Sorcier et ton but, souviens-toi toujours que tu dois faire d'une Araignée ton amie. Voilà tout. Peu concluant, pensez-vous. Toutefois, un bon conseil peut se révéler utile tôt ou tard, et vous avez l'impression que ce conseil-là n'est pas mauvais. Mais, pour l'instant, retournez au 33 pour y décider de votre prochaine étape",
       "choices": [
@@ -2576,14 +2709,17 @@
     },
     {
       "id": 160,
+      "img": "blank.png",
       "paragraph": " Ce chapitre ne doit être consulté que si vous prenez la décision de dormir durant une aventure. Si les dés vous amènent à cette page, observez les règles suivantes : Vous entrez dans le Temps du Rêve avec le total de POINTS DE VIE que vous possédiez lorsque vous avez décidé de dormir. Vous entrez dans le Temps du Rêve sans armure ni autre protection, quelle qu'elle soit. Vous entrez dans le Temps du Rêve sans magie ni arme quelconque, à l'exception de ceJ'es qui auraient pu vous être remises lors d'une rencontre bien précise. Il se peut que vous ne rameniez rien d'un séjour au Temps du Rêve. Tout POINT DE VIE perdu dans le Temps du Rêve est déduit de votre total de POINTS DE VIE. Si vous êtes tué dans le Temps du Rêve, vous êtes effectivement mort et vous devez vous rendre directement au 14 fatidique. Maintenant, entrez dans le Temps du Rêve en lançant deux dés et en vous rendant directement à la section du Temps du Rêve indiquée par le total obtenu. Si vous survivez, retournez au paragraphe où vous aviez décidé de dormir."
     },
     {
       "id": 161,
+      "img": "blank.png",
       "paragraph": " Vous vous trouvez face à une petite créature volante en forme de cigare qui ne cesse de vous harceler. Bien qu'elle ne vous touche pas, à chaque passage elle émet une vibration qui altère votre cerveau et vous fait perdre 5 POINTS DE VIE. Cette créature est un Ronge-Méninges. Elle dispose de 15 POINTS DE VIE et frappe la première. Combattez-la au plus vite !"
     },
     {
       "id": 162,
+      "img": "blank.png",
       "paragraph": "Vous êtes pourchassé à travers un cimetière par un Vampire. Si l'abominable monstre vous attrappe, c'en est fait de vous ! Déjà vos jambes flageolent à cette idée. Pouvez-vous lui échapper? Testez la Force du vampire en lançant deux dés. Testez ensuite votre propre Force de la même façon. Comparez vos Forces respectives. Si le Vampire a une Force de 5 points supérieures à la vôtre... ",
       "choices": [
         {
@@ -2594,10 +2730,12 @@
     },
     {
       "id": 163,
+      "img": "blank.png",
       "paragraph": "Vous êtes dans la grande salle de banquet d'un château. Cette salle est déserte. Sur la table, devant vous, sont posés deux calices. L'un de cristal, l'autre de bronze. Dans l'un, il y a du vin, dans l'autre du poison, mais vous n'avez aucun moyen de les distinguer l'un de l'autre, et vous êtes obligé de boire le contenu de l'un d'eux. Tentez donc votre chance en lançant deux dés. Si vous obtenez plus de six, vous avez assez de chance pour choisir le bon calice. En revanche, si le chiffre que vous obtenez est inférieur ou égal à 6, vous avez bu le poison, auquel cas vous devez lancer encore deux dés et soustraire ce que vous obtiendrez de votre total de POINTS DE VIE."
     },
     {
       "id": 164,
+      "img": "blank.png",
       "paragraph": " Vous essayez de vous enfuir de l'échauguette d'une haute tour et vous avez réussi à vous glisser dans une étroite fenêtre, dans l'espoir de descendre en escalade la paroi extérieure de la tour. En dépit de bonnes prises pour le bout des doigts et des pieds, la surface de la pierre est très glissante. Lancez deux dés pour savoir si vous tombez. Vous faites moins de 6 et c'est la chute libre ! Pendant que vous tombez, relancez deux dés pour savoir si vous allez vous écraser au sol ou plonger dans l'eau des douves. Si vous faîtes moins de 6, vous vous écrasez au sol et vous perdez 10 POINTS DE VIE. Si vous faites 6, ou plus de 6 vous tombez dans le fossé sans perdre de POINTS DE VIE, mais vous devez encore lancer deux dés pour découvrir si vous savez nager. Si vous obtenez moins de 6, vous ne savez pas nager, vous coulez à pic",
       "choices": [
         {
@@ -2608,26 +2746,32 @@
     },
     {
       "id": 165,
+      "img": "blank.png",
       "paragraph": " Vous marchez dans un superbe jardin clos par des murs, savourant la chaleur du soleil, quand vous êtes attaqué par un essaim d'abeilles. Chaque piqûre d'abeille vous coûte 1 POINT DE VIE. Lancez un dé pour savoir le nombre d'abeilles qui vont réussir à vous piquer. L'un des sortilèges de Merlin a échoué et vous a transformé en pied de céleri. Vous poussez maintenant tranquillement dans un potager. C'est une existence supportable car vous avez à vos côtés des choux et des choux-fleurs à qui parler, mais la chèvre de Merlin a enfoncé la clôture et elle se rapproche dangereusement de vous en broutant. Lancez un dé pour savoir si elle aime le céleri... Si vous faites moins de 6, elle va vous grignoter 5 POINTS DE VIE avant de s'attaquer aux carottes de Merlin "
     },
     {
       "id": 166,
+      "img": "blank.png",
       "paragraph": " Vous combattez le Chevalier Noir, un redoutable scélérat disposant de 25 POINTS DE VIE. Vous portez une armure qui vous permet de déduire 5 points, des Points de Dommage que le Chevalier peut vous infliger. L'armure de votre adversaire est plus robuste, elle peut absorber 6 Points de Dommage. La lance utilisée par le Chevalier Noir lui donne 10 Points de Dommage supplémentaires à chaque fois qu'il vous portera un coup. Cependant, votre lance a été baptisée par l'archevêque de Canterbury et elle vous permet d'ajouter 12 Points de Dommage supplémentaire à chaque coup que vous porterez. Le roi Arthur lance deux dés pour décider de celui qui frappera en premier. S'il obtient de 2 à 6, c'est le Chevalier Noir qui prend l'initiative. S'il obtient de 7 à 12, c'est vous qui commencez. "
     },
     {
       "id": 167,
+      "img": "blank.png",
       "paragraph": " Vous vous trouvez dans un sinistre couloir face à un énorme Monstre du Sommeil couvert de poils. Vous n'avez ni armes ni armure mais, près de vous, sont posés deux coffrets. Vous n'avez le temps d'en ouvrir qu'un seul avant que le Monstre du Sommeil ne vous attaque. Lancez un dé. Si vous faites de 1 à 3, vous trouvez une dague magique qui vous permet de trucider instantanément le Monstre. De 4 à 6, le coffret que vous ouvrez est rempli de gaz soporifique. Autrement dit, vous voilà obligé de vous endormir et de lancer à nouveau les dés pour savoir si vous allez faire un nouveau voyage dans le Temps du Rêve. "
     },
     {
       "id": 168,
+      "img": "blank.png",
       "paragraph": " Vous chassez le sanglier dans la forêt, armé d'un arc et de sept flèches. Chaque flèche vous permet de marquer 10 Points de Dommage si elle frappe sa cible et il vous faut obtenir plus de 6 avec deux dés pour l'atteindre. Vous entrez dans une clairière et vous y découvrez un Ogre gigantesque sur le point de dévorer une ravissante jeune fille. Vous avez le temps de tirer vos sept flèches avant que l'Ogre ne puisse vous atteindre. L'Ogre a 40 POINTS DE VIE et il est si fort qu'il inflige 15 Points de Dommage supplémentaires à chaque coup qu'il porte de son énorme massue. Vous avez donc sept chances de le tuer avant qu'il ne vous touche et, comme il est très lent, une chance supplémentaire de l'achever de vos mains nues avant qu'il n'abatte sur vous son terrible gourdin "
     },
     {
       "id": 169,
+      "img": "blank.png",
       "paragraph": "A la suite d'un désaccord avec le roi Arthur sur la question de savoir si la terre était plate ou ronde, vous avez été jeté sans eau ni nourriture au fond d'une sinistre oubliette. La durée de votre séjour dans ce cul-de-basse-fosse dépend des résultats de votre prochain lancer de dé. (Un seul dé.) Pour chaque point  marqué jusqu'à un maximum de 6, vous y restez un jour et vous perdez 1 POINT DE VIE avant que la colère du Roi ne s'apaise."
     },
     {
       "id": 170,
+      "img": "blank.png",
       "paragraph": " Vous vous trouvez sur le sommet d'une haute montagne en pleine bataille magique avec un malfaisant Sorcier qui occupe, lui, le sommet d'une montagne voisine. Dans cette bataille, vous émettez l'un contre l'autre de puissantes ondes magiques de feu bleuâtres. Tant que vous êtes deux à pratiquer ce bombardement réciproque d'ondes, un effet magique les neutralise et les rend inoffensives. Mais, tôt ou tard, l'un de vous va se trouver à court d'ondes. Lancez donc un dé pour savoir combien il reste d'ondes au Sorcier votre ennemi, et un dé pour savoir combien il vous en reste à vous. Celui des deux qui détient le plus grand nombre d'ondes divise par deux le total de POINTS DE VIE de son adversaire et gagne la bataille "
     }
   ]
