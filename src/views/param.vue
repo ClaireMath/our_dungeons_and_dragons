@@ -92,6 +92,7 @@ export default{
     border:solid black;
     transition: all .4s ease;
     text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    bottom: 100px;
 }
 .params:hover{
      box-shadow: 10px 10px 15px 5px rgba(0,0,0,0.82);
