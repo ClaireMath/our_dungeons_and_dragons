@@ -184,7 +184,6 @@
             <button @click="fight()" class="btn startFightBtn">
               Commencer la bagarre
             </button>
-            <hr />
             <div id="divSorts">
               <button @click="FingerAttack" class="btn fireFingerBtn">
                 Doigts de feu I ({{ remainingFireFingers1 }}/5)
