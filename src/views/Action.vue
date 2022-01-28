@@ -113,7 +113,7 @@
           </div>
         </div>
         <Param ref="param" />
-        <Inventaire ref="inv"/>
+        <Inventaire ref="inv" />
         <div class="combat" id="combat">
           <h1>Combat</h1>
           <div @click="closeWindow" class="close-container">
@@ -174,19 +174,28 @@
             </div>
           </div>
           <div class="action">
-            <button @click="JoueurHitEnemy" class="btn">Attaque</button>
-            <button @click="EnemyHitJoueur" class="btn">Attaque Ennemi</button>
+            <button @click="JoueurHitEnemy" class="btn btnAttack">
+              Attaquez {{ name }}
+            </button>
+            <button @click="EnemyHitJoueur" class="btn btnAttack">
+              {{ name }} vous attaque
+            </button>
+            <button @click="fight()" class="btn startFightBtn">
+              Commencer la bagarre
+            </button>
             <hr />
             <div class="divSorts">
-              <button @click="FingerAttack" class="btn">Doigts de feu I</button>
-              <button @click="FingerAttack2" class="btn">
-                Doigts de feu II
+              <button @click="FingerAttack" class="btn fireFingerBtn">
+                Doigts de feu I ({{ remainingFireFingers1 }}/5)
+              </button>
+              <button @click="FingerAttack2" class="btn fireFingerBtn">
+                Doigts de feu II ({{ remainingFireFingers2 }}/5)
               </button>
 
-              <button @click="FireBallAttack1" class="btn">
+              <button @click="FireBallAttack1" class="btn fireBallBtn">
                 Boule de feu I
               </button>
-              <button @click="FireBallAttack2" class="btn">
+              <button @click="FireBallAttack2" class="btn fireBallBtn">
                 Boule de feu II
               </button>
             </div>
@@ -202,8 +211,8 @@
 import LeftPage from "./LeftPage.vue";
 import json from "../assets/data.json";
 
-import Param from './param.vue';
-import Inventaire from './Inventaire.vue';
+import Param from "./param.vue";
+import Inventaire from "./Inventaire.vue";
 
 export default {
   components: { LeftPage, Param, Inventaire },
@@ -219,8 +228,8 @@ export default {
       diceResult: null,
       randomDice1: null,
       randomDice2: null,
-      startingLifePoints: 20,
-      lifePoints: 20,
+      startingLifePoints: 0,
+      lifePoints: 0,
       remainingLifePoints: 0,
       enemyLifePoints: 0,
       fireFingerDamagePoints: 10,
@@ -229,11 +238,17 @@ export default {
       enemyWeapon: 0,
       playerArmor: 0,
       enemyArmor: 0,
+      toHitEnemy: 0,
+      toHitPlayer: 0,
       counterFinger1: 0,
       counterFinger2: 0,
       potion: "",
       log: [],
       img: "",
+      remainingFireFingers1: 5,
+      remainingFireFingers2: 5,
+      playerInitiative: 0,
+      playerStarts: null,
     };
   },
   created: function () {
@@ -242,9 +257,22 @@ export default {
     this.enemyLifePoints = this.MyJson.book[this.Id].enemy[0].enemyLifePoints;
     this.enemyWeapon = this.MyJson.book[this.Id].enemy[0].enemyAttack;
     this.enemyArmor = this.MyJson.book[this.Id].enemy[0].enemyArmor;
+    this.playerInitiative = this.MyJson.book[this.Id].enemy[0].playerInitiative;
+    this.toHitEnemy = this.MyJson.book[this.Id].enemy[0].toHitEnemy;
+    this.toHitPlayer = this.MyJson.book[this.Id].enemy[0].toHitPlayer;
+    this.enemyAttack = this.MyJson.book[this.Id].enemy[0].enemyAttack;
 
-    // this.getFirstLifePoints();
-    // this.fight("player")
+    if (this.MyJson.book[this.Id].enemy[0].playerWeapon) {
+      this.weapon = 5;
+    } else {
+      this.weapon = 0;
+    }
+
+    if (this.MyJson.book[this.Id].enemy[0].playerArmor) {
+      this.playerArmor = 3;
+    } else {
+      this.playerArmor = 0;
+    }
   },
   mounted() {
     this.verifCombat();
@@ -252,45 +280,60 @@ export default {
 
   methods: {
     FingerAttack() {
-      let div = document.querySelectorAll(".btn");
+      let fireFingerBtn1 = document.getElementsByClassName("fireFingerBtn");
       this.enemyLifePoints = this.enemyLifePoints - this.fireFingerDamagePoints;
       this.counterFinger1 += 1;
+      this.remainingFireFingers1 -= 1;
       if (this.counterFinger1 >= 5) {
-        div[3].style.display = "none";
+        fireFingerBtn1[0].style.display = "none";
+      }
+      if (this.enemyLifePoints <= 0) {
+        this.displayMovement();
       }
     },
 
     FingerAttack2() {
-      let div = document.querySelectorAll(".btn");
+      let fireFingerBtn2 = document.getElementsByClassName("fireFingerBtn");
       this.enemyLifePoints = this.enemyLifePoints - this.fireFingerDamagePoints;
       this.counterFinger2 += 1;
+      this.remainingFireFingers2 -= 1;
+
       if (this.counterFinger2 >= 5) {
-        div[4].style.display = "none";
+        fireFingerBtn2[1].style.display = "none";
       }
+      if (this.enemyLifePoints <= 0) {
+          this.displayMovement();
+        }
     },
 
     FireBallAttack1() {
-      let div = document.querySelectorAll(".btn");
-      div[5].style.display = "none";
+      let fireBallBtn = document.getElementsByClassName("fireBallBtn");
+      fireBallBtn[0].style.display = "none";
       this.enemyLifePoints = this.enemyLifePoints - this.spellDamagePoints;
+      if (this.enemyLifePoints <= 0) {
+          this.displayMovement();
+        }
     },
 
     FireBallAttack2() {
-      let div = document.querySelectorAll(".btn");
-      div[6].style.display = "none";
+      let fireBallBtn = document.getElementsByClassName("fireBallBtn");
+      fireBallBtn[1].style.display = "none";
       this.enemyLifePoints = this.enemyLifePoints - this.spellDamagePoints;
+      if (this.enemyLifePoints <= 0) {
+          this.displayMovement();
+        }
     },
 
-    openMenu(message){
-      console.log(message)
-      if(message.message == "parametre"){
-        console.log("ici")
+    openMenu(message) {
+      console.log(message);
+      if (message.message == "parametre") {
+        console.log("ici");
         this.$refs.param.open();
-      }else if(message.message == "inventaire"){
+      } else if (message.message == "inventaire") {
         this.$refs.inventaire.open();
       }
     },
-    unDisplayMovement() {
+    hideMovement() {
       let elem = document.getElementById("movementButton");
       elem.style.display = "none";
     },
@@ -301,24 +344,20 @@ export default {
       elem2.style.display = "none";
       let elem3 = document.getElementById("combat");
       elem3.style.display = "none";
-
-
-
     },
     verifCombat() {
       if (this.MyJson.book[this.Id].enemy != undefined) {
-        this.unDisplayMovement();
+        this.hideMovement();
 
-        this.enemyLifePoints = this.MyJson.book[
-          this.Id
-        ].enemy[0].enemyLifePoints;
-        this.enemyWeapon = this.MyJson.book[this.Id].enemy[0].enemyAttack;
-        this.enemyArmor = this.MyJson.book[this.Id].enemy[0].enemyArmor;
+        // this.enemyLifePoints = this.MyJson.book[this.Id].enemy[0].enemyLifePoints;
+        // this.enemyWeapon = this.MyJson.book[this.Id].enemy[0].enemyAttack;
+        // this.enemyArmor = this.MyJson.book[this.Id].enemy[0].enemyArmor;
       } else {
         var elem = document.getElementById("displayFight");
         elem.style.display = "none";
       }
     },
+
     displayFightDiv() {
       var div = document.getElementById("combat");
 
@@ -356,9 +395,9 @@ export default {
         this.dice2 = false;
         this.gif1 = true;
         this.gif2 = false;
-        console.log("tets");
-        console.log("if throwthedice : gif1 :" + this.gif1);
-        console.log("if throwthedice : dé :" + this.dice1);
+        //console.log("tets");
+        //console.log("if throwthedice : gif1 :" + this.gif1);
+        //console.log("if throwthedice : dé :" + this.dice1);
         this.randomDice1 = Math.floor(6 * Math.random()) + 1;
         setTimeout(this.diceAnim, 2000, 1);
       } else {
@@ -369,8 +408,8 @@ export default {
         this.dice2 = false;
         this.gif1 = true;
         this.gif2 = true;
-        console.log("else throwthedice : gif1 :" + this.gif1);
-        console.log("else throwthedice : dé :" + this.dice1);
+        //console.log("else throwthedice : gif1 :" + this.gif1);
+        //console.log("else throwthedice : dé :" + this.dice1);
         // this.dice1 = true;
         this.randomDice1 = Math.floor(6 * Math.random()) + 1;
         this.randomDice2 = Math.floor(6 * Math.random()) + 1;
@@ -386,15 +425,15 @@ export default {
       if (nbOfDice == 1) {
         this.gif1 = false;
         this.dice1 = true;
-        console.log("diceAnim : gif1 :" + this.gif1);
-        console.log("diceAnim : dé :" + this.dice1);
+        //console.log("diceAnim : gif1 :" + this.gif1);
+        //console.log("diceAnim : dé :" + this.dice1);
       } else {
         this.gif1 = false;
         this.gif2 = false;
         this.dice1 = true;
         this.dice2 = true;
-        console.log("diceAnim else car 2 dés : gif1 :" + this.gif1);
-        console.log("diceAnim else car 2 dés : dé : " + this.dice1);
+        //console.log("diceAnim else car 2 dés : gif1 :" + this.gif1);
+        //console.log("diceAnim else car 2 dés : dé : " + this.dice1);
       }
     },
 
@@ -403,17 +442,20 @@ export default {
       startBtn.style.display = "none";
       this.gif1 = true;
       this.gif2 = true;
-      console.log("getFirstLifePoints : gif1 :" + this.gif1);
-      console.log("getFirstLifePoints :  dé :" + this.dice1);
+      //console.log("getFirstLifePoints : gif1 :" + this.gif1);
+      //console.log("getFirstLifePoints :  dé :" + this.dice1);
       this.throwTheDice(2);
       this.lifePoints = (this.randomDice1 + this.randomDice2) * 4;
+      this.startingLifePoints = this.lifePoints;
     },
     JoueurHitEnemy() {
-      this.log.push("C'est à vous d'attaquer.");
-      this.enemyLifePoints;
-      console.log(this.enemyLifePoints);
+      // this.log.push("C'est à vous d'attaquer.");
+      // this.enemyLifePoints;
+      // console.log(this.enemyLifePoints);
       //A aller chercher dans le json quand il sera mis en forme
-
+      let btnAttack = document.getElementsByClassName("btnAttack");
+      btnAttack[0].style.display = "none";
+      btnAttack[1].style.display = "block";
       //le joueur attaque l'ennemi
       //il lance les dés
       this.throwTheDice(2);
@@ -421,80 +463,138 @@ export default {
 
       let total = this.randomDice1 + this.randomDice2;
       this.log.push("Vous attaquez de :  " + total + " (total des dés).");
-
-      if (total >= 6) {
+      this.log.shift();
+      if (total >= this.toHitEnemy) {
         this.log.push("Le coup est réussi.");
+        this.log.shift();
+        let damage = total - this.toHitEnemy + this.weapon - this.enemyArmor;
 
-        let damage = total - 6 + this.weapon - this.enemyArmor;
-        this.log.push(
-          "Vous faites à l'ennemi :  " + damage + " points de dégats."
-        );
         this.enemyLifePoints = this.enemyLifePoints - damage;
         this.log.push(
-          "Il reste à l'ennemi : " + this.enemyLifePoints + " points."
+          "Vous faites à l'ennemi :  " +
+            damage +
+            " points de dégats. Il reste à l'ennemi : " +
+            this.enemyLifePoints +
+            " points."
         );
-      }
-      if (this.enemyLifePoints <= 0) {
-        this.displayMovement();
+        this.log.shift();
+        if (this.enemyLifePoints <= 0) {
+          this.displayMovement();
+        }
+      } else {
+        this.log.push("Sapristi! Vous l'avez manqué !");
+        this.log.shift();
       }
     },
-    RefreshLifePoints() {
-      let hpBar = LeftPage.getElementById("hpBar");
-      let lifePoints = this.lifePoints;
-      let startingLifePoints = this.startingLifePoints;
-      let lifeBar = lifePoints / startingLifePoints;
-      lifeBar = lifeBar * 100;
-      let lBar = lifeBar + "%";
-      hpBar.style.setProperty("--lifeBar", lBar);
-    },
+
     EnemyHitJoueur() {
+      let btnAttack = document.getElementsByClassName("btnAttack");
+      btnAttack[1].style.display = "none";
+      btnAttack[0].style.display = "block";
       this.throwTheDice(2);
 
       let total = this.randomDice1 + this.randomDice2;
 
-      if (total >= 6) {
-        let damage = total - 6 + this.enemyWeapon - this.playerArmor;
+      if (total >= this.toHitPlayer) {
+        let damage =
+          total - this.toHitPlayer + this.enemyAttack - this.playerArmor;
 
         this.log.push(
           "L'ennemi réussit à vous toucher, il vous inflige : " +
             damage +
             " points de dégats."
         );
-        this.remainingLifePoints = this.startingLifePoints - damage;
+        // this.log.shift();
+
+        this.remainingLifePoints = this.lifePoints - damage;
         this.lifePoints = this.remainingLifePoints;
-        this.RefreshLifePoints();
+        this.log.push("Il vous reste : " + this.lifePoints + " points de vie.");
+        this.log.shift();
       } else {
         this.log.push("L'ennemi vous rate.");
+        this.log.shift();
       }
     },
-    fight(whoStart) {
-      if (whoStart == "player") {
-        while (this.enemyLifePoints > 5 || this.lifePoints > 0) {
-          this.JoueurHitEnemy();
-          if (this.enemyLifePoints <= 5) {
-            console.log("l'ennemi est assommé");
-          } else {
-            this.EnemyHitJoueur();
-          }
+    fight() {
+      console.log(this.playerInitiative == 1);
+      if (this.playerInitiative == 1) {
+        // console.log("this.playerInitiative : " + this.playerInitiative);
+        this.log.push("C'est à vous de commencer à frapper.");
+        // this.log.shift();
+        let btnAttack = document.getElementsByClassName("btnAttack");
+        btnAttack[0].style.display = "block";
+        btnAttack[1].style.display = "none";
+        let startFightBtn = document.getElementsByClassName("startFightBtn");
+        startFightBtn[0].style.display = "none";
+        // this.JoueurHitEnemy();
+        if (this.enemyLifePoints <= 5) {
+          console.log("l'ennemi est assommé");
+        } else {
+          this.EnemyHitJoueur();
         }
+      } else if (this.playerInitiative == 2) {
+        // console.log("this.playerInitiative : " + this.playerInitiative);
+        this.log.push("L'ennemi commence");
+        // this.log.shift();
+        this.EnemyHitJoueur();
       } else {
-        this.log.push("L'ennemie vous rate");
+        // console.log("this.playerInitiative : " + this.playerInitiative);
+        this.log.push(
+          "Les dés ont été lancés pour déterminer qui commence, le score affiché à gauche sera le vôtre."
+        );
+        // this.log.shift();
+        this.throwTheDice(2);
+        console.log(
+          "randomdice1 : " +
+            parseInt(this.randomDice1) +
+            " randomdice2 : " +
+            this.randomDice2
+        );
+
+        this.whoStarts();
       }
 
       if (this.lifePoints <= 0) {
         this.goTo(14);
       }
     },
-    drinkPotion(nom){                             //a finir
-        if(nom == "Potions Curatives"){
-            this.throwTheDice(2);
-            this.lifePoints = this.lifePoints + (this.randomDice1+this.randomDice2)
-        }else if(nom == "Onguents"){
-          this.lifePoints = this.lifePoints + 5
-        }
-    }
+    whoStarts() {
+      console.log(
+        "randomdice1 : " +
+          parseInt(this.randomDice1) +
+          " randomdice2 : " +
+          this.randomDice2
+      );
 
-
+      if (this.randomDice1 == this.randomDice2) {
+        this.log.push(
+          "Egalité, les dés ont été relancés. Veuillez cliquer sur le bouton d'attaque"
+        );
+        this.throwTheDice();
+        return this.whoStarts();
+      } else if (this.randomDice1 > this.randomDice2) {
+        // signifie que c'est le joueur qui commence
+        let btnAttack = document.getElementsByClassName("btnAttack");
+        btnAttack[0].style.display = "block";
+        let startFightBtn = document.getElementsByClassName("startFightBtn");
+        startFightBtn[0].style.display = "none";
+      } else if (this.randomDice1 < this.randomDice2) {
+        let btnAttack = document.getElementsByClassName("btnAttack");
+        btnAttack[1].style.display = "block";
+        let startFightBtn = document.getElementsByClassName("startFightBtn");
+        startFightBtn[0].style.display = "none";
+      }
+    },
+    drinkPotion(nom) {
+      //a finir
+      if (nom == "Potions Curatives") {
+        this.throwTheDice(2);
+        this.lifePoints =
+          this.lifePoints + (this.randomDice1 + this.randomDice2);
+      } else if (nom == "Onguents") {
+        this.lifePoints = this.lifePoints + 5;
+      }
+    },
   },
 };
 </script>
@@ -669,21 +769,19 @@ p {
   display: block;
   width: 500px;
   height: 700px;
-  background-image: 
-  url("../assets/shield-removebg-preview.png");
+  background-image: url("../assets/shield-removebg-preview.png");
   position: absolute;
   z-index: 10;
   display: none;
-  bottom : 150px;
+  bottom: 150px;
   border-radius: 5%;
-  background-repeat: no-repeat ;
+  background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
   padding-top: 100px;
   color: black;
   font-family: Augusta;
   text-shadow: 1px 1px 1px 1px #666;
-  
 }
 
 #game {
@@ -810,6 +908,10 @@ p {
   border-radius: 2px;
   transform: rotate(-45deg);
   transition: all 0.3s ease-in;
+}
+.btnAttack {
+  display: none;
+  margin: auto;
 }
 .close {
   /* margin: 60px 0 0 5px; */
