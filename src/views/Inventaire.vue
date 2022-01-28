@@ -246,7 +246,7 @@ export default{
     background-color: rgb(220,220,220);
     position: absolute;
     margin-left:30%;
-    display: flex;
+    display: none;
     flex-direction: column;
     align-items: center;
     box-shadow: 18px 26px 15px 5px rgba(0,0,0,0.37);
