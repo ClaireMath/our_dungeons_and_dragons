@@ -838,7 +838,7 @@ p {
 .divSpells {
   width: 98%;
   margin-left: 1%;
-  background-color: green;
+  /*background-color: green;*/
   height: 50px;
   display: flex;
   justify-content: space-evenly;
