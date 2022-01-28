@@ -16,13 +16,13 @@ Vue.use(VueRouter)
 
 const routes = [
    {
-     // juste le slash ça permet de dire que ce sera cette vue qui sera envoyée par défaut
+     // le slash permet de renvoyer à la racine du projet
     path: "/",
     name: "Home",
     component: Home
   },
   {
-    // juste le slash ça permet de dire que ce sera cette vue qui sera envoyée par défaut
+    
     path: "/action/:id",
     name: "Action",
     component: Action

@@ -22,17 +22,6 @@
 </template>
 
 
-<script>
-// var about = new Vue ({
-//   el: '#about',
-//   data: {
-//     message : "Si vous êtes arrivé là.."
-//   }
-// })
-
-</script>
-
-
 <style scoped>
 
 

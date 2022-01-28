@@ -170,7 +170,7 @@
 
           <div class="log">
             <div class="allLogs" id="logs">
-              <p v-for="line in log" :key="line">{{ line }}</p>
+              <!--<p v-for="line in log" :key="line">{{ line }}</p>-->
             </div>
           </div>
           <div class="action">
@@ -184,7 +184,7 @@
               Commencer la bagarre
             </button>
             <hr />
-            <div class="divSorts">
+            <div id="divSorts">
               <button @click="FingerAttack" class="btn fireFingerBtn">
                 Doigts de feu I ({{ remainingFireFingers1 }}/5)
               </button>
@@ -276,9 +276,19 @@ export default {
   },
   mounted() {
     this.verifCombat();
+    this.displaySorts();
   },
 
   methods: {
+    displaySorts() {
+      let sorts = document.getElementById("divSorts");
+
+      if (this.$route.query.id == 159) {
+        sorts.style.display = "none";
+      } else {
+        sorts.style.display = "block";
+      }
+    },
     FingerAttack() {
       let fireFingerBtn1 = document.getElementsByClassName("fireFingerBtn");
       this.enemyLifePoints = this.enemyLifePoints - this.fireFingerDamagePoints;
@@ -302,8 +312,8 @@ export default {
         fireFingerBtn2[1].style.display = "none";
       }
       if (this.enemyLifePoints <= 0) {
-          this.displayMovement();
-        }
+        this.displayMovement();
+      }
     },
 
     FireBallAttack1() {
@@ -311,8 +321,8 @@ export default {
       fireBallBtn[0].style.display = "none";
       this.enemyLifePoints = this.enemyLifePoints - this.spellDamagePoints;
       if (this.enemyLifePoints <= 0) {
-          this.displayMovement();
-        }
+        this.displayMovement();
+      }
     },
 
     FireBallAttack2() {
@@ -320,14 +330,12 @@ export default {
       fireBallBtn[1].style.display = "none";
       this.enemyLifePoints = this.enemyLifePoints - this.spellDamagePoints;
       if (this.enemyLifePoints <= 0) {
-          this.displayMovement();
-        }
+        this.displayMovement();
+      }
     },
 
     openMenu(message) {
-      console.log(message);
       if (message.message == "parametre") {
-        console.log("ici");
         this.$refs.param.open();
       } else if (message.message == "inventaire") {
         this.$refs.inventaire.open();
@@ -363,7 +371,6 @@ export default {
 
       div.style.display = "block";
       this.enemyLifePoints = this.MyJson.book[this.Id].enemy[0].enemyLifePoints;
-      console.log("enemy life point =" + this.enemyLifePoints);
     },
 
     closeWindow() {
@@ -395,9 +402,7 @@ export default {
         this.dice2 = false;
         this.gif1 = true;
         this.gif2 = false;
-        //console.log("tets");
-        //console.log("if throwthedice : gif1 :" + this.gif1);
-        //console.log("if throwthedice : dé :" + this.dice1);
+
         this.randomDice1 = Math.floor(6 * Math.random()) + 1;
         setTimeout(this.diceAnim, 2000, 1);
       } else {
@@ -408,9 +413,7 @@ export default {
         this.dice2 = false;
         this.gif1 = true;
         this.gif2 = true;
-        //console.log("else throwthedice : gif1 :" + this.gif1);
-        //console.log("else throwthedice : dé :" + this.dice1);
-        // this.dice1 = true;
+
         this.randomDice1 = Math.floor(6 * Math.random()) + 1;
         this.randomDice2 = Math.floor(6 * Math.random()) + 1;
 
@@ -421,19 +424,14 @@ export default {
     },
 
     diceAnim(nbOfDice) {
-      console.log("cest diceanim ici !");
       if (nbOfDice == 1) {
         this.gif1 = false;
         this.dice1 = true;
-        //console.log("diceAnim : gif1 :" + this.gif1);
-        //console.log("diceAnim : dé :" + this.dice1);
       } else {
         this.gif1 = false;
         this.gif2 = false;
         this.dice1 = true;
         this.dice2 = true;
-        //console.log("diceAnim else car 2 dés : gif1 :" + this.gif1);
-        //console.log("diceAnim else car 2 dés : dé : " + this.dice1);
       }
     },
 
@@ -442,13 +440,13 @@ export default {
       startBtn.style.display = "none";
       this.gif1 = true;
       this.gif2 = true;
-      //console.log("getFirstLifePoints : gif1 :" + this.gif1);
-      //console.log("getFirstLifePoints :  dé :" + this.dice1);
+
       this.throwTheDice(2);
       this.lifePoints = (this.randomDice1 + this.randomDice2) * 4;
       this.startingLifePoints = this.lifePoints;
     },
     JoueurHitEnemy() {
+      
       // this.log.push("C'est à vous d'attaquer.");
       // this.enemyLifePoints;
       // console.log(this.enemyLifePoints);
@@ -464,11 +462,17 @@ export default {
       let total = this.randomDice1 + this.randomDice2;
       this.log.push("Vous attaquez de :  " + total + " (total des dés).");
       this.log.shift();
-      if (total >= this.toHitEnemy) {
+      
+      if (total >= this.toHitEnemy)
+       {
+        console.log("chui la du con")
         this.log.push("Le coup est réussi.");
         this.log.shift();
         let damage = total - this.toHitEnemy + this.weapon - this.enemyArmor;
-
+        if (this.$route.query.id == 159) {
+          damage = damage * 2;
+        }
+        
         this.enemyLifePoints = this.enemyLifePoints - damage;
         this.log.push(
           "Vous faites à l'ennemi :  " +
@@ -518,7 +522,6 @@ export default {
     fight() {
       console.log(this.playerInitiative == 1);
       if (this.playerInitiative == 1) {
-        // console.log("this.playerInitiative : " + this.playerInitiative);
         this.log.push("C'est à vous de commencer à frapper.");
         // this.log.shift();
         let btnAttack = document.getElementsByClassName("btnAttack");
@@ -579,10 +582,10 @@ export default {
         let startFightBtn = document.getElementsByClassName("startFightBtn");
         startFightBtn[0].style.display = "none";
       } else if (this.randomDice1 < this.randomDice2) {
-        let btnAttack = document.getElementsByClassName("btnAttack");
-        btnAttack[1].style.display = "block";
         let startFightBtn = document.getElementsByClassName("startFightBtn");
         startFightBtn[0].style.display = "none";
+        let btnAttack = document.getElementsByClassName("btnAttack");
+        btnAttack[1].style.display = "block";
       }
     },
     drinkPotion(nom) {
@@ -953,6 +956,9 @@ p {
   flex-direction: column;
   align-items: space-evenly;
   justify-content: space-around;
+}
+#divSorts {
+  display: block;
 }
 
 .btnSpell {
