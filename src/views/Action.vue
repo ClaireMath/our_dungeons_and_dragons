@@ -202,10 +202,10 @@ import LeftPage from "./LeftPage.vue";
 import json from "../assets/data.json";
 
 import Param from './param.vue';
-import Inventaire from './Inventaire.vue';
+// import Inventaire from './Inventaire.vue';
 
 export default {
-  components: { LeftPage, Param, Inventaire },
+  components: { LeftPage, Param },
   name: "Action",
   data() {
     return {
