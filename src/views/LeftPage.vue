@@ -1,7 +1,7 @@
 <template>
   <div id="leftPage">
     <div id="menuItems">
-      <h3 id="hp">Points de vie</h3>
+      <h3 id="hp"><u>Points de vie</u></h3>
 
       <div id="hpBar">
         <div>{{ lifePoints }}/{{ startingLifePoints }}</div>
@@ -111,20 +111,25 @@ export default {
   --lifeBar: "";
 }
 
-@font-face {
+/* @font-face {
   font-family: "Augusta";
   src: url("../assets/augusta/Augusta.ttf");
+  font-family: 'Merriweather', serif;
+} */
+
+body {
+  font-family: 'Merriweather', serif;
 }
 
 #leftPage {
   top: -4%;
   width: 0px;
   height: 100vh;
-  background-image: linear-gradient(
+  /* background-image: linear-gradient(
       rgba(255, 255, 255, 0.5),
       rgba(0, 0, 0, 0.5)
     ),
-    url("../assets/gate-removebg-preview.png");
+    url("../assets/gate-removebg-preview.png"); */
   position: relative;
   z-index: 2;
   display: flex;
@@ -169,7 +174,7 @@ export default {
   left: -200px;
 }
 #hpBar {
-  background: linear-gradient(to top, red var(--lifeBar), #eee0ee66 0%);
+  background: linear-gradient(to top, rgb(148, 128, 43) var(--lifeBar), #eee0ee66 0%);
   border: solid;
   border-radius: 50%;
   width: 100px;
@@ -200,7 +205,7 @@ export default {
 }
 
 h3 {
-  font-family: Augusta;
+  font-family: 'Merriweather', serif;
   color: black;
   font-size: 1.2em;
   text-shadow: none;

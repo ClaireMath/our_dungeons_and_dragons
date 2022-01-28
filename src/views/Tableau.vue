@@ -79,12 +79,13 @@ export default {
   outline: none;
 }
 
-@font-face {
+/* @font-face {
   font-family: "Irish";
   src: url("../assets/IrishUncialfabeta-Bold.ttf");
-}
+} */
 html,
 body {
+  font-family: 'Merriweather', serif;
   height: 100%;
   width: 100%;
 }

@@ -12,6 +12,7 @@
 
 <style scoped>
 div {
+  font-family: 'Merriweather', serif;
   background-color: whitesmoke;
 }
 h1 {

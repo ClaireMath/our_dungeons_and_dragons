@@ -261,6 +261,7 @@ export default {
 
 <style scoped>
 * {
+  font-family: 'Merriweather', serif;
   margin: 0;
   padding: 0;
 }

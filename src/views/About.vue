@@ -15,7 +15,7 @@
       Retrouvez nous sur les réseaux sociaux.
     </span></div>
     <img src="../assets/Fb.png" alt="fb" class="rs">
-    <img src="../assets/Insta.png" alt="fb" class="rs">
+    <img src="../assets/Insta.png" alt="fb" class="rsf">
     </div>
     </div>
   </div>
@@ -23,12 +23,7 @@
 
 
 <script>
-// var about = new Vue ({
-//   el: '#about',
-//   data: {
-//     message : "Si vous êtes arrivé là.."
-//   }
-// })
+
 
 </script>
 
@@ -37,8 +32,7 @@
 
 
 body{
-  
-  color: black;
+  font-family: 'Merriweather', serif;
   
 }
 
@@ -48,6 +42,8 @@ flex-direction: row;
 justify-content: space-around;
 height: 100%;
 width: 100%;
+margin: 2%;
+color: black;
 
 
 }
@@ -78,7 +74,12 @@ border-radius: 10%;
 
 .rs {
   height: 10%;
-  width: 20%;
+  width: 22%;
+}
+
+.rsf{
+  height: 10%;
+  width: 22%;
 }
 
 </style>

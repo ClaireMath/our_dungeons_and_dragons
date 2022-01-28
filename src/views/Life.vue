@@ -88,11 +88,13 @@ Et maintenant, passons au sortilège.
 
 <style scoped>
 p {
+    font-family: 'Merriweather', serif;
     text-align: justify;
     line-height: 140%;
     width: 80%;
     position: relative;
-    left: 10%
+    left: 10%;
+    margin: 2%
 
 }
 </style>

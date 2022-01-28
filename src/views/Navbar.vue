@@ -21,6 +21,7 @@
 
 <style scoped>
 #nav {
+  font-family: 'Merriweather', serif;
   
   display: flex;
   flex-direction: row;

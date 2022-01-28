@@ -16,13 +16,13 @@ Vue.use(VueRouter)
 
 const routes = [
    {
-     // juste le slash ça permet de dire que ce sera cette vue qui sera envoyée par défaut
+     // le slash permet d'envoyer au ficheir racine apr défaut
     path: "/",
     name: "Home",
     component: Home
   },
   {
-    // juste le slash ça permet de dire que ce sera cette vue qui sera envoyée par défaut
+   
     path: "/action/:id",
     name: "Action",
     component: Action

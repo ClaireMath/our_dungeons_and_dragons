@@ -61,9 +61,9 @@ export default {
 
 
 body{
-background:black;
  margin: 0;
  padding: 0;
+ font-family: 'Merriweather', serif;
   
 }
 
@@ -76,7 +76,7 @@ background:black;
 
 
 .h1{
-    font: #000000;
+  color: #000000;
 }
 
 .containerp{

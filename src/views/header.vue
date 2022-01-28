@@ -25,8 +25,8 @@ export default {
 }
 
 header {
+  font-family: 'Merriweather', serif;
   position: relative;
-  /*background-color: grey;*/
   left: 0;
   top: 0;
   height: 70px;

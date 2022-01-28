@@ -76,7 +76,8 @@
 }
 
 body {
-  font-family: "Noto Sans JP", sans-serif;
+  font-family: 'Merriweather', serif;
+  /* font-family: "Noto Sans JP", sans-serif; */
   background-color: #fef8f8;
 }
 

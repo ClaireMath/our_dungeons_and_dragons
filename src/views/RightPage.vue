@@ -75,16 +75,20 @@ export default {
 </script>-->
 
 <style scoped>
-@font-face {
+/* @font-face {
   font-family: "Augusta";
   src: url("../assets/augusta/Augusta.ttf");
-}
+} */
 
 /*#rightCtn {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }*/
+
+body{
+  font-family: 'Merriweather', serif;
+}
 
 #rightPage {
   top: -4%;
