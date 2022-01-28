@@ -6,6 +6,7 @@
         :lifePoints="lifePoints"
         :startingLifePoints="startingLifePoints"
       />
+
     </div>
     <div class="superDiv">
       <div class="topDiv">
@@ -113,7 +114,7 @@
           </div>
         </div>
         <Param ref="param" />
-        <Inventaire ref="inv" />
+        <Inventaire ref="inventaire" />
         <div class="combat" id="combat">
           <h1>Combat</h1>
           <div @click="closeWindow" class="close-container">

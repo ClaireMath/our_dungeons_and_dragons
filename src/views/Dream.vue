@@ -13,8 +13,8 @@
         ENTREZ
       </button>
 
-      <button type="button" class="btnnight2" @click="throwTheDice(2)">
-        Lancez les dés
+      <button type="button" class="btnnight2" @click="openPopup()">
+        COMBAT
       </button>
 
       <!-- <p class="paragraphe" </p> -->
@@ -124,6 +124,10 @@ export default {
   },
 
   methods: {
+
+    openPopup(){
+      window.alert("EN CONSTRUCTION !");
+    },
 
 
       beyAttack(){
@@ -349,7 +353,7 @@ h1 {
   line-height: 150%;
 }
 
-.btnnight {
+.btnnight, .btnnight2 {
   background: rgba(0, 0, 0, 0.3);
   color: white;
   font-weight: bold;

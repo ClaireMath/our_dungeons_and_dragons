@@ -252,8 +252,9 @@ export default{
     box-shadow: 18px 26px 15px 5px rgba(0,0,0,0.37);
     margin-top: 1000px;
     overflow: scroll;
-     
+    bottom: 100px;
     box-shadow: inset -8px 6px 15px 8px rgba(0,0,0,0.12);
+    z-index: 12;
 }
 
 .trait

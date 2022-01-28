@@ -1520,18 +1520,21 @@
           "enemyLifePoints": 12,
           "enemyAttack": 2,
           "enemyArmor": 2,
+          "toHitEnemy": 6,
           "playerArmor": true,
           "playerWeapon": true,
-          "playerInitiative": false
+          "playerInitiative": 2,
+          "toHitPlayer": 6
         },
         {
           "name": "Garde 2",
           "enemyLifePoints": 12,
           "enemyAttack": 2,
           "enemyArmor": 2,
+          "toHitEnemy": 6,
           "playerArmor": true,
           "playerWeapon": true,
-          "playerInitiative": false
+          "playerInitiative": 2
         }
       ]
     },
@@ -1596,6 +1599,8 @@
           "enemyLifePoints": 40,
           "enemyAttack": 5,
           "enemyArmor": 0,
+          "toHitEnemy": 6,
+          "playerInitiative": 3,
           "playerArmor": true,
           "playerWeapon": true,
           "toHitPlayer": 6
@@ -1687,18 +1692,21 @@
           "enemyLifePoints": 12,
           "enemyAttack": 2,
           "enemyArmor": 2,
+          "toHitEnemy": 6,
           "playerArmor": true,
           "playerWeapon": true,
-          "playerInitiative": true
+          "playerInitiative": 1,
+          "toHitPlayer": 6
         },
         {
           "name": "Garde 2",
           "enemyLifePoints": 12,
           "enemyAttack": 2,
           "enemyArmor": 2,
+          "toHitEnemy": 6,
           "playerArmor": true,
           "playerWeapon": true,
-          "playerInitiative": true
+          "playerInitiative": 1
         }
       ]
     },
