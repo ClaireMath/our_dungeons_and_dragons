@@ -297,6 +297,13 @@ export default {
     displayMovement() {
       let elem = document.getElementById("movementButton");
       elem.style.display = "block";
+      let elem2 = document.getElementById("displayFight");
+      elem2.style.display = "none";
+      let elem3 = document.getElementById("combat");
+      elem3.style.display = "none";
+
+
+
     },
     verifCombat() {
       if (this.MyJson.book[this.Id].enemy != undefined) {
@@ -431,7 +438,15 @@ export default {
         this.displayMovement();
       }
     },
-
+    RefreshLifePoints() {
+      let hpBar = LeftPage.getElementById("hpBar");
+      let lifePoints = this.lifePoints;
+      let startingLifePoints = this.startingLifePoints;
+      let lifeBar = lifePoints / startingLifePoints;
+      lifeBar = lifeBar * 100;
+      let lBar = lifeBar + "%";
+      hpBar.style.setProperty("--lifeBar", lBar);
+    },
     EnemyHitJoueur() {
       this.throwTheDice(2);
 
@@ -447,6 +462,7 @@ export default {
         );
         this.remainingLifePoints = this.startingLifePoints - damage;
         this.lifePoints = this.remainingLifePoints;
+        this.RefreshLifePoints();
       } else {
         this.log.push("L'ennemi vous rate.");
       }
@@ -484,7 +500,6 @@ export default {
 </script>
 
 <style scoped>
-
 *,
 *::after,
 *::before {
@@ -650,15 +665,25 @@ p {
 }
 
 .combat {
+  top: 100px;
   display: block;
   width: 500px;
-  height: 600px;
-  background-color: blue;
+  height: 700px;
+  background-image: 
+  url("../assets/shield-removebg-preview.png");
   position: absolute;
   z-index: 10;
-  box-shadow: 17px 14px 24px 5px rgba(0, 0, 0, 0.14);
   display: none;
   bottom : 150px;
+  border-radius: 5%;
+  background-repeat: no-repeat ;
+  background-position: center;
+  background-size: contain;
+  padding-top: 100px;
+  color: black;
+  font-family: Augusta;
+  text-shadow: 1px 1px 1px 1px #666;
+  
 }
 
 #game {
@@ -678,30 +703,25 @@ p {
 
   display: flex;
   flex-direction: row;
-  background-color: yellow;
 }
 
 .player {
   width: 50%;
   height: 100px;
-  background-color: green;
 }
 
 .enemy {
   width: 50%;
   height: 100px;
-  background-color: purple;
 }
 .log {
   width: 100%;
   height: 100px;
-  background-color: pink;
   bottom: 100%;
 }
 .action {
   width: 100%;
   height: 200px;
-  background-color: fuchsia;
 }
 .allLogs {
   width: 100%;
@@ -758,12 +778,11 @@ p {
   justify-content: space-evenly;
 
   width: 100%;
-  background-color: aqua;
 }
 .close-container {
   position: relative;
   top: -20px;
-  left: 470px;
+  left: 400px;
   /*margin: auto;*/
   width: 25px;
   height: 25px;

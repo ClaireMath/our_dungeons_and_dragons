@@ -58,7 +58,6 @@ export default {
       lifeBar = lifeBar * 100;
       let lBar = lifeBar + "%";
       console.log("Life bar " + lBar);
-      hpBar.style.setProperty("--lifeBar", lBar);
 
       let leftPage = document.getElementById("leftPage");
       let lStar = document.getElementById("lStar");
@@ -91,7 +90,6 @@ export default {
         inv.style.left = "-200px";
         dream.style.left = "-200px";
         param.style.left = "-200px";
-        hpBar.style.setProperty("--lifeBar", lBar);
       }
     },
     emitOpenParam(){
