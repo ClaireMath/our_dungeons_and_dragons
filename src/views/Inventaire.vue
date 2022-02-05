@@ -225,7 +225,6 @@ export default{
 
     },
     mounted(){
-        this.addArme("t","t",5);
         this.createOptions()
     }
 

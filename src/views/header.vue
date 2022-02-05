@@ -1,6 +1,6 @@
 <template>
     <header>
-      <h1>黑暗城堡</h1>
+      <h1>Le château des Ténèbres</h1>
       <div class="divNav">
       <router-link to="/">| Accueil |</router-link>
       <router-link to="/Rules"> Règles |</router-link>

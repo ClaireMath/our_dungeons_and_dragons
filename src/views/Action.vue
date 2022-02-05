@@ -6,7 +6,6 @@
         :lifePoints="lifePoints"
         :startingLifePoints="startingLifePoints"
       />
-
     </div>
     <div class="superDiv">
       <div class="topDiv">
@@ -277,8 +276,21 @@ export default {
   mounted() {
     this.verifCombat();
     this.displaySorts();
+     if (localStorage.startingLifePoints) {
+      this.startingLifePoints = localStorage.startingLifePoints;
+    }
+    if (localStorage.lifePoints) {
+      this.lifePoints = localStorage.lifePoints;
+    }
   },
-
+watch: {
+    lifePoints(lifePoints, nlifePoints) {
+      localStorage.lifePoints = nlifePoints;
+    },
+    startingLifePoints(startingLifePoints, nstartingLifePoints) {
+      localStorage.startingLifePoints = nstartingLifePoints;
+    }
+  },
   methods: {
     displaySorts() {
       let sorts = document.getElementById("divSorts");
@@ -446,7 +458,6 @@ export default {
       this.startingLifePoints = this.lifePoints;
     },
     JoueurHitEnemy() {
-      
       // this.log.push("C'est à vous d'attaquer.");
       // this.enemyLifePoints;
       // console.log(this.enemyLifePoints);
@@ -462,17 +473,16 @@ export default {
       let total = this.randomDice1 + this.randomDice2;
       this.log.push("Vous attaquez de :  " + total + " (total des dés).");
       this.log.shift();
-      
-      if (total >= this.toHitEnemy)
-       {
-        console.log("chui la du con")
+
+      if (total >= this.toHitEnemy) {
+        console.log("chui la du con");
         this.log.push("Le coup est réussi.");
         this.log.shift();
         let damage = total - this.toHitEnemy + this.weapon - this.enemyArmor;
         if (this.$route.query.id == 159) {
           damage = damage * 2;
         }
-        
+
         this.enemyLifePoints = this.enemyLifePoints - damage;
         this.log.push(
           "Vous faites à l'ennemi :  " +
@@ -518,6 +528,20 @@ export default {
         this.log.push("L'ennemi vous rate.");
         this.log.shift();
       }
+      if (this.$route.query.id == 159) {
+        console.log("C'est bon");
+        console.log(this.lifePoints);
+        console.log(this.startingLifePoints);
+        if (this.lifePoints <= this.startingLifePoints - 10) {
+          this.goTo(1);
+        } else if (this.MyJson.book[this.Id].enemy[0].enemyLifePoints <= 10) {
+          this.goTo(2);
+        }
+      } else {
+        if (this.lifePoints <= 0) {
+          this.goTo(14);
+        }
+      }
     },
     fight() {
       console.log(this.playerInitiative == 1);
@@ -556,9 +580,19 @@ export default {
 
         this.whoStarts();
       }
-
-      if (this.lifePoints <= 0) {
-        this.goTo(14);
+      if (this.$route.query.id == 159) {
+        console.log("C'est bon");
+        console.log(this.lifePoints);
+        console.log(this.startingLifePoints);
+        if (this.lifePoints <= this.startingLifePoints - 10) {
+          this.goTo(1);
+        } else if (this.MyJson.book[this.Id].enemy[0].enemyLifePoints <= 10) {
+          this.goTo(2);
+        }
+      } else {
+        if (this.lifePoints <= 0) {
+          this.goTo(14);
+        }
       }
     },
     whoStarts() {
