@@ -86,7 +86,7 @@
       <div id="game">
         <div id="scrollable">
           <h2 class="pTitle" v-html="MyJson.book[Id].pTitle"></h2>
-          <p class="paragraphe" v-html="MyJson.book[Id].paragraph"></p>
+          <p class="paragraphe" id="paragraphe" v-html="MyJson.book[Id].paragraph"></p>
           <img :src="require('../assets/' + MyJson.book[Id].img)" />
           <div class="divOfChoicesBtn">
             <div id="movementButton">
@@ -112,8 +112,13 @@
             </button>
           </div>
         </div>
-        <Param ref="param" />
-        <Inventaire ref="inventaire" />
+        <Param @changePolice="changePolice" ref="param" />
+        <Inventaire :vie="lifePoints" 
+                    :argent="money" 
+                    :maxVie="startingLifePoints" 
+                    ref="inventaire" 
+                    @drinkPotion="drinkPotion"
+                    />
         <div class="combat" id="combat">
           <h1>Combat</h1>
           <div @click="closeWindow" class="close-container">
@@ -170,7 +175,7 @@
 
           <div class="log">
             <div class="allLogs" id="logs">
-              <!--<p v-for="line in log" :key="line">{{ line }}</p>-->
+              <p>{{ this.log }}</p>
             </div>
           </div>
           <div class="action">
@@ -242,12 +247,13 @@ export default {
       counterFinger1: 0,
       counterFinger2: 0,
       potion: "",
-      log: [],
+      log: "",
       img: "",
       remainingFireFingers1: 5,
       remainingFireFingers2: 5,
       playerInitiative: 0,
       playerStarts: null,
+      money: 5
     };
   },
   created: function () {
@@ -274,8 +280,11 @@ export default {
     }
   },
   mounted() {
+    
+    this.getLocalStorageInfo();
     this.verifCombat();
     this.displaySorts();
+    
      if (localStorage.startingLifePoints) {
       this.startingLifePoints = localStorage.startingLifePoints;
     }
@@ -284,14 +293,37 @@ export default {
     }
   },
 watch: {
-    lifePoints(lifePoints, nlifePoints) {
-      localStorage.lifePoints = nlifePoints;
+    lifePoints(lifePoints) {
+      localStorage.pv = lifePoints;
     },
-    startingLifePoints(startingLifePoints, nstartingLifePoints) {
-      localStorage.startingLifePoints = nstartingLifePoints;
-    }
+    startingLifePoints(startingLifePoints) {
+      localStorage.maxPv = startingLifePoints;
+    },
+    
   },
   methods: {
+    changePolice(police){
+        
+        let paragraphe = document.getElementById("paragraphe");
+        console.log(police.message)
+        paragraphe.style.fontFamily = police.message;
+        localStorage.police = police.message;
+    },
+    getLocalStorageInfo(){
+      if(localStorage.pv  === undefined){
+        
+      }else{
+        this.startingLifePoints = localStorage.maxPv;
+        this.lifePoints = localStorage.pv;
+      }
+      
+      if(localStorage.police  === undefined){
+        localStorage.police = "Irish";
+      }else{
+        console.log("JE SUIS ICI");
+        document.getElementById("paragraphe").style.fontFamily = localStorage.police;
+      }
+    },
     displaySorts() {
       let sorts = document.getElementById("divSorts");
 
@@ -391,6 +423,10 @@ watch: {
     },
 
     goTo(nextid) {
+      //données à sauvegarder
+      localStorage.pv = this.lifePoints;
+
+
       this.$router.push("?id=" + nextid);
       window.location.reload();
     },
@@ -471,33 +507,31 @@ watch: {
       //calcul du resultat
 
       let total = this.randomDice1 + this.randomDice2;
-      this.log.push("Vous attaquez de :  " + total + " (total des dés).");
-      this.log.shift();
+      this.log = ("Vous attaquez de :  " + total + " (total des dés).");
+      
 
       if (total >= this.toHitEnemy) {
-        console.log("chui la du con");
-        this.log.push("Le coup est réussi.");
-        this.log.shift();
+        
+        this.log = this.log+"\nLe coup est réussi.";
+        console.log("total: "+total+"|"+"hitEnnemy: "+this.toHitEnemy+"|"+"weapon: "+this.weapon+"|"+"armure: "+this.enemyArmor+"|")
         let damage = total - this.toHitEnemy + this.weapon - this.enemyArmor;
-        if (this.$route.query.id == 159) {
+        
+        if (this.Id == 159) {
+          
           damage = damage * 2;
         }
 
         this.enemyLifePoints = this.enemyLifePoints - damage;
-        this.log.push(
-          "Vous faites à l'ennemi :  " +
-            damage +
-            " points de dégats. Il reste à l'ennemi : " +
-            this.enemyLifePoints +
-            " points."
-        );
-        this.log.shift();
-        if (this.enemyLifePoints <= 0) {
+        console.log("POINT DE VIE ENNEMY:"+this.enemyLifePoints)
+        this.log = this.log+"\nVous faites à l'ennemi :  " + damage +" points de dégats.\nIl reste à l'ennemi : " +
+        this.enemyLifePoints +" points.";
+        
+        if (this.enemyLifePoints <= 10) {
           this.displayMovement();
         }
       } else {
-        this.log.push("Sapristi! Vous l'avez manqué !");
-        this.log.shift();
+        this.log = this.log+"\nSapristi! Vous l'avez manqué !";
+        
       }
     },
 
@@ -513,22 +547,23 @@ watch: {
         let damage =
           total - this.toHitPlayer + this.enemyAttack - this.playerArmor;
 
-        this.log.push(
+        this.log = 
           "L'ennemi réussit à vous toucher, il vous inflige : " +
             damage +
             " points de dégats."
-        );
-        // this.log.shift();
+        ;
+       
 
         this.remainingLifePoints = this.lifePoints - damage;
         this.lifePoints = this.remainingLifePoints;
-        this.log.push("Il vous reste : " + this.lifePoints + " points de vie.");
-        this.log.shift();
+        this.log = this.log+"\nIl vous reste : " + this.lifePoints + " points de vie.";
+        
       } else {
-        this.log.push("L'ennemi vous rate.");
-        this.log.shift();
+        this.log ="\nL'ennemi vous rate.";
+        
       }
       if (this.$route.query.id == 159) {
+        
         console.log("C'est bon");
         console.log(this.lifePoints);
         console.log(this.startingLifePoints);
@@ -546,8 +581,8 @@ watch: {
     fight() {
       console.log(this.playerInitiative == 1);
       if (this.playerInitiative == 1) {
-        this.log.push("C'est à vous de commencer à frapper.");
-        // this.log.shift();
+        this.log = "C'est à vous de commencer à frapper.";
+        
         let btnAttack = document.getElementsByClassName("btnAttack");
         btnAttack[0].style.display = "block";
         btnAttack[1].style.display = "none";
@@ -561,22 +596,17 @@ watch: {
         }
       } else if (this.playerInitiative == 2) {
         // console.log("this.playerInitiative : " + this.playerInitiative);
-        this.log.push("L'ennemi commence");
+        this.log = this.log+"\nL'ennemi commence";
         // this.log.shift();
         this.EnemyHitJoueur();
       } else {
         // console.log("this.playerInitiative : " + this.playerInitiative);
-        this.log.push(
-          "Les dés ont été lancés pour déterminer qui commence, le score affiché à gauche sera le vôtre."
-        );
-        // this.log.shift();
+        this.log = this.log+
+          "\nLes dés ont été lancés pour déterminer qui commence, le score affiché à gauche sera le vôtre."
+        ;
+        
         this.throwTheDice(2);
-        console.log(
-          "randomdice1 : " +
-            parseInt(this.randomDice1) +
-            " randomdice2 : " +
-            this.randomDice2
-        );
+        
 
         this.whoStarts();
       }
@@ -586,8 +616,10 @@ watch: {
         console.log(this.startingLifePoints);
         if (this.lifePoints <= this.startingLifePoints - 10) {
           this.goTo(1);
-        } else if (this.MyJson.book[this.Id].enemy[0].enemyLifePoints <= 10) {
+          this.lifePoints = this.startingLifePoints;
+        } else if (this.enemyLifePoints <= 10) {
           this.goTo(2);
+          this.lifePoints = this.startingLifePoints;
         }
       } else {
         if (this.lifePoints <= 0) {
@@ -604,9 +636,9 @@ watch: {
       );
 
       if (this.randomDice1 == this.randomDice2) {
-        this.log.push(
+        this.log = 
           "Egalité, les dés ont été relancés. Veuillez cliquer sur le bouton d'attaque"
-        );
+        ;
         this.throwTheDice();
         return this.whoStarts();
       } else if (this.randomDice1 > this.randomDice2) {
@@ -623,11 +655,11 @@ watch: {
       }
     },
     drinkPotion(nom) {
-      //a finir
+      
+      nom = nom.message
       if (nom == "Potions Curatives") {
         this.throwTheDice(2);
-        this.lifePoints =
-          this.lifePoints + (this.randomDice1 + this.randomDice2);
+        this.lifePoints = this.lifePoints + (this.randomDice1 + this.randomDice2);
       } else if (nom == "Onguents") {
         this.lifePoints = this.lifePoints + 5;
       }

@@ -4,7 +4,7 @@
       <div class="divNav">
       <router-link to="/">| Accueil |</router-link>
       <router-link to="/Rules"> Règles |</router-link>
-      <router-link to="/Action/?id=0"> Jouer |</router-link>
+      <router-link to="/Action/?id=157"> Jouer |</router-link>
       <router-link to="/About"> À propos |</router-link>
       
     </div>

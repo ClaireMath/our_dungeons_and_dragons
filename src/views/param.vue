@@ -15,7 +15,16 @@
                 <label>Volume :</label> <input type="range" id="volume">
             </div>
         </div>
+        <h2 style="margin-top:10px;">Texte</h2>
+        <div style="margin-top:10px;" class="OneParam">
+                <label>Changer de police:</label>
+                <select name="Texte" id="select" @change="emitChangePolice" >
+                     <option value="Irish">Mediéval</option>
+                     <option value="None">Normal</option>
+                </select>
+            </div>
         <h2 style="margin-top:10px;">Partie</h2>
+        
         <div class="partie" style="margin-top:30px;">
             <div class="OneParam" style="margin-top:10px;">
                 <button class="btn2">Sauvegarder</button>
@@ -38,6 +47,13 @@ export default{
 
         }
     },methods:{
+       
+        emitChangePolice(){
+            
+            let selectElem = document.getElementById('select')
+            var index = selectElem.value;
+            this.$emit("changePolice",{message: index})
+        },
         playSound(sound){
             let volumeIsActive = document.getElementById("volumeIsActive").checked ;
             let volume = document.getElementById("volume").value ;

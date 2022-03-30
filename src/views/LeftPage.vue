@@ -48,16 +48,16 @@ export default {
 
   methods: {
     toggleLeft() {
-      console.log("starting lp " + startingLifePoints);
+      
       let startingLifePoints = this.startingLifePoints;
-      console.log("starting life points : " + startingLifePoints);
+      
       let hpBar = document.getElementById("hpBar");
       let lifePoints = this.lifePoints;
       
       let lifeBar = lifePoints / startingLifePoints;
       lifeBar = lifeBar * 100;
       let lBar = lifeBar + "%";
-      console.log("Life bar " + lBar);
+      
 
       let leftPage = document.getElementById("leftPage");
       let lStar = document.getElementById("lStar");

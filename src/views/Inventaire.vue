@@ -8,9 +8,9 @@
         <div class="infos">
             <h2>Pip</h2>
             
-            <h3>Points de Vie: </h3>
+            <h3>Points de Vie: {{ vie }} / {{ maxVie }}</h3>
             
-            <h3>Argents: </h3>
+            <h3>Argents: {{ argent}}</h3>
             <br>
             <div class="infoArme">
                 <h3>Arme:</h3>
@@ -99,17 +99,17 @@
                     <tr>
                         <td>Potions Curatives</td>
                         <td>Vous redonne 2d6 PV</td>
-                        <td>18</td>
-                        <td><button>Utiliser</button></td>
+                        <td id="Curatives">18</td>
+                        <td><button id="BtnCuratives" @click="potion('Curatives','BtnCuratives')">Utiliser</button></td>
                     </tr>
                     <tr>
-                        <td>Onguents</td>
+                        <td>Onguents</td> 
                         <td>Restitue 5 PV</td>
-                        <td>5</td>
-                        <td><button>Utiliser</button></td>
+                        <td id="Onguents">5</td>
+                        <td><button id="BtnOnguents" @click="potion('Onguents','BtnOnguents')">Utiliser</button></td>
                     </tr>
                 </tbody>
-                
+                 
             </table>
         </div>
         <div class="sorts">
@@ -124,20 +124,20 @@
                     <tr>
                         <td><strong>Nom</strong></td>
                         <td><strong>Effets</strong></td>
-                        <td><strong>Nombre</strong></td>
+                        
                         
                     </tr>
                     
                     <tr>
-                        <td>Doigt de Feu</td>
+                        <td>Doigt de Feu I</td>
                         <td>Inflige 10 points de dégats</td>
-                        <td>10</td>
+                        
                         
                     </tr>
                     <tr>
                         <td>Boule de Feu</td>
                         <td>lancer 2d6 si vous faite plus de 5 vous infligez 75 points de dégats</td>
-                        <td>2</td>
+                        
                         
                     </tr>
                 </tbody>
@@ -151,8 +151,11 @@
 
 
 export default{
-
-    data(){
+    props: {
+        vie:"",
+        argent:0,
+        maxVie: 0,
+    },data(){
         return{
             
         }
@@ -191,6 +194,21 @@ export default{
 
 
         },
+        potion(id,P_btn){
+            let div = document.getElementById(id);
+            let btn = document.getElementById(P_btn)
+            let total = div.innerHTML;
+            total = parseInt(total);
+            
+            this.$emit("drinkPotion",{message: "Potions Curatives"})
+            div.innerHTML = total - 1;
+            if(total -1 == 0){
+                btn.setAttribute("disabled", "")
+            }
+
+
+
+        },
         createOptions(){
             //arme
             let ArmeName = document.getElementsByClassName("ArmeName");
@@ -202,7 +220,7 @@ export default{
                 option.appendChild(txt)
                 div.appendChild(option)
             }
-            //armure  
+            //armure
             let ArmureName = document.getElementsByClassName("ArmureName");
             let div2 = document.getElementById("armure-select");
             for(let i = 0; i< ArmureName.length; i++){
